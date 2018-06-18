@@ -1,0 +1,276 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/back_icon.js" ></script>
+		<script type="text/javascript" src="../js/check.js" ></script>
+		<script type="text/javascript" src="../js/change_lange.js" ></script>
+		
+		<style>
+			/*body{
+				font-size: 15px;
+			}*/
+			
+			.t_img {
+				width: 100%;
+				height: 40%;
+				padding-top: 80px;
+				margin-bottom: 60px;
+			}
+			
+			.p_word {
+				width: 100%;
+				border-bottom: 1px solid gainsboro;
+				text-align: center;
+			}
+			
+			.mui-input-row label {
+				width: 17%;
+				padding: 5px 15px;
+			}
+			
+			.mui-input-row label~input {
+				width: 83%;
+			}
+			
+			.mui-input-group .mui-input-row:after {
+				height: 0px;
+			}
+			
+			.mui-input-group {
+				background: none;
+			}
+			
+			.mui-input-row {
+				margin-bottom: 20px;
+				background-color: #FFFFFF;
+			}
+			
+			.mui-input-row:last-child {
+				background-color: #FFFFFF;
+			}
+			
+			.mui-input-row .mui-btn {
+				width: 25%;
+				margin-top: -40px;
+				padding: 11px 16px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<script>
+			
+			if(localStorage.pagecount == 1) {
+				addCssByLink('../css/zh.css');
+			} else if(localStorage.pagecount == 2) {
+				addCssByLink('../css/en.css');
+			}
+		</script>
+		<header class="mui-bar mui-bar-nav" style="background-color: #ffffff;">
+			<!--<i class="mui-icon mui-icon-left-nav mui-pull-left" onclick="back_go()"></i>-->
+			<h1 class="mui-title"><span>注册</span></h1>
+		</header>
+	
+		<div class="mui-content">
+			<div class="t_img">
+				<div style="width: 21%;height: 78px;margin: auto;">
+					<img src="../images/891043144065234706.png" alt="" style="width: 100%;height: 100%;border-radius: 100%;" />
+				</div>
+			</div>
+			<div class="mui-content-padded">
+				<p class="p_word"><span class="language-zhucezhanghao"></span></p>
+				<form class="mui-input-group">
+					<div class="mui-input-row">
+						<label><img src="../images/login/lianxiren.png" alt=""/></label>
+						<input type="text" placeholder="用户名" id="name">
+					</div>
+
+					<div class="mui-input-row">
+						<label><img src="../images/login/shouji.png" alt=""/></label>
+						<input type="text" placeholder="手机号码" id="phone">
+					</div>
+
+					<div class="mui-input-row">
+						<label><img src="../images/login/yzm.png" alt=""/></label>
+						<input type="text" placeholder="短信验证码" class="text_yzm" id="phone_code">
+						<a id="send" style="float: right;margin-top: -30px;color: red;" onclick="send()"><span class="language-huoquyanzhenma"></span></a>
+						<a style="float: right;margin-top: -30px;color: red;display: none" onclick="send()" id="send_time">60s后再获取</a>
+					</div>
+
+					<div class="mui-input-row">
+						<label><img src="../images/login/tuijian.png" alt=""/></label>
+						<input type="text" placeholder="推荐人编码" class="text_yzm" id="f_uid">
+						<span style="float: right;margin-top: -30px;color: gray;"><span class="language-bitian"></span></span>
+					</div>
+
+					<div class="mui-input-row">
+						<label><img src="../images/login/mima.png" alt=""/></label>
+						<input type="password" placeholder="设置登录密码(6位数字)" id="pass">
+					</div>
+
+					<div class="mui-input-row">
+						<label><img src="../images/login/mima.png" alt=""/></label>
+						<input type="password" placeholder="设置交易密码(6位数字)" id="pay_pass">
+					</div>
+				</form>
+				<button type="button" class="mui-btn mui-btn-primary mui-btn-block" id="btn">注册</button>
+				<p style="text-align: center;margin-bottom: 30px;"><span class="language-agree"></span>
+					<a href="./xieyi.html">malaxyb<span class="language-xieyi"></span></a>
+				</p>
+			</div>
+
+		</div>
+
+		<script type="text/javascript" src="../js/jquery.min.js"></script>
+		<!--<script type="text/javascript" src="../js/common.js"></script>-->
+		<script type="text/javascript" src="../js/url.js"></script>
+		
+		<script type="text/javascript">
+			mui.init();
+			function getQueryString() {
+                var qs = location.search.substr(1), // 获取url中"?"符后的字串
+                    args = {}, // 保存参数数据的对象
+                    items = qs.length ? qs.split("&") : [], // 取得每一个参数项,
+                    item = null,
+                    len = items.length;
+
+                for(var i = 0; i < len; i++) {
+                    item = items[i].split("=");
+                    var name = decodeURIComponent(item[0]),
+                        value = decodeURIComponent(item[1]);
+                    if(name) {
+                        args[name] = value;
+                    }
+                }
+                return args;
+            }
+            var qs = getQueryString();
+            var q1 = qs["account"]; // abc
+            document.getElementById("f_uid").value = q1;
+				if(localStorage.pagecount == 1) {
+					document.getElementById("name").setAttribute("placeholder", "用户名");
+					document.getElementById("phone").setAttribute("placeholder", "手机号码");
+					document.getElementById("pass").setAttribute("placeholder", "设置登录密码(6位数字)");
+					document.getElementById("pay_pass").setAttribute("placeholder", "设置交易密码(6位数字)");
+					document.getElementById("phone_code").setAttribute("placeholder", "短信验证码");
+					document.getElementById("f_uid").setAttribute("placeholder", "推荐人编码");
+					
+				} else if(localStorage.pagecount == 2) {
+					document.getElementById("name").setAttribute("placeholder", "name");
+					document.getElementById("phone").setAttribute("placeholder", "cell phone number");
+					document.getElementById("pay_pass").setAttribute("placeholder", "setting the transaction password");
+					document.getElementById("pass").setAttribute("placeholder", "set the sign-on using a password");
+					document.getElementById("phone_code").setAttribute("placeholder", "verification code ");
+					document.getElementById("f_uid").setAttribute("placeholder", "recommended encoding");
+				}
+			
+			function send() {
+				if(!$("#phone").val()) {
+					mui.alert('手机号码不能为空！')
+				} else if(!(/^1[34578]\d{9}$/.test($("#phone").val()))) {
+					mui.alert('手机号码有误，请重填！')
+				} else {
+				$.ajax({
+					url: j_url + "send/res",
+					type: 'POST',
+					dataType: 'jsonp',
+					data: {
+						phone: $("#phone").val()
+					},
+					crossDomain: true,
+					success: function(result) {
+						console.log(result);
+						if(result.code == 1) {
+							mui.toast('发送成功！');
+							$('#send').hide();
+							$('#send_time').show();
+							var cont = 60;
+							$('#send_time').html(cont + "s后再获取");
+							var sen_time = setInterval(function() {
+								cont--;
+								$('#send_time').html(cont + "s后再获取");
+								if(cont == 0) {
+									$('#send_time').hide();
+									$('#send').show();
+									cont = 60;
+									clearInterval(sen_time);
+								}
+							}, 1000);
+						} else {
+							alert(result.msg)
+						}
+					},
+					fail: function(result) {
+
+					}
+				});
+
+				}
+			}
+
+			document.getElementById("btn").addEventListener('tap', function() {
+				
+				if(!$("#name").val()) {
+					mui.alert('请填写昵称！')
+				}else if(!$("#phone").val()) {
+					mui.alert('手机号码不能为空！')
+				}
+				else if(!$("#phone_code").val()) {
+					mui.alert('验证码不能为空！')
+				}
+				else if(!$("#f_uid").val()) {
+					mui.alert('推荐人编码不能为空！')
+				}else if(!$("#pass").val()) {
+					mui.alert('请设置登录密码！')
+				}else if(!$("#pay_pass").val()) {
+					mui.alert('请设置支付密码！')
+				}else{
+					$.ajax({
+					url: j_url + "user/register",
+					type: 'POST',
+					dataType: 'jsonp',
+					data: {
+						pass: $("#pass").val(),
+						phone: $("#phone").val(),
+						phone_code: $("#phone_code").val(),
+						name: $("#name").val(),
+						f_uid: $("#f_uid").val(),
+						re_name: '123',
+						pay_pass: $("#pay_pass").val()
+					},
+					crossDomain: true,
+					success: function(res) {
+						console.log(res);
+						if(res.code == 2) {
+							mui.alert(res.msg);
+						} else if(res.code == 1) {
+							mui.alert(res.msg);
+							$("#pass").val("");
+							$("#pay_pass").val("");
+							$("#phone").val("");
+							$("#phone_code").val("");
+							$("#name").val("");
+							$("#f_uid").val("");
+							$("#re_name").val("");
+							localStorage.lastname = res.u_id;
+							window.location.href = '../index.html';
+						}
+					},
+					fail: function(res) {
+
+					}
+				});
+				}
+				
+
+			});
+		</script>
+	</body>
+
+</html>

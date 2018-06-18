@@ -1,0 +1,286 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<script type="text/javascript" src="../../js/jquery.min.js"></script>
+		<script type="text/javascript" src="../../js/common.js"></script>
+		<script type="text/javascript" src="../../js/back_icon.js" ></script>
+		<script type="text/javascript" src="../../js/change_lange.js" ></script>
+		<style>
+			.mui-segmented-control {
+				border: 1px solid #46adfc;
+			}
+			
+			.mui-segmented-control .mui-control-item.mui-active {
+				color: #fff;
+				background-color: #46adfc;
+			}
+			
+			.mui-segmented-control .mui-control-item {
+				color: #46adfc;
+				border-color: inherit;
+			}
+			ul{
+			  -webkit-padding-start: 0px;
+			}
+			.l_ul li{
+				background-color: #FFFFFF;
+				overflow: auto;
+				list-style: none;
+				margin-bottom: 10px;
+			}
+			.l_head{
+				height: 50px;
+				border-bottom: 1px solid gainsboro;
+			}
+			.h_img{
+				margin-top: 5px;
+				margin-left: 10px;
+				width: 11%;
+				height: 40px;
+				float: left;
+			}
+			.l_head button{
+				float: right;
+				margin-top: 10px;
+				margin-right: 10px;
+			}
+			.l_word{
+				padding: 10px 5px;
+				overflow: auto;
+			}
+			p{
+				margin-bottom: 3px;
+				color: #000000;
+				font-size: 13px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<script>
+			if(localStorage.pagecount == 1) {
+				addCssByLink('../../css/zh.css');
+			} else if(localStorage.pagecount == 2) {
+				addCssByLink('../../css/en.css');
+			}
+		</script>
+		<header class="mui-bar mui-bar-nav" style="background-color: #FFFFFF;">
+			<!--<i class="mui-icon mui-icon-left-nav mui-pull-left" onclick="back_go()"></i>-->
+			<h1 class="mui-title"><span class="language-weiwancendan"></span></h1>
+		</header>
+		<div class="mui-content">
+			<div style="padding: 20px 20px;background-color: #FFFFFF;">
+				<div id="segmentedControl" class="mui-segmented-control">
+					<a id="order_no" class="mui-control-item mui-active" href="#item1"><span class="language-weixuanfukuanren"></span></a>
+					<a id="order_y" class="mui-control-item" href="#item2"><span class="language-yixuanshoukuanren"></span></a>
+				</div>
+			</div>
+
+			<div id="item1" class="mui-control-content mui-active">
+				<p id="none1" style="font-size: 16px; margin: auto;width: 160px;margin-top: 20px; display: none;text-align: center;"><span class="language-meiyoujilu"></span></p>
+				<ul id="list1" class="l_ul">
+					
+				</ul>
+			</div>
+			<div id="item2" class="mui-control-content">
+				<p id="none2" style="font-size: 16px; margin: auto;width: 160px;margin-top: 20px; display: none;text-align: center;"><span class="language-meiyoujilu"></span></p>
+               <ul id="list2" class="l_ul">
+					
+					
+					<!--<span class='language-money'></span>-->
+					
+					
+				</ul>
+			</div>
+		</div>
+
+		</div>
+		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../js/url.js"></script>
+		<script type="text/javascript">
+			mui.init()
+
+				$.ajax({
+					url: j_url + "/index/no_order_a",
+					type: 'POST',
+					dataType: 'jsonp',
+					data: {
+						u_id: localStorage.lastname,
+					},
+					crossDomain: true,
+					success: function(res) {
+						console.log(res);
+						if(res.code == 2) {
+							$("#none1").show();
+							$("#list1").hide();
+						} else if(res.code == 1) {
+							var rou = res.data;
+							$('.l_ul').empty();
+							for(var key in rou) {
+								if(rou[key].u_img == null){
+									$('.l_ul').append("<li><div class='list'><div class='l_head'><div class='h_img'><img src='../../images/891043144065234706.png' alt='' style='width: 100%;height: 100%;border-radius: 100%;' /></div><button type='button' onclick='del(" +
+									rou[key].s_id + ")' class='mui-btn mui-btn-danger'><span class='language-quxiao'></span></button><button type='button' class='mui-btn mui-btn-warning'>"
+									+rou[key].static+"</button></div><div class='l_word' onclick='detail("+rou[key].s_id+")'><div style='float: left;'><p><span class='language-fukuanren'></span>:<span>"+rou[key].user +"</span></p>"+"<p><span class='language-fukuanren'></span>:<span>"
+									+rou[key].bn_name +"</span></p><p><span class='language-sokuanyinghankahao'></span>:<span>"
+						         	+rou[key].b_card +"</span></p></div><div style='float: right;text-align: right;'><p style='font-weight: bolder;'><span class='language-money'></span>:<span>"
+									+rou[key].money +"</span></p><p><span class='language-shifujiner'></span>:<span>"
+									+rou[key].shi_money +"</span></p><p style='color: gray;'>"
+									+rou[key].time +"</p></div></div></div></li>");
+								}else{
+									$('.l_ul').append("<li><div class='list'><div class='l_head'><div class='h_img'><img src="+img_url+rou[key].u_img+" alt='' style='width: 100%;height: 100%;border-radius: 100%;' /></div><button type='button' onclick='del(" +
+									rou[key].s_id + ")' class='mui-btn mui-btn-danger'><span class='language-quxiao'></span></button><button type='button' class='mui-btn mui-btn-warning'>"
+									+rou[key].static+"</button></div><div class='l_word' onclick='detail("+rou[key].s_id+")'><div style='float: left;'><p><span class='language-fukuanren'></span>:<span>"+rou[key].user +"</span></p>"+"<p><span class='language-shoukuanyinghan'></span>:<span>"
+									+rou[key].bn_name +"</span></p><p><span class='language-sokuanyinghankahao'></span>:<span>"
+						         	+rou[key].b_card +"</span></p></div><div style='float: right;text-align: right;'><p style='font-weight: bolder;'><span class='language-money'></span>:<span>"
+									+rou[key].money +"</span></p><p><span class='language-shifujiner'></span>:<span>"
+									+rou[key].shi_money +"</span></p><p style='color: gray;'>"
+									+rou[key].time +"</p></div></div></div></li>");
+								}
+									
+							}
+						}
+					},
+					fail: function(res) {
+
+					}
+				});
+				
+				document.getElementById("order_no").addEventListener('tap', function() {
+				 	$.ajax({
+					url: j_url + "/index/no_order_a",
+					type: 'POST',
+					dataType: 'jsonp',
+					data: {
+						u_id: localStorage.lastname,
+					},
+					crossDomain: true,
+					success: function(res) {
+						console.log(res);
+						if(res.code == 2) {
+							$("#none1").show();
+							$("#list1").hide();
+						} else if(res.code == 1) {
+							var rou = res.data;
+							$('.l_ul').empty();
+							for(var key in rou) {
+								if(rou[key].u_img == null){
+									$('.l_ul').append("<li><div class='list'><div class='l_head'><div class='h_img'><img src='../../images/891043144065234706.png' alt='' style='width: 100%;height: 100%;border-radius: 100%;' /></div><button type='button' onclick='del(" +
+									rou[key].s_id + ")' class='mui-btn mui-btn-danger'><span class='language-quxiao'></span></button><button type='button' class='mui-btn mui-btn-warning'>"
+									+rou[key].static+"</button></div><div class='l_word' onclick='detail("+rou[key].s_id+")'><div style='float: left;'><p><span class='language-fukuanren'></span>:<span>"+rou[key].user +"</span></p>"+"<p><span class='language-shoukuanyinghan'></span>:<span>"
+									+rou[key].bn_name +"</span></p><p><span class='language-sokuanyinghankahao'></span>:<span>"
+						         	+rou[key].b_card +"</span></p></div><div style='float: right;text-align: right;'><p style='font-weight: bolder;'><span class='language-money'></span>:<span>"
+									+rou[key].money +"</span></p><p><span class='language-shifujiner'></span>:<span>"
+									+rou[key].shi_money +"</span></p><p style='color: gray;'>"
+									+rou[key].time +"</p></div></div></div></li>");
+								}else{
+									$('.l_ul').append("<li><div class='list'><div class='l_head'><div class='h_img'><img src="+img_url+rou[key].u_img+" alt='' style='width: 100%;height: 100%;border-radius: 100%;' /></div><button type='button' onclick='del(" +
+									rou[key].s_id + ")' class='mui-btn mui-btn-danger'><span class='language-quxiao'></span></button><button type='button' class='mui-btn mui-btn-warning'>"
+									+rou[key].static+"</button></div><div class='l_word' onclick='detail("+rou[key].s_id+")'><div style='float: left;'><p><span class='language-fukuanren'></span>:<span>"+rou[key].user +"</span></p>"+"<p><span class='language-shoukuanyinghan'></span>:<span>"
+									+rou[key].bn_name +"</span></p><p><span class='language-sokuanyinghankahao'></span>:<span>"
+						         	+rou[key].b_card +"</span></p></div><div style='float: right;text-align: right;'><p style='font-weight: bolder;'><span class='language-money'></span>:<span>"
+									+rou[key].money +"</span></p><p><span class='language-shifujiner'></span>:<span>"
+									+rou[key].shi_money +"</span></p><p style='color: gray;'>"
+									+rou[key].time +"</p></div></div></div></li>");
+								}
+									
+							}
+						}
+					},
+					fail: function(res) {
+
+					}
+				});
+				 });
+				
+				 document.getElementById("order_y").addEventListener('tap', function() {
+				 	$.ajax({
+					url: j_url + "/index/no_order_c",
+					type: 'POST',
+					dataType: 'jsonp',
+					data: {
+						u_id: localStorage.lastname,
+					},
+					crossDomain: true,
+					success: function(res) {
+						console.log(res);
+						if(res.code == 2) {
+							$("#none2").show();
+							$("#list2").hide();
+						} else if(res.code == 1) {
+							var rou = res.data;
+							$('.l_ul').empty();
+							for(var key in rou) {
+								if(rou[key].u_img == null){
+									$('.l_ul').append("<li><div class='list'><div class='l_head'><div class='h_img'><img src='../../images/891043144065234706.png' alt='' style='width: 100%;height: 100%;border-radius: 100%;' /></div><button type='button' class='mui-btn mui-btn-danger' onclick=shensu("+rou[key].s_id+")>申诉</button><button type='button' class='mui-btn mui-btn-warning'>"
+									+rou[key].static+"</button></div><div class='l_word' onclick='detail("+rou[key].s_id+")'><div style='float: left;'><p><span class='language-fukuanren'></span>:<span>"+rou[key].user +"</span></p>"+"<p><span class='language-shoukuanyinghan'></span>:<span>"
+									+rou[key].bn_name +"</span></p><p><span class='language-sokuanyinghankahao'></span>:<span>"
+						         	+rou[key].b_card +"</span></p></div><div style='float: right;text-align: right;'><p style='font-weight: bolder;'><span class='language-money'></span>:<span>"
+									+rou[key].money +"</span></p><p><span class='language-shifujiner'></span>:<span>"
+									+rou[key].shi_money +"</span></p><p style='color: gray;'>"
+									+rou[key].time +"</p></div></div></div></li>");
+								}else{
+									$('.l_ul').append("<li><div class='list'><div class='l_head'><div class='h_img'><img src="+img_url+rou[key].u_img+" alt='' style='width: 100%;height: 100%;border-radius: 100%;' /></div><button type='button' class='mui-btn mui-btn-danger' onclick=shensu("+rou[key].s_id+")>申诉</button><button type='button' class='mui-btn mui-btn-warning'>"
+									+rou[key].static+"</button></div><div class='l_word' onclick='detail("+rou[key].s_id+")'><div style='float: left;'><p><span class='language-fukuanren'></span>:<span>"+rou[key].user +"</span></p>"+"<p><span class='language-shoukuanyinghan'></span>:<span>"
+									+rou[key].bn_name +"</span></p><p><span class='language-sokuanyinghankahao'></span>:<span>"
+						         	+rou[key].b_card +"</span></p></div><div style='float: right;text-align: right;'><p style='font-weight: bolder;'><span class='language-money'></span>:<span>"
+									+rou[key].money +"</span></p><p><span class='language-shifujiner'></span>:<span>"
+									+rou[key].shi_money +"</span></p><p style='color: gray;'>"
+									+rou[key].time +"</p></div></div></div></li>");
+								}
+									
+							}
+						}
+					},
+					fail: function(res) {
+
+					}
+				});
+				 });
+				 	function del(id) {
+				var btnArray = ['否', '是'];
+				mui.confirm('是否确认取消', '', btnArray, function(e) {
+					if (e.index == 1) {
+							$.ajax({
+					url: j_url + "/Turnin/del_order",
+					data: {
+						s_id: id
+					},
+					type: "POST",
+					dataType: 'jsonp',
+					crossDomain: true,
+					success: function(res) {
+						if(res.code == 2) {
+							mui.toast(res.msg, {
+								duration: 'long',
+								type: 'div'
+							}); 
+							setTimeout(function(){window.location.reload()},300);
+						} else if(res.code == 1) {
+							mui.toast(res.msg, {
+								duration: 'long',
+								type: 'div'
+							});
+							setTimeout(function(){window.location.reload()},300);
+						}
+					}
+				});
+					} else {
+						
+					}
+				})
+			}
+			
+  function detail(id){
+	window.location.href='order_list.html?sid='+id;
+  }
+  function shensu(id){
+				window.location.href='recharge.html?sid='+id;
+			}
+		</script>
+	</body>
+

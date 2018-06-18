@@ -1,0 +1,230 @@
+.t_img {
+    width: 100%;
+    height: 90px;
+    border-bottom: 1px solid gainsboro;
+    background-color: white;
+    margin-top: -5px;
+}
+.t_img a {
+    line-height: 80px;
+    padding-right: 10px;
+    color: gray;
+    font-size: 14px;
+}
+.img {
+    width: 63px;
+    height: 63px;
+    margin-top: 17px;
+    margin-left: 10px;
+    float: left;
+}
+.s_word1 {
+    width: 50%;
+    float: left;
+}
+ul {
+    -webkit-padding-start: 0px;
+}
+.t_img li {
+    list-style: none;
+}
+.border_bottom {
+    padding-bottom: 10px;
+}
+.s_word {
+    width: 100%;
+    padding: 10px 5px;
+    background-color: white;
+    overflow: hidden;
+    border-bottom: 5px;
+}
+.word_left {
+    float: left;
+    width: 33%;
+    text-align: center;
+}
+.word_left p {
+    color: #000000;
+    font-size: 15px;
+}
+.border_right {
+    border-right: 1px solid gainsboro;
+}
+.mui-table-view-chevron>.mui-table-view-cell span{
+    float: left;
+    display: block;
+    padding-top: 17px;
+    padding-left: 5px;
+}
+.mui-btn{
+    background-color:#fec900;
+}
+.main {
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.h_bg {
+    width: 100%;
+    height: 110px;
+    background-image: url(images/shuijiao.jpg);
+    background-size: 100% 100%;
+    padding: 60px 38%;
+}
+
+.img1 {
+    width: 100%;
+    height: 30px;
+}
+
+.img1 img {
+    border-radius: 100%;
+}
+
+.img1 span {
+    position: absolute;
+    color: #FFFFFF;
+    padding: 5px;
+}
+
+.card {
+    overflow: hidden;
+}
+
+.s_img {
+    width: 100%;
+    height: 50px;
+}
+
+.img_toux {
+    width: 41px;
+    height: 41px;
+    margin-top: 10px;
+    margin-left: 10px;
+    float: left;
+}
+.word {
+    width: 60%;
+    float: left;
+}
+
+ul {
+    -webkit-padding-start: 10px;
+    -webkit-margin-before: 1.3em;
+}
+
+.s_img li {
+    list-style: none;
+    color: #000000;
+}
+
+.card .mui-navigate-right:after,
+.mui-push-left:after,
+.mui-push-right:after {
+}
+
+.word2 {
+    width: 100%;
+    height: 60px;
+    /*padding: 10px;*/
+}
+.mui-grid-view.mui-grid-9 .mui-table-view-cell {
+    margin: 0;
+    padding: 16px 11px;
+    vertical-align: top;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.money {
+    width: 25%;
+    text-align: center;
+    float: left;
+}
+.money1 {
+    width: 50%;
+    text-align: center;
+    float: left;
+}
+
+.money p {
+    color: #000000;
+}
+.money1 p {
+    color: #000000;
+}
+
+.mui-grid-view.mui-grid-9 {
+    background-color: #FFFFFF;
+}
+
+
+.mui-bar-tab .mui-tab-item.mui-active {
+    color: #fec900;
+}
+/*.mui-content {*/
+/*    padding-top: 51px;*/
+/*}*/
+#con{
+    bottom: 51px;
+    position: relative;
+}
+.mui-tab-item{
+    padding-top: 5px;
+}
+	.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+				color: #fec900;
+			}
+			
+			.mui-segmented-control.mui-segmented-control-inverted~.mui-slider-progress-bar {
+				background-color: #fec900;
+			}
+			
+			.mui-segmented-control.mui-segmented-control-inverted .mui-control-item {
+				color: #fec900;
+			}
+			.mui-segmented-control{
+				background-color: white;
+			}
+			/*.mui-slider-group{
+				margin-top: 10px;
+			}*/
+			.mui-table-view-cell h5 {
+				color: #fec900;
+			}
+			
+			.mui-table-view-cell span {
+				color: #000000;
+				line-height: 0;
+			}
+			
+			.mui-ellipsis {
+				font-size: 12px;
+				color: #000000;
+			}
+.icp_iari_on{
+    color: #fec900;
+}
+.tab_a{
+    display: table-cell;
+    overflow: hidden;
+    width: 1%;
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    /*color: #929292;*/
+}
+.tab_a img{
+    width: 16px;
+    height: 16px;
+}
+.conter_icp_bot{
+    width: 100%;
+}
+.conter_icp_bot .conter_icp_div{
+    display: none;
+}

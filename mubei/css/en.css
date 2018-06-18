@@ -1,0 +1,615 @@
+.language-credit:before{
+    content:"credit";
+}
+.language-code:before{
+    content:"Scan QR code deal";
+}
+.language-money:before{
+    content:"Balance";
+}
+.language-score:before{
+    content:"Score";
+}
+.language-zhuanchu:before{
+    content:"Transfer-out";
+}
+.language-mairu11:before{
+    content:"share record";
+}
+.language-jilu:before{
+    content:"recode";
+}
+.language-maichujine:before{
+    content:"The amount sold";
+}
+.language-maichuzhanghu:before{
+    content:"Sell account";
+}
+.language-woyaomai:before{
+    content:"Sell";
+}
+.language-zhuanru:before{
+    content:"Transfer-in";
+}
+.language-querening:before{
+    content:"Confirmation";
+}
+.language-jiaoyijine:before{
+    content:"transaction amount";
+}
+.language-maichuorderquerenfukuan:before{
+    content:"Purchase order confirmation payment";
+}
+.language-maichucaozuoquerenfukuan:before{
+    content:"Buy operation to confirm payment";
+}
+.language-zhuanzhangnjine:before{
+    content:"Transfer amount";
+}
+.language-zhuanzhangzhanghu:before{
+    content:"transfer account";
+}
+.language-zhuanzhangnumber:before{
+    content:"Transfer card";
+}
+.language-mairutime:before{
+    content:"Buy time";
+}
+.language-maruzhanghu:before{
+    content:"Buy accounts";
+}
+.language-maichushuer:before{
+    content:"Please choose to sell the amount";
+}
+.language-mairu:before{
+    content:"Purchase";
+}
+.language-marujine:before{
+    content:"MASSACRATION";
+}
+
+.language-maichu:before{
+    content:"Sell";
+}
+.language-lange:before{
+    content:"Multi language";
+}
+
+.language-shuzi:before{
+    content:"The planetesimals currency";
+}
+.language-zichan:before{
+    content:"asset";
+}
+.language-queren:before{
+    content:"confirm";
+}
+.language-ruanjian:before{
+    content:"Software license service agreement";
+}
+.language-banquan:before{
+    content:"company all right reserved";
+}
+.language-mairuwancheng:before{
+    content:"Buy to complete the order";
+}
+.language-send:before{
+    content:"send";
+}
+.language-guamaiing:before{
+    content:"Hang sell";
+}
+.language-shoukuaicard:before{
+    content:"Collection number";
+}
+
+.language-shoukuanbank:before{
+    content:"due bank";
+}
+.language-fenxiangjilu:before{
+    content:"Sharing of records";
+}
+.language-shoukuanren:before{
+    content:"Beneficiary Name";
+}
+.language-yijianhewenti:before{
+    content:"Comments and questions";
+} 
+.language-yinsi:before{
+    content:"Privacy protection guidelines";
+}
+.language-yijianfankui:before{
+    content:"Feedback";
+}
+.language-shop:before{
+    content:"Mall";
+}
+.language-setting:before{
+    content:"Setting";
+}
+
+.language-changimg:before{
+    content:"Changeavatar";
+}
+.language-nicheng:before{
+    content:"Nickname";
+}
+.language-yuyan:before{
+    content:"Language Settings";
+}
+.language-card:before{
+    content:"My Bank Cards";
+}
+.language-loginpass:before{
+    content:"Login Password";
+}
+
+.language-paypass:before{
+    content:"Payment Password";
+}
+
+.language-changepass:before{
+    content:"Click modify";
+}
+
+.language-gonggao:before{
+    content:"Announcement";
+}
+
+.language-message:before{
+    content:"Message";
+}
+
+
+.language-dianpu:before{
+    content:"Personal store";
+}
+
+.language-order:before{
+    content:"Order";
+}
+.language-dizhi:before{
+    content:"Address management";
+}
+
+.language-jianyi:before{
+    content:"Suggestions";
+}
+
+.language-fenxiang:before{
+    content:"Sharing";
+}
+.language-bangben:before{
+    content:"Version";
+}
+.language-about:before{
+    content:"About";
+}
+.language-loginout:before{
+    content:"Log out";
+}
+.language-changename:before{
+    content:"Change nickname";
+}
+
+.language-meiyoujilu:before{
+    content:"No records were found.";
+}
+.language-yueijilu:before{
+    content:"Balance record";
+}
+.language-yuwuleixing:before{
+    content:"Business type";
+}
+.language-shuei:before{
+    content:"Amount";
+}
+
+.language-time:before{
+    content:"Time";
+}
+.language-jifenjilu:before{
+    content:"Score record";
+}
+
+.language-xiayibu:before{
+    content:"Next step";
+}
+
+.language-duihuanjifen:before{
+    content:"Credits exchange";
+}
+
+.language-duifanzhanghao:before{
+    content:"Reciprocal account number";
+}
+
+.language-zhuanchujilu:before{
+    content:"Transfer-out record";
+}
+
+.language-qingchuruzhifumima:before{
+     content:"Please enter payment password";
+ }
+.language-qingkong:before{
+    content:"empty";
+}
+.language-shanchu:before{
+    content:"delete";
+}
+.language-zhuanchujinei:before{
+    content:"Transfer amount";
+}
+
+.language-querenzhuanchu:before{
+    content:"Confirm the transfer";
+}
+
+.language-shoujimosiwei:before{
+    content:"Phone last four";
+}
+.language-zhuanrujilu:before{
+    content:"Transfer-in record";
+}
+
+.language-mairushuer:before{
+    content:"Please select the purchase amount";
+}
+
+.language-bangdingka:before{
+    content:"Binding bank card";
+}
+
+.language-tianjiaka:before{
+    content:"Please add bank card";
+}
+
+.language-chuanjiandan:before{
+    content:"create order";
+}
+
+.language-weiwancendan:before{
+    content:"backlog of unfilled orders";
+}
+
+.language-querendakuan:before{
+    content:"Confirm the money";
+}
+
+.language-wancendan:before{
+    content:"Completed order";
+}
+
+.language-mairujilu:before{
+    content:"Buy records";
+}
+
+.language-mairuzhongxin:before{
+    content:"Call center";
+}
+
+
+.language-weixuanshoukuanren:before{
+    content:"No payee is chosen";
+}
+
+.language-yixuanshoukuanren:before{
+    content:"The payee has been selected";
+}
+
+.language-fukuanren:before{
+    content:"payer";
+}
+.language-fukuanyinghan:before{
+    content:"paying bank";
+}
+.language-fukuanyinghankahao:before{
+    content:"payment number";
+}
+
+.language-sokuanren:before{
+    content:"payee";
+}
+.language-sokuanyinghan:before{
+    content:"due bank";
+}
+.language-sokuanyinghankahao:before{
+    content:"payee number";
+}
+
+.language-jiner:before{
+    content:"money";
+}
+.language-shifujiner:before{
+    content:"Amount paid";
+}
+
+.language-zhuantai:before{
+    content:"state";
+}
+
+.language-dingdanxiangqi:before{
+    content:"Orderdetail";
+}
+
+.language-weixuanze:before{
+    content:"unselected";
+}
+
+.language-quxiao:before{
+    content:"cancel";
+}
+
+
+.language-chuanjiandanmairu:before{
+    content:"You create a buy order";
+}
+
+.language-chuanjiandanmaichu:before{
+    content:"You create a sell order";
+}
+
+.language-kochubaozhenji:before{
+    content:"Deduct 100 balance from your balance as a deposit";
+}
+.language-kochunindeyier:before{
+    content:"Deduct from your balance";
+}
+.language-dengdaipipeimaichu:before{
+    content:"Wait for match to sell the user";
+}
+.language-dengdaipipeimairu:before{
+    content:"Wait for match to buy user";
+}
+
+.language-dengdainidakuan1:before{
+    content:"Waiting for you to sell off the user offline";
+}
+
+.language-dengdainidakuan2:before{
+    content:"Waiting for buy users to pay you offline";
+}
+
+.language-dengdainidakuan3:before{
+    content:"We are waiting for your confirmation";
+}
+
+.language-dengdainidakuan4:before{
+    content:"Wait to buy the user to confirm the payment";
+}
+.language-dengdainidakuan5:before{
+    content:"Wait to sell the customer confirm receipt";
+}
+
+.language-dengdainidakuan6:before{
+    content:"We are waiting for your confirmation";
+}
+.language-dengdainidakuan7:before{
+    content:"Buy success";
+}
+.language-queding:before{
+    content:"confirm";
+}
+
+.language-tishi:before{
+    content:"Hint";
+}
+.language-dengdainidakuan8:before{
+    content:"Selling success";
+}
+.language-dengdainidakuan9:before{
+    content:"Are you sure you want to cancel this order?";
+}
+.language-mairuquerenfukuan:before{
+    content:"Purchase";
+}
+.language-maichuquerenfukuan:before{
+    content:"Sell payment";
+}
+.language-kahaoee:before{
+    content:"card number";
+}
+.language-xingming:before{
+    content:"name";
+}
+.language-zhifufangsi:before{
+    content:"payment";
+}
+.language-duihuancjifen:before{
+    content:"convertibility";
+}
+.language-buzhiqishenmemingzi:before{
+    content:"At least 100, please enter 100 integer";
+}
+.language-duihuanjilui:before{
+    content:"For record";
+}
+.language-quedingduihuan:before{
+    content:"Determine the cash";
+}
+
+
+.language-quedingduihuan1:before{
+    content:"Buy order";
+}
+.language-quedingduihuan2:before{
+    content:"Purchase order";
+}
+.language-quedingduihuan3:before{
+    content:"Selling account";
+}
+.language-quedingduihuan4:before{
+    content:"Buy amount";
+}
+.language-quedingduihuan5:before{
+    content:"current state";
+}
+.language-quedingduihuan6:before{
+    content:"Time seller";
+}
+.language-querenshoukuan:before{
+    content:"confirm receipt";
+}
+.language-maichujilu:before{
+    content:"Sell records";
+}
+.language-maichuzhongxin:before{
+    content:"Sales center";
+}
+.language-weixuanfukuanren:before{
+    content:"payer is not";
+}
+
+.language-yixuanfukuanren:before{
+    content:"payer has been";
+}
+
+.language-quedingduihuan7:before{
+    content:"Buy confirm";
+}
+.language-quedingduihuan8:before{
+    content:"Sell confirm";
+}
+
+.language-quedingduihuan9:before{
+    content:"completed order";
+}
+.language-quedingduihuan10:before{
+    content:"Sell order";
+}
+.language-chushou:before{
+    content:"sell";
+}
+.language-bencichoubei:before{
+    content:"Preparation needs";
+}
+.language-wushangpingsoumai:before{
+    content:"There is no commercial sale";
+}
+.language-coukuan:before{
+    content:"raise funds";
+}
+.language-rencoubei:before{
+    content:"of prepare";
+}
+.language-moren:before{
+    content:"default";
+}
+.language-tianjiayinghanka:before{
+    content:"Add bank card";
+}
+.language-yiduidongix:before{
+    content:"Please bind the cardholder's bank card";
+}
+
+.language-zhuanchujinei1:before{
+    content:"Cardholder Name";
+}
+.language-zhuanchujinei6:before{
+    content:"Choose a bank";
+}
+.language-zhuanchujinei2:before{
+    content:"deposit bank";
+}
+
+.language-zhuanchujinei3:before{
+    content:"credit card numbers";
+}
+
+.language-zhuanchujinei4:before{
+    content:"Account opening branch";
+}
+
+.language-zhuanchujinei5:before{
+    content:"Set to the default bank card";
+}
+.language-xiugaidenglu:before{
+    content:"Update Password";
+}
+.language-gaimima1:before{
+    content:"old password";
+}
+.language-gaimima2:before{
+    content:"new password ";
+}
+.language-gaimima3:before{
+    content:"Forget login password";
+}
+.language-gaimima4:before{
+    content:"Forget to pay password";
+}
+.language-shoujihao:before{
+    content:"phone";
+}
+
+
+.language-yanzhenma:before{
+    content:"auth code";
+}
+
+.language-gaiyinwen:before{
+    content:"中文";
+}
+
+.language-huoquyanzhenma:before{
+    content:"get code";
+}
+.language-zaihuoqu:before{
+    content:"obtained";
+}
+
+.language-xiugaizhifumima:before{
+    content:"Change the payment password";
+}
+.language-shouhuoren:before{
+    content:"consignee";
+}
+
+.language-lianxidianhua:before{
+    content:"phone";
+}
+.language-querenshouhuo:before{
+    content:"confirm receipt ";
+}
+.language-zanwudingdan:before{
+    content:"No orders";
+}
+
+.language-guanlidizhi:before{
+    content:"locally administered ";
+}
+.language-tianjialidizhi:before{
+    content:"Add Region";
+}
+.language-agree:before{
+    content:"Click on the registrant you have read and agree";
+}
+
+.language-bitian:before{
+    content:"not null";
+}
+.language-xieyi:before{
+    content:"protocol";
+}
+.language-lianxirendianhua:before{
+    content:"contact number";
+}
+.language-saomiaofenxiang:before{
+    content:"Scan qr code to share friends";
+}
+.language-zhucezhanghao:before{
+    content:"registered accounts";
+}
+.language-denglumima:before{
+    content:"login password ";
+}
+
+.language-lijizhuce:before{
+    content:"sign up right away";
+}
+.language-wanjimima:before{
+    content:"forget the password";
+}
+.language-longin:before{
+    content:"Login";
+}

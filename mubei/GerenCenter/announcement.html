@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<script type="text/javascript" src="../js/jquery.min.js"></script>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/common.js"></script>
+		<script type="text/javascript" src="../js/back_icon.js"></script>
+		<script type="text/javascript" src="../js/change_lange.js" ></script>
+		<style>
+			.a_list {
+				overflow: auto;
+				background-color: #FFFFFF;
+				padding: 10px;
+				border-bottom: 1px solid gainsboro;
+			}
+			
+			.title {
+				font-size: 18px;
+				color: #000000;
+			}
+			
+			.word {
+				font-size: 16px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<script>
+			if(localStorage.pagecount == 1) {
+				addCssByLink('../css/zh.css');
+			} else if(localStorage.pagecount == 2) {
+				addCssByLink('../css/en.css');
+			}
+		</script>
+		<header class="mui-bar mui-bar-nav" style="background-color: #FFFFFF;">
+			<!--<i class="mui-icon mui-icon-left-nav mui-pull-left" onclick="back_go()"></i>-->
+			<h1 class="mui-title"><span class="language-gonggao"></span></h1>
+		</header>
+		<div class="mui-content">
+			<p id="none1" style="font-size: 16px; margin: auto;width: 160px;margin-top: 20px; display: none;text-align: center;"><span class="language-meiyoujilu"></span></p>
+			<div class="list">
+				
+			</div>
+			<!--<div class="a_list">
+				<p class="title">收到一个公告````</p>
+				<p>昨天20:50</p>
+				<p class="word">介绍大第二就没啥地方对方可欧康师傅是我说的的附加费舌坡让快手机算了可溶解时空裂缝IE是收费额鹅鹅鹅鹅鹅鹅饿咯耳机递费的反馈给打破而的浪费地方。</p>
+			</div>-->
+		</div>
+
+		<script type="text/javascript" src="../js/url.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			checkLogin();
+			$.ajax({
+				url: j_url + "index/notice",
+				data: {
+					token:'notice'
+				},
+				type: "POST",
+				dataType: 'jsonp',
+				crossDomain: true,
+				success: function(res) {
+					console.log(res);
+					if(res.code == 2) {
+						$("#none1").show();
+							$(".list").hide();
+					} else if(res.code == 1) {
+						$("#none1").hide();
+							$(".list").show();
+						var rou = res.data;
+						for(var key in rou) {
+							$('.list').append("<div class='a_list'><a href='announcement_word.html?news="+rou[key].n_id+"'><p class='title'>" + rou[key].n_title + "</p>"+"<p class='time'>" + rou[key].time + "</p><p class='word'>"
+							+rou[key].n_text +"</p></a></div>");
+						}
+
+					}
+				}
+			})
+		</script>
+	</body>
+
+</html>

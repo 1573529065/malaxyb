@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/mui.min.css" />
+    <script type="text/javascript" src="../js/mui.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="../js/back_icon.js"></script>
+    <link rel="stylesheet" href="../css/zhifu.css" />
+    <style>
+        .word2 {
+            background-color: white;
+            width: 100%;
+            height: 80px;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+
+        .money {
+            width: 33%;
+            text-align: center;
+            float: left;
+        }
+
+        .money p {
+            color: #000000;
+        }
+
+        .c_word {
+            background-color: #FFFFFF;
+            padding: 0 15px;
+        }
+
+        .c_word p {
+            color: red;
+            font-size: 16px;
+        }
+
+        .mui-input-row label~input,
+        .mui-input-row label~select,
+        .mui-input-row label~textarea {
+            border: 1px solid gainsboro;
+        }
+
+        .c_word h5 {
+            padding: 10px 0;
+            color: #000000;
+        }
+
+        .mui-btn {
+            margin-top: 50px;
+        }
+
+        .border_right {
+            border-right: 1px solid gainsboro;
+        }
+
+        .shue {
+            height: 120px;
+            border-top: 1px solid gainsboro;
+            background-color: white;
+        }
+
+        .shue a:hover {
+            text-decoration: none;
+        }
+        .shu {
+            margin: 3% 5% 3% 8%;
+            text-align: center;
+            float: left;
+            width: 20%;
+            border: 1px solid #fec900;
+            background-color: white;
+            color: #fec900;
+            font-weight: 700;
+            font-size: 12px;
+        }
+
+        .shu2 {
+            background-color: #fec900;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+<header class="mui-bar mui-bar-nav" style="background-color: #fec900;">
+    <i class="mui-icon mui-icon-left-nav mui-pull-left" onclick="back_go()"></i>
+    <h1 class="mui-title">流通兑换资产</h1>
+    <button class="mui-btn mui-btn-blue mui-btn-link mui-pull-right" style="color: #000000;font-size: 14px;" onclick="window.location.href='lt_change_recode_zc.html'; ">兑换记录</button>
+</header>
+<div class="mui-content">
+    <div class="word2">
+        <div class="money border_right">
+            <p>资产</p>
+            <p id="s_assets"></p>
+        </div>
+        <div class="money border_right">
+            <p>流通</p>
+            <p id="s_current"></p>
+        </div>
+        <div class="money">
+            <p>余额</p>
+            <p id="s_balance"></p>
+        </div>
+    </div>
+
+    <form class="mui-input-group" id="test">
+        <div class="mui-input-row mui-radio mui-left">
+            <label>余额兑换</label>
+            <input name="radio1" value="2" type="radio" checked>
+        </div>
+        <div class="mui-input-row mui-radio mui-left">
+            <label>流通兑换</label>
+            <input name="radio1" value="1" type="radio">
+        </div>
+    </form>
+
+    <div class="c_word">
+
+        <p>兑换成资产</p>
+
+        <div class="shue">
+            <div style=" margin: auto;">
+                <button value="500" class="shu selected">500</button>
+                <button value="1000" class="shu selected">1000</button>
+                <button value="3000" class="shu selected">3000</button>
+                <button value="5000" class="shu selected">5000</button>
+                <button value="10000" class="shu selected">10000</button>
+                <button value="30000" class="shu selected">30000</button>
+            </div>
+        </div>
+        <h5>提示：最少兑换数量100，请输入100整数倍</h5>
+    </div>
+
+    <div class="mui-content-padded">
+        <button type="button" class="mui-btn mui-btn-warning mui-btn-block" style="font-size: 16px;" id="turn_out">确认兑换</button>
+    </div>
+
+    <!--支付键盘-->
+    <div class="ftc_wzsf">
+        <div class="srzfmm_box">
+            <div class="qsrzfmm_bt clear_wl">
+                <img src="../images/xx_03.jpg" class="tx close fl">
+                <span class="fl">请输入支付密码</span></div>
+            <div class="zfmmxx_shop">
+                <div class="zhifu_price">￥<span id="need"></span></div>
+            </div>
+            <ul class="mm_box">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="numb_box">
+            <div class="xiaq_tb">
+                <img src="../images/jftc_14.jpg" height="10"></div>
+            <ul class="nub_ggg">
+                <li>
+                    <a href="javascript:void(0);" class="zf_num">1</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="zj_x zf_num">2</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="zf_num">3</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="zf_num">4</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="zj_x zf_num">5</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="zf_num">6</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="zf_num">7</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="zj_x zf_num">8</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="zf_num">9</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="zf_empty">清空</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="zj_x zf_num">0</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="zf_del">删除</a>
+                </li>
+            </ul>
+        </div>
+        <div class="hbbj"></div>
+    </div>
+</div>
+</body>
+
+</html>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/url.js"></script>
+<script src="../js/mui.min.js"></script>
+<script>
+    mui.init()
+    $(".selected").click(function(){
+        $(".selected").eq($(this).index()).addClass("shu2").siblings().removeClass('shu2');
+
+    });
+
+    $.ajax({
+        url: j_url + "/index/index",
+        type: 'POST',
+        data: {
+            u_id: localStorage.lastname
+        },
+        dataType: 'jsonp',
+        crossDomain: true,
+        success: function(res) {
+            console.log(res);
+            $("#s_assets").html(res.data.assets);
+            $("#s_balance").html(res.data.balance);
+            $("#s_current").html(res.data.current);
+
+        },
+        fail: function(res) {
+
+        }
+    });
+    $(document).ready(function() {
+        $('#test').find('input[type=checkbox]').bind('click', function() {
+            $('#test').find('input[type=checkbox]').not(this).attr("checked", false);
+        });
+    });
+
+    /*支付*/
+    $(function() {
+        //出现浮动层
+        $("#turn_out").click(function() {
+            $('#need').html($(".shu2").val());
+            $(".ftc_wzsf").show();
+        });
+        //关闭浮动
+        $(".close").click(function() {
+            $(".ftc_wzsf").hide();
+            $(".mm_box li").removeClass("mmdd");
+            $(".mm_box li").attr("data", "");
+            i = 0;
+        });
+        //数字显示隐藏
+        $(".xiaq_tb").click(function() {
+            $(".numb_box").slideUp(500);
+        });
+        $(".mm_box").click(function() {
+            $(".numb_box").slideDown(500);
+        });
+        //----
+        var i = 0;
+        $(".nub_ggg li .zf_num").click(function() {
+
+            if(i < 6) {
+                $(".mm_box li").eq(i).addClass("mmdd");
+                $(".mm_box li").eq(i).attr("data", $(this).text());
+                i++
+                if(i == 6) {
+                    setTimeout(function() {
+                        var data = "";
+                        $(".mm_box li").each(function() {
+                            data += $(this).attr("data");
+                        });
+                        $.ajax({
+                            url: j_url + "/turn/assets_exchange",
+                            type: 'POST',
+                            dataType: 'jsonp',
+                            data: {
+                                u_id: localStorage.lastname,
+                                money: $(".shu2").val(),
+                                pass_p: data,
+                                type: $('input[type=radio]:checked').val()
+                            },
+                            success: function(res) {
+                                console.log(res);
+                                if(res.code == 2) {
+                                    mui.toast(res.msg,{ duration:'long', type:'div' });
+                                    $(".ftc_wzsf").hide();
+                                    $(".mm_box li").removeClass("mmdd");
+                                    $(".mm_box li").attr("data","");
+                                    i = 0;
+                                } else if(res.code == 1) {
+                                    mui.toast(res.msg,{ duration:'long', type:'div' });
+                                    $(".ftc_wzsf").hide();
+                                    $(".mm_box li").removeClass("mmdd");
+                                    $(".mm_box li").attr("data","");
+                                    i = 0;
+                                    setTimeout(function(){window.location.reload() },800);
+                                }
+                            },
+                            fail: function(res) {
+
+                            }
+                        });
+
+                    }, 100);
+                };
+            }
+        });
+
+        $(".nub_ggg li .zf_del").click(function() {
+            if(i > 0) {
+                i--;
+                $(".mm_box li").eq(i).removeClass("mmdd");
+                $(".mm_box li").eq(i).attr("data", "");
+            }
+        });
+
+        $(".nub_ggg li .zf_empty").click(function() {
+            $(".mm_box li").removeClass("mmdd");
+            $(".mm_box li").attr("data", "");
+            i = 0;
+        });
+
+    });
+</script>

@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link href="__static__/css/mui.min.css" rel="stylesheet" />
+    <!--<script type="text/javascript" src="__static__/js/back_icon.js" ></script>-->
+    <style>
+        .table {
+            margin-top: 8px;
+            background-color: #FFFFFF;
+            font-size: 14px;
+            color: #000000;
+            text-align: center;
+        }
+        .table td,
+        .table th {
+            border-bottom: 1px solid #d8d8d8;
+            padding: 0 1em 0;
+            width: 33%;
+        }
+        .table tr{
+            height:40px;
+        }
+    </style>
+</head>
+
+<body>
+<header class="mui-bar mui-bar-nav" style="background-color: #fec900;color: #000000;">
+    <i class="mui-icon mui-icon-left-nav mui-pull-left"  onclick="window.location.href='{:url('index/index/index?taba='.$taba)}'"></i>
+    <h1 class="mui-title">流通明细</h1>
+</header>
+<div class="mui-content">
+    <table class="table" width="100%">
+        <tbody>
+        <tr>
+            <th>业务类型</th>
+            <th>数额</th>
+            <th>时间</th>
+        </tr>
+        <?php foreach($order as $v){ ?>
+        <tr>
+            <td>
+                <?php if($v['type'] == 1){ ?>
+                <?php echo '签到';?>
+                <?php }else if($v['type'] == 2){ echo '余额兑换流通';}
+                    else if($v['type'] == 3){ echo '兑换固定资产';}
+                     ?>
+            </td>
+            <td><?php echo $v['co_money']?></td>
+            <td class="jine"><?php echo date('Y-m-d H:i:s',$v['co_time'])?></td>
+        </tr>
+        <?php } ?>
+        </tbody>
+    </table>
+</div>
+<script src="__static__/js/mui.min.js"></script>
+<script type="text/javascript">
+    mui.init();
+    var tab = getQueryString('taba');
+
+    function back(){
+        window.location.href="{:url('index/index/index?taba=')}";
+    }
+
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return null;
+    }
+</script>
+</body>
+
+</html>

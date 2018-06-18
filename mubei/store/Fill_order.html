@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="Keywords" content="">
+		<meta name="Description" content="">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimum-scale=1.0">
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/index.css">
+		<link rel="stylesheet" href="../css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="./../css/zhifu.css">
+		<script type="text/javascript" src="./../js/jquery.js"></script>
+		<script type="text/javascript" src="../js/mui.min.js"></script>
+		<link rel="stylesheet" href="css/loading.css" />
+		<title>填写订单</title>
+	</head>
+
+	<body>
+		<div id="vm" v-cloak>
+			<div id="wrapper">
+				<header class="mui-bar mui-bar-nav">
+				     <!--<a class=" mui-icon mui-icon-left-nav mui-pull-left" onclick="history.go(-1)"></a>-->
+				     <h1 class="mui-title">填写订单</h1>
+				 </header>
+				 <div style="height: 41px;"></div>
+				<div class="m_pwd topline" style="height: auto;">
+					<div class="fill_order clearfix" v-if="defaultInfo!=''">
+						<ul class="fill_box">
+							<li class="fill_left fill_list fl">
+								<span class="fill_span">{{defaultInfo.delivery_name}}&nbsp;&nbsp;{{defaultInfo.contact}}</span>
+								<p class="fill_pic clearfix">
+									<span class="span_pic fl"><img src="images/ddxq/icon.png"></span>
+									<span class="span_text fr">{{defaultInfo.address}}</span>
+								</p>
+							</li>
+							<li class="fill_right fill_list fr">
+								<a href="Receipt_info.html#"><img src="images/ddxq/right.png" class="fill_img" /></a>
+							</li>
+						</ul>
+					</div>
+					<div v-if="defaultInfo==''" class="ljtjBtn"><a href="New_address.html">立即添加地址</a></div>
+					<div class="fill_main">
+						<dl class="fill_dl clearfix">
+							<dt class="fill_p_pic fl">
+							<img :src="i_url+theGood.goods_img" />
+						</dt>
+							<dd class="fill_p_text fr">
+								<span class="fill_p_con">{{theGood.goods_name}}</span>
+								<p class="fill_p">规格：50ml<span class="f_right fr">x{{count}}</span></p>
+								<span class="fill_int"><b id="yue">{{theGood.price}}</b>余额</span>
+							</dd>
+						</dl>
+					</div>
+					<p class="notice">请先设置默认地址！</p>
+					<div class="con_sub clearfix" v-show="defaultInfo!=''">
+						<span class="con_color fill_style fl all_style">实付款:
+						    <b id="payNumber">{{s_pay}}</b>余额
+						</span>
+						<a id="paybutton" href="javascript:void(0);" class="con_ti fr">确认提交</a>
+					</div>
+					
+					
+				</div>
+			</div>
+			
+			<!--加载图层-->
+			<div class="load-mo" v-show="loading">
+				<div class="loader">
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+					<div class="dot"></div>
+				</div>
+			</div>
+			
+			<!--支付键盘-->
+			<div class="ftc_wzsf">
+				<div class="srzfmm_box">
+					<div class="qsrzfmm_bt clear_wl">
+						<img src="../images/xx_03.jpg" class="tx close fl">
+						<span class="tizhizhifu" style="line-height: 53px;">请输入支付密码</span>
+					</div>
+					<div class="zfmmxx_shop">
+						<div class="zhifu_price">￥<span id="need"></span></div>
+					</div>
+					<ul class="mm_box">
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</div>
+				<div class="numb_box">
+					<div class="xiaq_tb">
+						<img src="../images/jftc_14.jpg" height="10">
+					</div>
+					<ul class="nub_ggg">
+						<li>
+							<a href="javascript:void(0);" class="zf_num">1</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);" class="zj_x zf_num">2</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);" class="zf_num">3</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);" class="zf_num">4</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);" class="zj_x zf_num">5</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);" class="zf_num">6</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);" class="zf_num">7</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);" class="zj_x zf_num">8</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);" class="zf_num">9</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);" class="zf_empty">清空</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);" class="zj_x zf_num">0</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);" class="zf_del">删除</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/rem.js"></script>
+	<script type="text/javascript" src="js/vue.min.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="../js/url.js"></script>
+	<script type="text/javascript" src="../js/mui.min.js" ></script>
+	<script type="text/javascript">
+		/*支付*/
+		$(function() {
+			var vm = new Vue({
+				el: '#vm',
+				data: {
+					defaultInfo: '',
+					good_id: getUrlParam('g_id'),
+					theGood: '',
+					count: getUrlParam('count'),
+					loading:true
+				},
+				methods: {
+					getAddress: function() {
+						var that = this
+						$.ajax({
+							type: "post",
+							url: p_url + "getAddress",
+							async: true,
+							dataType: "jsonp",
+							crossDomain: true,
+							data: {
+								u_id: localStorage.getItem('lastname')
+							},
+							success: function(res) {
+								console.log(res)
+								if(res.code == 1) {
+									for(var i = 0; i < res.data.length; i++) {
+										if(res.data[i].is_default == 1) {
+											that.defaultInfo = res.data[i]
+										}
+									}
+								}
+
+							}
+						});
+					},
+					getGood: function() {
+						var that = this
+						$.ajax({
+							type: "post",
+							url: p_url + "getGoodsInfo",
+							async: true,
+							dataType: "jsonp",
+							crossDomain: true,
+							data: {
+								goods_id: that.good_id
+							},
+							success: function(res) {
+								//console.log(res, 'the good')
+								if(res.code == 1) {
+									that.theGood = res.data
+								}
+								that.loading=false
+							}
+						});
+					}
+				},
+				computed:{
+					s_pay:function(){
+						return this.theGood.price*this.count
+					}
+				},
+				mounted: function() {
+					this.getAddress()
+					this.getGood()
+				}
+				//  		
+			})
+
+			//出现浮动层
+			$(document).on('click','#paybutton',function(){
+				$(".ftc_wzsf").show();
+				$("#need").text($("#payNumber").text());
+			})
+			
+			//关闭浮动
+			$(".close").click(function() {
+				$(".ftc_wzsf").hide();
+				$(".mm_box li").removeClass("mmdd");
+				$(".mm_box li").attr("data", "");
+				i = 0;
+			});
+			//数字显示隐藏
+			$(".xiaq_tb").click(function() {
+				$(".numb_box").slideUp(500);
+			});
+			$(".mm_box").click(function() {
+				$(".numb_box").slideDown(500);
+			});
+			//----
+			var i = 0;
+			$(".nub_ggg li .zf_num").click(function() {
+
+				if(i < 6) {
+					$(".mm_box li").eq(i).addClass("mmdd");
+					$(".mm_box li").eq(i).attr("data", $(this).text());
+					i++
+					if(i == 6) {
+//						window.location = "./Payment_success.html";
+						setTimeout(function() {
+							$(".ftc_wzsf").hide();
+							var data = "";
+							$(".mm_box li").each(function() {
+								data += $(this).attr("data");
+							});
+							console.log(data)
+							$.ajax({
+								url: p_url + "createOrder",
+								type: 'POST',
+								dataType: 'jsonp',
+								data: {
+									u_id:u_id,
+									goods_id:vm.good_id,
+									num:vm.count,
+									total_price:vm.s_pay,
+									address_id:vm.defaultInfo.address_id,
+									pay_pass:data
+								},
+								success: function(res) {
+									console.log(res);
+									 if(res.code == 1) {
+										mui.toast(res.msg, {
+											duration: 'long',
+											type: 'div'
+										});
+										$(".ftc_wzsf").hide();
+										$(".mm_box li").removeClass("mmdd");
+										$(".mm_box li").attr("data", "");
+										i = 0;
+//										localStorage.setItem('last_order',res.data.order_sn)
+										localStorage.setItem('last_price',res.data.total_price)
+										
+										setTimeout(function() {
+											window.location = "./Payment_success.html";
+										}, 800);
+									}else{
+										mui.toast(res.msg, {
+											duration: 'long',
+											type: 'div'
+										});
+										$(".ftc_wzsf").hide();
+										$(".mm_box li").removeClass("mmdd");
+										$(".mm_box li").attr("data", "");
+										i = 0;
+									} 
+								},
+								fail: function(res) {
+
+								}
+							});
+
+						}, 20);
+					};
+				}
+			});
+
+			$(".nub_ggg li .zf_del").click(function() {
+				if(i > 0) {
+					i--;
+					$(".mm_box li").eq(i).removeClass("mmdd");
+					$(".mm_box li").eq(i).attr("data", "");
+				}
+			});
+
+			$(".nub_ggg li .zf_empty").click(function() {
+				$(".mm_box li").removeClass("mmdd");
+				$(".mm_box li").attr("data", "");
+				i = 0;
+			});
+		});
+	</script>
+
+</html>

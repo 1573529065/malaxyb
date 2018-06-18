@@ -1,0 +1,624 @@
+.language-credit:before{
+    content:"信用";
+}
+.language-code:before{
+    content:"扫码支付";
+}
+
+.language-money:before{
+    content:"余额";
+}
+
+.language-score:before{
+    content:"积分";
+}
+.language-lange:before{
+    content:"多语言";
+}
+.language-zhuanchu:before{
+    content:"转出";
+}
+
+.language-zhuanru:before{
+    content:"转入";
+}
+
+.language-mairu:before{
+    content:"买入";
+}
+.language-woyaomai:before{
+    content:"我要卖";
+}
+
+.language-mairu11:before{
+    content:"分享记录";
+}
+
+.language-maichu:before{
+    content:"卖出";
+}
+
+.language-shuzi:before{
+    content:"数字资产";
+}
+.language-zichan:before{
+    content:"余额";
+}
+.language-setting:before{
+    content:"设置";
+}
+.language-shop:before{
+    content:"商城";
+}
+.language-ar:before{
+    content:"AR";
+}
+.language-youxi:before{
+    content:"游戏";
+}
+.language-duihuan:before{
+    content:"兑换";
+}
+.language-cishan:before{
+    content:"慈善";
+}
+.language-changimg:before{
+    content:"更改头像";
+}
+
+.language-nicheng:before{
+    content:"昵称";
+}
+.language-yuyan:before{
+    content:"语言选择";
+}
+.language-card:before{
+    content:"我的银行卡";
+}
+
+.language-loginpass:before{
+    content:"登陆密码";
+}
+.language-yijianfankui:before{
+    content:"意见反馈";
+}
+.language-maruzhanghu:before{
+    content:"买入账户";
+}
+.language-marujine:before{
+    content:"买入余额";
+}
+
+.language-paypass:before{
+    content:"支付密码";
+}
+.language-changepass:before{
+    content:"点击修改";
+}
+.language-gonggao:before{
+    content:"公告";
+}
+.language-message:before{
+    content:"个人信息";
+}
+.language-dianpu:before{
+    content:"我的店铺";
+}
+.language-order:before{
+    content:"订单管理";
+}
+.language-dizhi:before{
+    content:"地址管理";
+}
+.language-jianyi:before{
+    content:"投诉建议";
+}
+
+.language-fenxiang:before{
+    content:"分享";
+}
+.language-fenxiangjilu:before{
+    content:"分享记录";
+}
+.language-zhuanzhangzhanghu:before{
+    content:"转账账户";
+}
+.language-zhuanzhangnumber:before{
+    content:"转账卡号";
+}
+.language-querening:before{
+    content:"确认中";
+}
+
+
+.language-saomiaofenxiang:before{
+    content:"扫描二维码即可分享好友哟";
+}
+.language-saomiaozhifu:before{
+    content:"扫码向我支付";
+}
+.language-bangben:before{
+    content:"版本";
+}
+.language-about:before{
+    content:"关于";
+}
+.language-loginout:before{
+    content:"退出登陆";
+}
+.language-ruanjian:before{
+    content:"软件许可及服务协议";
+}
+.language-yinsi:before{
+    content:"隐私保护指引";
+} 
+.language-yijianhewenti:before{
+    content:"意见和问题";
+} 
+.language-banquan:before{
+    content:"版权所有";
+}
+.language-send:before{
+    content:"发送";
+}
+.language-changename:before{
+    content:"修改昵称";
+}
+.language-meiyoujilu:before{
+    content:"没找到相关记录";
+}
+.language-yueijilu:before{
+    content:"余额记录";
+}
+.language-yuwuleixing:before{
+    content:"业务类型";
+}
+.language-shuei:before{
+    content:"数额";
+}
+.language-time:before{
+    content:"时间";
+}
+.language-jifenjilu:before{
+    content:"积分记录";
+}
+.language-xiayibu:before{
+    content:"下一步";
+}
+.language-duihuanjifen:before{
+    content:"兑换积分";
+}
+.language-duifanzhanghao:before{
+    content:"对方账号";
+}
+.language-zhuanchujilu:before{
+    content:"转出记录";
+}
+.language-qingchuruzhifumima:before{
+    content:"请输入支付密码";
+}
+.language-qingkong:before{
+    content:"清空";
+}
+.language-shanchu:before{
+    content:"删除";
+}
+.language-shoukuanbank:before{
+    content:"付款银行";
+}
+.language-guamaiing:before{
+    content:"挂卖中";
+}
+.language-shoukuaicard:before{
+    content:"付款卡号";
+}
+.language-fukuanren{
+	content:"收款人";
+}
+
+.language-moren:before{
+    content:"默认";
+}
+.language-tianjiayinghanka:before{
+    content:"添加银行卡";
+}
+.language-yiduidongix:before{
+    content:"请绑定持卡人的银行卡，姓名一经填写不可修改";
+}
+.language-zhuanchujinei:before{
+    content:"转出金额";
+}
+.language-shoukuanren:before{
+    content:"付款人姓名";
+}
+
+.language-zhuanchujinei1:before{
+    content:"持卡人姓名";
+}
+
+.language-zhuanchujinei2:before{
+    content:"开户银行";
+}
+
+.language-zhuanchujinei3:before{
+    content:"银行卡号";
+}
+
+.language-zhuanchujinei4:before{
+    content:"开户支行";
+}
+
+.language-zhuanchujinei5:before{
+    content:"设为默认银行卡";
+}
+.language-zhuanchujinei6:before{
+    content:"请选择开户银行";
+}
+.language-xiugaidenglu:before{
+    content:"修改登录密码";
+}
+
+.language-longin:before{
+    content:"登录";
+}
+.language-denglumima:before{
+    content:"登录密码";
+}
+.language-gaimima1:before{
+    content:"旧密码";
+}
+.language-gaimima2:before{
+    content:"新密码";
+}
+.language-gaimima3:before{
+    content:"忘记登录密码";
+}
+.language-gaimima4:before{
+    content:"忘记支付密码";
+}
+.language-querenzhuanchu:before{
+    content:"确认转出";
+}
+.language-queren:before{
+    content:"确认";
+}
+
+.language-xiugaizhifumima:before{
+    content:"修改支付密码";
+}
+.language-bitian:before{
+    content:"必填";
+}
+.language-agree:before{
+    content:"点击注册代表你已阅读并同意";
+}
+
+.language-zaihuoqu:before{
+    content:"后再获取";
+}
+.language-huoquyanzhenma:before{
+    content:"获取验证码";
+}
+.language-shoujimosiwei:before{
+    content:"手机末四位";
+}
+.language-zhuanrujilu:before{
+    content:"转入记录";
+}
+.language-mairushuer:before{
+    content:"请选择买入数额";
+}
+.language-xieyi:before{
+    content:"协议";
+}
+.language-maichushuer:before{
+    content:"请选择卖出数额";
+}
+.language-bangdingka:before{
+    content:"绑定的银行卡";
+}
+.language-tianjiaka:before{
+    content:"请添加银行卡";
+}
+.language-chuanjiandan:before{
+    content:"创建订单";
+}
+
+.language-weiwancendan:before{
+    content:"未完成订单";
+}
+.language-querendakuan:before{
+    content:"确认打款";
+}
+.language-mairuquerenfukuan:before{
+    content:"买入确认付款";
+}
+.language-mairuquerenfukuan:before{
+    content:"买入确认付款";
+}
+.language-maichuorderquerenfukuan:before{
+    content:"买入订单确认付款";
+}
+.language-maichucaozuoquerenfukuan:before{
+    content:"买入操作确认付款";
+}
+.language-wancendan:before{
+    content:"已完成订单";
+}
+.language-mairujilu:before{
+    content:"买入记录";
+}
+.language-jilu:before{
+    content:"记录";
+}
+.language-mairuzhongxin:before{
+    content:"买入中心";
+}
+
+.language-maichujilu:before{
+    content:"卖出记录";
+}
+.language-maichuzhongxin:before{
+    content:"卖出中心";
+}
+.language-weixuanshoukuanren:before{
+    content:"未选择收款人";
+}
+
+.language-yixuanshoukuanren:before{
+    content:"已选择收款人";
+}
+
+.language-weixuanfukuanren:before{
+    content:"未选择付款人";
+}
+.language-wanjimima:before{
+    content:"忘记密码";
+}
+
+.language-yixuanfukuanren:before{
+    content:"已选择付款人";
+}
+.language-mairuwancheng:before{
+    content:"买入完成订单";
+}
+.language-zhucezhanghao:before{
+    content:"注册账户";
+}
+.language-lijizhuce:before{
+    content:"立即注册";
+}
+.language-fukuanren:before{
+    content:"收款人";
+}
+.language-shoukuanyinghan:before{
+    content:"收款银行";
+}
+.language-fukuanyinghan:before{
+    content:"付款银行";
+}
+.language-fukuanyinghankahao:before{
+    content:"付款账号";
+}
+.language-sokuanren:before{
+    content:"收款人";
+}
+.language-sokuanyinghan:before{
+    content:"收款银行";
+}
+.language-sokuanyinghankahao:before{
+    content:"收款账号";
+}
+.language-jiaoyijine:before{
+    content:"交易余额";
+}
+
+.language-jiner:before{
+    content:"金额";
+}
+
+.language-shifujiner:before{
+    content:"实付余额";
+}
+
+.language-zhuantai:before{
+    content:"状态";
+}
+.language-dingdanxiangqi:before{
+    content:"订单详情";
+}
+.language-weixuanze:before{
+    content:"未选择";
+}
+
+.language-quxiao:before{
+    content:"取消";
+}
+
+.language-queding:before{
+    content:"确定";
+}
+.language-shoujihao:before{
+    content:"手机号";
+}
+
+.language-gaiyinwen:before{
+    content:"English";
+}
+
+.language-yanzhenma:before{
+    content:"验证码";
+}
+
+.language-tishi:before{
+    content:"提示";
+}
+.language-chuanjiandanmairu:before{
+    content:"您创建了买入订单";
+}
+
+.language-chuanjiandanmaichu:before{
+    content:"您创建了卖出订单";
+}
+.language-kochubaozhenji:before{
+    content:"从您的余额中扣除100余额作为保证金";
+}
+.language-kochunindeyier:before{
+    content:"从您的余额中扣除";
+}
+.language-dengdaipipeimaichu:before{
+    content:"等待匹配卖出用户";
+}
+
+.language-dengdaipipeimairu:before{
+    content:"等待匹配买入用户";
+}
+
+.language-dengdainidakuan1:before{
+    content:"等待您向卖出用户线下打款";
+}
+
+.language-dengdainidakuan2:before{
+    content:"等待买入用户向您线下打款";
+}
+.language-dengdainidakuan3:before{
+    content:"等待您确认打款";
+}
+
+.language-dengdainidakuan4:before{
+    content:"等待买入用户确认打款";
+}
+.language-dengdainidakuan5:before{
+    content:"等待卖出用户确认收款";
+}
+
+.language-dengdainidakuan6:before{
+    content:"等待您确认收款";
+}
+.language-dengdainidakuan7:before{
+    content:"买入成功";
+}
+
+.language-dengdainidakuan8:before{
+    content:"卖出成功";
+}
+.language-dengdainidakuan9:before{
+    content:"您确定要取消此订单吗";
+}
+
+.language-querenshoukuan:before{
+    content:"确认收款";
+}
+.language-kahaoee:before{
+    content:"卡号";
+}
+
+.language-xingming:before{
+    content:"姓名";
+}
+
+.language-zhifufangsi:before{
+    content:"支付方式";
+}
+.language-duihuancjifen:before{
+    content:"兑换成积分";
+}
+.language-buzhiqishenmemingzi:before{
+    content:"最少兑换数量100，请输入100整数倍";
+}	
+
+.language-duihuanjilui:before{
+    content:"兑换记录";
+}
+.language-quedingduihuan:before{
+    content:"确定兑换";
+}
+
+
+.language-quedingduihuan1:before{
+    content:"买入订单";
+}
+.language-quedingduihuan2:before{
+    content:"买入操作订单";
+}
+
+
+.language-quedingduihuan3:before{
+    content:"出售账户";
+}
+.language-quedingduihuan4:before{
+    content:"买入金额";
+}
+.language-maichujine:before{
+    content:"卖出金额";
+}
+.language-maichuzhanghu:before{
+    content:"卖出账户";
+}
+
+.language-quedingduihuan5:before{
+    content:"当前状态";
+}
+.language-quedingduihuan6:before{
+    content:"出售时间";
+}
+.language-mairutime:before{
+    content:"买入时间";
+}
+
+.language-quedingduihuan7:before{
+    content:"买入确认收款";
+}
+.language-quedingduihuan8:before{
+    content:"卖出确认收款";
+}
+
+.language-quedingduihuan9:before{
+    content:"卖出已完成订单";
+}
+.language-quedingduihuan10:before{
+    content:"卖出操作订单";
+}
+
+.language-chushou:before{
+    content:"出售";
+}
+
+.language-bencichoubei:before{
+    content:"本次筹备需要";
+}
+
+.language-wushangpingsoumai:before{
+     content:"暂无商品售卖";
+ }
+
+.language-coukuan:before{
+    content:"筹款";
+}
+
+.language-rencoubei:before{
+    content:"人筹备";
+}
+.language-shouhuoren:before{
+    content:"收货人";
+}
+.language-lianxidianhua:before{
+    content:"联系电话";
+}
+.language-querenshouhuo:before{
+    content:"确认收货";
+}
+.language-zanwudingdan:before{
+    content:"暂无订单";
+}
+
+.language-guanlidizhi:before{
+    content:"管理地址";
+}
+.language-tianjialidizhi:before{
+    content:"添加地址";
+}
+
+.language-lianxirendianhua:before{
+    content:"联系人电话";
+}

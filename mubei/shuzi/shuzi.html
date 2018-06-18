@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../css/mui.min.css" />
+		<script type="text/javascript" src="js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/back_icon.js" ></script>
+
+		<style>
+			* {
+				font-size: 14px;
+				font-family: '微软雅黑';
+			}
+			
+			.c-bg {
+				width: 100%;
+				background-color: #46adfc;
+				height: 180px;
+			}
+			
+			.w-center {
+				color: #FFFFFF;
+				margin: auto;
+				margin-top: 25px;
+				width: 200px;
+			}
+			
+			.w-center li {
+				float: left;
+				list-style: none;
+			}
+			
+			.c-content li {
+				color: #000000;
+				list-style: square;
+			}
+			
+			.bar-dh {
+				border-top: 1px solid gray;
+				border-bottom: 1px solid gray;
+			}
+			
+			.t-word {
+				color: #000000;
+			}
+			
+			.t-p {
+				float: right;
+				margin-top: -60px;
+			}
+			
+			.t-btn {
+				/*width: 45%;*/
+				float: right;
+				margin-top: -60px;
+				margin-left: 45%;
+			}
+			
+			.mui-grid-view.mui-grid-9 {
+				border-top: 1px solid #eee;
+				border-left: none;
+				background-color: white;
+			}
+			
+			.mui-grid-view.mui-grid-9 .mui-table-view-cell {
+				margin: 0;
+				padding: 0px 15px;
+				vertical-align: top;
+				border-right: none;
+				border-bottom: 1px solid #eee;
+			}
+			.box_li{
+				border-bottom: 1px solid #eee;
+			}
+			.mui-bar-nav{
+				box-shadow: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" style="background-color: #46adfc;color: white;">
+			<i class="mui-icon mui-icon-left-nav mui-pull-left" onclick="back()"></i>
+			<h1 class="mui-title" style="color: white;">数字资产</h1>
+			<button class="mui-btn mui-btn-blue mui-btn-link mui-pull-right" style="color: white;font-size: 14px;">交易记录</button>
+		</header> 
+
+		<div class="mui-content">
+			<div class="c-bg">
+				<img src="../images/428136363616915330.png" style="margin: auto;padding-top:20px;display: block;width: 100px; height: 120px;" />
+				<div class="w-center">
+					<ul>
+						<li><span style="font-size: 12px;letter-spacing: 1px;">当前价格：</span></li>
+						<li class="">￥2.00335282</li>
+					</ul>
+				</div>
+			</div>
+			<p></p>
+			<div class="c-content mui-table-view ">
+				<ul>
+					<li>
+						<span style="color: gray;">CVN资产    </span> 0.000
+					</li>
+					<li>
+						<span style="color: gray">钱包地址 </span>
+						<button type="button" class="mui-btn mui-btn-danger mui-btn-outlined" style="float: right;font-size: 12px;letter-spacing: 1px;padding: 3px 10px;margin-right: 8px;">复制地址</button>
+					</li>
+				</ul>
+					<div style="margin-top: -10px; margin-left: 25px;margin-bottom: 10px;">
+						dfjafiefjsklfjpoierk jmdfksoks
+					</div>
+
+				<ul class="mui-table-view mui-grid-view mui-grid-9 c-ul">
+					<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+						<a href="#">
+							<img src="../images/shuzi_09.png" style="height: 25px;" />
+							<div class="mui-media-body">转出</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+						<a href="#">
+							<img src="../images/shuzi_11.png" style="height: 25px;" />
+							<div class="mui-media-body">众筹</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+						<a href="#">
+							<img src="../images/shuzi_13.png" style="height: 25px;" />
+							<div class="mui-media-body">星宝</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+						<a href="#">
+							<img src="../images/shuzi_15.png" style="height: 25px;" />
+							<div class="mui-media-body">交易</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<p></p>
+			<ul class="mui-table-view">
+				<li class="mui-media box_li">
+					<ul>
+						<li class="t-title">CVN</li>
+					</ul>
+					<div style="width: 45%;float: left;">
+						<div>
+							<p class="t-word">0.0000</p>
+							<p class=" ">CVN资产</p>
+						</div>
+						<div class="t-p">
+							<p class="t-word">2</p>
+							<p class=" ">当前价格</p>
+						</div>
+					</div>
+					<div class="mui-content-padded t-btn">
+						<button type="button" class="mui-btn-success text-center" style="font-size: 7px;">
+							     现金交易
+						    </button>
+						<button type="button" class="mui-btn mui-btn-warning" style="font-size: 7px;">
+							      余额交易
+						    </button>
+					</div>
+				</li>
+				<li class="mui-media">
+					<ul>
+						<li class="t-title">CVN</li>
+					</ul>
+					<div style="width: 45%;float: left;">
+						<div>
+							<p class="t-word">0.0000</p>
+							<p class=" ">CVN资产</p>
+						</div>
+						<div class="t-p">
+							<p class="t-word">2</p>
+							<p class=" ">当前价格</p>
+						</div>
+					</div>
+					<div class="mui-content-padded t-btn">
+						<button type="button" class="mui-btn-success text-center" style="font-size: 7px;">
+							     现金交易
+						    </button>
+						<button type="button" class="mui-btn mui-btn-warning" style="font-size: 7px;">
+							      余额交易
+						    </button>
+					</div>
+
+				</li>
+			</ul>
+		</div>
+	</body>
+
+</html>

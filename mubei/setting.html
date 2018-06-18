@@ -1,0 +1,260 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/change_lange.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+		<link href="css/index.css" rel="stylesheet" />
+		<style>
+			.fileinput-button {
+				position: relative;
+				display: inline-block;
+				overflow: hidden;
+				top: 20px;
+				float: right;
+				right: 10px;
+			}
+			
+			.fileinput-button input {
+				position: absolute;
+				right: 0;
+				top: 0;
+				opacity: 0;
+				-ms-filter: 'alpha(opacity=0)';
+			}
+			
+			.update {
+				padding-top: 5px;
+				text-align: right;
+				color: gray;
+			}
+		</style>
+	</head>
+
+	<body>
+		<script>
+			if(localStorage.pagecount == 1) {
+				addCssByLink('css/zh.css');
+			} else if(localStorage.pagecount == 2) {
+				addCssByLink('css/en.css');
+			}
+		</script>
+		<div class="conter_icp_bot">
+			<div>
+
+				<!--<header class="mui-bar mui-bar-nav" style="background-color: #46adfc;">-->
+				<!--	<i class="mui-icon mui-icon-left-nav mui-pull-left" onclick="window.location.href='index.html'"></i>-->
+				<!--	<h1 class="mui-title"><span class="language-setting"></span></h1>-->
+				<!--</header>-->
+				<div class="mui-content">
+					<div class="t_img">
+						<div class="img">
+							<img class="s_u_img" src="" alt="" style="width: 100%;height: 100%;border-radius: 100%;" />
+						</div>
+						<div class="s_word1">
+							<ul>
+								<li class="border_bottom">UID：<span class="s_tel"></span></li>
+								<li><span class="language-credit"></span>：<img height="12px" src="images/xinyong.png"></li>
+							</ul>
+						</div>
+						<!--<a>更换头像</a>-->
+						<span class="fileinput-button">
+							<span id="btn_uploadimg"><span class="language-changimg"></span></span>
+						<input type="file" accept="image/*" id="image" name="image" onchange="updateimg()" /></span>
+						<input type="hidden" value="" id="image" />
+					</div>
+					<div class="s_word">
+						<div class="word_left border_right" id="toastBtn1">
+							<img src="images/shezhi/dianpu.png">
+							<p><span class="language-dianpu"></span></p>
+						</div>
+						<div class="word_left border_right" id="toastBtn2">
+							<a href="store/all_order.html">
+								<img src="images/shezhi/order.png">
+								<p><span class="language-order"></span></p>
+							</a>
+							
+							
+						</div>
+						<div class="word_left" id="toastBtn3">
+							<a href="store/Receipt_info.html">
+								<img src="images/shezhi/dizhi.png">
+								<p><span class="language-dizhi"></span></p>
+							</a>
+
+						</div>
+					</div>
+
+					<ul class="mui-table-view mui-table-view-chevron">
+						<li class="mui-table-view-cell mui-media">
+							<a class="mui-navigate-right" href="GerenCenter/update_name.html?tab=5">
+								<img class="mui-pull-left" src="images/shezhi/mine_03.png" height="32px"><span class="language-nicheng"></span><i class="mui-pull-right update" id="user"></i></a>
+						</li>
+					</ul>
+
+					<ul class="mui-table-view mui-table-view-chevron">
+						<li class="mui-table-view-cell mui-media">
+							<a class="mui-navigate-right" onclick="lange()">
+								<img class="mui-pull-left" src="images/shezhi/mine_06.png" height="32px"><span class="language-lange"></span></a>
+						</li>
+						<li class="mui-table-view-cell mui-media">
+							<a class="mui-navigate-right" href="GerenCenter/announcement.html?tab=5">
+								<img class="mui-pull-left" src="images/shezhi/mine_08.png" height="32px"><span class="language-gonggao"></span></a>
+						</li>
+						<li class="mui-table-view-cell mui-media">
+							<a class="mui-navigate-right" href="GerenCenter/geren_mese.html?tab=5">
+								<img class="mui-pull-left" src="images/shezhi/mine_10.png" height="32px"><span class="language-message"></span></a>
+						</li>
+					</ul>
+					<ul class="mui-table-view mui-table-view-chevron">
+						<li class="mui-table-view-cell mui-media">
+							<a class="mui-navigate-right" href="GerenCenter/bank.html?tab=5">
+								<img class="mui-pull-left" src="images/shezhi/mine_12.png" height="32px"><span class="language-card"></span></a>
+						</li>
+						<li class="mui-table-view-cell mui-media">
+							<a class="mui-navigate-right" href="GerenCenter/update_loginpsw.html?tab=5">
+								<img class="mui-pull-left" src="images/shezhi/mine_14.png" height="32px"><span class="language-loginpass"></span></a>
+						</li>
+					</ul>
+					<ul class="mui-table-view mui-table-view-chevron">
+						<li class="mui-table-view-cell mui-media">
+							<a class="mui-navigate-right" href="GerenCenter/update_paypsw.html?tab=5">
+								<img class="mui-pull-left" src="images/shezhi/mine_16.png" height="32px">
+								<span class="language-paypass"></span></a>
+						</li>
+					</ul>
+					<ul class="mui-table-view mui-table-view-chevron">
+						<li class="mui-table-view-cell mui-media">
+							<a class="mui-navigate-right" href="GerenCenter/feedback.html?tab=5">
+								<img class="mui-pull-left" src="images/shezhi/mine_18.png" height="32px"><span class="language-jianyi"></span></a>
+						</li>
+						<li class="mui-table-view-cell mui-media">
+							<a class="mui-navigate-right" href="GerenCenter/share.html?tab=5">
+								<img class="mui-pull-left" src="images/shezhi/share.png" height="32px"><span class="language-fenxiang"></span></a>
+						</li>
+
+						<li class="mui-table-view-cell mui-media">
+							<a class="mui-navigate-right" href="GerenCenter/banben.html?tab=5">
+								<img class="mui-pull-left" src="images/shezhi/mine_20.png" height="32px"><span class="language-bangben"></span></a>
+						</li>
+						<li class="mui-table-view-cell mui-media">
+							<a class="mui-navigate-right" href="GerenCenter/About.html?tab=5">
+								<img class="mui-pull-left" src="images/shezhi/mine_22.png" height="32px"><span class="language-about"></span></a>
+						</li>
+					</ul>
+					<div class="mui-content-padded">
+						<button type="button" style="background: #46adfc;border-color: #46adfc;" class="mui-btn mui-btn-warning mui-btn-block" onclick="btn_to_login()"><span class="language-loginout"></span></button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="js/layer/2.4/layer.js"></script>
+		<script src="js/mui.min.js"></script>
+
+		<script type="text/javascript" src="js/url.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			document.getElementById("toastBtn1").addEventListener('tap', function() {
+				mui.toast('该功能暂未开放');
+			});
+//			document.getElementById("toastBtn2").addEventListener('tap', function() {
+//				mui.toast('该功能暂未开放');
+//			});
+//			document.getElementById("toastBtn3").addEventListener('tap', function() {
+//				mui.toast('该功能暂未开放');
+//			});
+
+			function btn_to_login() {
+				localStorage.lastname = 123;
+				window.location.href = 'login.html';
+			}
+
+			function lange() {
+				layer.open({
+					type: 2,
+					closeBtn: 1,
+					title: '语言选择',
+					shadeClose: true,
+					shade: 0.4,
+					anim: 9,
+					area: ['80%', '28%'],
+					isOutAnim: false,
+					content: "GerenCenter/lange.html"
+				});
+			}
+
+			/*图片轮播*/
+			var slider = mui("#slider");
+			slider.slider({
+				interval: 5000
+			});
+
+			//						mui.plusReady(function() {
+
+			$.ajax({
+				url: j_url + "/index/index",
+				type: 'POST',
+				data: {
+					u_id: localStorage.lastname
+				},
+				dataType: 'jsonp',
+				crossDomain: true,
+				success: function(res) {
+					console.log(res);
+					$(".s_tel").html(res.data.u_id);
+					$(".s_assets").html(res.data.assets);
+					$(".s_balance").html(res.data.balance);
+					$(".s_current").html(res.data.current);
+					$(".s_gold").html(res.data.gold);
+					$("#user").html(res.data.user);
+					if(res.data.u_img == null) {
+						$('.s_u_img').attr("src", "images/891043144065234706.png");
+					} else {
+						$('.s_u_img').attr("src", img_url + res.data.u_img);
+					}
+
+				},
+				fail: function(res) {
+
+				}
+			});
+
+			function updateimg() {
+				var fileInput = document.getElementById("image");
+				var file = fileInput.files[0];
+				var formData = new FormData();
+				formData.append("image", file);
+				formData.append("u_id", localStorage.lastname);
+				console.log(formData);
+				$.ajax({
+					url: j_url + "user/change_uimg",
+					data: formData,
+					type: "POST",
+					cache: false, //上传文件无需缓存
+					jsonp:   "jsoncallback",
+					processData: false, //用于对data参数进行序列化处理 这里必须false
+					contentType: false, //必须
+					crossDomain: true,
+					complete: function(res) {
+						console.log(res);
+						console.log(res.responseJSON);
+						if(res.responseJSON.code == 2) {
+							mui.alert(res.msg);
+						} else if(res.responseJSON.code == 1) {
+							mui.alert(res.msg);
+							$('.s_u_img').attr("src", img_url + res.responseJSON.url);
+						}
+					}
+				});
+			}
+		</script>
+	</body>
+
+</html>

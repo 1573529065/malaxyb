@@ -1,0 +1,121 @@
+@media only screen and (min-width: 100px) and (max-width: 320px) {
+	html{
+		max-width: 640px;
+		font-size: 14px;
+		margin: auto;
+	}
+}
+@media only screen and (min-width: 320px) and (max-width: 380px) {
+	html{
+		max-width: 640px;
+		font-size: 15px;
+		margin: auto;
+	}
+}
+@media only screen and (min-width: 380px)  and (max-width: 480px){
+	html{
+		max-width: 640px;
+		font-size: 16px;
+		margin: auto;
+	}
+}
+@media only screen and (min-width: 480px)  {
+	html{
+		max-width: 640px;
+		font-size: 18px;
+		margin: auto;
+	}
+}
+.underHead{
+	padding-top: 5px;
+	background-color: white;
+}
+.underHead .mlabel{
+	display: inline-block;
+	padding: 5px 3px;
+	margin-left: 10px;
+	font-size: 1rem;
+	color: orangered;
+	border-bottom: 1px solid orangered;
+}
+
+.order_item{
+	margin: 5px 0;
+	padding: 5px;
+	background-color: white;
+}
+.order_item .inside{
+	background-color: whitesmoke;
+}
+.order_item .img{
+	margin: 1px;
+	padding: 2px;
+	background-color: white;
+}
+.order_item .pd_5{
+	padding: 5px;
+}
+.order_item .title{
+	font-size: 1.05rem;
+}
+.order_item .sub_title{
+	font-size: 0.8rem;color: gray;
+}
+.mt_10{
+	margin-top: 10px;
+}
+.relative{
+	position: relative;
+}
+.bottom_5{
+	position: absolute;
+	bottom: 5px;
+}
+.f_gray{
+	color: gray;
+}
+.order_item .money{
+	font-size: 0.95rem;
+}
+.order_item .count{
+	font-size: 0.94rem;
+}
+.bar2{
+	position: relative;
+	padding: 5px 0;
+	/*border-bottom: 0.5px solid gainsboro;*/
+}
+.bar2 .state{
+	margin-left: 10px;
+	font-size: 1rem;
+}
+.bar2 .right{
+	position: absolute;
+	right: 5px;
+	font-size: 1rem;
+}
+.bar3{
+	padding: 5px;
+	font-size: 1.0rem;
+	margin-top: 5px;
+}
+.bar3 .item{
+	color: black;
+	border: 1px solid gainsboro;
+	padding: 5px 10px;
+	border-radius: 13px;
+	margin-top: 5px;
+}
+.bar3 .right{
+	position: absolute;
+	right: 5px;
+	top: -5px;
+	 
+}
+.img-responsive{
+	
+	display: block;
+	max-width: 100%;
+	height: auto
+
+}

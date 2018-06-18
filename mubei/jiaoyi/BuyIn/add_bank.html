@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.css" rel="stylesheet" />
+		<script type="text/javascript" src="../../js/back_icon.js" ></script>
+	</head>
+
+	<body>
+		<!--<header class="mui-bar mui-bar-nav" style="background-color: #fec900;">-->
+		<header class="mui-bar mui-bar-nav" style="background-color: #FFFFFF;">
+			<!--<i class="mui-icon mui-icon-left-nav mui-pull-left" onclick="back_go()"></i>-->
+			<h1 class="mui-title">添加银行卡</h1>
+		</header>
+		<div class="mui-content">
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label class="xin">持卡人姓名</label>
+					<input type="text" placeholder="请输入持卡人姓名">
+				</div>
+				<div class="mui-input-row">
+					<label class="xin">开户银行</label>
+					<input type="text" placeholder="请输入选择开户银行">
+					<!--<select class="mui-h5" style="margin: auto;color: #000000;">
+						<option value="1">中国光大银行</option>
+						<option value="1">建设银行</option> 
+						<option value="1">交通银行</option>
+						<option value="1">中信银行</option>
+						<option value="1">中国银行</option>
+						<option value="1">中国建行</option>
+						<option value="1">中国名生银行</option>
+						<option value="1">招商银行</option>
+						<option value="1">中国工商银行</option>
+						<option value="1">兴业银行</option>
+						<option value="1">中国邮政储蓄银行</option>
+						<option value="1">中国农业发展银行</option>
+						<option value="1">广东发展银行</option>
+						<option value="1">中国农业银行</option>
+					</select>-->
+				</div>
+				<div class="mui-input-row">
+					<label class="xin">银行卡号</label>
+					<input type="text" placeholder="请输入开户银行的卡号" id="bankcard" onblur="checkCard()">
+				</div>
+				<div class="mui-input-row">
+					<label>开户支行</label>
+					<input type="text" placeholder="请输入开户银行的支行">
+				</div>
+				
+			</form>
+			<h6 class="mui-content-padded xin" style="color: #fec900;">
+				请绑定持卡人的银行卡，姓名一经填写不可修改
+			</h6>
+			<div class="mui-input-row mui-checkbox mui-left">
+				<label>设为默认银行卡</label>
+				<input name="checkbox" value="Item 1" type="checkbox">
+			</div>
+			<div class="mui-content-padded">
+				<button type="button" id="getAll" class="mui-btn mui-btn-warning mui-btn-block">确定</button>
+			</div>
+
+		</div>
+		
+		
+		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</body>
+
+</html>

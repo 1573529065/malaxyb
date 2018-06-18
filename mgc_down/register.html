@@ -1,0 +1,236 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="./css/common.css">
+		<link href="./css/mui.min.css" rel="stylesheet" />
+		<style>
+
+			/*iconfont*/
+			@font-face {
+			  font-family: 'iconfont';
+			  src: url('./font/iconfont.eot');
+			  src: url('./font/iconfont.eot?#iefix') format('embedded-opentype'),
+			  url('./font/iconfont.woff') format('woff'),
+			  url('./font/iconfont.ttf') format('truetype'),
+			  url('./font/iconfont.svg#iconfont') format('svg');
+			}
+
+			.iconfont{
+			  font-family:"iconfont" !important;
+			  font-size:18px;font-style:normal;
+			  -webkit-font-smoothing: antialiased;
+			  -webkit-text-stroke-width: 0.2px;
+			  -moz-osx-font-smoothing: grayscale;
+			}
+			/*body{
+				font-size: 15px;
+			}*/
+			
+			.t_img {
+				width: 100%;
+				height: 40%;
+				padding-top: 80px;
+				margin-bottom: 60px;
+			}
+			
+			.p_word {
+				width: 100%;
+				border-bottom: 1px solid gainsboro;
+				text-align: center;
+			}
+			
+			.mui-input-row label {
+				width: 17%;
+				padding: 5px 15px;
+			}
+			
+			.mui-input-row label~input {
+				width: 83%;
+			}
+			
+			.mui-input-group .mui-input-row:after {
+				height: 0px;
+			}
+			
+			.mui-input-group {
+				background: none;
+			}
+			
+			.mui-input-row {
+				margin-bottom: 20px;
+				background-color: #FFFFFF;
+			}
+			
+			.mui-input-row:last-child {
+				background-color: #FFFFFF;
+			}
+			
+			.mui-input-row .mui-btn {
+				width: 25%;
+				margin-top: -40px;
+				padding: 11px 16px;
+			}
+			input{
+				line-height: 45px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<div class="t_img">
+				<div style="width: 21%;height: 78px;margin: auto;">
+					<img src="./img/logo.png" alt="" style="width: 100%;height: 100%;border-radius: 100%;" />
+				</div>
+			</div>
+			<div class="mui-content-padded">
+				<p class="p_word" style="font-size: 1.1em;">注 册</p>
+				<form class="mui-input-group">
+					<div class="mui-input-row">
+						<label class="iconfont icon">&#xe6b3;</label>
+						<input type="text" placeholder="用户名" id="name">
+					</div>
+
+					<div class="mui-input-row">
+						<label class="iconfont icon">&#xe650;</label>
+						<input type="text" placeholder="手机号码" id="phone">
+					</div>
+
+					<div class="mui-input-row">
+						<label class="iconfont icon">&#xe61e;</label>
+						<input type="text" placeholder="短信验证码" class="text_yzm" id="phone_code">
+						<a id="send" style="float: right;margin-top: -30px;color: red;" onclick="send()">获取验证码</a>
+						<a style="float: right;margin-top: -30px;color: red;display: none" onclick="send()" id="send_time">60s后再获取</a>
+					</div>
+
+                    <div class="mui-input-row" id="content_fuid" style="display: none">
+                        <label class="iconfont icon">&#xe61e;</label>
+                        <input type="text" placeholder="推荐人编码" class="text_yzm" id="f_uid_p2">
+                        <span style="float: right;margin-top: -30px;color: gray;"></span>
+                    </div>
+					<div class="mui-input-row">
+						<label class="iconfont icon">&#xe623;</label>
+						<input type="password" placeholder="设置登录密码(6位数字)" id="pass">
+					</div>
+
+					<div class="mui-input-row">
+						<label class="iconfont icon">&#xe623;</label>
+						<input type="password" placeholder="设置交易密码(6位数字)" id="pay_pass">
+					</div>
+				</form>
+				<button style="padding: 0; line-height: 40px;" type="button" class="mui-btn mui-btn-warning mui-btn-block" id="btn" onclick="result()">注册</button>
+				<p style="text-align: center;margin-bottom: 30px;">已用账号,
+					<a href="download.html" style="color: red;">去下载app</a>
+				</p>
+			</div>
+
+		</div>
+
+		<script type="text/javascript" src="./js/jquery-1.9.1.js"></script>
+		<!--<script type="text/javascript" src="../js/common.js"></script>-->
+		<!-- <script type="text/javascript" src="./js/url.js"></script> -->
+		<script src="./js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+            var accoun = getQueryString('account');
+            if(accoun == null || accoun == undefined){
+                $('#content_fuid').show();
+            }
+			// alert(account);
+
+			function getQueryString(name) {
+		        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+		        var r = window.location.search.substr(1).match(reg);
+		        if(r != null) return unescape(r[2]);
+		        return null;
+		    }
+
+			function send() {
+				if(!$("#phone").val()) {
+					mui.alert('手机号码不能为空！')
+				} else if(!(/^1[34578]\d{9}$/.test($("#phone").val()))) {
+					mui.alert('手机号码有误，请重填！')
+				} else {
+				$.ajax({
+					url:"http://mubei8.com/new_vpay_api/public/index/send/res",
+					type: 'POST',
+					dataType: 'jsonp',
+					data: {
+						phone: $("#phone").val()
+					},
+					crossDomain: true,
+					success: function(result) {
+						console.log(result);
+						if(result.code == 1) {
+							mui.toast('发送成功！');
+							$('#send').hide();
+							$('#send_time').show();
+							var cont = 60;
+							$('#send_time').html(cont + "s后再获取");
+							var sen_time = setInterval(function() {
+								cont--;
+								$('#send_time').html(cont + "s后再获取");
+								if(cont == 0) {
+									$('#send_time').hide();
+									$('#send').show();
+									cont = 60;
+									clearInterval(sen_time);
+								}
+							}, 1000);
+						} else {
+							alert(result.msg)
+						}
+					},
+					fail: function(result) {
+
+					}
+				});
+
+				}
+			}
+
+			function result(){
+
+                if(accoun == null || accoun == undefined){
+                    var account = $('#f_uid_p2').val();
+                }else{
+                    var account = accoun;
+                }
+
+
+				$.ajax({
+					url:  "http://mubei8.com/new_vpay_api/public/index/user/register",
+					type: 'POST',
+					dataType: 'jsonp',
+					data: {
+						pass: $("#pass").val(),
+						phone: $("#phone").val(),
+						phone_code: $("#phone_code").val(),
+						name: $("#name").val(),
+						f_uid: account,
+						re_name: 1,
+						pay_pass: $("#pay_pass").val()
+					},
+					crossDomain: true,
+					success: function(res) {
+						console.log(res);
+						if(res.code == 2) {
+							alert(res.msg);
+						} else if(res.code == 1) {
+							alert(res.msg);
+							window.location.href = 'download.html';
+						}
+					},
+					fail: function(res) {
+
+					}
+				});
+			}
+		</script>
+	</body>
+
+</html>

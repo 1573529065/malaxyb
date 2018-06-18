@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<style>
+			.mui-bar-nav {
+				box-shadow: none;
+			}
+			
+			#topPopover {
+				position: fixed;
+				top: 16px;
+				right: 6px;
+			}
+			
+			#topPopover .mui-popover-arrow {
+				left: auto;
+				right: 6px;
+			}
+			
+			p {
+				text-indent: 22px;
+			}
+			
+			span.mui-icon {
+				font-size: 12px;
+				margin-left: -15px;
+				padding-right: 10px;
+			}
+			
+			.mui-popover {
+				width: 120px;
+				height: 230px;
+			}
+			.head {
+				background-color: #46adfc;
+				height: 65px;
+				text-align: center;
+				color: #FFFFFF;
+				padding: 5px;
+				font-size: 15px;
+			}
+			
+			.l_head {
+				letter-spacing: 1px;
+				width: 48%;
+				float: left;
+				border-right: 1px solid #FFFFFF;
+			}
+			
+			.r_head {
+				float: left;
+				letter-spacing: 1px;
+				width: 48%;
+			}
+			.mui-table-view-chevron{
+				background-color: #FFFFFF;
+				margin: 15px;
+				padding-left: 0;
+				font-size: 14px;
+			}
+			input[type=text]{
+				margin-bottom: 0;
+				border: none;
+				height: 25px;
+			}
+			.f_btn{
+				margin: 20px 50px;
+				width: 70%;
+				height: 40px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" style="background-color: #46adfc;color: white;">
+			<i class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></i>
+			<h1 class="mui-title" style="color: white;">HPAY</h1>
+			<a id="menu" class="mui-action-menu mui-icon mui-icon-bars mui-pull-right" style="color: white;" href="#topPopover"></a>
+		</header>
+		<div class="mui-content">
+			<div class="head">
+				<div class="l_head">
+					HPAY资产
+					<div>0.0000</div>
+				</div>
+				<div class="r_head">
+					余&nbsp;&nbsp;额
+					<div>￥0000</div>
+				</div>
+			</div>
+			<div>
+			<ul class=" mui-table-view-chevron">
+				<li class="mui-table-view-cell">
+					
+						当前价格：<span style="color: #269ABC;">23.9951</span>
+					
+				</li>
+				<li class="mui-table-view-cell">
+						购买价格：<span>23.9951</span>
+				</li>
+				<li class="mui-table-view-cell">
+					<a>
+						购买数量：<input type="text" placeholder="输入出售数量">
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a>
+						支付总额：<input type="text" placeholder="0">
+					</a>
+				</li>
+					<button type="button" class="mui-btn mui-btn-danger f_btn">
+					发布
+				</button>
+				
+			</ul>
+			</div>
+		</div>
+		
+		
+		<!--右上角弹出菜单-->
+		<div id="topPopover" class="mui-popover">
+			<div class="mui-popover-arrow"></div>
+			<div class="mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<ul class="mui-table-view" style="">
+						<li class="mui-table-view-cell">
+							<a href="Confirmation_money.html">Vpay</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a href="Completed_order.html">比特币</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a href="Buy_record.html">莱特币</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a href="Buy_center .html">以太坊</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a href="Buy_center .html">狗狗币</a>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</body>
+
+</html>

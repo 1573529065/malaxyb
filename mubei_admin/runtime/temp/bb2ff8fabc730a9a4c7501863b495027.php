@@ -1,0 +1,176 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:103:"D:\phpStudy\PHPTutorial\WWW\malaxyb\mubei_admin\public/../application/index\view\index\look_html_v.html";i:1525949356;}*/ ?>
+<!DOCTYPE html>
+
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+
+<!--[if !IE]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+
+<!-- BEGIN HEAD -->
+
+<head>
+
+    <meta charset="utf-8" />
+
+    <title>会员管理</title>
+
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <meta content="" name="description" />
+
+    <meta content="" name="author" />
+
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+
+    <link href="__static__/media/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+
+    <link href="__static__/media/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
+
+    <link href="__static__/media/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+
+    <link href="__static__/media/css/style-metro.css" rel="stylesheet" type="text/css"/>
+
+    <link href="__static__/media/css/style.css" rel="stylesheet" type="text/css"/>
+
+    <link href="__static__/media/css/style-responsive.css" rel="stylesheet" type="text/css"/>
+
+    <link href="__static__/media/css/default.css" rel="stylesheet" type="text/css" id="style_color"/>
+
+    <link href="__static__/media/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+
+    <!-- END GLO__static__/BAL MANDATORY STYLES -->
+
+    <!-- BEGIN P__static__/AGE LEVEL STYLES -->
+
+    <link href="__static__/media/css/jquery.gritter.css" rel="stylesheet" type="text/css"/>
+
+    <link href="__static__/media/css/daterangepicker.css" rel="stylesheet" type="text/css" />
+
+    <link href="__static__/media/css/fullcalendar.css" rel="stylesheet" type="text/css"/>
+
+    <link href="__static__/media/css/jqvmap.css" rel="stylesheet" type="text/css" media="screen"/>
+
+    <link href="__static__/media/css/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen"/>
+
+    <!-- END PAGE LEVEL STYLES -->
+
+    <link rel="shortcut icon" href="__static__/media/image/favicon.ico" />
+
+</head>
+
+<!-- END HEAD -->
+
+<!-- BEGIN BODY -->
+
+<body class="page-header-fixed">
+
+<div class="portlet box blue">
+
+    <div class="portlet-title">
+
+        <div class="caption"><i class="icon-cogs"></i>会员列表</div>
+
+
+    </div>
+
+    <div class="portlet-body no-more-tables">
+
+        <table class="table-bordered table-striped table-condensed cf">
+
+            <thead class="cf">
+
+            <tr>
+
+                <th>用户uid</th>
+                <th class="numeric">用户昵称</th>
+                <th class="numeric">手机号码</th>
+                <th class="numeric">资产</th>
+                <!--<th class="numeric">流通资产</th>-->
+                <th class="numeric">积分</th>
+                <th class="numeric">最上级会员</th>
+                <th class="numeric">上级会员</th>
+
+                <th class="numeric">会员代级</th>
+                <th class="numeric">是否为VIP会员</th>
+                <th class="numeric">会员等级</th>
+                <th class="numeric">注册时间</th>
+                <th class="numeric">上次登陆ip</th>
+
+            </tr>
+
+            </thead>
+
+            <tbody>
+
+            <?php if($user){ foreach($user as $v ){ ?>
+            <tr style="text-align: center">
+                <td data-title="用户uid"><?php echo $v['u_id']?></td>
+                <!--<td data-title="Company">AUSTRALIAN AGRICULTURAL COMPANY LIMITED.</td>-->
+                <td data-title="用户昵称" class="numeric"><?php echo $v['user']?></td>
+                <td data-title="手机号码" class="numeric"><?php echo $v['tel']?></td>
+                <td data-title="资产" class="numeric"><?php echo $v['balance']?></td>
+                <td data-title="积分" class="numeric"><?php echo $v['assets']?></td>
+                <td data-title="最上级会员" class="numeric"><?php if($v['best_uid'] == 0){ echo '初级会员'; }else{ echo $v['best_uid'];}?></td>
+                <td data-title="上级会员" class="numeric"><?php if($v['f_uid'] == 0){ echo '初级会员'; }else{ echo $v['f_uid'];}?></td>
+                <td data-title="会员代级" class="numeric"><?php if($v['era'] == 0){ echo '初'; }else{ echo '第'.$v['era'];}?>代</td>
+                <td data-title="是否为VIP会员" class="numeric"><?php echo $v['vip_static']==1? '是':'否'?></td>
+                <!--<td data-title="会员等级" class="numeric">M<?php echo $v['level'] ?></td>-->
+                <td data-title="注册时间" class="numeric"><?php echo date('Y-m-d H:i:s', $v['time']) ?></td>
+                <td data-title="上次登陆ip" class="numeric"><?php echo $v['last_ip'] ?></td>
+            </tr>
+            <?php } }else{ ?>
+            <tr style="text-align: center">
+                暂无记录
+            </tr>
+            <?php }?>
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+
+
+
+
+<script>
+
+    jQuery(document).ready(function() {
+
+        App.init(); // initlayout and core plugins
+
+        Index.init();
+
+        Index.initJQVMAP(); // init index page's custom scripts
+
+        Index.initCalendar(); // init index page's custom scripts
+
+        Index.initCharts(); // init index page's custom scripts
+
+        Index.initChat();
+
+        Index.initMiniCharts();
+
+        Index.initDashboardDaterange();
+
+        Index.initIntro();
+
+    });
+
+
+
+    function admin_add(title, url, w, h) {
+        layer_show(title, url, w, h);
+    }
+</script>
+
+<!-- END JAVASCRIPTS -->
+
+</body>
+
+<!-- END BODY -->
+
+</html>

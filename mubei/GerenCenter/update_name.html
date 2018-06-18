@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link href="../css/mui.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="../js/jquery.min.js" ></script>
+    <script type="text/javascript" src="../js/back_icon.js" ></script>
+    <script type="text/javascript" src="../js/change_lange.js" ></script>
+</head>
+
+<body>
+	<script>
+			if(localStorage.pagecount == 1) {
+				addCssByLink('../css/zh.css');
+			} else if(localStorage.pagecount == 2) {
+				addCssByLink('../css/en.css');
+			}
+		</script>
+<header class="mui-bar mui-bar-nav" style="background-color: #FFFFFF;">
+    <!--<i class="mui-icon mui-icon-left-nav mui-pull-left" onclick="back_go()"></i>-->
+    <h1 class="mui-title"><span class="language-changename"></span></h1>
+</header>
+<div style="height: 10px"></div>
+<div class="mui-content">
+
+    <input type="text" placeholder="" id="name">
+
+    <div class="mui-content-padded">
+        <button type="button" class="mui-btn mui-btn-primary mui-btn-block" id="update"><span class="language-queren"></span></button>
+    </div>
+</div>
+<script src="../js/mui.min.js"></script>
+<script type="text/javascript" src="../js/common.js" ></script>
+<script type="text/javascript" src="../js/url.js" ></script>
+<script type="text/javascript">
+    mui.init();
+    document.getElementById("update").addEventListener('tap', function() {
+				 $.ajax({
+					url: j_url+"user/change_name",
+					data: {
+					u_id: localStorage.lastname,
+					name:$("#name").val()
+				    },
+					type: "POST",
+					dataType: 'jsonp',
+					crossDomain: true,
+					success: function(res) {
+						console.log(res);
+						if(res.code == 2) {
+							mui.alert(res.msg);
+						} else if(res.code == 1) {
+							mui.alert("修改成功");
+							
+						}
+					}
+				})
+			});
+    
+   
+
+</script>
+</body>
+
+</html>

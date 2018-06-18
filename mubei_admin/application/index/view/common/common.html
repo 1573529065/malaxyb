@@ -1,0 +1,123 @@
+<div class="header navbar navbar-inverse navbar-fixed-top">
+
+    <!-- BEGIN TOP NAVIGATION BAR -->
+
+    <div class="navbar-inner">
+
+        <div class="container-fluid">
+            <!-- BEGIN LOGO -->
+
+            <a class="brand" href="{:url('index/index/')}">
+
+                <img src="__static__/media/image/logo.png" alt="logo"/>
+
+            </a>
+
+            <!-- END LOGO -->
+
+            <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+
+            <a href="javascript:;" class="btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
+
+                <img src="__static__/media/image/menu-toggler.png" alt="" />
+
+            </a>
+
+            <!-- END RESPONSIVE MENU TOGGLER -->
+
+            <!-- BEGIN TOP NAVIGATION MENU -->
+
+            <ul class="nav pull-right">
+
+                <!-- BEGIN NOTIFICATION DROPDOWN -->
+
+
+                <!-- BEGIN USER LOGIN DROPDOWN -->
+
+                <li class="dropdown user">
+
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+
+                        <!--<img alt="" src="__static__/media/image/avatar1_small.jpg" />-->
+
+                        <span class="username"><?php echo $admin['account']?></span>
+
+                        <i class="icon-angle-down"></i>
+
+                    </a>
+
+                    <ul class="dropdown-menu">
+
+
+                        <li><a href="{:url('index/login/update_pass')}"><i class="icon-lock"></i>修改密码</a></li>
+
+                        <li><a href="{:url('index/login/out_login')}"><i class="icon-key"></i>退出登陆</a></li>
+
+                    </ul>
+
+                </li>
+
+                <!-- END USER LOGIN DROPDOWN -->
+
+            </ul>
+
+            <!-- END TOP NAVIGATION MENU -->
+
+        </div>
+
+    </div>
+
+    <!-- END TOP NAVIGATION BAR -->
+
+</div>
+
+<!-- END HEADER -->
+
+<!-- BEGIN CONTAINER -->
+
+<div class="page-container">
+
+    <!-- BEGIN SIDEBAR -->
+
+    <div class="page-sidebar nav-collapse collapse">
+
+        <!-- BEGIN SIDEBAR MENU -->
+
+        <ul class="page-sidebar-menu">
+
+            <li>
+
+                <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+
+                <div class="sidebar-toggler hidden-phone"></div>
+
+                <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+
+            </li>
+
+            <li style="margin: 10% 0 0 0;"></li>
+
+            <?php foreach($menu as $v){ ?>
+            <li class="start <?php if($fun == $v['me_class']){echo 'active';}?>" >
+
+                <a href="{:url($v.me_url)}">
+
+                    <i class="<?php echo $v['me_ico']?>"></i>
+
+                    <span class="title">{$v.me_name}</span>
+
+                    <span class="selected"></span>
+
+                </a>
+
+            </li>
+            <?php }?>
+
+
+
+
+        </ul>
+
+        <!-- END SIDEBAR MENU -->
+
+    </div>

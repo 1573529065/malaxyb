@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en" class="feedback">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>问题反馈</title>
+		<link rel="stylesheet" type="text/css" href="../css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/feedback.css" />
+		<script type="text/javascript" src="../js/back_icon.js" ></script>
+		<script type="text/javascript" src="../js/change_lange.js" ></script>
+	</head>
+
+	<body>
+		<script>
+			if(localStorage.pagecount == 1) {
+				addCssByLink('../css/zh.css');
+			} else if(localStorage.pagecount == 2) {
+				addCssByLink('../css/en.css');
+			}
+		</script>
+		<header class="mui-bar mui-bar-nav" style="background-color: #FFFFFF;">
+			<!--<i class="mui-icon mui-icon-left-nav mui-pull-left" onclick="window.location.href='../setting.html'"></i>-->
+			<!--<button id="submit" class="mui-btn mui-btn-blue mui-btn-link mui-pull-right" style="color: #000"><span class="language-send"></span></button>-->
+			<h1 class="mui-title"><span class="language-yijianfankui"></span></h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-content-padded">
+				<div class="mui-inline"><span class="language-yijianhewenti"></span></div>
+				
+			</div>
+			<div class="row mui-input-row">
+				<textarea id='question' class="mui-input-clear question" placeholder=""></textarea>
+			</div>
+			
+			
+			<br />
+		</div>
+		<div class="mui-content-padded">
+    <button id="submit" type="button" style="background: #007aff;border-color: #4cd964" class="mui-btn mui-btn-warning mui-btn-block"><span>发送</span></button>
+</div>
+    <div>
+        <div class="mui-content">
+            <p id="none1" style="font-size: 16px; margin: auto;width: 160px;margin-top: 20px; display: none;text-align: center;">
+                <span class="language-meiyoujilu"></span>
+            </p>
+            <div class="list">
+
+            </div>
+        </div>
+
+    </div>
+		<script type="text/javascript" src="../js/jquery.min.js"></script>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/common.js"></script>
+		<script type="text/javascript" src="../js/url.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			$.ajax({
+            url: j_url + "user/feedbackList",
+            type: 'POST',
+            data: {
+                u_id: localStorage.lastname
+            },
+            dataType: 'jsonp',
+            crossDomain: true,
+            success: function (res) {
+                console.log(res);
+                if (res.code == 1){
+                    var rou = res.data;
+                    for(var key in rou) {
+                        if (!rou[key].f_content) rou[key].f_content = '暂无回复...';
+                        $('.list').append("<div class='a_list'>" +
+                            "<p class='title'><h4>反馈</h4>" + rou[key].f_text + "</p>"
+                            +"<p class='time'><h4>回复</h4>" + rou[key].f_content + "</p></div>");
+                    }
+                }
+            },
+            fail: function (res) {
+
+            }
+        });
+				
+			if(localStorage.pagecount == 1) {
+					document.getElementById("question").setAttribute("placeholder", "请详细描述你的问题和意见");
+					
+				} else if(localStorage.pagecount == 2) {
+					document.getElementById("question").setAttribute("placeholder", "Please describe your questions and opinions in detail");
+				}
+			
+			 document.getElementById("submit").addEventListener('tap', function() {
+			 	if(!$("#question").val()) {
+					mui.alert('请填写您的问题与反馈！')
+				} else{
+						$.ajax({
+				url: j_url + "user/feedback",
+				data: {
+					u_id:localStorage.lastname,
+					feedback:$("#question").val()
+				},
+				type: "POST",
+				dataType: 'jsonp',
+				crossDomain: true,
+				success: function(res) {
+					console.log(res);
+					if(res.code == 2) {
+						mui.alert(res.msg);
+					} else if(res.code == 1) {
+						mui.alert("发送成功");
+                        setTimeout(function(){window.location.reload()},1000);
+					}
+				}
+			});
+				}
+			 	
+			});
+			
+			
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width,minimum-scale=1.0 maximum-scale=1.0 user-scalable=no' />
+    <title>Mubei-下载</title>
+    <style>
+        *{
+            margin: 0 auto;
+            padding: 0;
+
+        }
+        p{
+            color: #fff;
+        }
+        body{
+            background-color: #14C7FF;
+        }
+        .header_img img{
+            display: block;
+            margin: 50px auto;
+            width: 180px;
+        }
+        .code img{
+            display: block;
+            margin: auto;
+            width: 180px;
+        }
+        .code p{
+            text-align: center;
+            padding-top: 10px;
+            font-size: 1.2em;
+        }
+        .downl{
+            margin-top: 50px;
+            width: 80%;
+        }
+        .downl li{
+            position: relative;
+            display: block;
+            margin: 15px auto;
+            line-height: 50px;
+            text-align: center;
+            border: 1px #fff solid;
+            font-size: 1.1em;
+            text-indent: 2em;
+            color: #fff;
+        }
+        .downl li span{
+            position: relative;
+        }
+        .downl li span img{
+            position: absolute;
+            top: -2px;
+            left: -40px;
+            width: 30px;
+        }
+    </style>
+</head>
+<body class="">
+<div class="al_width">
+    <div class="header_img">
+        <img src="./img/gme_logo.png" alt="">
+    </div>
+    <div class="code">
+        <img src="./img/code.png?v=1.0.1" alt="">
+        <p>扫一扫下载</p>
+    </div>
+    <div class="downl">
+        <ul>
+            <li onclick="doloadw()"><span><img src="./img/a.png" alt=""></span>Andriod正版下载</li>
+            <li onclick="doloadw()"><span><img src="./img/i.png" alt=""></span>iphone正版下载</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    function doloadw(){
+        var browser={
+            versions:function(){
+                var u = navigator.userAgent,
+                        app = navigator.appVersion;
+                return {
+                    trident: u.indexOf('Trident') > -1, //IE内核
+                    presto: u.indexOf('Presto') > -1, //opera内核
+                    webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+                    gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1,//火狐内核
+                    mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+                    ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+                    android: u.indexOf('Android') > -1 || u.indexOf('Adr') > -1, //android终端
+                    iPhone: u.indexOf('iPhone') > -1 , //是否为iPhone或者QQHD浏览器
+                    iPad: u.indexOf('iPad') > -1, //是否iPad
+                    webApp: u.indexOf('Safari') == -1, //是否web应该程序，没有头部与底部
+                    weixin: u.indexOf('MicroMessenger') > -1, //是否微信 （2015-01-22新增）
+                    qq: u.match(/\sQQ/i) == " qq" //是否QQ
+                };
+            }(),
+            language:(navigator.browserLanguage || navigator.language).toLowerCase()
+        };
+
+        if(browser.versions.weixin){
+            if(browser.versions.ios){
+                alert('请在右上角按钮中用浏览器打开，进行下载');
+            }else if(browser.versions.android){
+                alert('请在右上角按钮中用浏览器打开，进行下载');
+            }
+        }else{
+            if(browser.versions.ios){
+                window.location.href = "https://fir.im/mpay";
+            }else if(browser.versions.android){
+                window.location.href = "http://mubei8.com/mpay.apk";
+            }
+        }
+    }
+</script>

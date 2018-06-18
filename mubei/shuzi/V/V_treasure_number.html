@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<style>
+			.head {
+				background-image: url(../../images/img/lunbo2.jpg);
+				height: 130px;
+			}
+			
+			.t_word {
+				font-size: 12px;
+				color: #FFFFFF;
+				padding: 8px;
+				text-align: center;
+			}
+			
+			.l_word {
+				font-size: 22px;
+				color: #FFFFFF;
+				text-align: center;
+			}
+			
+			.v_btn {
+				margin-top: 14px;
+			}
+			
+			.btn {
+				border: none;
+				width: 48%;
+				padding: 8px;
+				color: #FFFFFF;
+			}
+			.v_btn p {
+				color: #FFFFFF;
+			}
+			.mui-slider-indicator{
+				margin-top: 10px;
+				background-color: #FFFFFF;
+			}
+			.mui-slider .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-group .mui-slider-item {
+				border: none;
+			}
+			.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+				color: #ee0b36;
+				border-bottom: 2px solid #ee0b36;
+				background: 0 0;
+			}
+			.mui-segmented-control.mui-segmented-control-inverted~.mui-slider-progress-bar {
+				background-color: #ee0b36;
+			}
+			.f_btn{
+				width: 50%;
+			}
+			.mui-bar-tab{
+				height: 38px;
+			}
+			.mui-bar .mui-btn{
+				border-radius: inherit;
+				top: 0;
+				padding: 9px 12px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" style="background-color: #46adfc;color: white;">
+			<i class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" onclick="back()"></i>
+			<h1 class="mui-title" style="color: white;">
+				H宝数字中心
+			</h1>
+		</header>
+		<div class="mui-content">
+			<div class="head">
+				<div class="t_word">
+					<span>昨日收益(余额)</span>
+					<img src="../../images/img/20180319094527.png" />
+				</div>
+				<div class="l_word">0.0000</div>
+
+				<div class="v_btn">
+					<div type="button" class="mui-btn mui-btn-outlined btn">
+						H宝总资产
+						<p>0</p>
+					</div>
+					<div type="button" class="mui-btn mui-btn-outlined btn">
+						可用资产
+						<p>0</p>
+					</div>
+				</div>
+			</div>
+
+			<div id="slider" class="mui-slider">
+				<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<a class="mui-control-item mui-active" href="#item1">
+						收益记录
+					</a>
+					<a class="mui-control-item" href="#item2">
+						转出记录
+					</a>
+					<a class="mui-control-item" href="#item3">
+						转入记录
+					</a>
+				</div>
+				<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-4"></div>
+				<div class="mui-slider-group">
+					<!--收益记录-->
+					<div id="item1" class="mui-slider-item mui-control-content mui-active">
+						<p style="font-size: 16px; margin: auto;width: 140px;margin-top: 20px;">没有找到相关记录</p>
+					</div>
+					<!--转出记录-->
+					<div id="item2" class="mui-slider-item mui-control-content">
+						<p style="font-size: 16px; margin: auto;width: 140px;margin-top: 20px;">没有找到相关记录2</p>
+					</div>
+					<!--转入记录-->
+					<div id="item3" class="mui-slider-item mui-control-content">
+						<p style="font-size: 16px; margin: auto;width: 140px;margin-top: 20px;">没有找到相关记录3</p>
+					</div>
+				</div>
+			</div>
+			<nav class="mui-bar mui-bar-tab">
+			<button class="mui-btn mui-btn-warning f_btn">转入</button>
+			<button class="mui-btn mui-btn-primary f_btn">转出</button>
+		</nav>
+		</div>
+
+		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</body>
+
+</html>

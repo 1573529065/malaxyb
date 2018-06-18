@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<style>
+			.mui-slider .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-group .mui-slider-item {
+				border-top: 1px solid #c8c7cc;
+				border-bottom: 0px solid #c8c7cc;
+			}
+			
+			.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+				color: #ee0b36;
+				border-bottom: 2px solid #ee0b36;
+				background: 0 0;
+			}
+			
+			.mui-segmented-control.mui-segmented-control-inverted~.mui-slider-progress-bar {
+				background-color: #ee0b36;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" style="background-color: #46adfc;color: white;">
+			<i class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></i>
+			<h1 class="mui-title" style="color: white;">使用记录</h1>
+		</header>
+
+		<div class="mui-content">
+			<div id="slider" class="mui-slider">
+				<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<a class="mui-control-item mui-active" href="#item1">
+						转出记录
+					</a>
+					<a class="mui-control-item" href="#item2">
+						转入记录
+					</a>
+				</div>
+				<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-6"></div>
+				<div class="mui-slider-group">
+					<!--转出记录-->
+					<div id="item1" class="mui-slider-item mui-control-content mui-active">
+						<p style="font-size: 16px; margin: auto;width: 140px;margin-top: 20px;">没有找到相关记录</p>
+					</div>
+					<!--转入记录-->
+					<div id="item2" class="mui-slider-item mui-control-content">
+						<p style="font-size: 16px; margin: auto;width: 140px;margin-top: 20px;">没有找到相关记录2</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</body>
+
+</html>

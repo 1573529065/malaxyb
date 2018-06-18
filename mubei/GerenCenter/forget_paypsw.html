@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<script type="text/javascript" src="../js/jquery.min.js" ></script>
+		<script type="text/javascript" src="../js/common.js" ></script>
+		<script type="text/javascript" src="../js/back_icon.js" ></script>
+		<script type="text/javascript" src="../js/change_lange.js" ></script>
+		<style>
+			*{
+				font-size: 14px;
+				font-family:'微软雅黑';
+			}
+			.forget{
+				height: 45px;
+				float: right;
+			}
+			.forget a{
+			  color: #000000;
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<script>
+			if(localStorage.pagecount == 1) {
+				addCssByLink('../css/zh.css');
+			} else if(localStorage.pagecount == 2) {
+				addCssByLink('../css/en.css');
+			}
+		</script>
+		<header class="mui-bar mui-bar-nav" style="background-color: #ffffff;">
+			<!--<i class="mui-icon mui-icon-left-nav mui-pull-left" onclick="back_go()"></i>-->
+			<h1 class="mui-title"><span class="language-gaimima4"></span></h1>
+		</header>
+		<div style="height:10px"></div>
+		<div class="mui-content">
+			<form class="mui-input-group">
+				<div class="mui-input-row mui-password">
+						<label><span class="language-shoujihao"></span></label>
+						<input type="tel" placeholder="" class="" id="phone">
+					</div>
+					
+					<div class="mui-input-row mui-password">
+						<label><span class="language-yanzhenma"></span></label>
+						<input type="text" placeholder="" class="" id="phone_code">
+					</div>
+					<a id="send" style="right:1%;margin-top: -30px;color: red;position: absolute;" onclick="send()"><span class="language-huoquyanzhenma"></span></a>
+						<a style="right:1%;margin-top: -30px;color: red;display: none;position: absolute;" onclick="send()" id="send_time">60s<span class="language-zaihuoqu"></span></a>
+					
+					<div class="mui-input-row mui-password">
+						<label><span class="language-gaimima2"></span></label>
+						<input type="password" placeholder="" class="" id="pass"> 
+					</div>
+			</form>
+			 <div class="mui-content-padded">
+			 	<button type="button" class="mui-btn mui-btn-primary mui-btn-block" id="btn"><span class="language-queding"></span></button>
+			 </div>
+			
+			</div>
+		
+		
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/url.js" ></script>
+		
+		<script type="text/javascript">
+			mui.init()
+			if(localStorage.pagecount == 1) {
+					document.getElementById("phone").setAttribute("placeholder", "手机号码");
+					document.getElementById("phone_code").setAttribute("placeholder", "短信验证码");
+					document.getElementById("pass").setAttribute("placeholder", "新密码(6-18位字母和数字)");
+					
+				} else if(localStorage.pagecount == 2) {
+					document.getElementById("phone").setAttribute("placeholder", "cell phone number");
+					document.getElementById("phone_code").setAttribute("placeholder", "verification code ");
+					document.getElementById("pass").setAttribute("placeholder", "new password");
+				}
+		function send() {
+				if(!$("#phone").val()) {
+					mui.alert('手机号码不能为空！')
+				} else if(!(/^1[34578]\d{9}$/.test($("#phone").val()))) {
+					mui.alert('手机号码有误，请重填！')
+				} else {
+				$.ajax({
+					url: j_url + "/send/res",
+					type: 'POST',
+					dataType: 'jsonp',
+					data: {
+						phone: $("#phone").val(),
+					},
+					crossDomain: true,
+					success: function(result) {
+						console.log(result);
+						if(result.code == 1) {
+							mui.toast('发送成功！');
+							$('#send').hide();
+							$('#send_time').show();
+							var cont = 60;
+							$('#send_time').html(cont + "s后再获取");
+							var sen_time = setInterval(function() {
+								cont--;
+								$('#send_time').html(cont + "s后再获取");
+								if(cont == 0) {
+									$('#send_time').hide();
+									$('#send').show();
+									cont = 60;
+									clearInterval(sen_time);
+								}
+							}, 1000);
+						} else {
+							alert(result.msg)
+						}
+					},
+					fail: function(result) {
+
+					}
+				});
+
+				}
+			}
+
+			document.getElementById("btn").addEventListener('tap', function() {
+				if(!$("#phone").val()) {
+					mui.alert('手机号码不能为空！')
+				}else if(!$("#phone_code").val()) {
+					mui.alert('请输入验证码！')
+				}else if(!$("#pass").val()) {
+					mui.alert('请输入新密码！')
+				}else{
+					$.ajax({
+					url: j_url + "/user/findpay_pass",
+					type: 'POST',
+					dataType: 'jsonp',
+					data: {
+						pass: $("#pass").val(),
+						phone: $("#phone").val(),
+						phone_code: $("#phone_code").val(),
+					},
+					crossDomain: true,
+					success: function(res) {
+						console.log(res);
+						if(res.code == 2) {
+//							mui.alert(res.msg);
+						} else if(res.code == 1) {
+							mui.alert("修改成功");
+							$("#pass").val("");
+							$("#phone").val("");
+							$("#phone_code").val("");
+							
+						}
+					},
+					fail: function(res) {
+
+					}
+				});
+				}
+				
+			});
+		</script>
+	</body>
+
+</html>

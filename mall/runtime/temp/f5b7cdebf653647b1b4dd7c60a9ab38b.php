@@ -1,0 +1,1152 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:83:"/www/wwwroot/www.malaxyb.com/mall/public/../application/index/view/goods/index.html";i:1527728446;s:85:"/www/wwwroot/www.malaxyb.com/mall/public/../application/index/view/common/common.html";i:1527652642;}*/ ?>
+<!DOCTYPE html>
+
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+
+<!--[if !IE]><!--> 
+<html lang="en" class="no-js"> <!--<![endif]-->
+
+<!-- BEGIN HEAD -->
+
+<head>
+
+    <meta charset="utf-8" />
+
+    <title>商品管理</title>
+
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <meta content="" name="description" />
+
+    <meta content="" name="author" />
+
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+
+    <link href="__static__/media/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+
+    <link href="__static__/media/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
+
+    <link href="__static__/media/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+
+    <link href="__static__/media/css/style-metro.css" rel="stylesheet" type="text/css"/>
+
+    <link href="__static__/media/css/style.css" rel="stylesheet" type="text/css"/>
+
+    <link href="__static__/media/css/style-responsive.css" rel="stylesheet" type="text/css"/>
+
+    <link href="__static__/media/css/default.css" rel="stylesheet" type="text/css" id="style_color"/>
+
+    <link href="__static__/media/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+
+    <!-- END GLO__static__/BAL MANDATORY STYLES -->
+
+    <!-- BEGIN P__static__/AGE LEVEL STYLES -->
+
+    <link href="__static__/media/css/jquery.gritter.css" rel="stylesheet" type="text/css"/>
+
+    <link href="__static__/media/css/daterangepicker.css" rel="stylesheet" type="text/css" />
+
+    <link href="__static__/media/css/fullcalendar.css" rel="stylesheet" type="text/css"/>
+
+    <link href="__static__/media/css/jqvmap.css" rel="stylesheet" type="text/css" media="screen"/>
+
+    <link href="__static__/media/css/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen"/>
+
+    <!-- END PAGE LEVEL STYLES -->
+
+    <link rel="shortcut icon" href="__static__/media/image/favicon.ico" />
+    <link href="__static__/layui/css/layui.css" rel="stylesheet" type="text/css"/>
+
+</head>
+
+<!-- END HEAD -->
+
+<!-- BEGIN BODY -->
+
+<body class="page-header-fixed" style="padding-bottom: 5%;">
+
+<!-- BEGIN HEADER -->
+
+<div class="header navbar navbar-inverse navbar-fixed-top">
+
+    <!-- BEGIN TOP NAVIGATION BAR -->
+
+    <div class="navbar-inner">
+
+        <div class="container-fluid">
+            <!-- BEGIN LOGO -->
+
+            <a class="brand" href="<?php echo url('index/index/'); ?>">
+
+                <img src="__static__/media/image/logo.png" alt="logo"/>
+
+            </a>
+
+            <!-- END LOGO -->
+
+            <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+
+            <a href="javascript:;" class="btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
+
+                <img src="__static__/media/image/menu-toggler.png" alt="" />
+
+            </a>
+
+            <!-- END RESPONSIVE MENU TOGGLER -->
+
+            <!-- BEGIN TOP NAVIGATION MENU -->
+
+            <ul class="nav pull-right">
+
+                <!-- BEGIN NOTIFICATION DROPDOWN -->
+
+
+                <!-- BEGIN USER LOGIN DROPDOWN -->
+
+                <li class="dropdown user">
+
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+
+                        <!--<img alt="" src="__static__/media/image/avatar1_small.jpg" />-->
+
+                        <span class="username"><?php echo $admin['account']?></span>
+
+                        <i class="icon-angle-down"></i>
+
+                    </a>
+
+                    <ul class="dropdown-menu">
+
+
+                        <li><a href="<?php echo url('index/login/update_pass'); ?>"><i class="icon-lock"></i>修改密码</a></li>
+
+                        <li><a href="<?php echo url('index/login/out_login'); ?>"><i class="icon-key"></i>退出登陆</a></li>
+
+                    </ul>
+
+                </li>
+
+                <!-- END USER LOGIN DROPDOWN -->
+
+            </ul>
+
+            <!-- END TOP NAVIGATION MENU -->
+
+        </div>
+
+    </div>
+
+    <!-- END TOP NAVIGATION BAR -->
+
+</div>
+
+<!-- END HEADER -->
+
+<!-- BEGIN CONTAINER -->
+
+<div class="page-container">
+
+    <!-- BEGIN SIDEBAR -->
+
+    <div class="page-sidebar nav-collapse collapse">
+
+        <!-- BEGIN SIDEBAR MENU -->
+
+        <ul class="page-sidebar-menu">
+
+            <li>
+
+                <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+
+                <div class="sidebar-toggler hidden-phone"></div>
+
+                <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+
+            </li>
+
+            <li style="margin: 10% 0 0 0;"></li>
+
+            <?php foreach($menu as $v){ ?>
+            <li class="start <?php if($fun == $v['me_url']){echo 'active';}?>" >
+
+                <a href="/mall/public/<?php echo $v['me_url']; ?>">
+
+                    <i class="<?php echo $v['me_ico']?>"></i>
+
+                    <span class="title"><?php echo $v['me_name']; ?></span>
+
+                    <span class="selected"></span>
+
+                </a>
+
+            </li>
+            <?php }?>
+
+
+
+
+        </ul>
+
+        <!-- END SIDEBAR MENU -->
+
+    </div>
+
+    <!-- END SIDEBAR -->
+
+    <!-- BEGIN PAGE -->
+
+    <div class="page-content">
+
+        <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+
+        <div id="portlet-config" class="modal hide">
+
+            <div class="modal-header">
+
+                <button data-dismiss="modal" class="close" type="button"></button>
+
+                <h3>Widget Settings</h3>
+
+            </div>
+
+            <div class="modal-body">
+
+                Widget settings form goes here
+
+            </div>
+
+        </div>
+
+        <!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+
+        <!-- BEGIN PAGE CONTAINER-->
+
+        <div class="container-fluid">
+
+            <!-- BEGIN PAGE HEADER-->
+
+            <div class="row-fluid">
+
+                <div class="span12">
+
+                    <!-- BEGIN STYLE CUSTOMIZER -->
+
+                    <div class="color-panel hidden-phone">
+
+
+                        <div class="color-mode">
+
+                            <p>THEME COLOR</p>
+
+                            <ul class="inline">
+
+                                <li class="color-black current color-default" data-style="default"></li>
+
+                                <li class="color-blue" data-style="blue"></li>
+
+                                <li class="color-brown" data-style="brown"></li>
+
+                                <li class="color-purple" data-style="purple"></li>
+
+                                <li class="color-grey" data-style="grey"></li>
+
+                                <li class="color-white color-light" data-style="light"></li>
+
+                            </ul>
+
+                            <label>
+
+                                <span>Layout</span>
+
+                                <select class="layout-option m-wrap small">
+
+                                    <option value="fluid" selected>Fluid</option>
+
+                                    <option value="boxed">Boxed</option>
+
+                                </select>
+
+                            </label>
+
+                            <label>
+
+                                <span>Header</span>
+
+                                <select class="header-option m-wrap small">
+
+                                    <option value="fixed" selected>Fixed</option>
+
+                                    <option value="default">Default</option>
+
+                                </select>
+
+                            </label>
+
+                            <label>
+
+                                <span>Sidebar</span>
+
+                                <select class="sidebar-option m-wrap small">
+
+                                    <option value="fixed">Fixed</option>
+
+                                    <option value="default" selected>Default</option>
+
+                                </select>
+
+                            </label>
+
+                            <label>
+
+                                <span>Footer</span>
+
+                                <select class="footer-option m-wrap small">
+
+                                    <option value="fixed">Fixed</option>
+
+                                    <option value="default" selected>Default</option>
+
+                                </select>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                    <!-- END BEGIN STYLE CUSTOMIZER -->
+
+                    <!-- BEGIN PAGE TITLE & BREADCRUMB-->
+
+                    <h3 class="page-title">
+
+                        商品管理
+
+                    </h3>
+
+                    <ul class="breadcrumb">
+
+                        <li>
+
+                            <i class="icon-home"></i>
+
+                            <a href="index.html">首页</a>
+
+                            <i class="icon-angle-right"></i>
+
+                        </li>
+
+                        <li><a href="#">商品管理</a></li>
+
+
+                    </ul>
+
+                    <!-- END PAGE TITLE & BREADCRUMB-->
+
+                </div>
+
+            </div>
+
+            <!-- END PAGE HEADER-->
+
+            <div id="dashboard">
+
+                <!-- BEGIN DASHBOARD STATS -->
+
+
+
+                <!-- END DASHBOARD STATS -->
+
+                <div class="clearfix"></div>
+                
+                <a href="javascript:add_goods();" style="float: left" class="btn blue"><i class="icon-plus"></i>添加商品</a>
+                 <form action="<?php echo url('index/Goods/search'); ?>" method='post' style="float:left;margin:0 5px">
+                   
+                    <?php if($admin['type'] == 1): ?>
+                     <input type="text" placeholder="输入商品名/分类名/店铺名"name='search' value=''>
+                    <?php else: ?>
+                     <input type="text" placeholder="请输入商品名"name='search' value=''>
+                    <?php endif; ?>
+                <span>上架状态:</span>
+                <select name="status" id="status" >
+                    <option value="-1"  selected>所有状态</option>
+                    <option value="0" >已下架</option>
+                    <option value="1" >已上架</option>
+                </select>
+                 开始时间:
+                <input type="text"  id="test1" placeholder="yyyy-MM-dd" name='time1' value=<?php echo $time1; ?>>
+                 结束时间:
+                <input type="text"  id="test2" placeholder="yyyy-MM-dd" name='time2' value = <?php echo $time2; ?>>
+                <input type="submit"  value="确认" class='btn green'/>
+                </form>
+                <a href="javascript:exportExcel()" class="btn blue">导出excel表</a>
+
+
+
+
+
+
+                <div class="chat-form">
+                </div>
+                <div class="clearfix"></div>
+                <div class="portlet box blue">
+                    <div class="portlet-title">
+                        <div class="caption"><i class="icon-cogs"></i>商品列表</div>
+                    </div>
+                    <div class="portlet-body no-more-tables" style="padding-bottom: 5%;">
+
+                        <table class="table-bordered table-striped table-condensed cf">
+
+                            <thead class="cf">
+
+                            <tr>
+
+                                <th class="numeric">商品id</th>
+                                <th class="numeric">商品名</th>
+                                <?php if($admin['type'] == 1): ?>
+                                <th class="numeric">所属商家</th>
+                                <?php endif; ?>
+                                <th class="numeric">商品封面图</th>
+                                <th class="numeric">商品分类</th>
+                                <th class="numeric">商品价格</th>
+                                <th class="numeric">商品库存</th>
+								<th class="numeric">商品销量</th>
+								<th class="numeric">状态</th>
+								<th class="numeric">添加时间</th>
+
+                                
+                                <th class="numeric">操作</th>
+                                
+                            </tr>
+
+                            </thead>
+							
+                            <tbody id="order">
+                            <?php if(is_array($goods) || $goods instanceof \think\Collection || $goods instanceof \think\Paginator): $key = 0; $__LIST__ = $goods;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$data): $mod = ($key % 2 );++$key;?>
+                            <tr>
+                            	<th class="numeric"><?php echo $data['goods_id']; ?></th>
+                            	<th class="numeric"><?php echo $data['goods_name']; ?></th>
+                                <?php if($admin['type'] == 1): ?>
+                                <th class="numeric"><?php echo $data['shop_name']; ?></th>
+                                <?php endif; ?>
+                                <th class="numeric"><img src="/mall<?php echo $data['goods_img']; ?>" alt="" style="height:100px"></th>
+                                <th class="numeric"><?php echo $data['name']; ?></th>
+                                <th class="numeric"><?php echo $data['price']; ?></th>
+                                <th class="numeric"><?php echo $data['stock']; ?></th>
+								<th class="numeric"><?php echo $data['sales_num']; ?></th>
+								<th class="numeric"> <button class="<?php if($data['status'] == 1): ?>layui-btn<?php else: ?>layui-btn layui-btn-danger<?php endif; ?>" id = 'btn<?php echo $key; ?>' onclick = 'changestatus(<?php echo $data['goods_id']; ?>,<?php echo $key; ?>)'><?php if($data['status'] == 1): ?>已上架<?php else: ?>已下架<?php endif; ?></button></th>
+								<th class="numeric"><?php echo date('Y-m-d H:i:s',$data['add_time']); ?></th>
+
+                                
+                                <th class="numeric">
+                                	<div class="btn-group">
+                                        <a class="btn green" href="javascript:update_goods(<?php echo $data['goods_id']; ?>)" >
+                                            <i class="icon-user"></i> 修改                                          
+                                        </a>                                      
+                                    </div>
+                                    <div class="btn-group">
+                                        <a class="btn purple" href="javascript:del_goods(<?php echo $data['goods_id']; ?>)">
+                                            <i class="icon-user"></i> 删除                                           
+                                        </a>                                      
+                                    </div>
+                                </th>
+                                </tr>
+                            <?php endforeach; endif; else: echo "" ;endif; ?>
+                            
+                            </tbody>
+	
+                        </table>
+                       <?php echo $goods->render(); ?>
+                      
+                    </div>
+
+                </div>
+
+                <div style="width: 100%;height: 250px;"></div>
+
+            </div>
+
+
+
+            <!--<div style="height: 200px;width: 100%;"></div>-->
+        </div>
+
+        <!-- END PAGE CONTAINER-->
+
+    </div>
+
+    <!-- END PAGE -->
+
+</div>
+
+<!-- END CONTAINER -->
+
+<div id="overlay"></div>
+
+<!-- BEGIN FOOTER -->
+
+<div class="footer">
+
+    <div class="footer-inner">
+
+        2018 &copy; Metronic by keenthemes.Collect from <a href="" title="" target="_blank"></a> - More Templates <a href="" target="_blank" title=""></a>
+
+    </div>
+
+    <div class="footer-tools">
+
+			<span class="go-top">
+
+			<i class="icon-angle-up"></i>
+
+			</span>
+
+    </div>
+
+</div>
+
+<!-- END FOOTER -->
+
+<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+
+<!-- BEGIN CORE PLUGINS -->
+
+<script src="__static__/media/js/jquery-1.10.1.min.js" type="text/javascript"></script>
+
+<script src="__static__/media/js/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+
+<!-- IMPORTANT! Load jquery-ui-1.10.1.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+
+<script src="__static__/media/js/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
+
+<script src="__static__/media/js/bootstrap.min.js" type="text/javascript"></script>
+
+<!--[if lt IE 9]>
+
+<script src="__static__/media/js/excanvas.min.js"></script>
+
+<script src="__static__/media/js/respond.min.js"></script>
+
+<![endif]-->
+
+<script src="__static__/media/js/jquery.slimscroll.min.js" type="text/javascript"></script>
+
+<script src="__static__/media/js/jquery.blockui.min.js" type="text/javascript"></script>
+
+<script src="__static__/media/js/jquery.cookie.min.js" type="text/javascript"></script>
+
+<script src="__static__/media/js/jquery.uniform.min.js" type="text/javascript" ></script>
+
+<!-- END CORE PLUGINS -->
+
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+
+<script src="__static__/media/js/jquery.vmap.js" type="text/javascript"></script>
+
+<script src="__static__/media/js/jquery.vmap.russia.js" type="text/javascript"></script>
+
+<script src="__static__/media/js/jquery.vmap.world.js" type="text/javascript"></script>
+
+<script src="__static__/media/js/jquery.vmap.europe.js" type="text/javascript"></script>
+
+<script src="__static__/media/js/jquery.vmap.germany.js" type="text/javascript"></script>
+
+<script src="__static__/media/js/jquery.vmap.usa.js" type="text/javascript"></script>
+
+<script src="__static__/media/js/jquery.vmap.sampledata.js" type="text/javascript"></script>
+
+<script src="__static__/media/js/jquery.flot.js" type="text/javascript"></script>
+
+<script src="__static__/media/js/jquery.flot.resize.js" type="text/javascript"></script>
+
+<script src="__static__/media/js/jquery.pulsate.min.js" type="text/javascript"></script>
+
+<script src="__static__/media/js/date.js" type="text/javascript"></script>
+
+<script src="__static__/media/js/daterangepicker.js" type="text/javascript"></script>
+
+<script src="__static__/media/js/jquery.gritter.js" type="text/javascript"></script>
+
+<script src="__static__/media/js/fullcalendar.min.js" type="text/javascript"></script>
+
+<script src="__static__/media/js/jquery.easy-pie-chart.js" type="text/javascript"></script>
+
+<script src="__static__/media/js/jquery.sparkline.min.js" type="text/javascript"></script>
+
+<!-- END PAGE__static__/ LEVEL PLUGINS -->
+
+<!-- BEGIN PA__static__/GE LEVEL SCRIPTS -->
+
+<script src="__static__/media/js/app.js" type="text/javascript"></script>
+
+<script src="__static__/media/js/index.js" type="text/javascript"></script>
+
+<!-- END PAGE LEVEL SCRIPTS -->
+
+
+<script type="text/javascript" src="__static__/hui/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="__static__/hui/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="__static__/hui/static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="__static__/hui/static/h-ui.admin/js/H-ui.admin.js"></script>
+<script type="text/javascript" src="__static__/layui/layui.js"></script>
+
+<script>
+
+    jQuery(document).ready(function() {
+        layui.use(['laydate','form'], function(){
+          var laydate = layui.laydate;
+           var form = layui.form;
+          //alert(laydate);
+          
+          //常规用法
+          laydate.render({
+            elem: '#test1'
+          });
+          laydate.render({
+            elem: '#test2'
+          });
+
+        })
+
+    	$('#hide').hide();
+        $('#hide1').hide();
+        $('#table').hide();
+        App.init(); // initlayout and core plugins
+
+        Index.init();
+
+        Index.initJQVMAP(); // init index page's custom scripts
+
+        Index.initCalendar(); // init index page's custom scripts
+
+        Index.initCharts(); // init index page's custom scripts
+
+        Index.initChat();
+
+        Index.initMiniCharts();
+
+        Index.initDashboardDaterange();
+
+        Index.initIntro();
+
+        
+
+    });
+    function exportExcel(){
+        //alert($('#order').children().length);
+        if($('#order').children().length <= 0){
+            layer.msg('暂无数据导出');
+        }else{
+            if($('input[name="search"]').val() == ''){
+                window.location.href = '/mall/public/index/Goods/goodsExport/type/'+<?php echo $admin['type']; ?>+'/status/'+$('select[name="status"]').val()+'/time1/'+$('#test1').val()+'/time2/'+$('#test2').val();
+            
+            }else{
+                 window.location.href = '/mall/public/index/Goods/goodsExport/type/'+<?php echo $admin['type']; ?>+'/search/'+$('input[name="search"]').val()+'/status/'+$('select[name="status"]').val()+'/time1/'+$('#test1').val()+'/time2/'+$('#test2').val();
+            }
+        }
+                   
+    }
+
+    //删除商品
+  	function del_goods(goods_id){
+  		layer.confirm('是否确认删除该商品？', {
+		  btn: ['确认', '取消'] //可以无限个按钮
+		  ,yes: function(index, layero){
+		    $.ajax({
+                type: "post",
+                url: "<?php echo url('index/goods/delGoods'); ?>",
+                dataType: "json",
+                data: {
+                    goods_id:goods_id,
+                },
+                success: function (res) {
+                    if(res.code == 1) {
+                    	layer.msg('删除成功',{time:2000})
+                    	setInterval("window.location.reload()",2000);
+                    }else{
+                    	layer.msg('删除失败',{time:2000});
+                    	setInterval("window.location.reload()",2000);
+                      
+                    }
+                }, fail: function (res) {
+                    alert("网络错误");
+                }
+            });
+		  }
+		}, function(index, layero){
+		  //按钮【按钮一】的回调
+		}, function(index){
+		  //按钮【按钮二】的回调
+		});
+  	}
+    
+    /**
+     * [timestampToTime 时间戳转时间]
+     * @Author    wyc
+     * @DateTime  2018-05-21T15:24:40+0800
+     * @copyright [copyright]
+     * @license   [license]
+     * @version   [version]
+     * @param     {[type]}                 timestamp [description]
+     * @return    {[type]}                           [description]
+     */
+    function timestampToTime(timestamp) {
+        var date = new Date(timestamp * 1000);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+        Y = date.getFullYear() + '-';
+        M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+        D = date.getDate() + ' ';
+        return Y+M+D;
+    }
+    function timestampToTime1(timestamp){
+        var date = new Date(timestamp * 1000);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+        h = date.getHours() + ':';
+        m = date.getMinutes() + ':';
+        s = date.getSeconds();
+        return h+m+s;
+    }
+    function timestampToTime2(timestamp){
+        var date = new Date(timestamp * 1000);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+        Y = date.getFullYear() + '-';
+        M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+        D = date.getDate() + ' ';
+        h = date.getHours() + ':';
+        m = date.getMinutes() + ':';
+        s = date.getSeconds();
+        return Y+M+D+h+m+s;
+    }
+
+  	function update_goods(goods_id){
+  		
+        
+     layer.open({
+                  type: 1,
+                  title: '修改商品',
+                  //maxmin: true,
+                  //shadeClose: true, //点击遮罩关闭层
+                  area : ['800px' , '800px'],
+                  content: $('#hide')
+                 });
+     	 $.ajax({
+                    type: "post",
+                    url: "<?php echo url('index/goods/updateGoods'); ?>",
+                    dataType: "json",
+                    data: {
+                        goods_id:goods_id
+                    },
+                    success: function (res) {
+                    	
+                        if(res.code == 1) {
+                        	//$("#classify_id").attr("value",res.data.classify_id);
+                        	$("*[name='classify_id1']").val(res.data.classify_id);
+
+                        	$("*[name='goods_name1']").val(res.data.goods_name);
+                        	$("*[name='price1']").val(res.data.price);
+                        	$("*[name='stock1']").val(res.data.stock);
+                        	$("*[name='sales_num1']").val(res.data.sales_num);
+                        	$("*[name='classify_id1']").val(res.data.classify_id);
+                        	$("*[name='status1']").val(res.data.status);
+                        	$('#LAY_demo3').val(res.data.content);
+                           $('#LAY_demo4').val(res.data.standard);
+                        	      layui.use(['form','layedit'],function(){
+                        	      	var form = layui.form; 
+                        	      	var layedit = layui.layedit;
+                        	      	        layedit.set({  
+								                uploadImage: {  
+								                    url: '<?php echo url('uploadImg'); ?>'
+								                  , type: 'post'
+								                  ,success:function(res){								                  	
+								                  }
+								                }  
+								            });
+                        	      	var index3 =  layedit.build('LAY_demo3');
+       								var index4 = layedit.build('LAY_demo4');
+
+						        	
+						        	form.render('select');
+						        	form.on('submit',function(){
+								      		 $.ajax({
+								                    type: "post",
+								                    url: "<?php echo url('index/goods/updateGoods1'); ?>",
+								                    dataType: "json",
+								                    data: {
+								                    	goods_id:res.data.goods_id,
+									       				goods_name:$("*[name='goods_name1']").val(),
+									       				content:layedit.getContent(index3),
+									       				standard:layedit.getContent(index4),
+									       				price:$("*[name='price']").val(),
+									       				stock:$("*[name='stock']").val(),
+									       				sales_num:$("*[name='sales_num1']").val(),
+									       				status:$("*[name='status1']").val()
+
+								                    },
+								                    success: function (res) {
+								                    	
+								                        if(res.code == 1) {
+								                           layer.msg('修改成功',{time:1000});
+								                           setInterval('location.reload()',2000);
+								                        }else{
+								                        	layer.msg('修改失败',{time:1000});
+								                          
+								                        }
+								                    }, 
+								                    fail: function (res) {
+								                        alert("网络错误");
+								                    }
+								                });     
+      								})
+						        })
+
+                           }
+                    }, 
+                    fail: function (res) {
+                        alert("网络错误");
+                    }
+                });     
+
+
+      
+          	   
+  	}
+    function changestatus(goods_id,key){
+     $.ajax({
+                    type: "post",
+                    url: "<?php echo url('index/goods/updateGoodsStatus'); ?>",
+                    dataType: "json",
+                    data: {
+                        goods_id:goods_id,
+                    },
+                    success: function (res) {
+                        if(res.code == 1) {
+                           layer.msg('成功');
+							setInterval('location.reload()',1000);
+                        }else{
+
+                          
+                        }
+                    }, fail: function (res) {
+                        alert("网络错误");
+                    }
+                }); 
+
+}
+
+    function add_goods(){
+        //layer.msg('卧槽');
+         layer.open({
+                  type: 1,
+                  title: '添加商品',
+                  //maxmin: true,
+                  //shadeClose: true, //点击遮罩关闭层
+                  area : ['800px' , '800px'],
+                  content: $('#hide1')
+                            
+                 });
+         layui.use(['form','layedit','upload'], function(){
+          var layedit = layui.layedit
+  			,$ = layui.jquery; upload = layui.upload;	
+        var form = layui.form;
+        layedit.set({  
+                uploadImage: {  
+                    url: '<?php echo url('uploadImg'); ?>'
+                  , type: 'post'
+
+                  ,success:function(res){
+                  	console.log(res);
+                  }
+
+                }  
+            });
+      var index1 =  layedit.build('LAY_demo1');
+       var index2 = layedit.build('LAY_demo2');
+
+
+       form.on('submit',function(data){
+       	src = '';
+			$('#demo2 > img').each(function(){
+       			src += src == ''? $(this).attr('src'):'-'+$(this).attr('src');
+       		})
+/*       		console.log(layedit.getContent(index1));
+       		console.log(layedit.getContent(index2));
+       		console.log($("*[name='classify_id']").val());*/
+            /*if($('#seller_id').length<= 0){
+                seller_id = '';
+
+            }else{
+                seller_id = $('#seller_id').val();
+            }*/
+       		$.ajax({
+       			type:'POST',
+       			url:'<?php echo url('addGoods'); ?>',
+       			traditional:true,
+       			data:{
+       				classify_id:$("*[name='classify_id']").val(),
+       				goods_name:$("*[name='goods_name']").val(),
+       				content:layedit.getContent(index1),
+       				standard:layedit.getContent(index2),
+       				price:$("*[name='price']").val(),
+       				stock:$("*[name='stock']").val(),
+                   
+                    seller_id:$('#seller_id').val(),
+                   
+       				sales_num:$("*[name='sales_num']").val(),
+       				status:$("*[name='status']").val(),
+                    goods_img:$('#demo1 >img').attr('src'),
+       				src:src
+
+
+       			},
+       			dataType:'json',
+       			success:function(res){
+       				layer.msg('添加成功',{time:1000});
+       				if(res.code ==1){
+       					setInterval('location.reload()',2000);
+       				}
+       				     
+       					
+
+       			}
+       			})
+       })
+        upload.render({
+    elem: '#test3'
+    ,url: '<?php echo url('uploadMultiImg'); ?>'
+    ,multiple: false
+
+    ,before: function(obj){
+      //预读本地文件示例，不支持ie8
+      obj.preview(function(index, file, result){
+       
+      });
+    }
+    ,done: function(res){
+        //console.log(res);
+    $('#demo1').append('<img src="'+ res.data.src +'" style="height:100px;width:100px" class="layui-upload-img" >');
+    
+    }
+  });
+        
+         //多图片上传
+  upload.render({
+    elem: '#test4'
+    ,url: '<?php echo url('uploadMultiImg'); ?>'
+    ,multiple: true
+
+    ,before: function(obj){
+      //预读本地文件示例，不支持ie8
+      obj.preview(function(index, file, result){
+       
+      });
+    }
+    ,done: function(res){
+    	//console.log(res);
+    $('#demo2').append('<img src="'+ res.data.src +'" style="height:100px;width:100px" class="layui-upload-img" >');
+    //console.log($("#demo2>img"));
+    //console.log($('#demo2').children().length);
+    if($('#demo2').children().length == 5){
+
+      layer.msg('已经5张了');
+    }
+    }
+  });
+     
+         
+     
+
+        
+
+
+           
+    })
+     }
+     
+    
+    
+    
+    
+
+   
+    
+</script>
+
+
+<!-- END JAVASCRIPTS -->
+
+</body>
+<div id = 'hide'>
+
+<form class="layui-form" id= 'form1' > 
+  <div class="layui-form-item" >
+    
+    <label class="layui-form-label">商品名</label>
+    <div class="layui-input-inline">
+        <input type="text" name="goods_name1" id= 'goods_name' placeholder="请输入" autocomplete="off" class="layui-input" value=''lay-verify='required' >
+    </div>
+  </div>
+  <div class="layui-form-item" >
+    <label class="layui-form-label">价格</label>
+    <div class="layui-input-inline">
+      <input type="text" name="price1" id= 'price' placeholder="请输入" autocomplete="off" class="layui-input" value=''lay-verify='required' >
+    </div>
+    <label class="layui-form-label">库存</label>
+    <div class="layui-input-inline">
+      <input type="text" name="stock1" id= 'stock' placeholder="请输入" autocomplete="off" class="layui-input" value='9999'lay-verify='required' >
+    </div>
+  </div>
+  <div class="layui-form-item" >
+    <label class="layui-form-label">销量</label>
+    <div class="layui-input-inline">
+      <input type="text" name="sales_num1" id= 'sales_num' placeholder="请输入" autocomplete="off" class="layui-input" value='0'lay-verify='required' >
+    </div>
+    <label class="layui-form-label">是否上架</label>
+    <div class="layui-input-inline">
+      <select name="status1" lay-filter="aihao" id='status'>
+       
+        <option value="1" selected="">上架</option>
+        <option value="0">下架</option>
+      </select>
+    </div>
+  </div>
+	 <div class="layui-form-item" >
+    <label class="layui-form-label">商品详情</label>
+    <div class="layui-input-block">
+       <textarea class="layui-textarea" id="LAY_demo3" name ='content'style="display: none;" >  
+  
+</textarea>
+    </div>
+  </div>
+ <div class="layui-form-item" >
+    <label class="layui-form-label">商品规格</label>
+    <div class="layui-input-block">
+       <textarea class="layui-textarea" id="LAY_demo4" name ='standard'style="display: none;" >  
+  
+</textarea>
+    </div>
+  </div>
+ <div class="layui-form-item">
+    <div class="layui-input-block">
+      <button class="layui-btn wocao" lay-submit="" lay-filter="add"  type='button'>修改</button>
+      <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+    </div>
+  </div>
+
+</form>
+</div>
+   
+  </div>
+ 
+<div id = 'hide1'>
+
+<form class="layui-form" id= 'form1' > 
+  <div class="layui-form-item" >
+    <?php if($admin['type'] == 1): ?>
+    <label class="layui-form-label">商品分类</label>
+    <div class="layui-input-inline">
+        
+      <select name="classify_id" lay-filter="aihao">
+        <?php if(is_array($classify) || $classify instanceof \think\Collection || $classify instanceof \think\Paginator): $i = 0; $__LIST__ = $classify;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$data): $mod = ($i % 2 );++$i;?>
+        <option value="<?php echo $data['classify_id']; ?>"><?php echo $data['name']; ?></option>
+        <?php endforeach; endif; else: echo "" ;endif; ?>
+      </select>
+    </div>
+      <?php endif; ?>
+    
+    <label class="layui-form-label">商品名</label>
+    <div class="layui-input-inline">
+        <input type="text" name="goods_name"  placeholder="请输入" autocomplete="off" class="layui-input" value=''lay-verify='required' >
+    </div>
+  </div>
+  <div class="layui-form-item" >
+    <label class="layui-form-label">价格</label>
+    <div class="layui-input-inline">
+      <input type="text" name="price" id= 'title1' placeholder="请输入" autocomplete="off" class="layui-input" value=''lay-verify='required' >
+    </div>
+    <label class="layui-form-label">库存</label>
+    <div class="layui-input-inline">
+      <input type="text" name="stock" id= 'title1' placeholder="请输入" autocomplete="off" class="layui-input" value='9999'lay-verify='required' >
+    </div>
+  </div>
+  <?php if($admin['type'] == 1): ?>
+   <div class="layui-form-item" >
+   <label class="layui-form-label">所属商家</label>
+    <div class="layui-input-inline">
+        
+      <select name="seller_id" id='seller_id'>
+        <?php if(is_array($seller) || $seller instanceof \think\Collection || $seller instanceof \think\Paginator): $i = 0; $__LIST__ = $seller;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$data): $mod = ($i % 2 );++$i;?>
+        <option value="<?php echo $data['admin_id']; ?>"><?php echo $data['shop_name']; ?></option>
+        <?php endforeach; endif; else: echo "" ;endif; ?>
+      </select>
+    </div>
+
+  </div>
+  <?php endif; ?>
+  <div class="layui-form-item" >
+    <label class="layui-form-label">销量</label>
+    <div class="layui-input-inline">
+      <input type="text" name="sales_num" id= 'title1' placeholder="请输入" autocomplete="off" class="layui-input" value='0'lay-verify='required' >
+    </div>
+    <label class="layui-form-label">是否上架</label>
+    <div class="layui-input-inline">
+      <select name="status" lay-filter="aihao">
+       
+        <option value="1" selected="">上架</option>
+        <option value="0">不上架</option>
+      </select>
+    </div>
+  </div>
+  <div class="layui-form-item">
+       <label class="layui-form-label">商品封面图上传</label>
+       <div class="layui-input-block">
+  <button type="button" class="layui-btn" id="test3">上传图片</button>
+   <blockquote class="layui-elem-quote layui-quote-nm" style="margin-top: 10px;">
+    预览图：
+    <div class="layui-upload-list" id="demo1"></div>
+ </blockquote>
+</div>  
+  </div>
+  
+  <div >
+    <label class="layui-form-label">商品图上传</label>
+    <div class="layui-input-block">
+      <div class="layui-upload">
+  <button type="button" class="layui-btn" id="test4">多图片上传</button> 
+  <blockquote class="layui-elem-quote layui-quote-nm" style="margin-top: 10px;">
+    预览图：
+    <div class="layui-upload-list" id="demo2"></div>
+ </blockquote>
+</div>
+    </div>
+   
+  </div>
+  <div class="layui-form-item" >
+    <label class="layui-form-label">商品详情</label>
+    <div class="layui-input-block">
+       <textarea class="layui-textarea" id="LAY_demo1" name ='content'style="display: none;" >  
+  
+</textarea>
+    </div>
+  </div>
+ <div class="layui-form-item" >
+    <label class="layui-form-label">商品规格</label>
+    <div class="layui-input-block">
+       <textarea class="layui-textarea" id="LAY_demo2" name ='standard'style="display: none;" >  
+  
+</textarea>
+    </div>
+  </div>
+ <div class="layui-form-item">
+    <div class="layui-input-block">
+      <button class="layui-btn wocao" lay-submit="" lay-filter="add"  type='button'>添加</button>
+      <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+    </div>
+  </div>
+
+</form>
+</div>
+
+
+
+<!-- END BODY -->
+
+</html>

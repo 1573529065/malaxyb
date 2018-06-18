@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<style>
+			.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+				color: #fec900;
+			}
+			
+			.mui-segmented-control.mui-segmented-control-inverted~.mui-slider-progress-bar {
+				background-color: #fec900;
+			}
+			
+			.mui-segmented-control.mui-segmented-control-inverted .mui-control-item {
+				color: #fec900;
+			}
+			.mui-segmented-control{
+				background-color: white;
+			}
+			.mui-slider-group{
+				margin-top: 10px;
+			}
+			.mui-table-view-cell h5 {
+				color: #fec900;
+			}
+			
+			.mui-table-view-cell span {
+				color: #000000;
+				line-height: 0;
+			}
+			
+			.mui-ellipsis {
+				font-size: 12px;
+				color: #000000;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" style="background-color: #fec900;">
+			<h1 class="mui-title">资产</h1>
+		</header>
+		
+				<div id="" class="mui-content">
+					<div id="slider" class="mui-slider">
+						<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+							<a class="mui-control-item" href="#item1">
+								资产
+							</a>
+							<a class="mui-control-item"></a>
+						</div>
+						<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-6"></div>
+						<div class="mui-slider-group">
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell mui-media">
+									<a href="zichan/zichan_word.html">
+										<img class="mui-media-object mui-pull-left" src="images/shouye/touxiang.jpg">
+										<div class="mui-media-body">
+											<h5>幸福:<span>你想去哪？</span></h5>
+											<p class='mui-ellipsis'>能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+											<p class="mui-text-right">2018-03-30</p>
+										</div>
+									</a>
+								</li>
+								<li class="mui-table-view-cell mui-media">
+									<a href="zichan/zichan_word.html">
+										<img class="mui-media-object mui-pull-left" src="images/shouye/touxiang.jpg">
+										<div class="mui-media-body">
+											<h5>幸福:<span>你想去哪？</span></h5>
+											<p class='mui-ellipsis'>能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+											<p class="mui-text-right">2018-03-30</p>
+										</div>
+									</a>
+								</li>
+								<li class="mui-table-view-cell mui-media">
+									<a href="javascript:;">
+										<img class="mui-media-object mui-pull-left" src="images/shouye/touxiang.jpg">
+										<div class="mui-media-body">
+											<h5>幸福:<span>你想去哪？</span></h5>
+											<p class='mui-ellipsis'>能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+											<p class="mui-text-right">2018-03-30</p>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</body>
+
+</html>

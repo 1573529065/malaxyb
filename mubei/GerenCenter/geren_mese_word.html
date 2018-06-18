@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<script type="text/javascript" src="../js/back_icon.js" ></script>
+		<script type="text/javascript" src="../js/jquery.min.js"></script>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/common.js"></script>
+		<script type="text/javascript" src="../js/change_lange.js" ></script>
+		<style>
+			.g_word{
+				overflow: auto;
+				background-color: #FFFFFF;
+				padding: 10px;
+				margin-bottom: 15px;
+			}
+			.title{
+				font-size: 18px;
+				color: #000000;
+			}
+			.right{
+				float: right;
+			}
+		</style>
+	</head>
+
+	<body>
+		<script>
+			if(localStorage.pagecount == 1) {
+				addCssByLink('../css/zh.css');
+			} else if(localStorage.pagecount == 2) {
+				addCssByLink('../css/en.css');
+			}
+		</script>
+		<header class="mui-bar mui-bar-nav" style="background-color: #46adfc;">
+			<i class="mui-icon mui-icon-left-nav mui-pull-left" onclick="back_go()"></i>
+			<h1 class="mui-title"><span class="language-message"></span></h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-content-padded">
+			
+			<div class="g_word">
+				<p class="title" id="title"></p>
+				<p id="text"></p>
+			    <p id="time" class="right"></p>
+			</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript" src="../js/url.js"></script>
+		<script type="text/javascript">
+			mui.init();
+				var mesege = getQueryString('mesege');
+//				mui.alert(mesege);
+			$.ajax({
+				url: j_url + "index/message_list",
+				data: {
+					token:"message",
+					m_id:mesege
+				},
+				type: "POST",
+				dataType: 'jsonp',
+				crossDomain: true,
+				success: function(res) {
+					console.log(res);
+					if(res.code == 2) {
+						mui.alert(res.msg);
+					} else if(res.code == 1) {
+                        $("#title").html(res.data.m_title);
+					$("#text").html(res.data.m_text);
+					$("#time").html(res.data.m_time);
+					}
+				}
+			});
+				function getQueryString(name) {
+				var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+				var r = window.location.search.substr(1).match(reg);
+				if(r != null) return unescape(r[2]);
+				return null;
+			}
+		</script>
+	</body>
+
+</html>
