@@ -152,7 +152,9 @@
             }
             var qs = getQueryString();
             var q1 = qs["account"]; // abc
-            document.getElementById("f_uid").value = q1;
+				if (q1){
+					document.getElementById("f_uid").value = q1;
+				}
 				if(localStorage.pagecount == 1) {
 					document.getElementById("name").setAttribute("placeholder", "用户名");
 					document.getElementById("phone").setAttribute("placeholder", "手机号码");
