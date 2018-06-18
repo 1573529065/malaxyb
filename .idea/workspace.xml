@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3eec561-b85e-45d5-bfe6-c01cb19bb019" name="Default" comment="初始化项目">
+    <list default="true" id="c3eec561-b85e-45d5-bfe6-c01cb19bb019" name="Default" comment="修改mysql数据库账号密码">
+      <change beforePath="" afterPath="$PROJECT_DIR$/mubei/store/newgoods.html" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/mall/application/config.php" afterPath="$PROJECT_DIR$/mall/application/config.php" />
-      <change beforePath="$PROJECT_DIR$/mall/application/database.php" afterPath="$PROJECT_DIR$/mall/application/database.php" />
-      <change beforePath="$PROJECT_DIR$/mubei/js/url.js" afterPath="$PROJECT_DIR$/mubei/js/url.js" />
-      <change beforePath="$PROJECT_DIR$/mubei/login/register.html" afterPath="$PROJECT_DIR$/mubei/login/register.html" />
-      <change beforePath="$PROJECT_DIR$/mubei_admin/application/database.php" afterPath="$PROJECT_DIR$/mubei_admin/application/database.php" />
-      <change beforePath="$PROJECT_DIR$/new_vpay_api/application/database.php" afterPath="$PROJECT_DIR$/new_vpay_api/application/database.php" />
+      <change beforePath="$PROJECT_DIR$/mall/application/api/controller/Api.php" afterPath="$PROJECT_DIR$/mall/application/api/controller/Api.php" />
+      <change beforePath="$PROJECT_DIR$/mubei/store/Details_zoom.html" afterPath="$PROJECT_DIR$/mubei/store/Details_zoom.html" />
+      <change beforePath="$PROJECT_DIR$/mubei/store/css/index.css" afterPath="$PROJECT_DIR$/mubei/store/css/index.css" />
+      <change beforePath="$PROJECT_DIR$/mubei/store/index.html" afterPath="$PROJECT_DIR$/mubei/store/index.html" />
+      <change beforePath="$PROJECT_DIR$/new_vpay_api/runtime/cache/be/7d91287f66b486272dfaf8f4c999d1.php" afterPath="$PROJECT_DIR$/new_vpay_api/runtime/cache/be/7d91287f66b486272dfaf8f4c999d1.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,46 +22,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Login.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/new_vpay_api/application/index/controller/Login.php">
+      <file leaf-file-name="Details_zoom.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mubei/store/Details_zoom.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="19" column="49" lean-forward="true" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
-              <folding>
-                <marker date="1529294921882" expanded="true" signature="493:547" ph="SELECT * FRO... mb_user" />
-                <marker date="1529294921882" expanded="true" signature="727:796" ph="select * fro... mb_user" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="register.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mubei/login/register.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="730">
-              <caret line="177" column="73" lean-forward="true" selection-start-line="177" selection-start-column="73" selection-end-line="177" selection-end-column="73" />
-              <folding>
-                <element signature="n#style#0;n#span#0;n#div#3;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mubei/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-9681">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="621">
+              <caret line="81" column="0" lean-forward="true" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/new_vpay_api/application/index/controller/Index.php">
+      <file leaf-file-name="Fill_order.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mubei/store/Fill_order.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-432">
-              <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+            <state relative-caret-position="168">
+              <caret line="250" column="50" lean-forward="false" selection-start-line="250" selection-start-column="50" selection-end-line="250" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -70,18 +45,101 @@
       <file leaf-file-name="url.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mubei/js/url.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="1" column="47" lean-forward="false" selection-start-line="1" selection-start-column="47" selection-end-line="1" selection-end-column="47" />
+            <state relative-caret-position="180">
+              <caret line="10" column="7" lean-forward="false" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mubei/login.html">
+      <file leaf-file-name="Api.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mall/application/api/controller/Api.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="203">
+              <caret line="488" column="31" lean-forward="false" selection-start-line="488" selection-start-column="20" selection-end-line="488" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="My_info.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mubei/store/My_info.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="689">
+              <caret line="97" column="10" lean-forward="true" selection-start-line="79" selection-start-column="8" selection-end-line="97" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mubei/store/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
-              <caret line="142" column="32" lean-forward="false" selection-start-line="142" selection-start-column="32" selection-end-line="142" selection-end-column="32" />
+              <caret line="34" column="42" lean-forward="true" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="45" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1529304969216" expanded="true" signature="7093:7109" ph="..." />
+                <marker date="1529304969216" expanded="true" signature="7312:7326" ph="..." />
+                <marker date="1529304969216" expanded="true" signature="7439:7454" ph="..." />
+                <marker date="1529304969216" expanded="true" signature="8111:8126" ph="..." />
+                <marker date="1529304969216" expanded="true" signature="8319:8325" ph=" " />
+                <marker date="1529304969216" expanded="true" signature="8354:8365" ph="..." />
+                <marker date="1529304969216" expanded="true" signature="8538:8549" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="newgoods.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mubei/store/newgoods.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="121" column="34" lean-forward="true" selection-start-line="121" selection-start-column="34" selection-end-line="121" selection-end-column="34" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1529306656060" expanded="true" signature="3141:3157" ph="..." />
+                <marker date="1529306656060" expanded="true" signature="3375:3389" ph="..." />
+                <marker date="1529306656060" expanded="true" signature="3511:3526" ph="..." />
+                <marker date="1529306656060" expanded="true" signature="4126:4141" ph="..." />
+                <marker date="1529306656060" expanded="true" signature="4308:4320" ph="..." />
+                <marker date="1529306656060" expanded="true" signature="4355:4361" ph=" " />
+                <marker date="1529306656060" expanded="true" signature="4390:4414" ph="..." />
+                <marker date="1529306656060" expanded="true" signature="4501:4513" ph="..." />
+                <marker date="1529306656060" expanded="true" signature="4599:4624" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mubei/store/css/index.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="362" column="23" lean-forward="true" selection-start-line="362" selection-start-column="23" selection-end-line="362" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="liutong.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mubei/wallet/liutong.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18">
+              <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+              <folding>
+                <marker date="1528559338000" expanded="true" signature="1843:1856" ph="..." />
+                <marker date="1528559338000" expanded="true" signature="2057:2070" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Wallet.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/new_vpay_api/application/index/controller/Wallet.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="600">
+              <caret line="119" column="27" lean-forward="false" selection-start-line="119" selection-start-column="27" selection-end-line="119" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -92,6 +150,21 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>f_uid</find>
+      <find>registSeller</find>
+      <find>卧槽</find>
+      <find>add_goods</find>
+      <find>detail_main</find>
+      <find>getGoodsInfo</find>
+      <find>paybutton</find>
+      <find>yue</find>
+      <find>createOrder</find>
+      <find>getUserInfo</find>
+      <find>goodslist</find>
+      <find>val</find>
+      <find>getGoodsList</find>
+      <find>con</find>
+      <find>php</find>
+      <find>menu</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -101,6 +174,9 @@
         <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
+    <push-targets>
+      <push-target-info target-remote="origin" target-branch="zhw" repo="$PROJECT_DIR$" source="zhw" />
+    </push-targets>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -112,6 +188,12 @@
         <option value="$PROJECT_DIR$/mubei/js/url.js" />
         <option value="$PROJECT_DIR$/new_vpay_api/application/index/controller/Login.php" />
         <option value="$PROJECT_DIR$/mubei/login/register.html" />
+        <option value="$PROJECT_DIR$/new_vpay_api/application/index/controller/User.php" />
+        <option value="$PROJECT_DIR$/mubei/store/Details_zoom.html" />
+        <option value="$PROJECT_DIR$/mubei/store/css/index.css" />
+        <option value="$PROJECT_DIR$/mubei/store/index.html" />
+        <option value="$PROJECT_DIR$/mall/application/api/controller/Api.php" />
+        <option value="$PROJECT_DIR$/mubei/store/newgoods.html" />
       </list>
     </option>
   </component>
@@ -124,8 +206,8 @@
   <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="520" />
-    <option name="width" value="1400" />
+    <option name="x" value="530" />
+    <option name="width" value="1390" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -160,7 +242,7 @@
               <item name="malaxyb" type="b2602c69:ProjectViewProjectNode" />
               <item name="malaxyb" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="mubei" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="login" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="store" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="malaxyb" type="b2602c69:ProjectViewProjectNode" />
@@ -200,6 +282,11 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\phpStudy\PHPTutorial\WWW\malaxyb\mubei\store" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -227,7 +314,7 @@
       <updated>1529290221971</updated>
       <workItem from="1529290223223" duration="203000" />
       <workItem from="1529290445690" duration="1655000" />
-      <workItem from="1529292311011" duration="3149000" />
+      <workItem from="1529292311011" duration="13310000" />
     </task>
     <task id="LOCAL-00001" summary="初始化项目">
       <created>1529291021491</created>
@@ -236,11 +323,18 @@
       <option name="project" value="LOCAL" />
       <updated>1529291021491</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="修改mysql数据库账号密码">
+      <created>1529295529972</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1529295529972</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5007000" />
+    <option name="totallyTimeSpent" value="15168000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -252,14 +346,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="520" y="0" width="1400" height="1047" extended-state="0" />
+    <frame x="530" y="0" width="1390" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23731343" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2448037" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5604396" sideWeight="0.49716598" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5263736" sideWeight="0.5060729" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.49716598" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24950884" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -271,7 +366,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -283,7 +377,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="初始化项目" />
-    <option name="LAST_COMMIT_MESSAGE" value="初始化项目" />
+    <MESSAGE value="修改mysql数据库账号密码" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改mysql数据库账号密码" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -336,14 +431,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mall/application/database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-72">
-          <caret line="22" column="32" lean-forward="false" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mall/application/config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -356,14 +443,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="142" column="32" lean-forward="false" selection-start-line="142" selection-start-column="32" selection-end-line="142" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mubei/js/url.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="47" lean-forward="false" selection-start-line="1" selection-start-column="47" selection-end-line="1" selection-end-column="47" />
           <folding />
         </state>
       </provider>
@@ -384,10 +463,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/new_vpay_api/application/index/controller/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mubei/login/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-422">
+          <caret line="143" column="47" lean-forward="false" selection-start-line="143" selection-start-column="47" selection-end-line="143" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mubei/store/regist_seller.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="142" column="58" lean-forward="false" selection-start-line="142" selection-start-column="46" selection-end-line="142" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mubei/store/Receipt_info.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/new_vpay_api/application/index/controller/Login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="19" column="49" lean-forward="true" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
+        <state relative-caret-position="54">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
             <marker date="1529294921882" expanded="true" signature="493:547" ph="SELECT * FRO... mb_user" />
             <marker date="1529294921882" expanded="true" signature="727:796" ph="select * fro... mb_user" />
@@ -395,12 +506,175 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mubei/login/register.html">
+    <entry file="file://$PROJECT_DIR$/mall/application/index/controller/Goods.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="730">
-          <caret line="177" column="73" lean-forward="true" selection-start-line="177" selection-start-column="73" selection-end-line="177" selection-end-column="73" />
+        <state relative-caret-position="270">
+          <caret line="286" column="39" lean-forward="false" selection-start-line="286" selection-start-column="33" selection-end-line="286" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mubei_admin/application/index/controller/Index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#style#0;n#span#0;n#div#3;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1528639674000" expanded="true" signature="7444:7462" ph="..." />
+            <marker date="1528639674000" expanded="true" signature="7464:10814" ph="..." />
+            <marker date="1528639674000" expanded="true" signature="8615:10780" ph="..." />
+            <marker date="1528639674000" expanded="true" signature="8677:9501" ph="..." />
+            <marker date="1528639674000" expanded="true" signature="8915:9458" ph="..." />
+            <marker date="1528639674000" expanded="true" signature="9564:10524" ph="..." />
+            <marker date="1528639674000" expanded="true" signature="9665:9865" ph="..." />
+            <marker date="1528639674000" expanded="true" signature="9934:10481" ph="..." />
+            <marker date="1528639674000" expanded="true" signature="10586:10741" ph="..." />
+            <marker date="1528639674000" expanded="true" signature="10882:10900" ph="..." />
+            <marker date="1528639674000" expanded="true" signature="10902:14251" ph="..." />
+            <marker date="1528639674000" expanded="true" signature="12051:14217" ph="..." />
+            <marker date="1528639674000" expanded="true" signature="12113:12937" ph="..." />
+            <marker date="1528639674000" expanded="true" signature="12351:12894" ph="..." />
+            <marker date="1528639674000" expanded="true" signature="13000:13960" ph="..." />
+            <marker date="1528639674000" expanded="true" signature="13101:13301" ph="..." />
+            <marker date="1528639674000" expanded="true" signature="13370:13917" ph="..." />
+            <marker date="1528639674000" expanded="true" signature="14022:14178" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mall/application/index/view/goods/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-624">
+          <caret line="757" column="36" lean-forward="false" selection-start-line="757" selection-start-column="28" selection-end-line="757" selection-end-column="36" />
+          <folding>
+            <marker date="1529243205000" expanded="true" signature="26637:26661" ph="..." />
+            <marker date="1529243205000" expanded="true" signature="27068:27092" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mall/application/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="34" column="30" lean-forward="true" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mubei/store/js/zoomify.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="636">
+          <caret line="93" column="7" lean-forward="false" selection-start-line="93" selection-start-column="7" selection-end-line="93" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mubei/store/Fill_order.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="250" column="50" lean-forward="false" selection-start-line="250" selection-start-column="50" selection-end-line="250" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mubei/wallet/liutong.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding>
+            <marker date="1528559338000" expanded="true" signature="1843:1856" ph="..." />
+            <marker date="1528559338000" expanded="true" signature="2057:2070" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/new_vpay_api/application/index/controller/Wallet.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="119" column="27" lean-forward="false" selection-start-line="119" selection-start-column="27" selection-end-line="119" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mall/application/index/view/index/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mubei/store/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="362" column="23" lean-forward="true" selection-start-line="362" selection-start-column="23" selection-end-line="362" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mubei/js/url.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="7" lean-forward="false" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mubei/store/My_info.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="689">
+          <caret line="97" column="10" lean-forward="true" selection-start-line="79" selection-start-column="8" selection-end-line="97" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mall/application/api/controller/Api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="488" column="31" lean-forward="false" selection-start-line="488" selection-start-column="20" selection-end-line="488" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mubei/store/Details_zoom.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="81" column="0" lean-forward="true" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mubei/store/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="34" column="42" lean-forward="true" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="45" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1529304969216" expanded="true" signature="7093:7109" ph="..." />
+            <marker date="1529304969216" expanded="true" signature="7312:7326" ph="..." />
+            <marker date="1529304969216" expanded="true" signature="7439:7454" ph="..." />
+            <marker date="1529304969216" expanded="true" signature="8111:8126" ph="..." />
+            <marker date="1529304969216" expanded="true" signature="8319:8325" ph=" " />
+            <marker date="1529304969216" expanded="true" signature="8354:8365" ph="..." />
+            <marker date="1529304969216" expanded="true" signature="8538:8549" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mubei/store/newgoods.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="121" column="34" lean-forward="true" selection-start-line="121" selection-start-column="34" selection-end-line="121" selection-end-column="34" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1529306656060" expanded="true" signature="3141:3157" ph="..." />
+            <marker date="1529306656060" expanded="true" signature="3375:3389" ph="..." />
+            <marker date="1529306656060" expanded="true" signature="3511:3526" ph="..." />
+            <marker date="1529306656060" expanded="true" signature="4126:4141" ph="..." />
+            <marker date="1529306656060" expanded="true" signature="4308:4320" ph="..." />
+            <marker date="1529306656060" expanded="true" signature="4355:4361" ph=" " />
+            <marker date="1529306656060" expanded="true" signature="4390:4414" ph="..." />
+            <marker date="1529306656060" expanded="true" signature="4501:4513" ph="..." />
+            <marker date="1529306656060" expanded="true" signature="4599:4624" ph="..." />
           </folding>
         </state>
       </provider>

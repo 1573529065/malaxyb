@@ -284,6 +284,14 @@ class Api {
 		$data['update_time'] = time();
 		$data['status'] = 1;
 		$res = $mall->table('mall_order')->insertGetId($data);
+
+		$balanceInfo['u_id'] = $param['u_id'];
+		$balanceInfo['bo_money'] = $param['num'] * $goodsInfo['price'];
+		$balanceInfo['former_money'] = $balance;
+		$balanceInfo['type'] = 8;
+		$balanceInfo['bo_time'] = time();
+        $res1 = Db::table('mb_balance_order')->insertGetId($balanceInfo);
+
 		if($res){
 			Db::name('mb_user')->where('u_id',$param['u_id'])->setDec('balance',$param['total_price']);
 			$mall->table('mall_goods')->where('goods_id',$param['goods_id'])->setDec('stock',$param['num']);
@@ -473,6 +481,37 @@ class Api {
 		$res = Db::name('mb_user')->where('u_id',$param['u_id'])->find();
 		return jsonp($res);
 	}
+
+    /**
+     * 最新商品
+     * @return \think\response\Jsonp
+     */
+    public function getNewGoods(){
+            $mall = Db::connect('mall');
+            $where['a.is_delete'] = 0;
+            $where['a.status'] = 1;
+            $res = $mall->table('mall_goods a')
+                ->join('mall_admin b','a.seller_id = b.admin_id')
+                ->where($where)
+                ->order('goods_id desc')
+                ->field('goods_id,goods_img,goods_name,sales_num,price,shop_name')
+                ->select();
+            if($res){
+                $re = [
+                    'code' => 1,
+                    'msg' => 'success',
+                    'data' => $res,
+                ];
+            }else{
+                $re = [
+                    'code' => 0,
+                    'msg' => '暂无数据',
+                    'data' => [],
+                ];
+            }
+            return jsonp($re);
+
+    }
 	
 
 }

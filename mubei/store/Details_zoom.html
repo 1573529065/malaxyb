@@ -77,12 +77,14 @@
 						</div>
 						<div class="name_perf details_padding">
 							<div class="name_box detail_width_con">
-								<span class="detail_main">{{info.content}}</span>
+								<!--<span class="detail_main"></span>-->
+								<span class="detail_main" id="xiangqing"></span>
 
 							
 							</div>
 							<div class="name_box detail_width_con">
-								<span class="detail_main">{{info.standard}}</span>
+								<!--<span class="detail_main">{{info.standard}}</span>-->
+								<span class="detail_main" id="guige"></span>
 
 								<span class="detail_main">配送时间：我们会在您下单后的2-3个工作日内日发货</span>
 							</div>
@@ -150,6 +152,9 @@
 								that.bgImg = res.data.goods_img
 								if(res.code != 1) {
 									alert(res.msg)
+								}else{
+								    $('#xiangqing').html(res.data.content);
+								    $('#guige').html(res.data.standard);
 								}
 								$('.showImgs').zoomify();
 								console.log(res)
