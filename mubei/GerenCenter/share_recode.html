@@ -1,114 +1,118 @@
 <!doctype html>
 <html>
 
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<link href="../css/mui.min.css" rel="stylesheet" />
-		<script type="text/javascript" src="../js/jquery.min.js"></script>
-		<script type="text/javascript" src="../js/common.js"></script>
-		<script type="text/javascript" src="../js/back_icon.js"></script>
-		<script type="text/javascript" src="../js/change_lange.js"></script>
-		<style>
-			.mui-table-view-chevron .mui-table-view-cell>a:not(.mui-btn) {
-				margin-right: -110px;
-			}
-			.head-img{
-				border-radius: 2rem;
-			}
-		</style>
-	</head>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link href="../css/mui.min.css" rel="stylesheet"/>
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+    <script type="text/javascript" src="../js/back_icon.js"></script>
+    <script type="text/javascript" src="../js/change_lange.js"></script>
+    <style>
+        .mui-table-view-chevron .mui-table-view-cell > a:not(.mui-btn) {
+            margin-right: -110px;
+        }
 
-	<body>
-		<script>
-			if(localStorage.pagecount == 1) {
-				addCssByLink('../css/zh.css');
-			} else if(localStorage.pagecount == 2) {
-				addCssByLink('../css/en.css');
-			}
-		</script>
-		<header class="mui-bar mui-bar-nav" style="background-color: #ffffff;">
-			<!--<i class="mui-icon mui-icon-left-nav mui-pull-left" onclick="back_go()"></i>-->
-			<h1 class="mui-title"><span class="language-fenxiangjilu"></span></h1>
-		</header>
-		<div style="height="10px""></div>
-		<div class="mui-content">
-			<p id="none1" style="font-size: 16px; margin: auto;width: 180px;margin-top: 20px; display: none;text-align: center;"><span class="language-meiyoujilu"></span></p>
-			<ul class="mui-table-view mui-table-view-chevron">
-				<!--<li class='mui-table-view-cell mui-media'>
-								<a class='' href='#account'>
-									<img class='mui-media-object mui-pull-left head-img' id='head-img' src='../images/539978889160903097.png'>
-									<div class='mui-media-body'>
-										Hello MUI(10004)
-										<div class='mui-pull-right mui-btn' style='background-color: gainsboro;color: white;'>普通会员</div>
-										<div class='mui-pull-right mui-btn' style='background-color: #bb2045;color:#fefc57;'>VIP</div>
-										<p class='mui-ellipsis'>13713876071</p>
-										<p class='mui-ellipsis'>2018-05-02 11:11:11</p>
-										
-									</div>
-							  </a>
-				</li>-->
-			</ul>
-		</div>
+        .head-img {
+            border-radius: 2rem;
+        }
+    </style>
+</head>
 
-		<script src="../js/mui.min.js"></script>
-		<script type="text/javascript" src="../js/url.js"></script>
-		<script type="text/javascript">
-			mui.init()
-			$.ajax({
-				url: j_url + "/index/share_order",
-				type: 'POST',
-				dataType: 'jsonp',
-				data: {
-					u_id: localStorage.lastname,
-				},
-				crossDomain: true,
-				success: function(res) {
-					console.log(res);
-					if(res.code == 2) {
-						$("#none1").show();
-						$(".mui-table-view").hide();
-					} else if(res.code == 1) {
-						var rou = res.data;
-						for(var key in rou) {
-							if(rou[key].u_img == null) {
-								if(rou[key].vip_static == 2) {
-									$('.mui-table-view').append("<li class='mui-table-view-cell mui-media'><a href='#'><img class='mui-media-object mui-pull-left head-img'  src='../images/428136363616915330.jpg'><div class='mui-media-body'><div class='mui-pull-right mui-btn' style='background-color: gainsboro;color: white;'>普通会员</div>" +
-										rou[key].user + "(" +
-										rou[key].u_id + ")<p class='mui-ellipsis'>" +
-										rou[key].time + "</p></div></a></li>");
-								} else {
-									$('.mui-table-view').append("<li class='mui-table-view-cell mui-media'><a href='#'><img class='mui-media-object mui-pull-left head-img'  src='../images/428136363616915330.jpg'><div class='mui-media-body'><div class='mui-pull-right mui-btn' style='background-color: #bb2045;color:#fefc57;'>VIP</div>" +
-										rou[key].user + "(" +
-										rou[key].u_id + ")<p class='mui-ellipsis'>" +
-										rou[key].time + "</p></div></a></li>");
-								}
-							} else {
-								if(rou[key].vip_static == 2) {
-									$('.mui-table-view').append("<li class='mui-table-view-cell mui-media'><a href='#'><img class='mui-media-object mui-pull-left head-img'  src=" +
-										img_url + rou[key].u_img + "><div class='mui-media-body'><div class='mui-pull-right mui-btn' style='background-color: gainsboro;color: white;'>普通会员</div>" +
-										rou[key].user + "(" +
-										rou[key].u_id + ")<p class='mui-ellipsis'>" +
-										rou[key].time + "</p></div></a></li>");
-								} else {
-									$('.mui-table-view').append("<li class='mui-table-view-cell mui-media'><a href='#'><img class='mui-media-object mui-pull-left head-img'  src=" +
-										img_url + rou[key].u_img + "><div class='mui-media-body'><div class='mui-pull-right mui-btn' style='background-color: #bb2045;color:#fefc57;'>VIP</div>" +
-										rou[key].user + "(" +
-										rou[key].u_id + ")<p class='mui-ellipsis'>" +
-										rou[key].time + "</p></div></a></li>");
-								}
+<body>
+<script>
+    if (localStorage.pagecount == 1) {
+        addCssByLink('../css/zh.css');
+    } else if (localStorage.pagecount == 2) {
+        addCssByLink('../css/en.css');
+    }
+</script>
+<header class="mui-bar mui-bar-nav" style="background-color: #ffffff;">
+    <!--<i class="mui-icon mui-icon-left-nav mui-pull-left" onclick="back_go()"></i>-->
+    <h1 class="mui-title"><span class="language-fenxiangjilu"></span></h1>
+</header>
+<div style="height:10px"></div>
+<div class="mui-content">
+    <p id="none1" style="font-size: 16px; margin: auto;width: 180px;margin-top: 20px; display: none;text-align: center;">
+        <span class="language-meiyoujilu"></span>
+    </p>
+    <ul class="mui-table-view mui-table-view-chevron">
+        <!--<li class='mui-table-view-cell mui-media'>
+                        <a class='' href='#account'>
+                            <img class='mui-media-object mui-pull-left head-img' id='head-img' src='../images/539978889160903097.png'>
+                            <div class='mui-media-body'>
+                                Hello MUI(10004)
+                                <div class='mui-pull-right mui-btn' style='background-color: gainsboro;color: white;'>普通会员</div>
+                                <div class='mui-pull-right mui-btn' style='background-color: #bb2045;color:#fefc57;'>VIP</div>
+                                <p class='mui-ellipsis'>13713876071</p>
+                                <p class='mui-ellipsis'>2018-05-02 11:11:11</p>
 
-							}
+                            </div>
+                      </a>
+        </li>-->
+    </ul>
+</div>
 
-						}
-					}
-				},
-				fail: function(res) {
+<script src="../js/mui.min.js"></script>
+<script type="text/javascript" src="../js/url.js"></script>
+<script type="text/javascript">
+    mui.init()
+    $.ajax({
+        url: j_url + "/index/share_order",
+        type: 'POST',
+        dataType: 'jsonp',
+        data: {
+            u_id: localStorage.lastname,
+        },
+        crossDomain: true,
+        success: function (res) {
+            console.log(res);
+            if (res.code == 2) {
+                $("#none1").show();
+                $(".mui-table-view").hide();
+            } else if (res.code == 1) {
+                var rou = res.data;
+                for (var key in rou) {
+                    if (rou[key].u_img == null) {
+                        if (rou[key].vip_static == 2) {
+                            $('.mui-table-view').append("<li class='mui-table-view-cell mui-media'><a href='#'><img class='mui-media-object mui-pull-left head-img'  src='../images/428136363616915330.jpg'><div class='mui-media-body'><div class='mui-pull-right mui-btn' style='background-color: gainsboro;color: white;'>普通会员</div>" +
+                                rou[key].user + "(" +
+                                rou[key].u_id + ")<p class='mui-ellipsis'>" +
+                                rou[key].time + "</p></div></a></li>");
+                        } else {
+                            $('.mui-table-view').append("<li class='mui-table-view-cell mui-media'><a href='#'><img class='mui-media-object mui-pull-left head-img'  src='../images/428136363616915330.jpg'><div class='mui-media-body'><div class='mui-pull-right mui-btn' style='background-color: #bb2045;color:#fefc57;'>VIP</div>" +
+                                rou[key].user + "(" +
+                                rou[key].u_id + ")<p class='mui-ellipsis'>" +
+                                rou[key].time + "</p></div></a></li>");
+                        }
+                    } else {
+                        if (rou[key].vip_static == 2) {
+                            $('.mui-table-view').append("<li class='mui-table-view-cell mui-media'><a href='#'><img class='mui-media-object mui-pull-left head-img'  src=" +
+                                img_url + rou[key].u_img + "><div class='mui-media-body'><div class='mui-pull-right mui-btn' style='background-color: gainsboro;color: white;'>普通会员</div>" +
+                                rou[key].user + "(" +
+                                rou[key].u_id + ")<p class='mui-ellipsis'>" +
+                                rou[key].time + "</p></div></a></li>");
+                        } else {
+                            $('.mui-table-view').append("<li class='mui-table-view-cell mui-media'><a href='#'><img class='mui-media-object mui-pull-left head-img'  src=" +
+                                img_url + rou[key].u_img + "><div class='mui-media-body'><div class='mui-pull-right mui-btn' style='background-color: #bb2045;color:#fefc57;'>VIP</div>" +
+                                rou[key].user + "(" +
+                                rou[key].u_id + ")<p class='mui-ellipsis'>" +
+                                rou[key].time + "</p></div></a></li>");
+                        }
 
-				}
-			});
-		</script>
-	</body>
+                    }
+
+                }
+            }
+        },
+        fail: function (res) {
+
+        }
+    });
+</script>
+</body>
 
 </html>
