@@ -564,7 +564,7 @@ class Turn extends Send
      * @param $u_id  收款方上级用户u_id
      * @param $money    收款金额
      * @param $check    1.都是vip 2.只有一个是vip
-     * @param $level
+     * @param $level    当前用户等级
      *
      */
     public function inc_speed($u_id, $money, $check, $level)

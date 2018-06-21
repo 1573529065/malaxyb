@@ -505,11 +505,12 @@ class Index extends Controller
                 ->join('mb_sell_order w','a.u_id = w.u_id')
                 ->join('mb_bank c','w.u_id_bank = c.b_id')
                 ->join('mb_bank_name n','c.b_name = n.bn_id')
-                ->where('mb_sell_order.type',1)
-                ->where('mb_sell_order.u_id',$user)
-                ->where('mb_sell_order.user',null)
-                ->field('a.u_img,a.user,a.tel,n.bn_name,w.money,w.s_id,w.static,w.time,w.u_id,c.b_card,c.c_name,w.shi_money')
-                ->order('mb_sell_order.time', 'desc')
+                ->where('w.type',1)
+                ->where('w.u_id',$user)
+                ->where('w.user',null)
+                ->field('a.u_img,a.user,a.tel,n.bn_name,w.money,w.s_id,
+                w.static,w.time,w.u_id,c.b_card,c.c_name,w.shi_money')
+                ->order('w.time', 'desc')
                 ->select();
             foreach($order as $k=>$v){
                 switch ($v['static']) {

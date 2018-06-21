@@ -1,5 +1,5 @@
 mui.init();
-    mui.getJSON("manifest.json",null,function(data){
+    mui.getJSON("../manifest.json",null,function(data){
     	var name = data.version.name; 
     	$.ajax({
 					url: j_url+"turnin/check",

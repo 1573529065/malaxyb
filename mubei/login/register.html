@@ -99,14 +99,20 @@
 					<div class="mui-input-row">
 						<label><img src="../images/login/yzm.png" alt=""/></label>
 						<input type="text" placeholder="短信验证码" class="text_yzm" id="phone_code">
-						<a id="send" style="float: right;margin-top: -30px;color: red;" onclick="send()"><span class="language-huoquyanzhenma"></span></a>
-						<a style="float: right;margin-top: -30px;color: red;display: none" onclick="send()" id="send_time">60s后再获取</a>
+						<span id="send" style="float: right;margin-top: -30px;color: red;" onclick="send()">
+							<span class="language-huoquyanzhenma"></span>
+						</span>
+						<span style="float: right;margin-top: -30px;color: red;
+						display: none" onclick="send()" id="send_time">60s后再获取</span>
 					</div>
+
 
 					<div class="mui-input-row">
 						<label><img src="../images/login/tuijian.png" alt=""/></label>
 						<input type="text" placeholder="推荐人编码" class="text_yzm" id="f_uid">
-						<span style="float: right;margin-top: -30px;color: gray;"><span class="language-bitian"></span></span>
+						<span style="float: right;margin-top: -30px;color: gray;">
+							<span class="language-bitian"></span>
+						</span>
 					</div>
 
 					<div class="mui-input-row">
