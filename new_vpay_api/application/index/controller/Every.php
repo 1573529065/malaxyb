@@ -28,7 +28,10 @@ class Every extends Controller
 
     public function every()
     {
-        $num = Db::table('mb_user')->field('u_id,assets,balance')->select();
+        $num = Db::table('mb_user')
+            ->field('u_id,assets,balance')
+            ->select();
+
         $config11 = Db::table('mb_config')->where('co_id', 5)->value('co_config');
         foreach ($num as $v) {
             $speed = sprintf("%.2f", substr(sprintf("%.3f", $v['assets'] * $config11 / 1000), 0, -2));

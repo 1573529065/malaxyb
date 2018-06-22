@@ -25,6 +25,14 @@ class Test extends Command
     }
 
     private function test(){
+        $num = Db::table('mb_user')->field('u_id,assets,vip_static')->select();
+        foreach ($num as $v) {
+
+            if ($v['assets'] >= 1000000 && $v['vip_static'] != 1) {
+                Db::table('mb_user')->where('u_id', $v['u_id'])->setField('vip_static', 1);
+                Log::info('成为vip'.$v['u_id']);
+            }
+        }
         $user_arr = Db::table('mb_user')
             ->where('assets','<>',0)
             ->field('u_id,assets,balance')
