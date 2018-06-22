@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3eec561-b85e-45d5-bfe6-c01cb19bb019" name="Default" comment="fix`">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/malaxyb.iml" afterPath="$PROJECT_DIR$/.idea/malaxyb.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/jiaoyi/BuyIn/unfilled_order.html" afterPath="$PROJECT_DIR$/mubei/jiaoyi/BuyIn/unfilled_order.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/js/check.js" afterPath="$PROJECT_DIR$/mubei/js/check.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/login/register.html" afterPath="$PROJECT_DIR$/mubei/login/register.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/new_vpay_api/application/index/controller/Index.php" afterPath="$PROJECT_DIR$/new_vpay_api/application/index/controller/Index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/new_vpay_api/application/index/controller/Turn.php" afterPath="$PROJECT_DIR$/new_vpay_api/application/index/controller/Turn.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/login/xieyi.html" afterPath="$PROJECT_DIR$/mubei/login/xieyi.html" />
     </list>
     <list id="d259030c-ace7-4e09-b021-c1c9c209a123" name="Default-no" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/new_vpay_api/runtime/cache/8b/04d5e3775d298e78455efc5ca404d5.php" afterPath="$PROJECT_DIR$/new_vpay_api/runtime/cache/8b/04d5e3775d298e78455efc5ca404d5.php" />
@@ -27,101 +23,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="turn_out.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mubei/TurnOut/turn_out.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="752">
-              <caret line="349" column="63" lean-forward="false" selection-start-line="349" selection-start-column="51" selection-end-line="349" selection-end-column="63" />
-              <folding>
-                <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="e#610#662#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Turn.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/new_vpay_api/application/index/controller/Turn.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="578" column="32" lean-forward="true" selection-start-line="578" selection-start-column="32" selection-end-line="578" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="unfilled_order.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mubei/jiaoyi/BuyIn/unfilled_order.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="148" column="37" lean-forward="false" selection-start-line="148" selection-start-column="29" selection-end-line="148" selection-end-column="37" />
-              <folding>
-                <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1529596238343" expanded="true" signature="5434:5479" ph="..." />
-                <marker date="1529596238343" expanded="true" signature="5845:5857" ph="..." />
-                <marker date="1529596238343" expanded="true" signature="6197:6228" ph="..." />
-                <marker date="1529596238343" expanded="true" signature="6240:6260" ph="..." />
-                <marker date="1529596238343" expanded="true" signature="6493:6505" ph="..." />
-                <marker date="1529596238343" expanded="true" signature="6776:6821" ph="..." />
-                <marker date="1529596238343" expanded="true" signature="7187:7199" ph="..." />
-                <marker date="1529596238343" expanded="true" signature="7539:7570" ph="..." />
-                <marker date="1529596238343" expanded="true" signature="7582:7602" ph="..." />
-                <marker date="1529596238343" expanded="true" signature="7835:7847" ph="..." />
-                <marker date="1529596238343" expanded="true" signature="8932:8977" ph="..." />
-                <marker date="1529596238343" expanded="true" signature="9351:9363" ph="..." />
-                <marker date="1529596238343" expanded="true" signature="9711:9742" ph="..." />
-                <marker date="1529596238343" expanded="true" signature="9754:9774" ph="..." />
-                <marker date="1529596238343" expanded="true" signature="10015:10027" ph="..." />
-                <marker date="1529596238343" expanded="true" signature="10310:10355" ph="..." />
-                <marker date="1529596238343" expanded="true" signature="10729:10741" ph="..." />
-                <marker date="1529596238343" expanded="true" signature="11089:11120" ph="..." />
-                <marker date="1529596238343" expanded="true" signature="11132:11152" ph="..." />
-                <marker date="1529596238343" expanded="true" signature="11393:11405" ph="..." />
-                <marker date="1529596238343" expanded="true" signature="12532:12577" ph="..." />
-                <marker date="1529596238343" expanded="true" signature="12885:12897" ph="..." />
-                <marker date="1529596238343" expanded="true" signature="13245:13276" ph="..." />
-                <marker date="1529596238343" expanded="true" signature="13288:13308" ph="..." />
-                <marker date="1529596238343" expanded="true" signature="13549:13561" ph="..." />
-                <marker date="1529596238343" expanded="true" signature="13845:13890" ph="..." />
-                <marker date="1529596238343" expanded="true" signature="14198:14210" ph="..." />
-                <marker date="1529596238343" expanded="true" signature="14558:14589" ph="..." />
-                <marker date="1529596238343" expanded="true" signature="14601:14621" ph="..." />
-                <marker date="1529596238343" expanded="true" signature="14862:14874" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/new_vpay_api/application/index/controller/Index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="507" column="35" lean-forward="true" selection-start-line="507" selection-start-column="35" selection-end-line="507" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="register.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mubei/login/register.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="90" column="71" lean-forward="true" selection-start-line="90" selection-start-column="71" selection-end-line="90" selection-end-column="71" />
-              <folding>
-                <element signature="n#style#0;n#span#0;n#div#2;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#1;n#div#2;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#3;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -134,16 +36,17 @@
       <find>turn_out_two</find>
       <find>text_yzm</find>
       <find>language-huoquyanzhenma</find>
-      <find>send_time</find>
-      <find>send</find>
       <find>#send</find>
       <find>phone_code</find>
       <find>mui-input-rowmui-input-row</find>
       <find>manifest.jsonmanifest.json</find>
-      <find>mui-input-row</find>
       <find>mb_sell_order</find>
       <find>manifest.json</find>
       <find>mui.min.</find>
+      <find>send</find>
+      <find>send_time</find>
+      <find>mui-input-row</find>
+      <find>mui-btn</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -171,8 +74,9 @@
         <option value="$PROJECT_DIR$/new_vpay_api/application/index/controller/Index.php" />
         <option value="$PROJECT_DIR$/mubei/GerenCenter/banben.html" />
         <option value="$PROJECT_DIR$/mubei/js/check.js" />
-        <option value="$PROJECT_DIR$/mubei/login/register.html" />
         <option value="$PROJECT_DIR$/new_vpay_api/application/index/controller/Turn.php" />
+        <option value="$PROJECT_DIR$/mubei/login/xieyi.html" />
+        <option value="$PROJECT_DIR$/mubei/login/register.html" />
       </list>
     </option>
   </component>
@@ -189,9 +93,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="350" />
-    <option name="width" value="1016" />
-    <option name="height" value="728" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -209,6 +114,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -316,9 +222,26 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="malaxyb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="malaxyb" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mubei" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="login" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -378,6 +301,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -417,6 +346,7 @@
       <workItem from="1529290223223" duration="203000" />
       <workItem from="1529290445690" duration="1655000" />
       <workItem from="1529292311011" duration="3149000" />
+      <workItem from="1529670685016" duration="5787000" />
     </task>
     <task id="LOCAL-00001" summary="初始化项目">
       <created>1529291021491</created>
@@ -460,11 +390,18 @@
       <option name="project" value="LOCAL" />
       <updated>1529596108332</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="fix`">
+      <created>1529602019275</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1529602019275</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18429000" />
+    <option name="totallyTimeSpent" value="24383000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -476,39 +413,31 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="350" y="0" width="1016" height="728" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26278028" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23640168" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5604396" sideWeight="0.49716598" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5604396" sideWeight="0.502834" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5263736" sideWeight="0.5060729" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.49716598" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.49716598" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32718122" sideWeight="0.49716598" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24950884" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25384617" sideWeight="0.49392712" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5604396" sideWeight="0.49716598" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5263736" sideWeight="0.5060729" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.49716598" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25384617" sideWeight="0.49392712" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23731343" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24950884" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -517,9 +446,9 @@
     <MESSAGE value="初始化项目" />
     <MESSAGE value="代码格式化" />
     <MESSAGE value="fix" />
-    <MESSAGE value="fix`" />
     <MESSAGE value="fix代码格式化" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix代码格式化" />
+    <MESSAGE value="fix`" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix`" />
   </component>
   <component name="WindowStateProjectService">
     <state width="198" height="301" key="Git.Branch.Popup" />
@@ -530,6 +459,89 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/mubei/TurnOut/turn_out.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5933">
+          <caret line="349" column="63" lean-forward="false" selection-start-line="349" selection-start-column="51" selection-end-line="349" selection-end-column="63" />
+          <folding>
+            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="e#610#662#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mubei/jiaoyi/BuyIn/unfilled_order.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2516">
+          <caret line="148" column="37" lean-forward="false" selection-start-line="148" selection-start-column="29" selection-end-line="148" selection-end-column="37" />
+          <folding>
+            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1529596238343" expanded="true" signature="5434:5479" ph="..." />
+            <marker date="1529596238343" expanded="true" signature="5845:5857" ph="..." />
+            <marker date="1529596238343" expanded="true" signature="6197:6228" ph="..." />
+            <marker date="1529596238343" expanded="true" signature="6240:6260" ph="..." />
+            <marker date="1529596238343" expanded="true" signature="6493:6505" ph="..." />
+            <marker date="1529596238343" expanded="true" signature="6776:6821" ph="..." />
+            <marker date="1529596238343" expanded="true" signature="7187:7199" ph="..." />
+            <marker date="1529596238343" expanded="true" signature="7539:7570" ph="..." />
+            <marker date="1529596238343" expanded="true" signature="7582:7602" ph="..." />
+            <marker date="1529596238343" expanded="true" signature="7835:7847" ph="..." />
+            <marker date="1529596238343" expanded="true" signature="8932:8977" ph="..." />
+            <marker date="1529596238343" expanded="true" signature="9351:9363" ph="..." />
+            <marker date="1529596238343" expanded="true" signature="9711:9742" ph="..." />
+            <marker date="1529596238343" expanded="true" signature="9754:9774" ph="..." />
+            <marker date="1529596238343" expanded="true" signature="10015:10027" ph="..." />
+            <marker date="1529596238343" expanded="true" signature="10310:10355" ph="..." />
+            <marker date="1529596238343" expanded="true" signature="10729:10741" ph="..." />
+            <marker date="1529596238343" expanded="true" signature="11089:11120" ph="..." />
+            <marker date="1529596238343" expanded="true" signature="11132:11152" ph="..." />
+            <marker date="1529596238343" expanded="true" signature="11393:11405" ph="..." />
+            <marker date="1529596238343" expanded="true" signature="12532:12577" ph="..." />
+            <marker date="1529596238343" expanded="true" signature="12885:12897" ph="..." />
+            <marker date="1529596238343" expanded="true" signature="13245:13276" ph="..." />
+            <marker date="1529596238343" expanded="true" signature="13288:13308" ph="..." />
+            <marker date="1529596238343" expanded="true" signature="13549:13561" ph="..." />
+            <marker date="1529596238343" expanded="true" signature="13845:13890" ph="..." />
+            <marker date="1529596238343" expanded="true" signature="14198:14210" ph="..." />
+            <marker date="1529596238343" expanded="true" signature="14558:14589" ph="..." />
+            <marker date="1529596238343" expanded="true" signature="14601:14621" ph="..." />
+            <marker date="1529596238343" expanded="true" signature="14862:14874" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/new_vpay_api/application/index/controller/Index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8619">
+          <caret line="507" column="35" lean-forward="true" selection-start-line="507" selection-start-column="35" selection-end-line="507" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mubei/login/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1530">
+          <caret line="90" column="71" lean-forward="true" selection-start-line="90" selection-start-column="71" selection-end-line="90" selection-end-column="71" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#div#2;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#div#2;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#3;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/new_vpay_api/application/index/controller/Turn.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10047">
+          <caret line="591" column="49" lean-forward="true" selection-start-line="591" selection-start-column="49" selection-end-line="591" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mubei/js/mui.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -556,7 +568,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="26" column="14" lean-forward="true" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -586,7 +597,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="666">
           <caret line="37" column="31" lean-forward="true" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -612,7 +622,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-72">
           <caret line="22" column="32" lean-forward="false" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -635,7 +644,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-9681">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -651,7 +659,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -659,7 +666,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -675,7 +681,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -683,15 +688,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="31" />
-          <folding>
-            <element signature="n#style#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1529587432137" expanded="true" signature="3372:3413" ph="..." />
-            <marker date="1529587432137" expanded="true" signature="3941:3981" ph="..." />
-            <marker date="1529587432137" expanded="true" signature="4616:4657" ph="..." />
-            <marker date="1529587432137" expanded="true" signature="5215:5255" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -699,10 +695,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="237">
           <caret line="115" column="35" lean-forward="true" selection-start-line="115" selection-start-column="35" selection-end-line="115" selection-end-column="35" />
-          <folding>
-            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
-            <marker date="1529594956226" expanded="true" signature="3889:3902" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -710,7 +702,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="103">
           <caret line="14" column="24" lean-forward="true" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -718,7 +709,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="24" column="22" lean-forward="false" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -726,22 +716,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="71" column="26" lean-forward="false" selection-start-line="71" selection-start-column="26" selection-end-line="71" selection-end-column="26" />
-          <folding>
-            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#button#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mubei/jiaoyi/BuyIn/unfilled_order.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
+        <state relative-caret-position="1581">
           <caret line="148" column="37" lean-forward="false" selection-start-line="148" selection-start-column="29" selection-end-line="148" selection-end-column="37" />
           <folding>
             <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#p#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <marker date="1529596238343" expanded="true" signature="5434:5479" ph="..." />
             <marker date="1529596238343" expanded="true" signature="5845:5857" ph="..." />
             <marker date="1529596238343" expanded="true" signature="6197:6228" ph="..." />
@@ -788,8 +774,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/new_vpay_api/application/index/controller/Index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="507" column="35" lean-forward="true" selection-start-line="507" selection-start-column="35" selection-end-line="507" selection-end-column="35" />
+        <state relative-caret-position="8517">
+          <caret line="507" column="35" lean-forward="false" selection-start-line="507" selection-start-column="35" selection-end-line="507" selection-end-column="35" />
           <folding />
         </state>
       </provider>
@@ -806,26 +792,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="319">
           <caret line="63" column="29" lean-forward="false" selection-start-line="63" selection-start-column="29" selection-end-line="63" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mubei/login/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="90" column="71" lean-forward="true" selection-start-line="90" selection-start-column="71" selection-end-line="90" selection-end-column="71" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#div#2;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#div#2;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#3;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mubei/TurnOut/turn_out.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="752">
+        <state relative-caret-position="4879">
           <caret line="349" column="63" lean-forward="false" selection-start-line="349" selection-start-column="51" selection-end-line="349" selection-end-column="63" />
           <folding>
             <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
@@ -836,9 +808,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/new_vpay_api/application/index/controller/Turn.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="578" column="32" lean-forward="true" selection-start-line="578" selection-start-column="32" selection-end-line="578" selection-end-column="32" />
+        <state relative-caret-position="289">
+          <caret line="598" column="17" lean-forward="true" selection-start-line="598" selection-start-column="17" selection-end-line="598" selection-end-column="17" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mubei/login/xieyi.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="120" column="9" lean-forward="true" selection-start-line="120" selection-start-column="9" selection-end-line="120" selection-end-column="9" />
+          <folding>
+            <element signature="n#style#0;n#p#36;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mubei/login/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="114" column="72" lean-forward="true" selection-start-line="114" selection-start-column="72" selection-end-line="114" selection-end-column="72" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#div#2;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#div#2;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#3;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
