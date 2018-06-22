@@ -126,11 +126,15 @@
 						<label><img src="../images/login/mima.png" alt=""/></label>
 						<input type="password" placeholder="设置交易密码(6位数字)" id="pay_pass">
 					</div>
+					<p style="text-align: center;margin-bottom: 30px;">
+						<input type="checkBox"  onclick="if (this.checked) {enable()} else {disable()}">同意协议
+						<a href="./xieyi.html">malaxyb
+							<span class="language-xieyi"></span>
+						</a>
+					</p>
 				</form>
-				<button type="button" class="mui-btn mui-btn-primary mui-btn-block" id="btn">注册</button>
-				<p style="text-align: center;margin-bottom: 30px;"><span class="language-agree"></span>
-					<a href="./xieyi.html">malaxyb<span class="language-xieyi"></span></a>
-				</p>
+				<button type="button" disabled  class="mui-btn mui-btn-primary mui-btn-block" id="btn">注册</button>
+
 			</div>
 
 		</div>
@@ -141,6 +145,15 @@
 		
 		<script type="text/javascript">
 			mui.init();
+            function disable()
+            {
+                document.getElementById("btn").disabled=true
+            }
+            function enable()
+            {
+                document.getElementById("btn").disabled=false
+            }
+
 			function getQueryString() {
                 var qs = location.search.substr(1), // 获取url中"?"符后的字串
                     args = {}, // 保存参数数据的对象
@@ -225,7 +238,8 @@
 			}
 
 			document.getElementById("btn").addEventListener('tap', function() {
-				
+                console.log($("#yuedu").val());return false;
+
 				if(!$("#name").val()) {
 					mui.alert('请填写昵称！')
 				}else if(!$("#phone").val()) {
