@@ -16,7 +16,13 @@ class Wallet extends Controller
     public function zichan(){
         $user = Request::instance()->param('u_id');
         if($user){
-            $user_arr=Db::table('mb_assets_order')->where('u_id',$user)->order('ao_time desc')->field('type,ao_money,ao_time')->limit(500)->select();
+            $user_arr=Db::table('mb_assets_order')
+                ->where('u_id',$user)
+                ->order('ao_time desc')
+                ->field('type,ao_money,ao_time')
+                ->limit(500)
+                ->select();
+
             foreach($user_arr as $k=>$v){
                 $message= '';
                 switch ($v['type']) {
@@ -60,7 +66,12 @@ class Wallet extends Controller
         $user = Request::instance()->param('u_id');
 
         if($user){
-            $user_arr=Db::table('mb_current_order')->where('u_id',$user)->order('co_time desc')->field('co_money,target_uid,co_time,type')->select();
+            $user_arr=Db::table('mb_current_order')
+                ->where('u_id',$user)
+                ->order('co_time desc')
+                ->field('co_money,target_uid,co_time,type')
+                ->select();
+
             foreach($user_arr as $k=>$v){
                 $message = '';
                 switch ($v['type']) {
@@ -96,7 +107,13 @@ class Wallet extends Controller
     public function yue(){
         $user = Request::instance()->param('u_id');
         if($user){
-            $user_arr=Db::table('mb_balance_order')->where('u_id',$user)->order('bo_time desc')->field('bo_money,target_uid,bo_time,type')->limit(500)->select();
+            $user_arr=Db::table('mb_balance_order')
+                ->where('u_id',$user)
+                ->order('bo_time desc')
+                ->field('bo_money,target_uid,bo_time,type')
+                ->limit(500)
+                ->select();
+
             foreach($user_arr as $k=>$v){
                 switch ($v['type']) {
                     case 1:

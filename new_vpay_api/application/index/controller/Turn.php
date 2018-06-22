@@ -16,25 +16,62 @@ class Turn extends Send
 
     public function inc_speed_p2($u_id, $money)
     {
-        $c_uid = Db::table('vpay_user')->where('u_id', $u_id)->field('agentid,vip_static,speed,f_uid,u_id,best_uid')->find();
-        $f_uid_top = Db::table('vpay_user')->where('u_id', $c_uid['best_uid'])->field('vip_static,speed')->find();
-        $config1 = Db::table('vpay_config')->where('c_id', 3)->value('c_config');
-        $config2 = Db::table('vpay_config')->where('c_id', 4)->value('c_config');
-        $config3 = Db::table('vpay_config')->where('c_id', 8)->value('c_config');
-        $config4 = Db::table('vpay_config')->where('c_id', 9)->value('c_config');
+        $c_uid = Db::table('vpay_user')
+            ->where('u_id', $u_id)
+            ->field('agentid,vip_static,speed,f_uid,u_id,best_uid')
+            ->find();
+
+        $f_uid_top = Db::table('vpay_user')
+            ->where('u_id', $c_uid['best_uid'])
+            ->field('vip_static,speed')
+            ->find();
+
+        $config1 = Db::table('vpay_config')
+            ->where('c_id', 3)
+            ->value('c_config');
+
+        $config2 = Db::table('vpay_config')
+            ->where('c_id', 4)
+            ->value('c_config');
+
+        $config3 = Db::table('vpay_config')
+            ->where('c_id', 8)
+            ->value('c_config');
+
+        $config4 = Db::table('vpay_config')
+            ->where('c_id', 9)
+            ->value('c_config');
+
         if ($f_uid_top['vip_static'] == 1) { //最上级代理是否为vip
             if ($c_uid['speed'] == 0) {
                 if ($c_uid['agentid'] == 1) { //该用户属于第几代会员,第一代会员影响f_uid
                     $f_speed = sprintf("%.2f", substr(sprintf("%.3f", $money * $config1 / 100), 0, -2));
-                    $score = Db::table('vpay_user')->where('u_id', $c_uid['f_uid'])->value('score');
+                    $score = Db::table('vpay_user')
+                        ->where('u_id', $c_uid['f_uid'])
+                        ->value('score');
+
                     if ($score >= $f_speed) {
-                        Db::table('vpay_user')->where('u_id', $c_uid['f_uid'])->setInc('money', $f_speed);
-                        Db::table('vpay_user')->where('u_id', $c_uid['f_uid'])->setDec('score', $f_speed);
+                        Db::table('vpay_user')
+                            ->where('u_id', $c_uid['f_uid'])
+                            ->setInc('money', $f_speed);
+
+                        Db::table('vpay_user')
+                            ->where('u_id', $c_uid['f_uid'])
+                            ->setDec('score', $f_speed);
+
                     } else if ($score < $f_speed) {
-                        Db::table('vpay_user')->where('u_id', $c_uid['f_uid'])->setInc('money', $score);
-                        Db::table('vpay_user')->where('u_id', $c_uid['f_uid'])->setDec('score', $score);
+                        Db::table('vpay_user')
+                            ->where('u_id', $c_uid['f_uid'])
+                            ->setInc('money', $score);
+
+                        Db::table('vpay_user')
+                            ->where('u_id', $c_uid['f_uid'])
+                            ->setDec('score', $score);
                     }
-                    $mon1 = Db::table('vpay_user')->where('u_id', $c_uid['f_uid'])->value('money');
+                    $mon1 = Db::table('vpay_user')
+                        ->where('u_id', $c_uid['f_uid'])
+                        ->value('money');
+
                     Log::write($c_uid['f_uid'], 'notice');
                     Log::write($mon1, 'notice');
                     Db::table('vpay_score_order')->insert([
@@ -50,19 +87,35 @@ class Turn extends Send
                         'time' => time(),
                         'type' => 6,
                     ]);
-                    Db::table('vpay_user')->where('u_id', $c_uid['u_id'])->setField('speed', 1);
+                    Db::table('vpay_user')
+                        ->where('u_id', $c_uid['u_id'])
+                        ->setField('speed', 1);
+
                 } else if ($c_uid['agentid'] <= 14 && $c_uid['agentid'] > 1) {//该用户属于第几代会员,第一代会员影响f_uid
                     $f_speed = sprintf("%.2f", substr(sprintf("%.3f", $money * $config1 / 100), 0, -2));
                     $f_speed_p2 = sprintf("%.2f", substr(sprintf("%.3f", $money * $config2 / 100), 0, -2));
-                    $score = Db::table('vpay_user')->where('u_id', $c_uid['f_uid'])->value('score');
+                    $score = Db::table('vpay_user')
+                        ->where('u_id', $c_uid['f_uid'])
+                        ->value('score');
+
                     if ($score >= $f_speed) {
-                        Db::table('vpay_user')->where('u_id', $c_uid['f_uid'])->setInc('money', $f_speed);
-                        Db::table('vpay_user')->where('u_id', $c_uid['f_uid'])->setDec('score', $f_speed);
+                        Db::table('vpay_user')
+                            ->where('u_id', $c_uid['f_uid'])
+                            ->setInc('money', $f_speed);
+                        Db::table('vpay_user')
+                            ->where('u_id', $c_uid['f_uid'])
+                            ->setDec('score', $f_speed);
                     } else if ($score < $f_speed) {
-                        Db::table('vpay_user')->where('u_id', $c_uid['f_uid'])->setInc('money', $score);
-                        Db::table('vpay_user')->where('u_id', $c_uid['f_uid'])->setDec('score', $score);
+                        Db::table('vpay_user')
+                            ->where('u_id', $c_uid['f_uid'])
+                            ->setInc('money', $score);
+                        Db::table('vpay_user')
+                            ->where('u_id', $c_uid['f_uid'])
+                            ->setDec('score', $score);
                     }
-                    $mon1 = Db::table('vpay_user')->where('u_id', $c_uid['f_uid'])->value('money');
+                    $mon1 = Db::table('vpay_user')
+                        ->where('u_id', $c_uid['f_uid'])
+                        ->value('money');
                     Log::write($c_uid['f_uid'], 'notice');
                     Log::write($mon1, 'notice');
                     Db::table('vpay_score_order')->insert([
@@ -81,7 +134,9 @@ class Turn extends Send
                     $this->get_top_parentid($c_uid['f_uid'], $f_speed_p2);
                     $best_uid = Cache::get('best_uid' . $f_speed_p2);
                     if ($c_uid['best_uid'] == $best_uid) {
-                        Db::table('vpay_user')->where('u_id', $c_uid['u_id'])->setField('speed', 1);
+                        Db::table('vpay_user')
+                            ->where('u_id', $c_uid['u_id'])
+                            ->setField('speed', 1);
                     }
                 }
             }
@@ -91,15 +146,28 @@ class Turn extends Send
                     Log::write('1', 'notice');
 
                     $f_speed = sprintf("%.2f", substr(sprintf("%.3f", $money * $config3 / 100), 0, -2));
-                    $score = Db::table('vpay_user')->where('u_id', $c_uid['f_uid'])->value('score');
+                    $score = Db::table('vpay_user')
+                        ->where('u_id', $c_uid['f_uid'])
+                        ->value('score');
                     if ($score >= $f_speed) {
-                        Db::table('vpay_user')->where('u_id', $c_uid['f_uid'])->setInc('money', $f_speed);
-                        Db::table('vpay_user')->where('u_id', $c_uid['f_uid'])->setDec('score', $f_speed);
+                        Db::table('vpay_user')
+                            ->where('u_id', $c_uid['f_uid'])
+                            ->setInc('money', $f_speed);
+                        Db::table('vpay_user')
+                            ->where('u_id', $c_uid['f_uid'])
+                            ->setDec('score', $f_speed);
                     } else if ($score < $f_speed) {
-                        Db::table('vpay_user')->where('u_id', $c_uid['f_uid'])->setInc('money', $score);
-                        Db::table('vpay_user')->where('u_id', $c_uid['f_uid'])->setDec('score', $score);
+                        Db::table('vpay_user')
+                            ->where('u_id', $c_uid['f_uid'])
+                            ->setInc('money', $score);
+                        Db::table('vpay_user')
+                            ->where('u_id', $c_uid['f_uid'])
+                            ->setDec('score', $score);
                     }
-                    $mon1 = Db::table('vpay_user')->where('u_id', $c_uid['f_uid'])->value('money');
+                    $mon1 = Db::table('vpay_user')
+                        ->where('u_id', $c_uid['f_uid'])
+                        ->value('money');
+
                     Log::write($c_uid['f_uid'], 'notice');
                     Log::write($mon1, 'notice');
                     Db::table('vpay_score_order')->insert([
@@ -115,20 +183,36 @@ class Turn extends Send
                         'time' => time(),
                         'type' => 6,
                     ]);
-                    Db::table('vpay_user')->where('u_id', $c_uid['u_id'])->setField('speed', 1);
+                    Db::table('vpay_user')
+                        ->where('u_id', $c_uid['u_id'])
+                        ->setField('speed', 1);
+
                 } else if ($c_uid['agentid'] <= 8 && $c_uid['agentid'] > 1) {//该用户属于第几代会员,第一代会员影响f_uid
                     Log::write('2', 'notice');
                     $f_speed = sprintf("%.2f", substr(sprintf("%.3f", $money * $config3 / 100), 0, -2));
                     $f_speed_p2 = sprintf("%.2f", substr(sprintf("%.3f", $money * $config4 / 100), 0, -2));
-                    $score = Db::table('vpay_user')->where('u_id', $c_uid['f_uid'])->value('score');
+                    $score = Db::table('vpay_user')
+                        ->where('u_id', $c_uid['f_uid'])
+                        ->value('score');
                     if ($score >= $f_speed) {
-                        Db::table('vpay_user')->where('u_id', $c_uid['f_uid'])->setInc('money', $f_speed);
-                        Db::table('vpay_user')->where('u_id', $c_uid['f_uid'])->setDec('score', $f_speed);
+                        Db::table('vpay_user')
+                            ->where('u_id', $c_uid['f_uid'])
+                            ->setInc('money', $f_speed);
+                        Db::table('vpay_user')
+                            ->where('u_id', $c_uid['f_uid'])
+                            ->setDec('score', $f_speed);
                     } else if ($score < $f_speed) {
-                        Db::table('vpay_user')->where('u_id', $c_uid['f_uid'])->setInc('money', $score);
-                        Db::table('vpay_user')->where('u_id', $c_uid['f_uid'])->setDec('score', $score);
+                        Db::table('vpay_user')
+                            ->where('u_id', $c_uid['f_uid'])
+                            ->setInc('money', $score);
+                        Db::table('vpay_user')
+                            ->where('u_id', $c_uid['f_uid'])
+                            ->setDec('score', $score);
                     }
-                    $mon1 = Db::table('vpay_user')->where('u_id', $c_uid['f_uid'])->value('money');
+                    $mon1 = Db::table('vpay_user')
+                        ->where('u_id', $c_uid['f_uid'])
+                        ->value('money');
+
                     Log::write($c_uid['f_uid'], 'notice');
                     Log::write($mon1, 'notice');
                     Db::table('vpay_score_order')->insert([
@@ -147,7 +231,9 @@ class Turn extends Send
                     $this->get_top_parentid($c_uid['f_uid'], $f_speed_p2);
                     $best_uid = Cache::get('best_uid' . $f_speed_p2);
                     if ($c_uid['best_uid'] == $best_uid) {
-                        Db::table('vpay_user')->where('u_id', $c_uid['u_id'])->setField('speed', 1);
+                        Db::table('vpay_user')
+                            ->where('u_id', $c_uid['u_id'])
+                            ->setField('speed', 1);
                     }
                 }
             }
@@ -164,17 +250,30 @@ class Turn extends Send
         $type = Request::instance()->param('type');
 
         if ($user && $money && $pass_p && $type) {
-            $check = Db::table('mb_user')->where('u_id', $user)->field('assets,speed,f_uid,best_uid,pay_pass,era,balance,level')->find();
-            $config1 = Db::table('mb_config')->where('co_id', 7)->value('co_config');
+            $check = Db::table('mb_user')
+                ->where('u_id', $user)
+                ->field('assets,speed,f_uid,best_uid,
+                pay_pass,era,balance,level')
+                ->find();
+            $config1 = Db::table('mb_config')
+                ->where('co_id', 7)
+                ->value('co_config');
 
             if ($type == 1) { //流通兑换资产
             } else if ($type == 2) { //余额兑换资产
                 if (md5($pass_p) == $check['pay_pass']) {
                     if ($check['balance'] < $money) {
-                        return jsonp(['code' => 2, 'msg' => '余额不足！']);
+                        return jsonp([
+                            'code' => 2,
+                            'msg' => '余额不足！'
+                        ]);
                     } else {
-                        $res1 = Db::table('mb_user')->where('u_id', $user)->setDec('balance', $money);
-                        $res2 = Db::table('mb_user')->where('u_id', $user)->setInc('assets', $money * $config1 / 100);
+                        $res1 = Db::table('mb_user')
+                            ->where('u_id', $user)
+                            ->setDec('balance', $money);
+                        $res2 = Db::table('mb_user')
+                            ->where('u_id', $user)
+                            ->setInc('assets', $money * $config1 / 100);
                         $insert1 = Db::table('mb_assets_order')->insert([
                             'u_id' => $user,
                             'ao_money' => $money * $config1 / 100,
@@ -191,13 +290,19 @@ class Turn extends Send
                         ]);
 
                         if ($check['era'] > 0) {
-                            $f_uid = Db::table('mb_user')->where('u_id', $check['f_uid'])->find();
+                            $f_uid = Db::table('mb_user')
+                                ->where('u_id', $check['f_uid'])
+                                ->find();
                             if ($f_uid['vip_static'] == 1) {
                                 $vip_num = 15;
-                                $config11 = Db::table('mb_config')->where('co_id', 1)->value('co_config');
+                                $config11 = Db::table('mb_config')
+                                    ->where('co_id', 1)
+                                    ->value('co_config');
                             } else {
                                 $vip_num = 9;
-                                $config11 = Db::table('mb_config')->where('co_id', 3)->value('co_config');
+                                $config11 = Db::table('mb_config')
+                                    ->where('co_id', 3)
+                                    ->value('co_config');
                             }
 
                             if (($check['era'] - $f_uid['era']) < $vip_num) {
@@ -221,13 +326,19 @@ class Turn extends Send
                                     ]);
                                 }
 
-                                $two_uid = Db::table('mb_user')->where('u_id', $check['f_uid'])->value('u_id');
+                                $two_uid = Db::table('mb_user')
+                                    ->where('u_id', $check['f_uid'])
+                                    ->value('u_id');
                                 if ($f_uid['vip_static'] == 1) {
                                     $num = 14;
-                                    $config12 = Db::table('mb_config')->where('co_id', 2)->value('co_config');
+                                    $config12 = Db::table('mb_config')
+                                        ->where('co_id', 2)
+                                        ->value('co_config');
                                 } else if ($f_uid['vip_static'] != 1) {
                                     $num = 8;
-                                    $config12 = Db::table('mb_config')->where('co_id', 4)->value('co_config');
+                                    $config12 = Db::table('mb_config')
+                                        ->where('co_id', 4)
+                                        ->value('co_config');
                                 }
                                 if ($f_uid['era'] == 1) {
                                     $num = 0;
@@ -342,17 +453,30 @@ class Turn extends Send
         $money = Request::instance()->param('money');
         $pass_p = Request::instance()->param('pass_p');
         if ($user && $money && $pass_p) {
-            $check = Db::table('mb_user')->where('u_id', $user)->field('current,balance,pay_pass')->find();
+            $check = Db::table('mb_user')
+                ->where('u_id', $user)
+                ->field('current,balance,pay_pass')
+                ->find();
 
-            $config1 = Db::table('mb_config')->where('co_id', 8)->value('co_config');
+            $config1 = Db::table('mb_config')
+                ->where('co_id', 8)
+                ->value('co_config');
             if (md5($pass_p) == $check['pay_pass']) {
                 if ($check['balance'] < $money) {
-                    return jsonp(['code' => 2, 'msg' => '余额不足！']);
+                    return jsonp([
+                        'code' => 2,
+                        'msg' => '余额不足！'
+                    ]);
                 } else {
 
                     Log::write($user, 'notice');
-                    $res1 = Db::table('mb_user')->where('u_id', $user)->setDec('balance', $money);
-                    $res2 = Db::table('mb_user')->where('u_id', $user)->setInc('current', $money * $config1 / 100);
+                    $res1 = Db::table('mb_user')
+                        ->where('u_id', $user)
+                        ->setDec('balance', $money);
+                    $res2 = Db::table('mb_user')
+                        ->where('u_id', $user)
+                        ->setInc('current', $money * $config1 / 100);
+
                     $insert1 = Db::table('mb_current_order')->insert([
                         'u_id' => $user,
                         'co_money' => $money * $config1 / 100,
@@ -367,9 +491,16 @@ class Turn extends Send
                         'bo_time' => time(),
                         'type' => 2,
                     ]);
-                    $now = Db::table('mb_user')->where('u_id', $user)->field('balance,current,assets')->find();
+                    $now = Db::table('mb_user')
+                        ->where('u_id', $user)
+                        ->field('balance,current,assets')
+                        ->find();
                     if ($res1 || $res2 || $insert1 || $insert2) {
-                        return jsonp(['code' => 1, 'msg' => '兑换成功！', 'data' => $now]);
+                        return jsonp([
+                            'code' => 1,
+                            'msg' => '兑换成功！',
+                            'data' => $now
+                        ]);
                     } else {
                         return jsonp(['code' => 2, 'msg' => '兑换失败！']);
                     }
@@ -390,22 +521,39 @@ class Turn extends Send
         $u_id = $user;
 
         if ($user) {
-            $check = Db::table('mb_user')->where('u_id', $user)->field('u_id,tel')->find();
+            $check = Db::table('mb_user')
+                ->where('u_id', $user)
+                ->field('u_id,tel')
+                ->find();
             if ($u_id == $check['tel']) {
                 return jsonp(['code' => 2, 'msg' => '收款人不能是自己！']);
             } else {
 
                 if (strlen($u_id) <= 6) {
-                    $res = Db::table('mb_user')->where('u_id', $u_id)->field('tel,user,u_img')->find();
+                    $res = Db::table('mb_user')
+                        ->where('u_id', $u_id)
+                        ->field('tel,user,u_img')
+                        ->find();
                     if ($res) {
-                        return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $res]);
+                        return jsonp([
+                            'code' => 1,
+                            'msg' => 'succeed',
+                            'data' => $res
+                        ]);
                     } else {
                         return jsonp(['code' => 2, 'msg' => '用户不存在！']);
                     }
                 } else if (strlen($u_id) <= 11 && strlen($u_id) > 6) {
-                    $res = Db::table('mb_user')->where('tel', $u_id)->field('tel,user,u_img')->find();
+                    $res = Db::table('mb_user')
+                        ->where('tel', $u_id)
+                        ->field('tel,user,u_img')
+                        ->find();
                     if ($res) {
-                        return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $res]);
+                        return jsonp([
+                            'code' => 1,
+                            'msg' => 'succeed',
+                            'data' => $res
+                        ]);
                     } else {
                         return jsonp(['code' => 2, 'msg' => '用户不存在！']);
                     }
@@ -426,26 +574,52 @@ class Turn extends Send
 
 
         if ($u_id && $user) {
-            $check = Db::table('mb_user')->where('u_id', $user)->field('u_id,tel')->find();
+            $check = Db::table('mb_user')
+                ->where('u_id', $user)
+                ->field('u_id,tel')
+                ->find();
 
 
             if ($u_id == $check['u_id']) {
-                return jsonp(['code' => 2, 'msg' => '收款人不能是自己！']);
+                return jsonp([
+                    'code' => 2,
+                    'msg' => '收款人不能是自己！'
+                ]);
             } else {
 
                 if (strlen($u_id) <= 6) {
-                    $res = Db::table('mb_user')->where('u_id', $u_id)->field('u_id,tel,user,u_img')->find();
+                    $res = Db::table('mb_user')
+                        ->where('u_id', $u_id)
+                        ->field('u_id,tel,user,u_img')
+                        ->find();
                     if ($res) {
-                        return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $res]);
+                        return jsonp([
+                            'code' => 1,
+                            'msg' => 'succeed',
+                            'data' => $res
+                        ]);
                     } else {
-                        return jsonp(['code' => 2, 'msg' => '用户不存在！']);
+                        return jsonp([
+                            'code' => 2,
+                            'msg' => '用户不存在！'
+                        ]);
                     }
                 } else if (strlen($u_id) <= 11 && strlen($u_id) > 6) {
-                    $res = Db::table('mb_user')->where('tel', $u_id)->field('u_id,tel,user,u_img')->find();
+                    $res = Db::table('mb_user')
+                        ->where('tel', $u_id)
+                        ->field('u_id,tel,user,u_img')
+                        ->find();
                     if ($res) {
-                        return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $res]);
+                        return jsonp([
+                            'code' => 1,
+                            'msg' => 'succeed',
+                            'data' => $res
+                        ]);
                     } else {
-                        return jsonp(['code' => 2, 'msg' => '用户不存在！']);
+                        return jsonp([
+                            'code' => 2,
+                            'msg' => '用户不存在！'
+                        ]);
                     }
                 }
             }
@@ -467,9 +641,15 @@ class Turn extends Send
         $money = Request::instance()->param('money');
         $phone = Request::instance()->param('phone');
         if ($type && $pass_p && $user && $money && $phone) {
-            $check = Db::table('mb_user')->where('tel', $phone)->field('u_id,tel')->find();
+            $check = Db::table('mb_user')
+                ->where('tel', $phone)
+                ->field('u_id,tel')
+                ->find();
             if ($user == $check['u_id']) {
-                return jsonp(['code' => 2, 'msg' => '请输入对方手机号码！']);
+                return jsonp([
+                    'code' => 2,
+                    'msg' => '请输入对方手机号码！'
+                ]);
             } else {
                 if ($type == 1) {  //余额互转
                     $check = Db::table('mb_user')
@@ -563,7 +743,7 @@ class Turn extends Send
     /**
      * @param $u_id  收款方上级用户u_id
      * @param $money    收款金额
-     * @param $check    1.都是vip 2.只有一个是vip
+     * @param $check 1.都是vip 2.只有一个是vip
      * @param $level    当前用户等级
      *
      */

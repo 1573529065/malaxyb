@@ -115,7 +115,10 @@ class Send extends Controller
             }else{
                 //状态非0，说明失败
                 $msg = $result['reason'];
-                return json(['code' => 2, 'msg' =>  "短信发送失败(".$error_code.")：".$msg]);
+                return json([
+                    'code' => 2,
+                    'msg' =>  "短信发送失败(".$error_code.")：".$msg
+                ]);
 //                echo "短信发送失败(".$error_code.")：".$msg;
             }
         }else{
@@ -146,7 +149,10 @@ class Send extends Controller
             }else{
                 //状态非0，说明失败
                 $msg = $result['reason'];
-                return json(['code' => 2, 'msg' =>  "短信发送失败(".$error_code.")：".$msg]);
+                return json([
+                    'code' => 2,
+                    'msg' =>  "短信发送失败(".$error_code.")：".$msg
+                ]);
 //                echo "短信发送失败(".$error_code.")：".$msg;
             }
         }else{
@@ -177,7 +183,10 @@ class Send extends Controller
             }else{
                 //状态非0，说明失败
                 $msg = $result['reason'];
-                return json(['code' => 2, 'msg' =>  "短信发送失败(".$error_code.")：".$msg]);
+                return json([
+                    'code' => 2,
+                    'msg' =>  "短信发送失败(".$error_code.")：".$msg
+                ]);
 //                echo "短信发送失败(".$error_code.")：".$msg;
             }
         }else{
