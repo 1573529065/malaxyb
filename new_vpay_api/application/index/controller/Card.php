@@ -148,7 +148,8 @@ class Card extends Controller
                     ->where('b_id', $bc_id)
                     ->field('defult')
                     ->find();
-                if ($default == 1) return jsonp(['code' => 2, 'msg' => '该卡已是默认银行卡']);
+
+                if ($default['defult'] == 1) return jsonp(['code' => 2, 'msg' => '该卡已是默认银行卡']);
 
                 $res = Db::table('mb_bank')
                     ->where('u_id', $user)
