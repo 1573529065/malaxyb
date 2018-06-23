@@ -639,11 +639,11 @@ class Index extends Controller
 //
                 ->join('mb_bank c', 'w.u_id_bank = c.b_id')
                 ->join('mb_bank_name n', 'c.b_name = n.bn_id')
-                ->where('mb_sell_order.type', 1)
-                ->where('mb_sell_order.u_id', $user)
-                ->where('mb_sell_order.user', '>', 1)
+                ->where('w.type', 1)
+                ->where('w.u_id', $user)
+                ->where('w.user', '>', 1)
                 ->field('a.u_img,a.user,a.tel,n.bn_name,w.money,w.s_id,w.static,w.time,w.u_id,c.b_card,c.c_name,w.shi_money')
-                ->order('mb_sell_order.time', 'desc')
+                ->order('w.time', 'desc')
                 ->select();
             foreach ($order as $k => $v) {
                 switch ($v['static']) {
@@ -685,11 +685,11 @@ class Index extends Controller
             $order = Db::table('mb_user')
                 ->alias('a')
                 ->join('mb_sell_order w', 'a.u_id = w.user')
-                ->where('mb_sell_order.type', 1)
-                ->where('mb_sell_order.u_id', $user)
-                ->where('mb_sell_order.static', 4)
+                ->where('w.type', 1)
+                ->where('w.u_id', $user)
+                ->where('w.static', 4)
                 ->field('a.tel,w.money,w.s_id,w.static,w.time,w.u_id,w.shi_money')
-                ->order('mb_sell_order.time', 'desc')
+                ->order('w.time', 'desc')
                 ->select();
             foreach ($order as $k => $v) {
                 $order[$k]['time'] = date('Y-m-d H:i:s', $v['time']);
@@ -715,11 +715,11 @@ class Index extends Controller
             $order = Db::table('mb_user')
                 ->alias('a')
                 ->join('mb_sell_order w', 'a.u_id = w.user')
-                ->where('mb_sell_order.type', 2)
-                ->where('mb_sell_order.user', $user)
-                ->where('mb_sell_order.static', '>=', 2)
+                ->where('w.type', 2)
+                ->where('w.user', $user)
+                ->where('w.static', '>=', 2)
                 ->field('a.tel,w.money,w.s_id,w.static,w.time,w.u_id,w.shi_money')
-                ->order('mb_sell_order.time', 'desc')
+                ->order('w.time', 'desc')
                 ->select();
 
             foreach ($order as $k => $v) {
@@ -763,11 +763,11 @@ class Index extends Controller
                 ->join('mb_sell_order w', 'a.u_id = w.u_id')
                 ->join('mb_bank c', 'w.u_id_bank = c.b_id')
                 ->join('mb_bank_name n', 'c.b_name = n.bn_id')
-                ->where('mb_sell_order.type', 2)
-                ->where('mb_sell_order.user', $user)
-                ->where('mb_sell_order.static', 2)
+                ->where('w.type', 2)
+                ->where('w.user', $user)
+                ->where('w.static', 2)
                 ->field('a.u_img,a.user,a.tel,n.bn_name,w.money,w.s_id,w.static,w.time,w.u_id,c.b_card,c.c_name,w.shi_money')
-                ->order('mb_sell_order.time', 'desc')
+                ->order('w.time', 'desc')
                 ->select();
 
             foreach ($order as $k => $v) {
@@ -795,11 +795,11 @@ class Index extends Controller
                 ->join('mb_sell_order w', 'a.u_id = w.user')
                 ->join('mb_bank c', 'w.user_bank = c.b_id')
                 ->join('mb_bank_name n', 'c.b_name = n.bn_id')
-                ->where('mb_sell_order.type', 1)
-                ->where('mb_sell_order.u_id', $user)
-                ->where('mb_sell_order.static', 2)
+                ->where('w.type', 1)
+                ->where('w.u_id', $user)
+                ->where('w.static', 2)
                 ->field('a.u_img,a.user,a.tel,n.bn_name,w.money,w.s_id,w.static,w.time,w.u_id,c.b_card,c.c_name,w.shi_money')
-                ->order('mb_sell_order.time', 'desc')
+                ->order('w.time', 'desc')
                 ->select();
 
             foreach ($order as $k => $v) {
@@ -828,11 +828,11 @@ class Index extends Controller
                 ->join('mb_sell_order w', 'a.u_id = w.u_id')
                 ->join('mb_bank c', 'w.u_id_bank = c.b_id')
                 ->join('mb_bank_name n', 'c.b_name = n.bn_id')
-                ->where('mb_sell_order.type', 2)
-                ->where('mb_sell_order.user', null)
-                ->where('mb_sell_order.money', $money)
+                ->where('w.type', 2)
+                ->where('w.user', null)
+                ->where('w.money', $money)
                 ->field('a.u_img,a.user,a.tel,n.bn_name,w.money,w.s_id,w.static,w.time,w.u_id,c.b_card,c.c_name,w.shi_money')
-                ->order('mb_sell_order.time', 'desc')
+                ->order('w.time', 'desc')
                 ->select();
             foreach ($order as $k => $v) {
                 $order[$k]['time'] = date('Y-m-d', $v['time']);
@@ -933,11 +933,13 @@ class Index extends Controller
                 ->join('mb_sell_order w', 'a.u_id = w.u_id')
                 ->join('mb_bank c', 'w.u_id_bank = c.b_id')
                 ->join('mb_bank_name n', 'c.b_name = n.bn_id')
-                ->where('mb_sell_order.type', 2)
-                ->where('mb_sell_order.u_id', $user)
-                ->where('mb_sell_order.user', null)
-                ->field('a.u_img,a.user,a.tel,n.bn_name,w.money,w.s_id,w.static,w.time,w.u_id,c.b_card,c.c_name,w.shi_money')
-                ->order('mb_sell_order.time', 'desc')
+                ->where('w.type', 2)
+                ->where('w.u_id', $user)
+                ->where('w.user', null)
+                ->field('a.u_img,a.user,a.tel,n.bn_name,
+                w.money,w.s_id,w.static,w.time,w.u_id,
+                c.b_card,c.c_name,w.shi_money')
+                ->order('w.time', 'desc')
                 ->select();
 
             foreach ($order as $k => $v) {
@@ -982,11 +984,11 @@ class Index extends Controller
                 ->join('mb_sell_order w', 'a.u_id = w.u_id')
                 ->join('mb_bank c', 'w.u_id_bank = c.b_id')
                 ->join('mb_bank_name n', 'c.b_name = n.bn_id')
-                ->where('mb_sell_order.type', 2)
-                ->where('mb_sell_order.u_id', $user)
-                ->where('mb_sell_order.user', '>', 0)
+                ->where('w.type', 2)
+                ->where('w.u_id', $user)
+                ->where('w.user', '>', 0)
                 ->field('a.u_img,a.user,a.tel,n.bn_name,w.money,w.s_id,w.static,w.time,w.u_id,c.b_card,c.c_name,w.shi_money')
-                ->order('mb_sell_order.time', 'desc')
+                ->order('w.time', 'desc')
                 ->select();
             foreach ($order as $k => $v) {
                 switch ($v['static']) {
@@ -1029,11 +1031,11 @@ class Index extends Controller
             $order = Db::table('mb_user')
                 ->alias('a')
                 ->join('mb_sell_order w', 'a.u_id = w.u_id')
-                ->where('mb_sell_order.type', 2)
-                ->where('mb_sell_order.u_id', $user)
-                ->where('mb_sell_order.static', 4)
+                ->where('w.type', 2)
+                ->where('w.u_id', $user)
+                ->where('w.static', 4)
                 ->field('a.tel,w.money,w.s_id,w.static,w.time,w.u_id,w.shi_money')
-                ->order('mb_sell_order.time', 'desc')
+                ->order('w.time', 'desc')
                 ->select();
 
 
@@ -1061,11 +1063,11 @@ class Index extends Controller
             $order = Db::table('mb_user')
                 ->alias('a')
                 ->join('mb_sell_order w', 'a.u_id = w.u_id')
-                ->where('mb_sell_order.type', 1)
-                ->where('mb_sell_order.user', $user)
-                ->where('mb_sell_order.static', '>=', 2)
+                ->where('w.type', 1)
+                ->where('w.user', $user)
+                ->where('w.static', '>=', 2)
                 ->field('a.tel,w.money,w.s_id,w.static,w.time,w.u_id,w.shi_money')
-                ->order('mb_sell_order.time', 'desc')
+                ->order('w.time', 'desc')
                 ->select();
 
 
@@ -1109,11 +1111,11 @@ class Index extends Controller
                 ->join('mb_sell_order w', 'a.u_id = w.user')
                 ->join('mb_bank c', 'w.user_bank = c.b_id')
                 ->join('mb_bank_name n', 'c.b_name = n.bn_id')
-                ->where('mb_sell_order.type', 2)
-                ->where('mb_sell_order.u_id', $user)
-                ->where('mb_sell_order.static', 3)
+                ->where('w.type', 2)
+                ->where('w.u_id', $user)
+                ->where('w.static', 3)
                 ->field('a.u_img,a.user,a.tel,n.bn_name,w.money,w.s_id,w.static,w.time,w.u_id,c.b_card,c.c_name,w.shi_money')
-                ->order('mb_sell_order.time', 'desc')
+                ->order('w.time', 'desc')
                 ->select();
             foreach ($order as $k => $v) {
                 $order[$k]['time'] = date('Y-m-d H:i:s', $v['time']);
@@ -1138,11 +1140,11 @@ class Index extends Controller
                 ->join('mb_sell_order w', 'a.u_id = w.u_id')
                 ->join('mb_bank c', 'w.u_id_bank = c.b_id')
                 ->join('mb_bank_name n', 'c.b_name = n.bn_id')
-                ->where('mb_sell_order.type', 1)
-                ->where('mb_sell_order.user', $user)
-                ->where('mb_sell_order.static', 3)
+                ->where('w.type', 1)
+                ->where('w.user', $user)
+                ->where('w.static', 3)
                 ->field('a.u_img,a.user,a.tel,n.bn_name,w.money,w.s_id,w.static,w.time,w.u_id,c.b_card,c.c_name,w.shi_money')
-                ->order('mb_sell_order.time', 'desc')
+                ->order('w.time', 'desc')
                 ->select();
             foreach ($order as $k => $v) {
                 $order[$k]['time'] = date('Y-m-d H:i:s', $v['time']);
@@ -1170,11 +1172,11 @@ class Index extends Controller
                 ->join('mb_sell_order w', 'a.u_id = w.u_id')
                 ->join('mb_bank c', 'w.u_id_bank = c.b_id')
                 ->join('mb_bank_name n', 'c.b_name = n.bn_id')
-                ->where('mb_sell_order.type', 1)
-                ->where('mb_sell_order.user', null)
-                ->where('mb_sell_order.money', $money)
+                ->where('w.type', 1)
+                ->where('w.user', null)
+                ->where('w.money', $money)
                 ->field('a.u_img,a.user,a.tel,n.bn_name,w.money,w.s_id,w.static,w.time,w.u_id,c.b_card,c.c_name,w.shi_money')
-                ->order('mb_sell_order.time', 'desc')
+                ->order('w.time', 'desc')
                 ->select();
             foreach ($order as $k => $v) {
                 $order[$k]['time'] = date('Y-m-d', $v['time']);
