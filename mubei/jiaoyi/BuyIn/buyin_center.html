@@ -4,14 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-    <link href="../../css/mui.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../../css/zhifu.css" />
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link href="../../css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../../css/zhifu.css"/>
     <script type="text/javascript" src="../../js/jquery.min.js"></script>
-<script type="text/javascript" src="../../js/common.js"></script>
-    <script type="text/javascript" src="../../js/change_lange.js" ></script>
+    <script type="text/javascript" src="../../js/common.js"></script>
+    <script type="text/javascript" src="../../js/change_lange.js"></script>
     <style>
-      
+
         .shue {
             height: 170px;
             border-top: 1px solid gainsboro;
@@ -48,7 +49,7 @@
             width: 42px;
             height: 42px;
             margin-top: 5px;
-          border-radius: 50%;
+            border-radius: 50%;
         }
 
         .mui-media-body {
@@ -70,20 +71,21 @@
 </head>
 
 <body>
-	<script>
-			if(localStorage.pagecount == 1) {
-				addCssByLink('../../css/zh.css');
-			} else if(localStorage.pagecount == 2) {
-				addCssByLink('../../css/en.css');
-			}
-		</script>
-    <header class="mui-bar mui-bar-nav" style="background-color: #FFFFFF;">
-        <!--<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: #FFFFFF;" href="../jiaoyi.html"></a>-->
-        <h1 class="mui-title"><span class="language-mairuzhongxin"></span></h1>
-        <!--<button class="mui-btn mui-btn-blue mui-btn-link mui-pull-right" style="color: white;font-size: 14px;" onclick="window.location.href='buyin_recode.html'; "><span class="language-jilu"></span></button>-->
-    </header>
+<script>
+    if (localStorage.pagecount == 1) {
+        addCssByLink('../../css/zh.css');
+    } else if (localStorage.pagecount == 2) {
+        addCssByLink('../../css/en.css');
+    }
+</script>
+<header class="mui-bar mui-bar-nav" style="background-color: #FFFFFF;">
+    <!--<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: #FFFFFF;" href="../jiaoyi.html"></a>-->
+    <h1 class="mui-title"><span class="language-mairuzhongxin"></span></h1>
+    <!--<button class="mui-btn mui-btn-blue mui-btn-link mui-pull-right" style="color: white;font-size: 14px;" onclick="window.location.href='buyin_recode.html'; "><span class="language-jilu"></span></button>-->
+</header>
 <div class="mui-content">
-    <h5 style="color: grey;letter-spacing: 1px;height: 20px;text-align:center;padding-top: 5px;"><span class="language-maichushuer"></span></h5>
+    <h5 style="color: grey;letter-spacing: 1px;height: 20px;text-align:center;padding-top: 5px;"><span
+            class="language-maichushuer"></span></h5>
     <div class="shue">
         <div style=" margin: auto;">
             <button value="500" class="shu selected shu2">500</button>
@@ -97,7 +99,9 @@
             <button value="100000" class="shu selected">100000</button>
         </div>
     </div>
-    <p id="none1" style="font-size: 16px; margin: auto;width: 160px;margin-top: 20px; display: none;text-align: center;"><span class="language-meiyoujilu"></span></p>
+    <p id="none1"
+       style="font-size: 16px; margin: auto;width: 160px;margin-top: 20px; display: none;text-align: center;"><span
+            class="language-meiyoujilu"></span></p>
     <ul class="mui-table-view l_ul">
         <!--<li class="mui-table-view-cell mui-media">
             <a href="javascript:;">
@@ -115,16 +119,16 @@
                 </div>
             </a>
         </li>-->
-         <!--<span class='language-time'></span>时间-->
+        <!--<span class='language-time'></span>时间-->
         <!--<span class="language-credit"></span>信用
         <span class="language-zhifufangsi"></span>支付方式
         <span class="language-jiaoyijine"></span>交易金额
         <span class="language-shifujiner"></span>实付金额
         <span class="language-mairu"></span>买入
         <span class="language-woyaomai"></span>我要卖-->
-         <!--<input type='hidden' name='' id='tel' value='rou[key].tel' />-->
+        <!--<input type='hidden' name='' id='tel' value='rou[key].tel' />-->
     </ul>
-   
+
     <!--支付键盘-->
     <div class="ftc_wzsf">
         <div class="srzfmm_box">
@@ -132,9 +136,15 @@
                 <img src="../../images/xx_03.jpg" class="tx close fl">
                 <span class="fl"><span class="language-qingchuruzhifumima"></span></span></div>
             <div class="zfmmxx_shop">
-                <div class="zhifu_price">￥<span id="need"></span></div></div>
+                <div class="zhifu_price">￥<span id="need"></span></div>
+            </div>
             <ul class="mm_box">
-                <li></li><li></li><li></li><li></li><li></li><li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
             </ul>
         </div>
         <div class="numb_box">
@@ -150,9 +160,11 @@
                 <li><a href="javascript:void(0);" class="zf_num">7</a></li>
                 <li><a href="javascript:void(0);" class="zj_x zf_num">8</a></li>
                 <li><a href="javascript:void(0);" class="zf_num">9</a></li>
-                <li><a href="javascript:void(0);" class="zf_empty"><span class="language-qingkong" style="color: #000000;"></span></a></li>
+                <li><a href="javascript:void(0);" class="zf_empty"><span class="language-qingkong"
+                                                                         style="color: #000000;"></span></a></li>
                 <li><a href="javascript:void(0);" class="zj_x zf_num">0</a></li>
-                <li><a href="javascript:void(0);" class="zf_del"><span class="language-shanchu" style="color: #000000;"></span></a></li>
+                <li><a href="javascript:void(0);" class="zf_del"><span class="language-shanchu"
+                                                                       style="color: #000000;"></span></a></li>
             </ul>
         </div>
         <div class="hbbj"></div>
@@ -162,7 +174,7 @@
 <script type="text/javascript" src="../../js/url.js"></script>
 <script type="text/javascript">
     mui.init()
-    $(".selected").click(function() {
+    $(".selected").click(function () {
         $(".selected").eq($(this).index()).addClass("shu2").siblings().removeClass("shu2");
 
         $.ajax({
@@ -173,41 +185,41 @@
                 money: $(".shu2").val()
             },
             crossDomain: true,
-            success: function(res) {
+            success: function (res) {
                 console.log(res);
-                if(res.code == 2) {
+                if (res.code == 2) {
                     $("#none1").show();
                     $(".l_ul").hide();
-                } else if(res.code == 1) {
+                } else if (res.code == 1) {
                     $("#none1").hide();
                     $(".l_ul").show();
                     var rou = res.data;
                     $('.l_ul').empty();
-                    for(var key in rou) {
-                        if(!img_url + rou[key].u_img) {
+                    for (var key in rou) {
+                        if (!img_url + rou[key].u_img) {
                             $('.l_ul').append("<li class='mui-table-view-cell mui-media'><img class='mui-media-object mui-pull-left' src=" +
-                            img_url + rou[key].u_img + "><div class='mui-media-body'><span>" +
-                            rou[key].user + "("+rou[key].u_id+")</span><p class='mui-ellipsis'><span class='language-time'></span>:" +
-                            rou[key].time + "</p><p class='mui-ellipsis'> <span class='language-zhifufangsi'></span>:<span>" +
-                            rou[key].bn_name + "</span></p><button onclick='call("+rou[key].tel+")' class='mui-btn mui-btn-warning'>联系他</button></div><div class='word_right'><span class='language-jiaoyijine'></span>:<span>" +
-                            rou[key].money + "</span><p class='mui-ellipsis'><span class='language-shifujiner'></span>:<span>" +
-                            rou[key].shi_money + "</span></p><p class='mui-ellipsis'><button type='button' class='mui-btn mui-btn-warning' onclick='buy(" +
-                            rou[key].s_id + ")'><span class='language-woyaomai'></span></button></p></div></li>");
+                                img_url + rou[key].u_img + "><div class='mui-media-body'><span>" +
+                                rou[key].user + "(" + rou[key].u_id + ")</span><p class='mui-ellipsis'><span class='language-time'></span>:" +
+                                rou[key].time + "</p><p class='mui-ellipsis'> <span class='language-zhifufangsi'></span>:<span>" +
+                                rou[key].bn_name + "</span></p><button onclick='call(" + rou[key].tel + ")' class='mui-btn mui-btn-warning'>联系他</button></div><div class='word_right'><span class='language-jiaoyijine'></span>:<span>" +
+                                rou[key].money + "</span><p class='mui-ellipsis'><span class='language-shifujiner'></span>:<span>" +
+                                rou[key].shi_money + "</span></p><p class='mui-ellipsis'><button type='button' class='mui-btn mui-btn-warning' onclick='buy(" +
+                                rou[key].s_id + ")'><span class='language-woyaomai'></span></button></p></div></li>");
 
                         } else {
                             $('.l_ul').append("<li class='mui-table-view-cell mui-media'><img class='mui-media-object mui-pull-left' src='../../images/891043144065234706.png'><div class='mui-media-body'><span>" +
-                            rou[key].user + "("+rou[key].u_id+")</span><p class='mui-ellipsis'><span class='language-time'></span>:" +
-                            rou[key].time + "</p><p class='mui-ellipsis'> <span class='language-zhifufangsi'></span>:<span>" +
-                            rou[key].bn_name + "</span></p><button onclick='call("+rou[key].tel+")' class='mui-btn mui-btn-warning'>联系他</button></div><div class='word_right'><span class='language-jiaoyijine'></span>:<span>" +
-                            rou[key].money + "</span><p class='mui-ellipsis'><span class='language-shifujiner'></span>:<span>" +
-                            rou[key].shi_money + "</span></p><p class='mui-ellipsis'><button type='button' class='mui-btn mui-btn-warning' onclick='buy(" +
-                            rou[key].s_id + ")'><span class='language-mairu'></span></button></p></div></li>");
+                                rou[key].user + "(" + rou[key].u_id + ")</span><p class='mui-ellipsis'><span class='language-time'></span>:" +
+                                rou[key].time + "</p><p class='mui-ellipsis'> <span class='language-zhifufangsi'></span>:<span>" +
+                                rou[key].bn_name + "</span></p><button onclick='call(" + rou[key].tel + ")' class='mui-btn mui-btn-warning'>联系他</button></div><div class='word_right'><span class='language-jiaoyijine'></span>:<span>" +
+                                rou[key].money + "</span><p class='mui-ellipsis'><span class='language-shifujiner'></span>:<span>" +
+                                rou[key].shi_money + "</span></p><p class='mui-ellipsis'><button type='button' class='mui-btn mui-btn-warning' onclick='buy(" +
+                                rou[key].s_id + ")'><span class='language-mairu'></span></button></p></div></li>");
 
                         }
                     }
                 }
             },
-            fail: function(res) {
+            fail: function (res) {
 
             }
         });
@@ -222,118 +234,122 @@
             money: $(".shu2").val()
         },
         crossDomain: true,
-        success: function(res) {
+        success: function (res) {
             console.log(res);
-            if(res.code == 2) {
+            if (res.code == 2) {
                 $("#none1").show();
                 $(".l_ul").hide();
-            } else if(res.code == 1) {
+            } else if (res.code == 1) {
                 var rou = res.data;
                 $('.l_ul').empty();
-                for(var key in rou) {
-                    if(!img_url + rou[key].u_img) {
+                for (var key in rou) {
+                    if (!img_url + rou[key].u_img) {
                         $('.l_ul').append("<li class='mui-table-view-cell mui-media'><img class='mui-media-object mui-pull-left' src=" +
-                        img_url + rou[key].u_img + "><div class='mui-media-body'><span>" +
-                        rou[key].user + "("+rou[key].u_id+")</span><p class='mui-ellipsis'><span class='language-time'></span>:" +
-                        rou[key].time + "</p><p class='mui-ellipsis'><span class='language-zhifufangsi'></span>:<span>" +
-                        rou[key].bn_name + "</span></p><button onclick='call("+rou[key].tel+")' class='mui-btn mui-btn-warning'>联系他</button></div><div class='word_right'><span class='language-jiaoyijine'></span>:<span>" +
-                        rou[key].money + "</span><p class='mui-ellipsis'><span class='language-shifujiner'></span>:<span>" +
-                        rou[key].shi_money + "</span></p><p class='mui-ellipsis'><button type='button' class='mui-btn mui-btn-warning' onclick='buy(" +
-                        rou[key].s_id + ")'><span class='language-mairu'></span></button></p></div></li>");
+                            img_url + rou[key].u_img + "><div class='mui-media-body'><span>" +
+                            rou[key].user + "(" + rou[key].u_id + ")</span><p class='mui-ellipsis'><span class='language-time'></span>:" +
+                            rou[key].time + "</p><p class='mui-ellipsis'><span class='language-zhifufangsi'></span>:<span>" +
+                            rou[key].bn_name + "</span></p><button onclick='call(" + rou[key].tel + ")' class='mui-btn mui-btn-warning'>联系他</button></div><div class='word_right'><span class='language-jiaoyijine'></span>:<span>" +
+                            rou[key].money + "</span><p class='mui-ellipsis'><span class='language-shifujiner'></span>:<span>" +
+                            rou[key].shi_money + "</span></p><p class='mui-ellipsis'><button type='button' class='mui-btn mui-btn-warning' onclick='buy(" +
+                            rou[key].s_id + ")'><span class='language-mairu'></span></button></p></div></li>");
                     } else {
                         $('.l_ul').append("<li class='mui-table-view-cell mui-media'><img class='mui-media-object mui-pull-left' src='../../images/891043144065234706.png'><div class='mui-media-body'><span>" +
-                        rou[key].user + "("+rou[key].u_id+")</span><p class='mui-ellipsis'><span class='language-time'></span>:" +
-                        rou[key].time + "</p><p class='mui-ellipsis'><span class='language-zhifufangsi'></span>:<span>" +
-                        rou[key].bn_name + "</span></p><button onclick='call("+rou[key].tel+")' class='mui-btn mui-btn-warning'>联系他</button></div><div class='word_right'><span class='language-jiaoyijine'></span>:<span>" +
-                        rou[key].money + "</span><p class='mui-ellipsis'><span class='language-shifujiner'></span>:<span>" +
-                        rou[key].shi_money + "</span></p><p class='mui-ellipsis'><button type='button' class='mui-btn mui-btn-warning' onclick='buy(" +
-                        rou[key].s_id + ")'><span class='language-mairu'></span></button></p></div></li>");
+                            rou[key].user + "(" + rou[key].u_id + ")</span><p class='mui-ellipsis'><span class='language-time'></span>:" +
+                            rou[key].time + "</p><p class='mui-ellipsis'><span class='language-zhifufangsi'></span>:<span>" +
+                            rou[key].bn_name + "</span></p><button onclick='call(" + rou[key].tel + ")' class='mui-btn mui-btn-warning'>联系他</button></div><div class='word_right'><span class='language-jiaoyijine'></span>:<span>" +
+                            rou[key].money + "</span><p class='mui-ellipsis'><span class='language-shifujiner'></span>:<span>" +
+                            rou[key].shi_money + "</span></p><p class='mui-ellipsis'><button type='button' class='mui-btn mui-btn-warning' onclick='buy(" +
+                            rou[key].s_id + ")'><span class='language-mairu'></span></button></p></div></li>");
                     }
                 }
             }
         },
-        fail: function(res) {
+        fail: function (res) {
 
         }
     });
-   function call(id){
-       var phone=id;
-       window.location.href="tel:"+phone;
-   }
-            
-      
-     
-     
-    function buy(so_id){
+    function call(id) {
+        var phone = id;
+        window.location.href = "tel:" + phone;
+    }
+
+
+    function buy(so_id) {
         if (!$(".shu2").val()) {
-            mui. alert('请选择金额！');
-        }else{
+            mui.alert('请选择金额！');
+        } else {
             $('#need').html($(".shu2").val());
             $(".ftc_wzsf").show();
         }
 
         //关闭浮动
-        $(".close").click(function(){
+        $(".close").click(function () {
             $(".ftc_wzsf").hide();
             $(".mm_box li").removeClass("mmdd");
-            $(".mm_box li").attr("data","");
+            $(".mm_box li").attr("data", "");
             i = 0;
         });
         //数字显示隐藏
-        $(".xiaq_tb").click(function(){
+        $(".xiaq_tb").click(function () {
             $(".numb_box").slideUp(500);
         });
-        $(".mm_box").click(function(){
+        $(".mm_box").click(function () {
             $(".numb_box").slideDown(500);
         });
         //----
         var i = 0;
-        $(".nub_ggg li .zf_num").click(function(){
+        $(".nub_ggg li .zf_num").click(function () {
 
-            if(i<6){
+            if (i < 6) {
                 $(".mm_box li").eq(i).addClass("mmdd");
-                $(".mm_box li").eq(i).attr("data",$(this).text());
+                $(".mm_box li").eq(i).attr("data", $(this).text());
                 i++;
-                if (i==6) {
-                    setTimeout(function(){
+                if (i == 6) {
+                    setTimeout(function () {
                         var data = "";
-                        $(".mm_box li").each(function(){
+                        $(".mm_box li").each(function () {
                             data += $(this).attr("data");
                         });
 
                         $.ajax({
-                            url: j_url+"/turn/purchase_pay",
+                            url: j_url + "/turn/purchase_pay",
                             type: 'POST',
                             dataType: 'jsonp',
                             data: {
-                                s_id:so_id,
-                                u_id:localStorage.lastname,
+                                s_id: so_id,
+                                u_id: localStorage.lastname,
                                 pay_pass: data
                             },
                             crossDomain: true,
                             success: function (res) {
-                                if(res.code == 2) {
+                                if (res.code == 2) {
                                     mui.alert(res.msg);
                                     $(".ftc_wzsf").hide();
                                     $(".mm_box li").removeClass("mmdd");
-                                    $(".mm_box li").attr("data","");
+                                    $(".mm_box li").attr("data", "");
                                     i = 0;
-                                    setTimeout(function(){window.location.reload()},200);
+                                    setTimeout(function () {
+                                        window.location.reload()
+                                    }, 200);
                                 } else if (res.code == 1) {
                                     mui.alert(res.msg);
                                     $(".ftc_wzsf").hide();
                                     $(".mm_box li").removeClass("mmdd");
-                                    $(".mm_box li").attr("data","");
+                                    $(".mm_box li").attr("data", "");
                                     i = 0;
-                                    setTimeout(function(){window.location.href = 'confirmation_money.html'},1000);
+                                    setTimeout(function () {
+                                        window.location.href = 'confirmation_money.html'
+                                    }, 1000);
 
-                                }else if (res.code == 3) {
+                                } else if (res.code == 3) {
                                     mui.alert(res.msg);
                                     $(".ftc_wzsf").hide();
                                     $(".mm_box li").removeClass("mmdd");
-                                    $(".mm_box li").attr("data","");
+                                    $(".mm_box li").attr("data", "");
                                     i = 0;
-                                    setTimeout(function(){window.location.href = '../../GerenCenter/add_bank.html'},800);
+                                    setTimeout(function () {
+                                        window.location.href = '../../GerenCenter/add_bank.html'
+                                    }, 800);
                                 }
 
                             }, fail: function (res) {
@@ -341,22 +357,23 @@
                             }
                         });
 
-                    },100);
-                };
+                    }, 100);
+                }
+                ;
             }
         });
 
-        $(".nub_ggg li .zf_del").click(function(){
-            if(i>0){
+        $(".nub_ggg li .zf_del").click(function () {
+            if (i > 0) {
                 i--;
                 $(".mm_box li").eq(i).removeClass("mmdd");
-                $(".mm_box li").eq(i).attr("data","");
+                $(".mm_box li").eq(i).attr("data", "");
             }
         });
 
-        $(".nub_ggg li .zf_empty").click(function(){
+        $(".nub_ggg li .zf_empty").click(function () {
             $(".mm_box li").removeClass("mmdd");
-            $(".mm_box li").attr("data","");
+            $(".mm_box li").attr("data", "");
             i = 0;
         });
     }

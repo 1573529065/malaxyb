@@ -4,14 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-    <link href="../css/mui.min.css" rel="stylesheet" />
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link href="../css/mui.min.css" rel="stylesheet"/>
     <script type="text/javascript" src="../js/back_icon.js"></script>
-    <link rel="stylesheet" href="../css/zhifu.css" />
+    <link rel="stylesheet" href="../css/zhifu.css"/>
     <script type="text/javascript" src="../js/jquery.min.js"></script>
-<script src="../js/mui.min.js"></script>
-<script type="text/javascript" src="../js/common.js"></script>
-    <script type="text/javascript" src="../js/change_lange.js" ></script>
+    <script src="../js/mui.min.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+    <script type="text/javascript" src="../js/change_lange.js"></script>
     <style>
         .mui-segmented-control {
             border: 1px solid #46adfc;
@@ -80,6 +81,7 @@
             background-color: #46adfc;
             color: white;
         }
+
         .shu3 {
             background-color: #46adfc;
             color: white;
@@ -114,10 +116,12 @@
             height: 25px;
             list-style: none;
         }
-        .conter_icp_bot .conter_icp_div{
+
+        .conter_icp_bot .conter_icp_div {
             display: none;
         }
-        .tab_a{
+
+        .tab_a {
             line-height: 38px;
             display: table-cell;
             overflow: hidden;
@@ -130,10 +134,12 @@
             color: #46adfc;
             border-color: #46adfc;
         }
-        .tab_on{
+
+        .tab_on {
             background: #46adfc;
             color: #ffffff;
         }
+
         /*.tab_a:hover{color:#fec900;}*/
         /*.tab_a:visited{color:#ffffff;}*/
         a:active {
@@ -143,23 +149,24 @@
 </head>
 
 <body>
-	<script>
-			if(localStorage.pagecount == 1) {
-				addCssByLink('../css/zh.css');
-			} else if(localStorage.pagecount == 2) {
-				addCssByLink('../css/en.css');
-			}
-		</script>
-    <header class="mui-bar mui-bar-nav" style="background-color: #FFFFFF;">
-        <!--<i class="mui-icon mui-icon-left-nav mui-pull-left" onclick="window.location.href='../index.html'"></i>-->
-        <h1 class="mui-title"><span class="language-maichu"></span></h1>
-    </header>
+<script>
+    if (localStorage.pagecount == 1) {
+        addCssByLink('../css/zh.css');
+    } else if (localStorage.pagecount == 2) {
+        addCssByLink('../css/en.css');
+    }
+</script>
+<header class="mui-bar mui-bar-nav" style="background-color: #FFFFFF;">
+    <!--<i class="mui-icon mui-icon-left-nav mui-pull-left" onclick="window.location.href='../index.html'"></i>-->
+    <h1 class="mui-title"><span class="language-maichu"></span></h1>
+</header>
 <div class="mui-content">
 
     <div class="conter_icp_bot">
 
-        <div id="cont1"  class="conter_icp_div">
-            <h5 style="color: grey;letter-spacing: 1px;padding-left: 5px;"><span class="language-maichushuer"></span></h5>
+        <div id="cont1" class="conter_icp_div">
+            <h5 style="color: grey;letter-spacing: 1px;padding-left: 5px;"><span class="language-maichushuer"></span>
+            </h5>
             <div class="shue">
                 <div style=" margin: auto;">
                     <button value="500" class="shu xuan shu3">500</button>
@@ -173,9 +180,11 @@
                     <button value="100000" class="shu xuan">100000</button>
                 </div>
             </div>
-                 <!--没有银行卡 -->
+            <!--没有银行卡 -->
             <div class="add_bank bank_btn" style="display: none;">
-                <button  type="button" class="mui-btn mui-btn-block"  onclick="window.location.href='../GerenCenter/add_bank.html'; " >+<span class="language-tianjiaka"></span></button>
+                <button type="button" class="mui-btn mui-btn-block"
+                        onclick="window.location.href='../GerenCenter/add_bank.html'; ">+<span
+                        class="language-tianjiaka"></span></button>
             </div>
             <!--有银行卡-->
             <div style="display: block;" class="bank_text">
@@ -189,27 +198,34 @@
                 </div>
             </div>
             <div class="mui-content-padded">
-                <button id="turnout_btn" style="background: #46adfc;border-color: #46adfc" type="button" class="mui-btn mui-btn-warning mui-btn-block" onclick="buyout_btn()" ><span class="language-chuanjiandan"></span></button>
+                <button id="turnout_btn" style="background: #46adfc;border-color: #46adfc" type="button"
+                        class="mui-btn mui-btn-warning mui-btn-block" onclick="buyout_btn()"><span
+                        class="language-chuanjiandan"></span></button>
             </div>
             <div class="b_list">
                 <ul class="mui-table-view mui-table-view-chevron">
                     <li class="mui-table-view-cell">
-                        <a href="BuyOut/buyout_recode.html?tab=2" class="mui-navigate-right"><span class="language-maichujilu"></span></a>
+                        <a href="BuyOut/buyout_recode.html?tab=2" class="mui-navigate-right"><span
+                                class="language-maichujilu"></span></a>
                     </li>
                     <li class="mui-table-view-cell">
-                        <a href="BuyOut/unfilled_order.html?tab=2" class="mui-navigate-right"><span class="language-weiwancendan"></span></a>
+                        <a href="BuyOut/unfilled_order.html?tab=2" class="mui-navigate-right"><span
+                                class="language-weiwancendan"></span></a>
                         <span style="display: none;" class="mui-badge mui-badge-primary" id="no_order1"></span>
                     </li>
                     <li class="mui-table-view-cell">
-                        <a href="BuyOut/completed_order.html?tab=2" class="mui-navigate-right"><span class="language-wancendan"></span></a>
+                        <a href="BuyOut/completed_order.html?tab=2" class="mui-navigate-right"><span
+                                class="language-wancendan"></span></a>
                         <span style="display: none;" class="mui-badge mui-badge-primary" id="no_order"></span>
                     </li>
                     <li class="mui-table-view-cell">
-                        <a href="BuyOut/confirmation_money.html?tab=2" class="mui-navigate-right"><span class="language-querenshoukuan"></span></a>
-                          <span style="display: none;" class="mui-badge mui-badge-primary" id="no_money"></span>     
+                        <a href="BuyOut/confirmation_money.html?tab=2" class="mui-navigate-right"><span
+                                class="language-querenshoukuan"></span></a>
+                        <span style="display: none;" class="mui-badge mui-badge-primary" id="no_money"></span>
                     </li>
                     <li class="mui-table-view-cell">
-                        <a href="BuyOut/buyout_center.html?tab=2" class="mui-navigate-right"><span class="language-maichuzhongxin"></span></a>
+                        <a href="BuyOut/buyout_center.html?tab=2" class="mui-navigate-right"><span
+                                class="language-maichuzhongxin"></span></a>
                         <span style="display: none;" class="mui-badge mui-badge-primary" id="no_center"></span>
                     </li>
                 </ul>
@@ -267,13 +283,15 @@
                 <a href="javascript:void(0);" class="zf_num">9</a>
             </li>
             <li>
-                <a href="javascript:void(0);" class="zf_empty"><span class="language-qingkong" style="color: #000000;"></span></a>
+                <a href="javascript:void(0);" class="zf_empty"><span class="language-qingkong"
+                                                                     style="color: #000000;"></span></a>
             </li>
             <li>
                 <a href="javascript:void(0);" class="zj_x zf_num">0</a>
             </li>
             <li>
-                <a href="javascript:void(0);" class="zf_del"><span class="language-shanchu" style="color: #000000;"></span></a>
+                <a href="javascript:void(0);" class="zf_del"><span class="language-shanchu"
+                                                                   style="color: #000000;"></span></a>
             </li>
         </ul>
     </div>
@@ -285,28 +303,28 @@
 <script type="text/javascript">
     mui.init();
 
-    $(document).ready(function() {
+    $(document).ready(function () {
         var tab = getQueryString('tab');
-        if(tab) {
+        if (tab) {
             $("#cont" + tab).show();
             $("#a" + tab).addClass("tab_on");
         } else {
             $("#cont1").show();
             $("#a1").addClass("tab_on");
         }
-        $("#tab .tab_a").click(function() {
+        $("#tab .tab_a").click(function () {
             $("#tab .tab_a").eq($(this).index()).addClass("tab_on").siblings().removeClass('tab_on');
             $(".conter_icp_bot .conter_icp_div").hide().eq($(this).index()).show();
         });
     });
 
 
-    $(".xuan").click(function() {
+    $(".xuan").click(function () {
         $(".xuan").eq($(this).index()).addClass("shu3").siblings().removeClass('shu3');
 
     });
 
-    $(".selected").click(function() {
+    $(".selected").click(function () {
         $(".selected").eq($(this).index()).addClass("shu2").siblings().removeClass('shu2');
 
     });
@@ -319,83 +337,83 @@
             u_id: localStorage.lastname
         },
         crossDomain: true,
-        success: function(res) {
+        success: function (res) {
             console.log(res);
-            if(res.code == 2) {
+            if (res.code == 2) {
                 $(".bank_btn").show();
-                $(".bank_text").hide(); 
-                
-            } else if(res.code == 1) {
-                if(res.data.defult == 1) {
+                $(".bank_text").hide();
+
+            } else if (res.code == 1) {
+                if (res.data.defult == 1) {
                     $(".name").html(res.data.c_name);
                     $(".bank").html(res.data.bn_name);
                     $(".bank_id").html(res.data.b_card);
                 }
-                if(!res.buy_center){
-                	$("#no_center").hide();
-                }else{
-                	$("#no_center").show();
-                	$("#no_center").html(res.buy_center);
+                if (!res.buy_center) {
+                    $("#no_center").hide();
+                } else {
+                    $("#no_center").show();
+                    $("#no_center").html(res.buy_center);
                 }
-                if(!res.result_pay){
-                	$("#no_money").hide();
-                }else{
-                	$("#no_money").show();
-                	$("#no_money").html(res.result_pay);
+                if (!res.result_pay) {
+                    $("#no_money").hide();
+                } else {
+                    $("#no_money").show();
+                    $("#no_money").html(res.result_pay);
                 }
-                if(!res.order_result){
-                	$("#no_order").hide();
-                }else{
-                	$("#no_order").show();
-                	$("#no_order").html(res.order_result);
+                if (!res.order_result) {
+                    $("#no_order").hide();
+                } else {
+                    $("#no_order").show();
+                    $("#no_order").html(res.order_result);
                 }
-                if(!res.no_order){
-                	$("#no_order1").hide();
-                }else{
-                	$("#no_order1").show();
-                	$("#no_order1").html(res.no_order);
+                if (!res.no_order) {
+                    $("#no_order1").hide();
+                } else {
+                    $("#no_order1").show();
+                    $("#no_order1").html(res.no_order);
                 }
-                
+
             }
         },
-        fail: function(res) {
+        fail: function (res) {
 
         }
     });
-    function buyin_btn(){
+    function buyin_btn() {
         /*买入支付*/
-        $(function() {
+        $(function () {
             //出现浮动层
 //      $("#buyin_btn").click(function() {
             $('#need').html($(".shu2").val());
             $(".ftc_wzsf").show();
 //      });
             //关闭浮动
-            $(".close").click(function() {
+            $(".close").click(function () {
                 $(".ftc_wzsf").hide();
                 $(".mm_box li").removeClass("mmdd");
                 $(".mm_box li").attr("data", "");
                 i = 0;
             });
             //数字显示隐藏
-            $(".xiaq_tb").click(function() {
+            $(".xiaq_tb").click(function () {
                 $(".numb_box").slideUp(500);
             });
-            $(".mm_box").click(function() {
+            $(".mm_box").click(function () {
                 $(".numb_box").slideDown(500);
             });
             //----
             var i = 0;
-            $(".nub_ggg li .zf_num").click(function() {
+            $(".nub_ggg li .zf_num").click(function () {
 
-                if(i < 6) {
+                if (i < 6) {
                     $(".mm_box li").eq(i).addClass("mmdd");
                     $(".mm_box li").eq(i).attr("data", $(this).text());
                     i++
-                    if(i == 6) {
-                        setTimeout(function() {
+                    if (i == 6) {
+                        setTimeout(function () {
                             var data = "";
-                            $(".mm_box li").each(function() {
+                            $(".mm_box li").each(function () {
                                 data += $(this).attr("data");
                             });
 
@@ -409,29 +427,29 @@
                                     money: $(".shu2").val(),
                                     pay_pass: data
                                 },
-                                success: function(res) {
+                                success: function (res) {
                                     console.log(res);
-                                    if(res.code == 2) {
-                                        mui.toast(res.msg,{ duration:'long', type:'div' });
+                                    if (res.code == 2) {
+                                        mui.toast(res.msg, {duration: 'long', type: 'div'});
                                         $(".ftc_wzsf").hide();
                                         $(".mm_box li").removeClass("mmdd");
                                         $(".mm_box li").attr("data", "");
                                         i = 0;
-                                        setTimeout(function() {
+                                        setTimeout(function () {
                                             window.location.reload()
                                         }, 600);
-                                    } else if(res.code == 1) {
-                                        mui.toast(res.msg,{ duration:'long', type:'div' });
+                                    } else if (res.code == 1) {
+                                        mui.toast(res.msg, {duration: 'long', type: 'div'});
                                         $(".ftc_wzsf").hide();
                                         $(".mm_box li").removeClass("mmdd");
                                         $(".mm_box li").attr("data", "");
                                         i = 0;
-                                        setTimeout(function() {
-                                            window.location.href="BuyIn/unfilled_order.html"
+                                        setTimeout(function () {
+                                            window.location.href = "BuyIn/unfilled_order.html"
                                         }, 800);
                                     }
                                 },
-                                fail: function(res) {
+                                fail: function (res) {
 
                                 }
                             });
@@ -441,15 +459,15 @@
                 }
             });
 
-            $(".nub_ggg li .zf_del").click(function() {
-                if(i > 0) {
+            $(".nub_ggg li .zf_del").click(function () {
+                if (i > 0) {
                     i--;
                     $(".mm_box li").eq(i).removeClass("mmdd");
                     $(".mm_box li").eq(i).attr("data", "");
                 }
             });
 
-            $(".nub_ggg li .zf_empty").click(function() {
+            $(".nub_ggg li .zf_empty").click(function () {
                 $(".mm_box li").removeClass("mmdd");
                 $(".mm_box li").attr("data", "");
                 i = 0;
@@ -458,45 +476,45 @@
         });
     }
 
-    function buyout_btn(){
+    function buyout_btn() {
         /*卖出支付*/
-        $(function() {
+        $(function () {
             //出现浮动层
 //      $("#buyout_btn").click(function() {
             $('#need').html($(".shu3").val());
             $(".ftc_wzsf").show();
 //      });
             //关闭浮动
-            $(".close").click(function() {
+            $(".close").click(function () {
                 $(".ftc_wzsf").hide();
                 $(".mm_box li").removeClass("mmdd");
                 $(".mm_box li").attr("data", "");
                 i = 0;
             });
             //数字显示隐藏
-            $(".xiaq_tb").click(function() {
+            $(".xiaq_tb").click(function () {
                 $(".numb_box").slideUp(500);
             });
-            $(".mm_box").click(function() {
+            $(".mm_box").click(function () {
                 $(".numb_box").slideDown(500);
             });
             //----
             var i = 0;
-            $(".nub_ggg li .zf_num").click(function() {
+            $(".nub_ggg li .zf_num").click(function () {
 
-                if(i < 6) {
+                if (i < 6) {
                     $(".mm_box li").eq(i).addClass("mmdd");
                     $(".mm_box li").eq(i).attr("data", $(this).text());
                     i++
-                    if(i == 6) {
-                        setTimeout(function() {
+                    if (i == 6) {
+                        setTimeout(function () {
                             var data = "";
-                            $(".mm_box li").each(function() {
+                            $(".mm_box li").each(function () {
                                 data += $(this).attr("data");
                             });
 
                             $.ajax({
-                                url: j_url+"/turn/sell_out",
+                                url: j_url + "/turn/sell_out",
                                 type: 'POST',
                                 dataType: 'jsonp',
                                 crossDomain: true,
@@ -505,47 +523,48 @@
                                     money: $(".shu3").val(),
                                     pay_pass: data
                                 },
-                                success: function(res) {
+                                success: function (res) {
                                     console.log(res);
-                                    if(res.code == 2) {
-                                        mui.toast(res.msg,{ duration:'long', type:'div' });
+                                    if (res.code == 2) {
+                                        mui.toast(res.msg, {duration: 'long', type: 'div'});
                                         $(".ftc_wzsf").hide();
                                         $(".mm_box li").removeClass("mmdd");
                                         $(".mm_box li").attr("data", "");
                                         i = 0;
-                                        setTimeout(function() {
+                                        setTimeout(function () {
                                             window.location.reload()
                                         }, 800);
-                                    } else if(res.code == 1) {
-                                        mui.toast(res.msg,{ duration:'long', type:'div' });
+                                    } else if (res.code == 1) {
+                                        mui.toast(res.msg, {duration: 'long', type: 'div'});
                                         $(".ftc_wzsf").hide();
                                         $(".mm_box li").removeClass("mmdd");
                                         $(".mm_box li").attr("data", "");
                                         i = 0;
-                                        setTimeout(function() {
-                                            window.location.href="BuyOut/unfilled_order.html"
+                                        setTimeout(function () {
+                                            window.location.href = "BuyOut/unfilled_order.html"
                                         }, 800);
                                     }
                                 },
-                                fail: function(res) {
+                                fail: function (res) {
 
                                 }
                             });
 
                         }, 100);
-                    };
+                    }
+                    ;
                 }
             });
 
-            $(".nub_ggg li .zf_del").click(function() {
-                if(i > 0) {
+            $(".nub_ggg li .zf_del").click(function () {
+                if (i > 0) {
                     i--;
                     $(".mm_box li").eq(i).removeClass("mmdd");
                     $(".mm_box li").eq(i).attr("data", "");
                 }
             });
 
-            $(".nub_ggg li .zf_empty").click(function() {
+            $(".nub_ggg li .zf_empty").click(function () {
                 $(".mm_box li").removeClass("mmdd");
                 $(".mm_box li").attr("data", "");
                 i = 0;
@@ -554,7 +573,6 @@
         });
 
     }
-
 
 
 </script>

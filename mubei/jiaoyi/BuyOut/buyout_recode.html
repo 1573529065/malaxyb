@@ -1,122 +1,131 @@
 <!doctype html>
 <html>
 
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<link href="../../css/mui.min.css" rel="stylesheet" />
-		<script type="text/javascript" src="../../js/jquery.min.js"></script>
-		<script type="text/javascript" src="../../js/common.js"></script>
-		<script type="text/javascript" src="../../js/back_icon.js" ></script>
-		<script type="text/javascript" src="../../js/change_lange.js" ></script>
-		<style>
-			.h-ul {
-				height: 40px;
-				background-color: #ffffff;
-				margin-top: 0px;
-			}
-			 ul {
-				-webkit-padding-start:0px;
-				    -webkit-margin-after: 0em;
-			}
-			.h-ul li {
-				padding-top: 10px;
-				list-style: none;
-				float: left;
-				width: 33%;
-				text-align: center;
-				 font-size: 15px;
-				 font-weight:inherit;
-			}
-			.table {
-				margin-top: 8px;
-                background-color: #FFFFFF;
-                font-size: 14px;
-                color: #000000;
-                text-align: center;
-            }
-              .table td,
-            .table th {
-                border-bottom: 1px solid #d8d8d8;
-                padding: 0 1em 0;
-                width:33%;
-            }
-             .table tr{
-             	height:40px;
-             }
-             .jine{
-             	color: red;
-             }
-		</style>
-	</head>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link href="../../css/mui.min.css" rel="stylesheet"/>
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../js/common.js"></script>
+    <script type="text/javascript" src="../../js/back_icon.js"></script>
+    <script type="text/javascript" src="../../js/change_lange.js"></script>
+    <style>
+        .h-ul {
+            height: 40px;
+            background-color: #ffffff;
+            margin-top: 0px;
+        }
 
-	<body>
-		<script>
-			if(localStorage.pagecount == 1) {
-				addCssByLink('../../css/zh.css');
-			} else if(localStorage.pagecount == 2) {
-				addCssByLink('../../css/en.css');
-			}
-		</script>
-		<header class="mui-bar mui-bar-nav" style="background-color: #FFFFFF;">
-			<!--<i class="mui-icon mui-icon-left-nav mui-pull-left" onclick="back_go()"></i>-->
-			<h1 class="mui-title"><span class="language-maichujilu"></span></h1>
-		</header>
-		<div class="mui-content">
-			<ul class="h-ul">
-				<li><span class="language-yuwuleixing"></span></li>
-				<li><span class="language-shuei"></span></li>
-				<li><span class="language-time"></span></li>
-			</ul>
-			<p id="none1" style="font-size: 16px; margin: auto;width: 160px;margin-top: 20px; display: none;text-align: center;"><span class="language-meiyoujilu"></span></p>
-			<table class="table" width="100%">
-            	<tbody class="tbody">
-            		<!--<tr>
-            			<td>卖出</td>
-            			<td>+200</td>
-            			<td>2018.03.15 10:10:10</td>
-            		</tr>
-            		<tr>
-            			<td>卖出</td>
-            			<td>+200</td>
-            			<td>2018.03.15 10:10:10</td>
-            		</tr>-->
-            	</tbody>
-            </table>
-		</div>
-		<script src="../../js/mui.min.js"></script>
-		<script type="text/javascript" src="../../js/url.js"></script>
-		<script type="text/javascript">
-			mui.init()
-			
-			  $.ajax({
-            url: j_url+"/index/result_out",
-            type: 'POST',
-            dataType: 'jsonp',
-            data: {
-                u_id:localStorage.lastname,
-            },
-            crossDomain: true,
-            success: function(res) {
-                console.log(res);
-                if(res.code == 2) {
-                    $("#none1").show();
-                    $(".table1").hide();
-                } else if(res.code == 1) {
-                   	var rou = res.data;
-                   	$('.tbody').empty();
-						for(var key in rou) {
-							$('.tbody').append("<tr style='height: 35px;'><td>卖出(" + rou[key].target_uid + ")</td> <td>" + rou[key].bo_money + "</td>" +
-								"<td>"+ rou[key].bo_time +  "</td> </tr>");	
-						}
+        ul {
+            -webkit-padding-start: 0px;
+            -webkit-margin-after: 0em;
+        }
+
+        .h-ul li {
+            padding-top: 10px;
+            list-style: none;
+            float: left;
+            width: 33%;
+            text-align: center;
+            font-size: 15px;
+            font-weight: inherit;
+        }
+
+        .table {
+            margin-top: 8px;
+            background-color: #FFFFFF;
+            font-size: 14px;
+            color: #000000;
+            text-align: center;
+        }
+
+        .table td,
+        .table th {
+            border-bottom: 1px solid #d8d8d8;
+            padding: 0 1em 0;
+            width: 33%;
+        }
+
+        .table tr {
+            height: 40px;
+        }
+
+        .jine {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+<script>
+    if (localStorage.pagecount == 1) {
+        addCssByLink('../../css/zh.css');
+    } else if (localStorage.pagecount == 2) {
+        addCssByLink('../../css/en.css');
+    }
+</script>
+<header class="mui-bar mui-bar-nav" style="background-color: #FFFFFF;">
+    <!--<i class="mui-icon mui-icon-left-nav mui-pull-left" onclick="back_go()"></i>-->
+    <h1 class="mui-title"><span class="language-maichujilu"></span></h1>
+</header>
+<div class="mui-content">
+    <ul class="h-ul">
+        <li><span class="language-yuwuleixing"></span></li>
+        <li><span class="language-shuei"></span></li>
+        <li><span class="language-time"></span></li>
+    </ul>
+    <p id="none1"
+       style="font-size: 16px; margin: auto;width: 160px;margin-top: 20px; display: none;text-align: center;"><span
+            class="language-meiyoujilu"></span></p>
+    <table class="table" width="100%">
+        <tbody class="tbody">
+        <!--<tr>
+            <td>卖出</td>
+            <td>+200</td>
+            <td>2018.03.15 10:10:10</td>
+        </tr>
+        <tr>
+            <td>卖出</td>
+            <td>+200</td>
+            <td>2018.03.15 10:10:10</td>
+        </tr>-->
+        </tbody>
+    </table>
+</div>
+<script src="../../js/mui.min.js"></script>
+<script type="text/javascript" src="../../js/url.js"></script>
+<script type="text/javascript">
+    mui.init()
+
+    $.ajax({
+        url: j_url + "/index/result_out",
+        type: 'POST',
+        dataType: 'jsonp',
+        data: {
+            u_id: localStorage.lastname,
+        },
+        crossDomain: true,
+        success: function (res) {
+            console.log(res);
+            if (res.code == 2) {
+                $("#none1").show();
+                $(".table1").hide();
+            } else if (res.code == 1) {
+                var rou = res.data;
+                $('.tbody').empty();
+                for (var key in rou) {
+                    $('.tbody').append("<tr style='height: 35px;'><td>卖出(" + rou[key].target_uid + ")</td> <td>" + rou[key].bo_money + "</td>" +
+                        "<td>" + rou[key].bo_time + "</td> </tr>");
                 }
-            },
-            fail: function(res) {
-
             }
-        });
-		</script>
-	</body>
+        },
+        fail: function (res) {
+
+        }
+    });
+</script>
+</body>
 
 </html>

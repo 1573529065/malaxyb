@@ -1,112 +1,116 @@
 <!doctype html>
 <html>
 
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<link href="../../css/mui.min.css" rel="stylesheet" />
-		<script type="text/javascript" src="../../js/back_icon.js" ></script>
-		<style>
-			.mui-segmented-control {
-				border: 1px solid #fec900;
-			}
-			
-			.mui-segmented-control .mui-control-item.mui-active {
-				color: #fff;
-				background-color: #fec900;
-			}
-			
-			.mui-segmented-control .mui-control-item {
-				color: #fec900;
-				border-color: inherit;
-			}
-			.table {
-				margin-top: 8px;
-                background-color: #FFFFFF;
-                font-size: 14px;
-                color: #000000;
-                text-align: center;
-            }
-              .table td,
-            .table th {
-                border-bottom: 1px solid #d8d8d8;
-                padding: 0 1em 0;
-                width:25%;
-            }
-             .table tr{
-             	height:40px;
-             }
-             
-		</style>
-	</head>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link href="../../css/mui.min.css" rel="stylesheet"/>
+    <script type="text/javascript" src="../../js/back_icon.js"></script>
+    <style>
+        .mui-segmented-control {
+            border: 1px solid #fec900;
+        }
 
-	<body>
-		<header class="mui-bar mui-bar-nav" style="background-color: #fec900;">
-			<i class="mui-icon mui-icon-left-nav mui-pull-left" onclick="back_go()"></i>
-			<h1 class="mui-title">买入记录</h1>
-		</header>
-		<div class="mui-content">
-				<div style="padding: 20px 20px;background-color: #FFFFFF;">
-				<div id="segmentedControl" class="mui-segmented-control">
-					<a class="mui-control-item mui-active" href="#item1">买入确认付款</a>
-					<a class="mui-control-item" href="#item2">卖出确认付款</a>
-				</div>
-			  </div>
-		     <div id="item1" class="mui-control-content mui-active">
-				<table class="table" width="100%">
-            	<tbody>
-            		<tr>
-            			<td>买入账户</td>
-            			<td>买入金额</td>
-            			<td>当前状态</td>
-            			<td>买入时间</td>
-            		</tr>
-            		<tr>
-            			<td>123456</td>
-            			<td>200</td>
-            			<td>已完成</td>
-            			<td>2018.03.15 10:10:10</td>
-            		</tr>
-            		<tr>
-            			<td>123456</td>
-            			<td>200</td>
-            			<td>已完成</td>
-            			<td>2018.03.15 10:10:10</td>
-            		</tr>
-            	</tbody>
-            </table>
-			</div>
-			<div id="item2" class="mui-control-content">
-              <table class="table" width="100%">
-            	<tbody>
-            		<tr>
-            			<td>买入账户</td>
-            			<td>买入金额</td>
-            			<td>当前状态</td>
-            			<td>卖出时间</td>
-            		</tr>
-            		<tr>
-            			<td>123456</td>
-            			<td>200</td>
-            			<td>已完成</td>
-            			<td>2018.03.15 10:10:10</td>
-            		</tr>
-            		<tr>
-            			<td>123456</td>
-            			<td>200</td>
-            			<td>已完成</td>
-            			<td>2018.03.15 10:10:10</td>
-            		</tr>
-            	</tbody>
-            </table>
-			</div>
-		</div>
-		</div>
-		<script src="../../js/mui.min.js"></script>
-		<script type="text/javascript">
-			mui.init()
-		</script>
-	</body>
+        .mui-segmented-control .mui-control-item.mui-active {
+            color: #fff;
+            background-color: #fec900;
+        }
+
+        .mui-segmented-control .mui-control-item {
+            color: #fec900;
+            border-color: inherit;
+        }
+
+        .table {
+            margin-top: 8px;
+            background-color: #FFFFFF;
+            font-size: 14px;
+            color: #000000;
+            text-align: center;
+        }
+
+        .table td,
+        .table th {
+            border-bottom: 1px solid #d8d8d8;
+            padding: 0 1em 0;
+            width: 25%;
+        }
+
+        .table tr {
+            height: 40px;
+        }
+
+    </style>
+</head>
+
+<body>
+<header class="mui-bar mui-bar-nav" style="background-color: #fec900;">
+    <i class="mui-icon mui-icon-left-nav mui-pull-left" onclick="back_go()"></i>
+    <h1 class="mui-title">买入记录</h1>
+</header>
+<div class="mui-content">
+    <div style="padding: 20px 20px;background-color: #FFFFFF;">
+        <div id="segmentedControl" class="mui-segmented-control">
+            <a class="mui-control-item mui-active" href="#item1">买入确认付款</a>
+            <a class="mui-control-item" href="#item2">卖出确认付款</a>
+        </div>
+    </div>
+    <div id="item1" class="mui-control-content mui-active">
+        <table class="table" width="100%">
+            <tbody>
+            <tr>
+                <td>买入账户</td>
+                <td>买入金额</td>
+                <td>当前状态</td>
+                <td>买入时间</td>
+            </tr>
+            <tr>
+                <td>123456</td>
+                <td>200</td>
+                <td>已完成</td>
+                <td>2018.03.15 10:10:10</td>
+            </tr>
+            <tr>
+                <td>123456</td>
+                <td>200</td>
+                <td>已完成</td>
+                <td>2018.03.15 10:10:10</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="item2" class="mui-control-content">
+        <table class="table" width="100%">
+            <tbody>
+            <tr>
+                <td>买入账户</td>
+                <td>买入金额</td>
+                <td>当前状态</td>
+                <td>卖出时间</td>
+            </tr>
+            <tr>
+                <td>123456</td>
+                <td>200</td>
+                <td>已完成</td>
+                <td>2018.03.15 10:10:10</td>
+            </tr>
+            <tr>
+                <td>123456</td>
+                <td>200</td>
+                <td>已完成</td>
+                <td>2018.03.15 10:10:10</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+<script src="../../js/mui.min.js"></script>
+<script type="text/javascript">
+    mui.init()
+</script>
+</body>
 
 </html>

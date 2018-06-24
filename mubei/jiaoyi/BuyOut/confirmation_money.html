@@ -1,382 +1,412 @@
 <!doctype html>
 <html>
 
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<link href="../../css/mui.min.css" rel="stylesheet" />
-		<script type="text/javascript" src="../../js/back_icon.js"></script>
-		<link rel="stylesheet" href="../../css/zhifu.css" />
-		<script type="text/javascript" src="../../js/jquery.min.js"></script>
-		<script type="text/javascript" src="../../js/common.js"></script>
-		<script type="text/javascript" src="../../js/change_lange.js" ></script>
-		<style>
-			.mui-segmented-control {
-				border: 1px solid #46adfc;
-			}
-			
-			.mui-segmented-control .mui-control-item.mui-active {
-				color: #fff;
-				background-color: #46adfc;
-			}
-			
-			.mui-segmented-control .mui-control-item {
-				color: #46adfc;
-				border-color: inherit;
-			}
-			.table {
-				margin-top: 8px;
-                background-color: #FFFFFF;
-                font-size: 14px;
-                color: #000000;
-                text-align: center;
-            }
-              .table td,
-            .table th {
-                border-bottom: 1px solid #d8d8d8;
-                padding: 0 1em 0;
-                width:25%;
-            }
-             .table tr{
-             	height:40px;
-             }
-             ul{
-			  -webkit-padding-start: 0px;
-			}
-             .c_list2 li{
-             	background-color: #FFFFFF;
-				overflow: auto;
-				list-style: none;
-				margin-bottom: 10px;
-             }
-              .c_list li{
-             	background-color: #FFFFFF;
-				overflow: auto;
-				list-style: none;
-				margin-bottom: 10px;
-             }
-             .c_head{
-             	padding: 10px 5px;
-				overflow: auto;
-				border-bottom: 1px solid gainsboro;
-             }
-             p{
-				margin-bottom: 3px;
-				color: #000000;
-				font-size: 13px;
-			}
-			.c_btn{
-		    margin-top: 5px;
-			height: 40px;
-			 text-align: right;
-			}
-			.c_btn button {
-				margin-right: 10px;
-			}
-		</style>
-	</head>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link href="../../css/mui.min.css" rel="stylesheet"/>
+    <script type="text/javascript" src="../../js/back_icon.js"></script>
+    <link rel="stylesheet" href="../../css/zhifu.css"/>
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../js/common.js"></script>
+    <script type="text/javascript" src="../../js/change_lange.js"></script>
+    <style>
+        .mui-segmented-control {
+            border: 1px solid #46adfc;
+        }
 
-	<body>
-		<script>
-			if(localStorage.pagecount == 1) {
-				addCssByLink('../../css/zh.css');
-			} else if(localStorage.pagecount == 2) {
-				addCssByLink('../../css/en.css');
-			}
-		</script>
-		<header class="mui-bar mui-bar-nav" style="background-color: #FFFFFF;">
-			<!--<i class="mui-icon mui-icon-left-nav mui-pull-left" onclick="window.location.href='../jiaoyi_t.html?tab=1'"></i>-->
-			<h1 class="mui-title"><span class="language-quedingduihuan8"></span></h1>
-		</header>
-		<div class="mui-content">
-			<div style="padding: 20px 20px;background-color: #FFFFFF;">
-				<div id="segmentedControl" class="mui-segmented-control">
-					<a id="order_no" class="mui-control-item mui-active" href="#item1"><span class="language-quedingduihuan8"></span></a>
-					<a id="order_y" class="mui-control-item" href="#item2"><span class="language-quedingduihuan10"></span></a>
-				</div>
-			</div>
-			
-			
+        .mui-segmented-control .mui-control-item.mui-active {
+            color: #fff;
+            background-color: #46adfc;
+        }
 
-			<div id="item1" class="mui-control-content mui-active">
-				<p id="none1" style="font-size: 16px; margin: auto;width: 160px;margin-top: 20px; display: none;text-align: center;"><span class="language-meiyoujilu"></span></p>
-				<ul class="c_list">
-					<!--<li>
-						<div>
-					<div class="c_head">
-						<div style="float: left;">
-								<p>转账账户:<span>小白</span></p>
-								<p>转账手机号:<span>1235****5858</span></p>
-								<p>转账金额:<span>123456</span></p>
-						</div>
-						<div style="float: right;text-align: right;">
-								<p style="font-weight: bolder;font-size: 14px;">待确认</span></p>
-								<p style="">余额：<span>22222</span></span></p>
-								<p style="color: gray;">2018-03-08 12:00:00</p>
-						</div>
-					</div>
-					<div class="c_btn">
-						<button type="button" class="mui-btn mui-btn-warning">确认付款</button>
-						
-					</div>
-				</div>
-					</li>-->
-					
-					
-				</ul>
-			</div>
-			<div id="item2" class="mui-control-content">
-				<p id="none2" style="font-size: 16px; margin: auto;width: 160px;margin-top: 20px; display: none;text-align: center;"><span class="language-meiyoujilu"></span></p>
-              <ul class="c_list2">
-					
-				</ul>
-			</div>
-		</div>
-		
-		<!--支付键盘-->
-    <div class="ftc_wzsf">
-        <div class="srzfmm_box">
-            <div class="qsrzfmm_bt clear_wl">
-                <img src="../../images/xx_03.jpg" class="tx close fl">
-                <span class="fl"><span class="language-qingchuruzhifumima"></span></span></div>
-            <div class="zfmmxx_shop">
-                <div class="zhifu_price">￥<span id="need"></span></div></div>
-            <ul class="mm_box">
-                <li></li><li></li><li></li><li></li><li></li><li></li>
-            </ul>
+        .mui-segmented-control .mui-control-item {
+            color: #46adfc;
+            border-color: inherit;
+        }
+
+        .table {
+            margin-top: 8px;
+            background-color: #FFFFFF;
+            font-size: 14px;
+            color: #000000;
+            text-align: center;
+        }
+
+        .table td,
+        .table th {
+            border-bottom: 1px solid #d8d8d8;
+            padding: 0 1em 0;
+            width: 25%;
+        }
+
+        .table tr {
+            height: 40px;
+        }
+
+        ul {
+            -webkit-padding-start: 0px;
+        }
+
+        .c_list2 li {
+            background-color: #FFFFFF;
+            overflow: auto;
+            list-style: none;
+            margin-bottom: 10px;
+        }
+
+        .c_list li {
+            background-color: #FFFFFF;
+            overflow: auto;
+            list-style: none;
+            margin-bottom: 10px;
+        }
+
+        .c_head {
+            padding: 10px 5px;
+            overflow: auto;
+            border-bottom: 1px solid gainsboro;
+        }
+
+        p {
+            margin-bottom: 3px;
+            color: #000000;
+            font-size: 13px;
+        }
+
+        .c_btn {
+            margin-top: 5px;
+            height: 40px;
+            text-align: right;
+        }
+
+        .c_btn button {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+<script>
+    if (localStorage.pagecount == 1) {
+        addCssByLink('../../css/zh.css');
+    } else if (localStorage.pagecount == 2) {
+        addCssByLink('../../css/en.css');
+    }
+</script>
+<header class="mui-bar mui-bar-nav" style="background-color: #FFFFFF;">
+    <!--<i class="mui-icon mui-icon-left-nav mui-pull-left" onclick="window.location.href='../jiaoyi_t.html?tab=1'"></i>-->
+    <h1 class="mui-title"><span class="language-quedingduihuan8"></span></h1>
+</header>
+<div class="mui-content">
+    <div style="padding: 20px 20px;background-color: #FFFFFF;">
+        <div id="segmentedControl" class="mui-segmented-control">
+            <a id="order_no" class="mui-control-item mui-active" href="#item1"><span
+                    class="language-quedingduihuan8"></span></a>
+            <a id="order_y" class="mui-control-item" href="#item2"><span class="language-quedingduihuan10"></span></a>
         </div>
-        <div class="numb_box">
-            <div class="xiaq_tb">
-                <img src="../../images/jftc_14.jpg" height="10"></div>
-            <ul class="nub_ggg">
-                <li><a href="javascript:void(0);" class="zf_num">1</a></li>
-                <li><a href="javascript:void(0);" class="zj_x zf_num">2</a></li>
-                <li><a href="javascript:void(0);" class="zf_num">3</a></li>
-                <li><a href="javascript:void(0);" class="zf_num">4</a></li>
-                <li><a href="javascript:void(0);" class="zj_x zf_num">5</a></li>
-                <li><a href="javascript:void(0);" class="zf_num">6</a></li>
-                <li><a href="javascript:void(0);" class="zf_num">7</a></li>
-                <li><a href="javascript:void(0);" class="zj_x zf_num">8</a></li>
-                <li><a href="javascript:void(0);" class="zf_num">9</a></li>
-                <li><a href="javascript:void(0);" class="zf_empty"><span class="language-qingkong" style="color: #000000;"></span></a></li>
-                <li><a href="javascript:void(0);" class="zj_x zf_num">0</a></li>
-                <li><a href="javascript:void(0);" class="zf_del"><span class="language-shanchu" style="color: #000000;"></span></a></li>
-            </ul>
-        </div>
-        <div class="hbbj"></div>
     </div>
-			
-		</div>
-		
-	    <script src="../../js/mui.min.js"></script>
-		<script type="text/javascript" src="../../js/url.js"></script>
-		
-		<script type="text/javascript">
-			mui.init()
-			
-			$.ajax({
-					url: j_url + "/index/result_sell",
-					type: 'POST',
-					dataType: 'jsonp',
-					data: {
-						u_id: localStorage.lastname,
-					},
-					crossDomain: true,
-					success: function(res) {
-						console.log(res);
-						if(res.code == 2) {
-							$("#none1").show();
-							$(".c_list").hide();
-						} else if(res.code == 1) {
-							$("#none1").hide();
-							$(".c_list").show();
-							var rou = res.data;
-							$('.c_list').empty();
-							for(var key in rou) {
-										$('.c_list').append("<li><div><div class='c_head'><div style='float: left;'><p><span class='language-zhuanzhangzhanghu'></span>:<span>"
-									+rou[key].c_name+"</span></p><p><span class='language-zhuanzhangnumber'></span>:<span>"
-									+rou[key].b_card+"</span></p><p><span class='language-jiaoyijine'></span>:<span>"
-									+rou[key].shi_money+"</span></p></div><div style='float: right;text-align: right;'><p style='font-weight: bolder;font-size: 14px;'><span class='language-querening'></span></p><p><span class='language-money'></span>：<span id='gold"+rou[key].s_id+"'>"
-									+rou[key].money+"</span></span></p><p style='color: gray;'>"
-									+rou[key].time+"</p></div></div><div class='c_btn'><button type='button' class='mui-btn mui-btn-warning' onclick='buy(" +
-									rou[key].s_id + ")'><span class='language-querenshoukuan'></span></button></div></div></li>");
-							}
-						}
-					},
-					fail: function(res) {
 
-					}
-				});
-				
-				document.getElementById("order_no").addEventListener('tap', function() {
-				 	$.ajax({
-					url: j_url + "/index/result_sell",
-					type: 'POST',
-					dataType: 'jsonp',
-					data: {
-						u_id: localStorage.lastname,
-					},
-					crossDomain: true,
-					success: function(res) {
-						console.log(res);
-						if(res.code == 2) {
-							$("#none1").show();
-							$(".c_list").hide();
-						} else if(res.code == 1) {
-							$("#none1").hide();
-							$(".c_list").show();
-							var rou = res.data;
-							$('.c_list').empty();
-							for(var key in rou) {
-									$('.c_list').append("<li><div><div class='c_head'><div style='float: left;'><p><span class='language-zhuanzhangzhanghu'></span>:<span>"
-									+rou[key].c_name+"</span></p><p><span class='language-zhuanzhangnumber'></span>:<span>"
-									+rou[key].b_card+"</span></p><p><span class='language-jiaoyijine'></span>:<span>"
-									+rou[key].shi_money+"</span></p></div><div style='float: right;text-align: right;'><p style='font-weight: bolder;font-size: 14px;'><span class='language-querening'></span></p><p><span class='language-money'></span>：<span id='gold"+rou[key].s_id+"'>"
-									+rou[key].money+"</span></span></p><p style='color: gray;'>"
-									+rou[key].time+"</p></div></div><div class='c_btn'><button type='button' class='mui-btn mui-btn-warning' onclick='buy(" +
-									rou[key].s_id + ")'><span class='language-querenshoukuan'></span></button></div></div></li>");
-							}
-						}
-					},
-					fail: function(res) {
 
-					}
-				});
-				 });
-				
-				 document.getElementById("order_y").addEventListener('tap', function() {
-				 	$.ajax({
-					url: j_url + "/index/result_sell_t",
-					type: 'POST',
-					dataType: 'jsonp',
-					data: {
-						u_id: localStorage.lastname,
-					},
-					crossDomain: true,
-					success: function(res) {
-						console.log(res);
-						if(res.code == 2) {
-							$("#none2").show();
-							$(".c_list2").hide();
-						} else if(res.code == 1) {
-							var rou = res.data;
-							$('.c_list2').empty();
-							for(var key in rou) {
-									$('.c_list2').append("<li><div><div class='c_head'><div style='float: left;'><p><span class='language-zhuanzhangzhanghu'></span>:<span>"
-									+rou[key].c_name+"</span></p><p><span class='language-zhuanzhangnumber'></span>:<span>"
-									+rou[key].b_card+"</span></p><p><span class='language-jiaoyijine'></span>:<span>"
-									+rou[key].shi_money+"123456</span></p></div><div style='float: right;text-align: right;'><p style='font-weight: bolder;font-size: 14px;'>"
-									+"<span class='language-querening'></span></p><p><span class='language-money'></span>：<span id='gold"+rou[key].s_id+"'>"
-									+rou[key].money+"</span></span></p><p style='color: gray;'>"
-									+rou[key].time+"</p></div></div><div class='c_btn'><button type='button' class='mui-btn mui-btn-warning' onclick='buy("
-									+rou[key].s_id+")'><span class='language-querenshoukuan'></span></button><button type='button' class='mui-btn mui-btn-danger' onclick=shensu("+rou[key].s_id+")>申诉</button></div></div></li>");
-							}
-						}
-					},
-					fail: function(res) {
+    <div id="item1" class="mui-control-content mui-active">
+        <p id="none1"
+           style="font-size: 16px; margin: auto;width: 160px;margin-top: 20px; display: none;text-align: center;"><span
+                class="language-meiyoujilu"></span></p>
+        <ul class="c_list">
+            <!--<li>
+                <div>
+            <div class="c_head">
+                <div style="float: left;">
+                        <p>转账账户:<span>小白</span></p>
+                        <p>转账手机号:<span>1235****5858</span></p>
+                        <p>转账金额:<span>123456</span></p>
+                </div>
+                <div style="float: right;text-align: right;">
+                        <p style="font-weight: bolder;font-size: 14px;">待确认</span></p>
+                        <p style="">余额：<span>22222</span></span></p>
+                        <p style="color: gray;">2018-03-08 12:00:00</p>
+                </div>
+            </div>
+            <div class="c_btn">
+                <button type="button" class="mui-btn mui-btn-warning">确认付款</button>
 
-					}
-				});
-				 });
-				 
-			function buy(so_id){
-				
-                    $('#need').html($("#gold"+so_id).html());
-                    $(".ftc_wzsf").show();
+            </div>
+        </div>
+            </li>-->
 
-                //关闭浮动
-                $(".close").click(function(){
-                    $(".ftc_wzsf").hide();
-                    $(".mm_box li").removeClass("mmdd");
-                    $(".mm_box li").attr("data","");
-                    i = 0;
-                });
-                //数字显示隐藏
-                $(".xiaq_tb").click(function(){
-                    $(".numb_box").slideUp(500);
-                });
-                $(".mm_box").click(function(){
-                    $(".numb_box").slideDown(500);
-                });
-                //----
-                var i = 0;
-                $(".nub_ggg li .zf_num").click(function(){
 
-                    if(i<6){
-                        $(".mm_box li").eq(i).addClass("mmdd");
-                        $(".mm_box li").eq(i).attr("data",$(this).text());
-                        i++;
-                        if (i==6) {
-                            setTimeout(function(){
-                                var data = "";
-                                $(".mm_box li").each(function(){
-                                    data += $(this).attr("data");
-                                });
+        </ul>
+    </div>
+    <div id="item2" class="mui-control-content">
+        <p id="none2"
+           style="font-size: 16px; margin: auto;width: 160px;margin-top: 20px; display: none;text-align: center;"><span
+                class="language-meiyoujilu"></span></p>
+        <ul class="c_list2">
 
-                                $.ajax({
-                                    url: j_url+"/turn/sell_confirm",
-                                    type: 'POST',
-                                    dataType: 'jsonp',
-                                    data: {
-                                         s_id:so_id,
-                                         u_id:localStorage.lastname,
-                                         pay_pass: data
-                                    },
-                                    crossDomain: true,
-                                    success: function (res) {
-                                        if(res.code == 2) {
-                                            mui.alert(res.msg);
-                                            $(".ftc_wzsf").hide();
-                                            $(".mm_box li").removeClass("mmdd");
-                                            $(".mm_box li").attr("data","");
-                                            i = 0;
-                                            setTimeout(function(){window.location.reload()},200);
-                                        } else if (res.code == 1) {
-                                            mui.alert(res.msg);
-                                            $(".ftc_wzsf").hide();
-                                            $(".mm_box li").removeClass("mmdd");
-                                            $(".mm_box li").attr("data","");
-                                            i = 0;
+        </ul>
+    </div>
+</div>
 
-                                            setTimeout(function(){window.location.href = 'completed_order.html'},800);
-                                        }else if (res.code == 3) {
-                                            mui.alert(res.msg);
-                                            $(".ftc_wzsf").hide();
-                                            $(".mm_box li").removeClass("mmdd");
-                                            $(".mm_box li").attr("data","");
-                                            i = 0;
-                                            setTimeout(function(){window.location.href = '../../GerenCenter/add_bank.html'},800);
-                                        }
+<!--支付键盘-->
+<div class="ftc_wzsf">
+    <div class="srzfmm_box">
+        <div class="qsrzfmm_bt clear_wl">
+            <img src="../../images/xx_03.jpg" class="tx close fl">
+            <span class="fl"><span class="language-qingchuruzhifumima"></span></span></div>
+        <div class="zfmmxx_shop">
+            <div class="zhifu_price">￥<span id="need"></span></div>
+        </div>
+        <ul class="mm_box">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <div class="numb_box">
+        <div class="xiaq_tb">
+            <img src="../../images/jftc_14.jpg" height="10"></div>
+        <ul class="nub_ggg">
+            <li><a href="javascript:void(0);" class="zf_num">1</a></li>
+            <li><a href="javascript:void(0);" class="zj_x zf_num">2</a></li>
+            <li><a href="javascript:void(0);" class="zf_num">3</a></li>
+            <li><a href="javascript:void(0);" class="zf_num">4</a></li>
+            <li><a href="javascript:void(0);" class="zj_x zf_num">5</a></li>
+            <li><a href="javascript:void(0);" class="zf_num">6</a></li>
+            <li><a href="javascript:void(0);" class="zf_num">7</a></li>
+            <li><a href="javascript:void(0);" class="zj_x zf_num">8</a></li>
+            <li><a href="javascript:void(0);" class="zf_num">9</a></li>
+            <li><a href="javascript:void(0);" class="zf_empty"><span class="language-qingkong"
+                                                                     style="color: #000000;"></span></a></li>
+            <li><a href="javascript:void(0);" class="zj_x zf_num">0</a></li>
+            <li><a href="javascript:void(0);" class="zf_del"><span class="language-shanchu"
+                                                                   style="color: #000000;"></span></a></li>
+        </ul>
+    </div>
+    <div class="hbbj"></div>
+</div>
 
-                                    }, fail: function (res) {
+</div>
 
-                                    }
-                                });
+<script src="../../js/mui.min.js"></script>
+<script type="text/javascript" src="../../js/url.js"></script>
 
-                            },100);
-                        };
-                    }
-                });
+<script type="text/javascript">
+    mui.init()
 
-                $(".nub_ggg li .zf_del").click(function(){
-                    if(i>0){
-                        i--;
-                        $(".mm_box li").eq(i).removeClass("mmdd");
-                        $(".mm_box li").eq(i).attr("data","");
-                    }
-                });
-
-                $(".nub_ggg li .zf_empty").click(function(){
-                    $(".mm_box li").removeClass("mmdd");
-                    $(".mm_box li").attr("data","");
-                    i = 0;
-                });
+    $.ajax({
+        url: j_url + "/index/result_sell",
+        type: 'POST',
+        dataType: 'jsonp',
+        data: {
+            u_id: localStorage.lastname,
+        },
+        crossDomain: true,
+        success: function (res) {
+            console.log(res);
+            if (res.code == 2) {
+                $("#none1").show();
+                $(".c_list").hide();
+            } else if (res.code == 1) {
+                $("#none1").hide();
+                $(".c_list").show();
+                var rou = res.data;
+                $('.c_list').empty();
+                for (var key in rou) {
+                    $('.c_list').append("<li><div><div class='c_head'><div style='float: left;'><p><span class='language-zhuanzhangzhanghu'></span>:<span>"
+                        + rou[key].c_name + "</span></p><p><span class='language-zhuanzhangnumber'></span>:<span>"
+                        + rou[key].b_card + "</span></p><p><span class='language-jiaoyijine'></span>:<span>"
+                        + rou[key].shi_money + "</span></p></div><div style='float: right;text-align: right;'><p style='font-weight: bolder;font-size: 14px;'><span class='language-querening'></span></p><p><span class='language-money'></span>：<span id='gold" + rou[key].s_id + "'>"
+                        + rou[key].money + "</span></span></p><p style='color: gray;'>"
+                        + rou[key].time + "</p></div></div><div class='c_btn'><button type='button' class='mui-btn mui-btn-warning' onclick='buy(" +
+                        rou[key].s_id + ")'><span class='language-querenshoukuan'></span></button></div></div></li>");
+                }
             }
-			function shensu(id){
-				window.location.href='recharge.html?sid='+id;
-			}
-		</script>
-	</body>
+        },
+        fail: function (res) {
+
+        }
+    });
+
+    document.getElementById("order_no").addEventListener('tap', function () {
+        $.ajax({
+            url: j_url + "/index/result_sell",
+            type: 'POST',
+            dataType: 'jsonp',
+            data: {
+                u_id: localStorage.lastname,
+            },
+            crossDomain: true,
+            success: function (res) {
+                console.log(res);
+                if (res.code == 2) {
+                    $("#none1").show();
+                    $(".c_list").hide();
+                } else if (res.code == 1) {
+                    $("#none1").hide();
+                    $(".c_list").show();
+                    var rou = res.data;
+                    $('.c_list').empty();
+                    for (var key in rou) {
+                        $('.c_list').append("<li><div><div class='c_head'><div style='float: left;'><p><span class='language-zhuanzhangzhanghu'></span>:<span>"
+                            + rou[key].c_name + "</span></p><p><span class='language-zhuanzhangnumber'></span>:<span>"
+                            + rou[key].b_card + "</span></p><p><span class='language-jiaoyijine'></span>:<span>"
+                            + rou[key].shi_money + "</span></p></div><div style='float: right;text-align: right;'><p style='font-weight: bolder;font-size: 14px;'><span class='language-querening'></span></p><p><span class='language-money'></span>：<span id='gold" + rou[key].s_id + "'>"
+                            + rou[key].money + "</span></span></p><p style='color: gray;'>"
+                            + rou[key].time + "</p></div></div><div class='c_btn'><button type='button' class='mui-btn mui-btn-warning' onclick='buy(" +
+                            rou[key].s_id + ")'><span class='language-querenshoukuan'></span></button></div></div></li>");
+                    }
+                }
+            },
+            fail: function (res) {
+
+            }
+        });
+    });
+
+    document.getElementById("order_y").addEventListener('tap', function () {
+        $.ajax({
+            url: j_url + "/index/result_sell_t",
+            type: 'POST',
+            dataType: 'jsonp',
+            data: {
+                u_id: localStorage.lastname,
+            },
+            crossDomain: true,
+            success: function (res) {
+                console.log(res);
+                if (res.code == 2) {
+                    $("#none2").show();
+                    $(".c_list2").hide();
+                } else if (res.code == 1) {
+                    var rou = res.data;
+                    $('.c_list2').empty();
+                    for (var key in rou) {
+                        $('.c_list2').append("<li><div><div class='c_head'><div style='float: left;'><p><span class='language-zhuanzhangzhanghu'></span>:<span>"
+                            + rou[key].c_name + "</span></p><p><span class='language-zhuanzhangnumber'></span>:<span>"
+                            + rou[key].b_card + "</span></p><p><span class='language-jiaoyijine'></span>:<span>"
+                            + rou[key].shi_money + "123456</span></p></div><div style='float: right;text-align: right;'><p style='font-weight: bolder;font-size: 14px;'>"
+                            + "<span class='language-querening'></span></p><p><span class='language-money'></span>：<span id='gold" + rou[key].s_id + "'>"
+                            + rou[key].money + "</span></span></p><p style='color: gray;'>"
+                            + rou[key].time + "</p></div></div><div class='c_btn'><button type='button' class='mui-btn mui-btn-warning' onclick='buy("
+                            + rou[key].s_id + ")'><span class='language-querenshoukuan'></span></button><button type='button' class='mui-btn mui-btn-danger' onclick=shensu(" + rou[key].s_id + ")>申诉</button></div></div></li>");
+                    }
+                }
+            },
+            fail: function (res) {
+
+            }
+        });
+    });
+
+    function buy(so_id) {
+
+        $('#need').html($("#gold" + so_id).html());
+        $(".ftc_wzsf").show();
+
+        //关闭浮动
+        $(".close").click(function () {
+            $(".ftc_wzsf").hide();
+            $(".mm_box li").removeClass("mmdd");
+            $(".mm_box li").attr("data", "");
+            i = 0;
+        });
+        //数字显示隐藏
+        $(".xiaq_tb").click(function () {
+            $(".numb_box").slideUp(500);
+        });
+        $(".mm_box").click(function () {
+            $(".numb_box").slideDown(500);
+        });
+        //----
+        var i = 0;
+        $(".nub_ggg li .zf_num").click(function () {
+
+            if (i < 6) {
+                $(".mm_box li").eq(i).addClass("mmdd");
+                $(".mm_box li").eq(i).attr("data", $(this).text());
+                i++;
+                if (i == 6) {
+                    setTimeout(function () {
+                        var data = "";
+                        $(".mm_box li").each(function () {
+                            data += $(this).attr("data");
+                        });
+
+                        $.ajax({
+                            url: j_url + "/turn/sell_confirm",
+                            type: 'POST',
+                            dataType: 'jsonp',
+                            data: {
+                                s_id: so_id,
+                                u_id: localStorage.lastname,
+                                pay_pass: data
+                            },
+                            crossDomain: true,
+                            success: function (res) {
+                                if (res.code == 2) {
+                                    mui.alert(res.msg);
+                                    $(".ftc_wzsf").hide();
+                                    $(".mm_box li").removeClass("mmdd");
+                                    $(".mm_box li").attr("data", "");
+                                    i = 0;
+                                    setTimeout(function () {
+                                        window.location.reload()
+                                    }, 200);
+                                } else if (res.code == 1) {
+                                    mui.alert(res.msg);
+                                    $(".ftc_wzsf").hide();
+                                    $(".mm_box li").removeClass("mmdd");
+                                    $(".mm_box li").attr("data", "");
+                                    i = 0;
+
+                                    setTimeout(function () {
+                                        window.location.href = 'completed_order.html'
+                                    }, 800);
+                                } else if (res.code == 3) {
+                                    mui.alert(res.msg);
+                                    $(".ftc_wzsf").hide();
+                                    $(".mm_box li").removeClass("mmdd");
+                                    $(".mm_box li").attr("data", "");
+                                    i = 0;
+                                    setTimeout(function () {
+                                        window.location.href = '../../GerenCenter/add_bank.html'
+                                    }, 800);
+                                }
+
+                            }, fail: function (res) {
+
+                            }
+                        });
+
+                    }, 100);
+                }
+                ;
+            }
+        });
+
+        $(".nub_ggg li .zf_del").click(function () {
+            if (i > 0) {
+                i--;
+                $(".mm_box li").eq(i).removeClass("mmdd");
+                $(".mm_box li").eq(i).attr("data", "");
+            }
+        });
+
+        $(".nub_ggg li .zf_empty").click(function () {
+            $(".mm_box li").removeClass("mmdd");
+            $(".mm_box li").attr("data", "");
+            i = 0;
+        });
+    }
+    function shensu(id) {
+        window.location.href = 'recharge.html?sid=' + id;
+    }
+</script>
+</body>
 
 </html>
