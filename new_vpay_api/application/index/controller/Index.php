@@ -230,7 +230,7 @@ class Index extends Controller
     {
         $address = Request::instance()->param('wallet_address');
         $u_id = Request::instance()->param('u_id');
-        if (empty($u_id)) return jsonp(['code' => 2,'msg' => '参数错误']);
+        if (empty($u_id)) return jsonp(['code' => 2, 'msg' => '参数错误']);
         if ($address) {
             $info = Db::table('mb_user')->where('u_id', $u_id)->update(['wallet_address' => $address]);
             if ($info) {
@@ -268,7 +268,7 @@ class Index extends Controller
     {
         $user = Request::instance()->param('token');
         $soid = Request::instance()->param('m_id');
-        if ($user != 'message')  return jsonp(['code' => 2, 'msg' => '参数错误']);
+        if ($user != 'message') return jsonp(['code' => 2, 'msg' => '参数错误']);
 
         $card = Db::table('mb_message')->where('m_id', $soid)->find();
         if ($card) {
@@ -284,7 +284,7 @@ class Index extends Controller
     public function about()
     {
         $token = Request::instance()->param('token');
-        $type = Request::instance()->param('type',1);
+        $type = Request::instance()->param('type', 1);
         if ($token != 'about') return jsonp(['code' => 2, 'msg' => '参数错误']);
 
         $about = Db::table('mb_about')->where('type', $type)->field('a_text')->find();
@@ -363,7 +363,7 @@ class Index extends Controller
     {
         $user = Request::instance()->param('token');
         $soid = Request::instance()->param('so_id');
-        if ($user != 'news' || empty($soid))  return jsonp(['code' => 2, 'msg' => '参数错误']);
+        if ($user != 'news' || empty($soid)) return jsonp(['code' => 2, 'msg' => '参数错误']);
 
         $card = Db::table('vpay_shop')->where('sh_id', $soid)->find();
         if ($card) {
@@ -517,225 +517,205 @@ class Index extends Controller
     public function result_turn()
     {
         $user = Request::instance()->param('u_id');
-        if ($user) {
-            $user_arr = Db::table('mb_balance_order')->where('u_id', $user)->order('bo_time desc')->where('type', 3)->field('bo_money,target_uid,bo_time')->select();
-            foreach ($user_arr as $k => $v) {
-                $user_arr[$k]['bo_time'] = date('Y-m-d H:i:s', $v['bo_time']);
-            }
-            if ($user_arr) {
-                return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $user_arr]);
-            } else {
-                return jsonp(['code' => 2, 'msg' => '暂无数据']);
-            }
-        } else {
-            return jsonp(['code' => 2, 'msg' => '参数错误']);
-        }
+        if (!$user) return jsonp(['code' => 2, 'msg' => '参数错误']);
 
+        $user_arr = Db::table('mb_balance_order')->where('u_id', $user)
+            ->where('type', 3)
+            ->order('bo_time desc')
+            ->field('bo_money,target_uid,bo_time')
+            ->select();
+
+        foreach ($user_arr as $k => $v) {
+            $user_arr[$k]['bo_time'] = date('Y-m-d H:i:s', $v['bo_time']);
+        }
+        if ($user_arr) {
+            return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $user_arr]);
+        } else {
+            return jsonp(['code' => 2, 'msg' => '暂无数据']);
+        }
     }
 
     //买入未完成订单（未选择收款人）
     public function no_order()
     {
         $user = Request::instance()->param('u_id');
-        if ($user) {
-            $order = Db::table('mb_user')
-                ->alias('a')
-                ->join('mb_sell_order w', 'a.u_id = w.u_id')
-                ->join('mb_bank c', 'w.u_id_bank = c.b_id')
-                ->join('mb_bank_name n', 'c.b_name = n.bn_id')
-                ->where('w.type', 1)
-                ->where('w.u_id', $user)
-                ->where('w.user', null)
-                ->field('a.u_img,a.user,a.tel,n.bn_name,w.money,w.s_id,
-                w.static,w.time,w.u_id,c.b_card,c.c_name,w.shi_money')
-                ->order('w.time', 'desc')
-                ->select();
-            foreach ($order as $k => $v) {
-                switch ($v['static']) {
-                    case 1:
-                        $message = '挂买中';
-                        break;
-                    case 2:
-                        $message = '交易中';
-                        break;
-                    case 3:
-                        $message = '确认中';
-                        break;
-                    case 4:
-                        $message = '已完成';
-                        break;
+        if (!$user) return jsonp(['code' => 2, 'msg' => '参数错误']);
+        $order = Db::table('mb_user')
+            ->alias('a')
+            ->join('mb_sell_order w', 'a.u_id = w.u_id')
+            ->join('mb_bank c', 'w.u_id_bank = c.b_id')
+            ->join('mb_bank_name n', 'c.b_name = n.bn_id')
+            ->where('w.type', 1)
+            ->where('w.u_id', $user)
+            ->where('w.user', null)
+            ->field('a.u_img,a.user,a.tel,n.bn_name,w.money,w.s_id,
+            w.static,w.time,w.u_id,c.b_card,c.c_name,w.shi_money')
+            ->order('w.time', 'desc')
+            ->select();
 
-                }
-                $order[$k]['time'] = date('Y-m-d H:i:s', $v['time']);
-                $order[$k]['static'] = $message;
-            }
-            if ($order) {
-                return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $order]);
-            } else {
-                return jsonp(['code' => 2, 'msg' => '暂无数据']);
-            }
+        foreach ($order as $k => $v) {
+            switch ($v['static']) {
+                case 1:
+                    $message = '挂买中';
+                    break;
+                case 2:
+                    $message = '交易中';
+                    break;
+                case 3:
+                    $message = '确认中';
+                    break;
+                case 4:
+                    $message = '已完成';
+                    break;
 
-        } else {
-            return jsonp(['code' => 2, 'msg' => '参数错误']);
+            }
+            $order[$k]['time'] = date('Y-m-d H:i:s', $v['time']);
+            $order[$k]['static'] = $message;
         }
-
+        if ($order) {
+            return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $order]);
+        } else {
+            return jsonp(['code' => 2, 'msg' => '暂无数据']);
+        }
     }
 
     //买入未完成订单（已选择收款人）
     public function no_order_t()
     {
         $user = Request::instance()->param('u_id');
-        if ($user) {
-            $order = Db::table('mb_user')
-                ->alias('a')
-                ->join('mb_sell_order w', 'a.u_id = w.u_id')
-//
-                ->join('mb_bank c', 'w.u_id_bank = c.b_id')
-                ->join('mb_bank_name n', 'c.b_name = n.bn_id')
-                ->where('w.type', 1)
-                ->where('w.u_id', $user)
-                ->where('w.user', '>', 1)
-                ->field('a.u_img,a.user,a.tel,n.bn_name,w.money,w.s_id,w.static,w.time,w.u_id,c.b_card,c.c_name,w.shi_money')
-                ->order('w.time', 'desc')
-                ->select();
-            foreach ($order as $k => $v) {
-                switch ($v['static']) {
-                    case 1:
-                        $message = '挂买中';
-                        break;
-                    case 2:
-                        $message = '交易中';
-                        break;
-                    case 3:
-                        $message = '确认中';
-                        break;
-                    case 4:
-                        $message = '已完成';
-                        break;
+        if (!$user) return jsonp(['code' => 2, 'msg' => '参数错误']);
 
-                }
-                $order[$k]['time'] = date('Y-m-d H:i:s', $v['time']);
-                $order[$k]['static'] = $message;
-            }
-            if ($order) {
-                return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $order]);
-            } else {
-                return jsonp(['code' => 2, 'msg' => '暂无数据']);
-            }
+        $order = Db::table('mb_user')
+            ->alias('a')
+            ->join('mb_sell_order w', 'a.u_id = w.u_id')
+            ->join('mb_bank c', 'w.u_id_bank = c.b_id')
+            ->join('mb_bank_name n', 'c.b_name = n.bn_id')
+            ->where('w.type', 1)
+            ->where('w.u_id', $user)
+            ->where('w.user', '>', 1)
+            ->field('a.u_img,a.user,a.tel,n.bn_name,w.money,w.s_id,w.static,w.time,w.u_id,c.b_card,c.c_name,w.shi_money')
+            ->order('w.time', 'desc')
+            ->select();
 
-        } else {
-            return jsonp(['code' => 2, 'msg' => '参数错误']);
+        foreach ($order as $k => $v) {
+            switch ($v['static']) {
+                case 1:
+                    $message = '挂买中';
+                    break;
+                case 2:
+                    $message = '交易中';
+                    break;
+                case 3:
+                    $message = '确认中';
+                    break;
+                case 4:
+                    $message = '已完成';
+                    break;
+
+            }
+            $order[$k]['time'] = date('Y-m-d H:i:s', $v['time']);
+            $order[$k]['static'] = $message;
         }
-
+        if ($order) {
+            return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $order]);
+        } else {
+            return jsonp(['code' => 2, 'msg' => '暂无数据']);
+        }
     }
 
     //买入已完成订单
     public function result_order()
     {
         $user = Request::instance()->param('u_id');
-        if ($user) {
-//           Db::table('mb_sell_order')->where('type',1)->where('u_id',$user)->where('static',4)->order('time', 'desc')->select();
-            $order = Db::table('mb_user')
-                ->alias('a')
-                ->join('mb_sell_order w', 'a.u_id = w.user')
-                ->where('w.type', 1)
-                ->where('w.u_id', $user)
-                ->where('w.static', 4)
-                ->field('a.tel,w.money,w.s_id,w.static,w.time,w.u_id,w.shi_money')
-                ->order('w.time', 'desc')
-                ->select();
-            foreach ($order as $k => $v) {
-                $order[$k]['time'] = date('Y-m-d H:i:s', $v['time']);
-            }
-            if ($order) {
-                return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $order]);
-            } else {
-                return jsonp(['code' => 2, 'msg' => '暂无数据']);
-            }
-        } else {
-            return jsonp(['code' => 2, 'msg' => '参数错误']);
+        if (!$user) return jsonp(['code' => 2, 'msg' => '参数错误']);
+        $order = Db::table('mb_user')
+            ->alias('a')
+            ->join('mb_sell_order w', 'a.u_id = w.user')
+            ->where('w.type', 1)
+            ->where('w.u_id', $user)
+            ->where('w.static', 4)
+            ->field('a.tel,w.money,w.s_id,w.static,w.time,w.u_id,w.shi_money')
+            ->order('w.time', 'desc')
+            ->select();
+
+        foreach ($order as $k => $v) {
+            $order[$k]['time'] = date('Y-m-d H:i:s', $v['time']);
         }
-
-
+        if ($order) {
+            return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $order]);
+        } else {
+            return jsonp(['code' => 2, 'msg' => '暂无数据']);
+        }
     }
 
     //买入操作订单
     public function result_order_t()
     {
         $user = Request::instance()->param('u_id');
-        if ($user) {
-//            $order=Db::table('mb_sell_order')->where('type',2)->where('user',$user)->where('static','>=',2)->order('time', 'desc')->select();
-            $order = Db::table('mb_user')
-                ->alias('a')
-                ->join('mb_sell_order w', 'a.u_id = w.user')
-                ->where('w.type', 2)
-                ->where('w.user', $user)
-                ->where('w.static', '>=', 2)
-                ->field('a.tel,w.money,w.s_id,w.static,w.time,w.u_id,w.shi_money')
-                ->order('w.time', 'desc')
-                ->select();
+        if (!$user) return jsonp(['code' => 2, 'msg' => '参数错误']);
 
-            foreach ($order as $k => $v) {
-                switch ($v['static']) {
-                    case 1:
-                        $message = '挂买中';
-                        break;
-                    case 2:
-                        $message = '交易中';
-                        break;
-                    case 3:
-                        $message = '确认中';
-                        break;
-                    case 4:
-                        $message = '已完成';
-                        break;
+        $order = Db::table('mb_user')
+            ->alias('a')
+            ->join('mb_sell_order w', 'a.u_id = w.user')
+            ->where('w.type', 2)
+            ->where('w.user', $user)
+            ->where('w.static', '>=', 2)
+            ->field('a.tel,w.money,w.s_id,w.static,w.time,w.u_id,w.shi_money')
+            ->order('w.time', 'desc')
+            ->select();
 
-                }
-                $order[$k]['time'] = date('Y-m-d H:i:s', $v['time']);
-                $order[$k]['static'] = $message;
+        foreach ($order as $k => $v) {
+            switch ($v['static']) {
+                case 1:
+                    $message = '挂买中';
+                    break;
+                case 2:
+                    $message = '交易中';
+                    break;
+                case 3:
+                    $message = '确认中';
+                    break;
+                case 4:
+                    $message = '已完成';
+                    break;
+
             }
-            if ($order) {
-                return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $order]);
-            } else {
-                return jsonp(['code' => 2, 'msg' => '暂无数据']);
-            }
-        } else {
-            return jsonp(['code' => 2, 'msg' => '参数错误']);
+            $order[$k]['time'] = date('Y-m-d H:i:s', $v['time']);
+            $order[$k]['static'] = $message;
         }
-
-
+        if ($order) {
+            return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $order]);
+        } else {
+            return jsonp(['code' => 2, 'msg' => '暂无数据']);
+        }
     }
 
     //买入确认打款
     public function result_pay()
     {
         $user = Request::instance()->param('u_id');
-        if ($user) {
-            $order = Db::table('mb_user')
-                ->alias('a')
-                ->join('mb_sell_order w', 'a.u_id = w.u_id')
-                ->join('mb_bank c', 'w.u_id_bank = c.b_id')
-                ->join('mb_bank_name n', 'c.b_name = n.bn_id')
-                ->where('w.type', 2)
-                ->where('w.user', $user)
-                ->where('w.static', 2)
-                ->field('a.u_img,a.user,a.tel,n.bn_name,w.money,w.s_id,w.static,w.time,w.u_id,c.b_card,c.c_name,w.shi_money')
-                ->order('w.time', 'desc')
-                ->select();
+        if (!$user) return jsonp(['code' => 2, 'msg' => '参数错误']);
 
-            foreach ($order as $k => $v) {
-                $order[$k]['time'] = date('Y-m-d H:i:s', $v['time']);
-            }
-            if ($order) {
-                return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $order]);
-            } else {
-                return jsonp(['code' => 2, 'msg' => '暂无数据']);
-            }
-        } else {
-            return jsonp(['code' => 2, 'msg' => '参数错误']);
+        $order = Db::table('mb_user')
+            ->alias('a')
+            ->join('mb_sell_order w', 'a.u_id = w.u_id')
+            ->join('mb_bank c', 'w.u_id_bank = c.b_id')
+            ->join('mb_bank_name n', 'c.b_name = n.bn_id')
+            ->where('w.type', 2)
+            ->where('w.user', $user)
+            ->where('w.static', 2)
+            ->field('a.u_img,a.user,a.tel,n.bn_name,w.money,w.s_id,w.static,w.time,w.u_id,c.b_card,c.c_name,w.shi_money')
+            ->order('w.time', 'desc')
+            ->select();
+
+        foreach ($order as $k => $v) {
+            $order[$k]['time'] = date('Y-m-d H:i:s', $v['time']);
         }
-
-
+        if ($order) {
+            return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $order]);
+        } else {
+            return jsonp(['code' => 2, 'msg' => '暂无数据']);
+        }
     }
 
     //卖出确认打款
@@ -800,288 +780,249 @@ class Index extends Controller
         } else {
             return jsonp(['code' => 2, 'msg' => '参数错误']);
         }
-
-
     }
 
     //卖出数据接口
     public function sell()
     {
         $user = Request::instance()->param('u_id');
-        if ($user) {
-            $user_arr = Db::table('mb_user')->where('u_id', $user)->find();
-            if ($user_arr['is_card'] != 0) {
-                $card = Db::table('mb_bank')
-                    ->alias('a')
-                    ->join('mb_bank_name w', 'a.b_name = w.bn_id')
-                    ->field('a.b_branch,a.c_name,w.bn_name,a.b_card,a.defult')
-                    ->where('u_id', $user)
-                    ->where('defult', 1)
-                    ->find();
+        if (!$user) return jsonp(['code' => 2, 'msg' => '参数错误']);
 
-                $order = Db::table('mb_sell_order')->where('type', 2)->where('u_id', $user)->where('static', 4)->count('s_id');
+        $user_arr = Db::table('mb_user')->where('u_id', $user)->find();
+        if ($user_arr['is_card'] == 0) return jsonp(['code' => 2, 'msg' => '请添加银行卡']);
 
-                $order1 = Db::table('mb_sell_order')->where('type', 1)->where('user', $user)->where('static', '>=', 2)->count('s_id');
+        $card = Db::table('mb_bank')
+            ->alias('a')
+            ->join('mb_bank_name w', 'a.b_name = w.bn_id')
+            ->field('a.b_branch,a.c_name,w.bn_name,a.b_card,a.defult')
+            ->where('u_id', $user)
+            ->where('defult', 1)
+            ->find();
+        if(empty($card)) return jsonp(['code' => 2, 'msg' => '请设置默认银行卡']);
 
-                $order3 = Db::table('mb_sell_order')->where('type', 2)->where('u_id', $user)->where('static', 3)->count('s_id');
+        $order = Db::table('mb_sell_order')->where('type', 2)->where('u_id', $user)->where('static', 4)->count('s_id');
 
-                $order4 = Db::table('mb_sell_order')->where('type', 1)->where('user', $user)->where('static', 3)->count('s_id');
+        $order1 = Db::table('mb_sell_order')->where('type', 1)->where('user', $user)->where('static', '>=', 2)->count('s_id');
 
-                $order5 = Db::table('mb_sell_order')->where('type', 1)->where('static', 1)->count('s_id');
+        $order3 = Db::table('mb_sell_order')->where('type', 2)->where('u_id', $user)->where('static', 3)->count('s_id');
 
+        $order4 = Db::table('mb_sell_order')->where('type', 1)->where('user', $user)->where('static', 3)->count('s_id');
 
-                $order6 = Db::table('mb_sell_order')->where('type', 2)->where('u_id', $user)->where('static', 1)->count('s_id');
-                $order7 = Db::table('mb_sell_order')->where('type', 2)->where('u_id', $user)->where('user', '>', 0)->where('static', '>', 1)->count('s_id');
+        $order5 = Db::table('mb_sell_order')->where('type', 1)->where('static', 1)->count('s_id');
 
+        $order6 = Db::table('mb_sell_order')->where('type', 2)->where('u_id', $user)->where('static', 1)->count('s_id');
+        $order7 = Db::table('mb_sell_order')->where('type', 2)->where('u_id', $user)->where('user', '>', 0)->where('static', '>', 1)->count('s_id');
 
-                if ($card) {
-                    return jsonp([
-                        'code' => 1,
-                        'msg' => 'succeed',
-                        'data' => $card,
-                        'result_pay' => $order3 + $order4,
-                        'buy_center' => $order5,
-                        'no_order' => $order6 + $order7,
-                        'order_result' => $order + $order1
-                    ]);
-                } else {
-                    return jsonp(['code' => 2, 'msg' => '请设置默认银行卡']);
-                }
-
-            } else {
-                return jsonp(['code' => 2, 'msg' => '请添加银行卡']);
-            }
-        } else {
-            return jsonp(['code' => 2, 'msg' => '参数错误']);
-        }
-
+        return jsonp([
+            'code' => 1,
+            'msg' => 'succeed',
+            'data' => $card,
+            'result_pay' => $order3 + $order4,
+            'buy_center' => $order5,
+            'no_order' => $order6 + $order7,
+            'order_result' => $order + $order1
+        ]);
     }
 
     //卖出记录
     public function result_out()
     {
-
         $user = Request::instance()->param('u_id');
-        if ($user) {
-            $user_arr = Db::table('mb_balance_order')->where('u_id', $user)->order('bo_time desc')->where('type', 4)->field('bo_money,target_uid,bo_time')->select();
-            foreach ($user_arr as $k => $v) {
-                $user_arr[$k]['bo_time'] = date('Y-m-d H:i:s', $v['bo_time']);
-            }
-            if ($user_arr) {
-                return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $user_arr]);
-            } else {
-                return jsonp(['code' => 2, 'msg' => '暂无数据']);
-            }
-        } else {
-            return jsonp(['code' => 2, 'msg' => '参数错误']);
+        if (!$user)  return jsonp(['code' => 2, 'msg' => '参数错误']);
+        $user_arr = Db::table('mb_balance_order')
+            ->where('u_id', $user)
+            ->where('type', 4)
+            ->order('bo_time desc')
+            ->field('bo_money,target_uid,bo_time')->select();
+        foreach ($user_arr as $k => $v) {
+            $user_arr[$k]['bo_time'] = date('Y-m-d H:i:s', $v['bo_time']);
         }
-
+        if ($user_arr) {
+            return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $user_arr]);
+        } else {
+            return jsonp(['code' => 2, 'msg' => '暂无数据']);
+        }
     }
 
     //卖出未完成订单（未选择付款人）
     public function no_order_a()
     {
         $user = Request::instance()->param('u_id');
-        if ($user) {
-            $order = Db::table('mb_user')
-                ->alias('a')
-                ->join('mb_sell_order w', 'a.u_id = w.u_id')
-                ->join('mb_bank c', 'w.u_id_bank = c.b_id')
-                ->join('mb_bank_name n', 'c.b_name = n.bn_id')
-                ->where('w.type', 2)
-                ->where('w.u_id', $user)
-                ->where('w.user', null)
-                ->field('a.u_img,a.user,a.tel,n.bn_name,
-                w.money,w.s_id,w.static,w.time,w.u_id,
-                c.b_card,c.c_name,w.shi_money')
-                ->order('w.time', 'desc')
-                ->select();
+        if (!$user) return jsonp(['code' => 2, 'msg' => '参数错误']);
+        $order = Db::table('mb_user')
+            ->alias('a')
+            ->join('mb_sell_order w', 'a.u_id = w.u_id')
+            ->join('mb_bank c', 'w.u_id_bank = c.b_id')
+            ->join('mb_bank_name n', 'c.b_name = n.bn_id')
+            ->where('w.type', 2)
+            ->where('w.u_id', $user)
+            ->where('w.user', null)
+            ->field('a.u_img,a.user,a.tel,n.bn_name,
+            w.money,w.s_id,w.static,w.time,w.u_id,
+            c.b_card,c.c_name,w.shi_money')
+            ->order('w.time', 'desc')
+            ->select();
 
-            foreach ($order as $k => $v) {
-                switch ($v['static']) {
-                    case 1:
-                        $message = '挂卖中';
-                        break;
-                    case 2:
-                        $message = '交易中';
-                        break;
-                    case 3:
-                        $message = '确认中';
-                        break;
-                    case 4:
-                        $message = '已完成';
-                        break;
-
-                }
-                $order[$k]['static'] = $message;
-                $order[$k]['time'] = date('Y-m-d H:i:s', $v['time']);
+        foreach ($order as $k => $v) {
+            switch ($v['static']) {
+                case 1:
+                    $message = '挂卖中';
+                    break;
+                case 2:
+                    $message = '交易中';
+                    break;
+                case 3:
+                    $message = '确认中';
+                    break;
+                case 4:
+                    $message = '已完成';
+                    break;
 
             }
-            if ($order) {
-                return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $order]);
-            } else {
-                return jsonp(['code' => 2, 'msg' => '暂无数据', 'user' => $user]);
-            }
-        } else {
-            return jsonp(['code' => 2, 'msg' => '参数错误']);
+            $order[$k]['static'] = $message;
+            $order[$k]['time'] = date('Y-m-d H:i:s', $v['time']);
+
         }
-
-
+        if ($order) {
+            return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $order]);
+        } else {
+            return jsonp(['code' => 2, 'msg' => '暂无数据', 'user' => $user]);
+        }
     }
 
     //卖出未完成订单（已选择付款人）
     public function no_order_c()
     {
         $user = Request::instance()->param('u_id');
-        if ($user) {
-            $order = Db::table('mb_user')
-                ->alias('a')
-                ->join('mb_sell_order w', 'a.u_id = w.u_id')
-                ->join('mb_bank c', 'w.u_id_bank = c.b_id')
-                ->join('mb_bank_name n', 'c.b_name = n.bn_id')
-                ->where('w.type', 2)
-                ->where('w.u_id', $user)
-                ->where('w.user', '>', 0)
-                ->field('a.u_img,a.user,a.tel,n.bn_name,w.money,w.s_id,w.static,w.time,w.u_id,c.b_card,c.c_name,w.shi_money')
-                ->order('w.time', 'desc')
-                ->select();
-            foreach ($order as $k => $v) {
-                switch ($v['static']) {
-                    case 1:
-                        $message = '挂卖中';
-                        break;
-                    case 2:
-                        $message = '交易中';
-                        break;
-                    case 3:
-                        $message = '确认中';
-                        break;
-                    case 4:
-                        $message = '已完成';
-                        break;
+        if (!$user) return jsonp(['code' => 2, 'msg' => '参数错误']);
+        $order = Db::table('mb_user')
+            ->alias('a')
+            ->join('mb_sell_order w', 'a.u_id = w.u_id')
+            ->join('mb_bank c', 'w.u_id_bank = c.b_id')
+            ->join('mb_bank_name n', 'c.b_name = n.bn_id')
+            ->where('w.type', 2)
+            ->where('w.u_id', $user)
+            ->where('w.user', '>', 0)
+            ->field('a.u_img,a.user,a.tel,n.bn_name,w.money,w.s_id,w.static,w.time,w.u_id,c.b_card,c.c_name,w.shi_money')
+            ->order('w.time', 'desc')
+            ->select();
 
-                }
-                $order[$k]['static'] = $message;
-                $order[$k]['time'] = date('Y-m-d H:i:s', $v['time']);
+        foreach ($order as $k => $v) {
+            switch ($v['static']) {
+                case 1:
+                    $message = '挂卖中';
+                    break;
+                case 2:
+                    $message = '交易中';
+                    break;
+                case 3:
+                    $message = '确认中';
+                    break;
+                case 4:
+                    $message = '已完成';
+                    break;
+
             }
-            if ($order) {
-                return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $order]);
-            } else {
-                return jsonp(['code' => 2, 'msg' => '暂无数据']);
-            }
-        } else {
-            return jsonp(['code' => 2, 'msg' => '参数错误']);
+            $order[$k]['static'] = $message;
+            $order[$k]['time'] = date('Y-m-d H:i:s', $v['time']);
         }
-
-
+        if ($order) {
+            return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $order]);
+        } else {
+            return jsonp(['code' => 2, 'msg' => '暂无数据']);
+        }
     }
 
     //卖出已完成订单
     public function result_order_s()
     {
         $user = Request::instance()->param('u_id');
-        if ($user) {
-//            $order=Db::table('mb_sell_order')->where('type',2)->where('u_id',$user)->where('static',4)->order('time', 'desc')->select();
+        if (!$user) return jsonp(['code' => 2, 'msg' => '参数错误']);
 
-            $order = Db::table('mb_user')
-                ->alias('a')
-                ->join('mb_sell_order w', 'a.u_id = w.u_id')
-                ->where('w.type', 2)
-                ->where('w.u_id', $user)
-                ->where('w.static', 4)
-                ->field('a.tel,w.money,w.s_id,w.static,w.time,w.u_id,w.shi_money')
-                ->order('w.time', 'desc')
-                ->select();
+        $order = Db::table('mb_user')
+            ->alias('a')
+            ->join('mb_sell_order w', 'a.u_id = w.u_id')
+            ->where('w.type', 2)
+            ->where('w.u_id', $user)
+            ->where('w.static', 4)
+            ->field('a.tel,w.money,w.s_id,w.static,w.time,w.u_id,w.shi_money')
+            ->order('w.time', 'desc')
+            ->select();
 
-
-            foreach ($order as $k => $v) {
-                $order[$k]['time'] = date('Y-m-d H:i:s', $v['time']);
-            }
-            if ($order) {
-                return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $order]);
-            } else {
-                return jsonp(['code' => 2, 'msg' => '暂无数据']);
-            }
-        } else {
-            return jsonp(['code' => 2, 'msg' => '参数错误']);
+        foreach ($order as $k => $v) {
+            $order[$k]['time'] = date('Y-m-d H:i:s', $v['time']);
         }
-
-
+        if ($order) {
+            return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $order]);
+        } else {
+            return jsonp(['code' => 2, 'msg' => '暂无数据']);
+        }
     }
 
     //卖出操作订单
     public function result_order_p()
     {
         $user = Request::instance()->param('u_id');
-        if ($user) {
+        if (!$user) return jsonp(['code' => 2, 'msg' => '参数错误']);
 
-            $order = Db::table('mb_user')
-                ->alias('a')
-                ->join('mb_sell_order w', 'a.u_id = w.u_id')
-                ->where('w.type', 1)
-                ->where('w.user', $user)
-                ->where('w.static', '>=', 2)
-                ->field('a.tel,w.money,w.s_id,w.static,w.time,w.u_id,w.shi_money')
-                ->order('w.time', 'desc')
-                ->select();
+        $order = Db::table('mb_user')
+            ->alias('a')
+            ->join('mb_sell_order w', 'a.u_id = w.u_id')
+            ->where('w.type', 1)
+            ->where('w.user', $user)
+            ->where('w.static', '>=', 2)
+            ->field('a.tel,w.money,w.s_id,w.static,w.time,w.u_id,w.shi_money')
+            ->order('w.time', 'desc')
+            ->select();
 
+        foreach ($order as $k => $v) {
+            switch ($v['static']) {
+                case 2:
+                    $message = '交易中';
+                    break;
+                case 3:
+                    $message = '确认中';
+                    break;
+                case 4:
+                    $message = '已完成';
+                    break;
 
-//            $order=Db::table('mb_sell_order')->where('type',1)->where('user',$user)->where('static','>=',2)->order('time', 'desc')->select();
-//            Log::write($order,'notice');
-            foreach ($order as $k => $v) {
-                switch ($v['static']) {
-                    case 2:
-                        $message = '交易中';
-                        break;
-                    case 3:
-                        $message = '确认中';
-                        break;
-                    case 4:
-                        $message = '已完成';
-                        break;
-
-                }
-                $order[$k]['time'] = date('Y-m-d H:i:s', $v['time']);
-                $order[$k]['static'] = $message;
             }
-            if ($order) {
-                return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $order]);
-            } else {
-                return jsonp(['code' => 2, 'msg' => '暂无数据']);
-            }
-
-        } else {
-            return jsonp(['code' => 2, 'msg' => '参数错误']);
+            $order[$k]['time'] = date('Y-m-d H:i:s', $v['time']);
+            $order[$k]['static'] = $message;
         }
-
+        if ($order) {
+            return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $order]);
+        } else {
+            return jsonp(['code' => 2, 'msg' => '暂无数据']);
+        }
     }
 
     //卖出确认收款
     public function result_sell()
     {
         $user = Request::instance()->param('u_id');
-        if ($user) {
-            $order = Db::table('mb_user')
-                ->alias('a')
-                ->join('mb_sell_order w', 'a.u_id = w.user')
-                ->join('mb_bank c', 'w.user_bank = c.b_id')
-                ->join('mb_bank_name n', 'c.b_name = n.bn_id')
-                ->where('w.type', 2)
-                ->where('w.u_id', $user)
-                ->where('w.static', 3)
-                ->field('a.u_img,a.user,a.tel,n.bn_name,w.money,w.s_id,w.static,w.time,w.u_id,c.b_card,c.c_name,w.shi_money')
-                ->order('w.time', 'desc')
-                ->select();
-            foreach ($order as $k => $v) {
-                $order[$k]['time'] = date('Y-m-d H:i:s', $v['time']);
-            }
-            if ($order) {
-                return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $order]);
-            } else {
-                return jsonp(['code' => 2, 'msg' => '暂无数据']);
-            }
+        if (!$user)  return jsonp(['code' => 2, 'msg' => '参数错误']);
+
+        $order = Db::table('mb_user')
+            ->alias('a')
+            ->join('mb_sell_order w', 'a.u_id = w.user')
+            ->join('mb_bank c', 'w.user_bank = c.b_id')
+            ->join('mb_bank_name n', 'c.b_name = n.bn_id')
+            ->where('w.type', 2)
+            ->where('w.u_id', $user)
+            ->where('w.static', 3)
+            ->field('a.u_img,a.user,a.tel,n.bn_name,w.money,w.s_id,w.static,w.time,w.u_id,c.b_card,c.c_name,w.shi_money')
+            ->order('w.time', 'desc')
+            ->select();
+
+        foreach ($order as $k => $v) {
+            $order[$k]['time'] = date('Y-m-d H:i:s', $v['time']);
+        }
+        if ($order) {
+            return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $order]);
         } else {
-            return jsonp(['code' => 2, 'msg' => '参数错误']);
+            return jsonp(['code' => 2, 'msg' => '暂无数据']);
         }
     }
 
@@ -1089,63 +1030,56 @@ class Index extends Controller
     public function result_sell_t()
     {
         $user = Request::instance()->param('u_id');
-        if ($user) {
-            $order = Db::table('mb_user')
-                ->alias('a')
-                ->join('mb_sell_order w', 'a.u_id = w.u_id')
-                ->join('mb_bank c', 'w.u_id_bank = c.b_id')
-                ->join('mb_bank_name n', 'c.b_name = n.bn_id')
-                ->where('w.type', 1)
-                ->where('w.user', $user)
-                ->where('w.static', 3)
-                ->field('a.u_img,a.user,a.tel,n.bn_name,w.money,w.s_id,w.static,w.time,w.u_id,c.b_card,c.c_name,w.shi_money')
-                ->order('w.time', 'desc')
-                ->select();
-            foreach ($order as $k => $v) {
-                $order[$k]['time'] = date('Y-m-d H:i:s', $v['time']);
-            }
-            if ($order) {
-                return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $order]);
-            } else {
-                return jsonp(['code' => 2, 'msg' => '暂无数据']);
-            }
+        if (!$user) return jsonp(['code' => 2, 'msg' => '参数错误']);
 
-        } else {
-            return jsonp(['code' => 2, 'msg' => '参数错误']);
+        $order = Db::table('mb_user')
+            ->alias('a')
+            ->join('mb_sell_order w', 'a.u_id = w.u_id')
+            ->join('mb_bank c', 'w.u_id_bank = c.b_id')
+            ->join('mb_bank_name n', 'c.b_name = n.bn_id')
+            ->where('w.type', 1)
+            ->where('w.user', $user)
+            ->where('w.static', 3)
+            ->field('a.u_img,a.user,a.tel,n.bn_name,w.money,w.s_id,w.static,w.time,w.u_id,c.b_card,c.c_name,w.shi_money')
+            ->order('w.time', 'desc')
+            ->select();
+
+        foreach ($order as $k => $v) {
+            $order[$k]['time'] = date('Y-m-d H:i:s', $v['time']);
         }
-
-
+        if ($order) {
+            return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $order]);
+        } else {
+            return jsonp(['code' => 2, 'msg' => '暂无数据']);
+        }
     }
 
     //卖出中心
     public function sell_sentic()
     {
         $money = Request::instance()->param('money');
-        if ($money) {
-            $order = Db::table('mb_user')
-                ->alias('a')
-                ->join('mb_sell_order w', 'a.u_id = w.u_id')
-                ->join('mb_bank c', 'w.u_id_bank = c.b_id')
-                ->join('mb_bank_name n', 'c.b_name = n.bn_id')
-                ->where('w.type', 1)
-                ->where('w.user', null)
-                ->where('w.money', $money)
-                ->field('a.u_img,a.user,a.tel,n.bn_name,w.money,w.s_id,w.static,w.time,w.u_id,c.b_card,c.c_name,w.shi_money')
-                ->order('w.time', 'desc')
-                ->select();
-            foreach ($order as $k => $v) {
-                $order[$k]['time'] = date('Y-m-d', $v['time']);
-            }
-            if ($order) {
-                return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $order]);
-            } else {
-                return jsonp(['code' => 2, 'msg' => '暂无数据']);
-            }
-        } else {
-            return jsonp(['code' => 2, 'msg' => '参数错误']);
+        if (!$money) return jsonp(['code' => 2, 'msg' => '参数错误']);
+
+        $order = Db::table('mb_user')
+            ->alias('a')
+            ->join('mb_sell_order w', 'a.u_id = w.u_id')
+            ->join('mb_bank c', 'w.u_id_bank = c.b_id')
+            ->join('mb_bank_name n', 'c.b_name = n.bn_id')
+            ->where('w.type', 1)
+            ->where('w.user', null)
+            ->where('w.money', $money)
+            ->field('a.u_img,a.user,a.tel,n.bn_name,w.money,w.s_id,w.static,w.time,w.u_id,c.b_card,c.c_name,w.shi_money')
+            ->order('w.time', 'desc')
+            ->select();
+
+        foreach ($order as $k => $v) {
+            $order[$k]['time'] = date('Y-m-d', $v['time']);
         }
-
-
+        if ($order) {
+            return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $order]);
+        } else {
+            return jsonp(['code' => 2, 'msg' => '暂无数据']);
+        }
     }
 
 
