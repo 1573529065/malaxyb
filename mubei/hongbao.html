@@ -1,36 +1,37 @@
 <!doctype html>
 <html>
 
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<link href="css/mui.min.css" rel="stylesheet" />
-		<script type="text/javascript" src="js/jquery.min.js"></script>
-		
-	</head>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
 
-	<body>
-		
-	 <div style="background: url(images/555370351020037073.png) no-repeat;background-position:center 0;height: 600px;width: 100%;position: relative;">
-			<div style="text-align: center;padding-top: 300px;">
-		    	<div style="color: #FFFFFF;font-size:20px;">恭喜你成功领取系统发的红包</div>
-		    	<div style="margin-top: 30px;color: #fec900;font-size: 20px;" id="money"></div>
-		    </div>
-	 </div>
-		<script src="js/mui.min.js"></script>
-		<script type="text/javascript">
-			mui.init();
-			
-        function getQueryString(name) {
-				var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-				var r = window.location.search.substr(1).match(reg);
-				if(r != null) return unescape(r[2]);
-				return null;
-			}
-             $("#money").html(getQueryString("sid"));
-			setTimeout("window.location.href='index.html'",4000);
-		</script>
-	</body>
+</head>
+
+<body>
+
+<div style="background: url(images/555370351020037073.png) no-repeat;background-position:center 0;height: 600px;width: 100%;position: relative;">
+    <div style="text-align: center;padding-top: 300px;">
+        <div style="color: #FFFFFF;font-size:20px;">恭喜你成功领取系统发的红包</div>
+        <div style="margin-top: 30px;color: #fec900;font-size: 20px;" id="money"></div>
+    </div>
+</div>
+<script src="js/mui.min.js"></script>
+<script type="text/javascript">
+    mui.init();
+
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]);
+        return null;
+    }
+    $("#money").html(getQueryString("sid"));
+    setTimeout("window.location.href='index.html'", 4000);
+</script>
+</body>
 
 </html>

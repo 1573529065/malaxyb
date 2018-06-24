@@ -1,222 +1,235 @@
 <!DOCTYPE html>
 <html>
 
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<link rel="stylesheet" href="../css/mui.min.css" />
-		<script type="text/javascript" src="../js/mui.min.js"></script>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<script type="text/javascript" src="../js/back_icon.js"></script>
-		<link rel="stylesheet" href="../css/zhifu.css" />
-		<script type="text/javascript" src="../js/jquery.min.js" ></script>
-		<script type="text/javascript" src="../js/common.js" ></script>
-		<script type="text/javascript" src="../js/change_lange.js" ></script>
-		<style>
-			.word2 {
-				background-color: white;
-				width: 100%;
-				height: 80px;
-				padding: 10px;
-				margin-bottom: 15px;
-			}
-			
-			.money {
-				width: 50%;
-				text-align: center;
-				float: left;
-			}
-			
-			.money p {
-				color: #000000;
-			}
-			
-			.c_word {
-				background-color: #FFFFFF;
-				padding: 0 15px;
-			}
-			
-			.c_word p {
-				color: red;
-				font-size: 16px;
-			}
-			
-			.mui-input-row label~input,
-			.mui-input-row label~select,
-			.mui-input-row label~textarea {
-				border: 1px solid gainsboro;
-			}
-			
-			.c_word h5 {
-				padding: 10px 0;
-				color: #000000;
-			}
-			
-			.mui-btn {
-				margin-top: 50px;
-			}
-			
-			.border_right {
-				border-right: 1px solid gainsboro;
-			}
-		</style>
-	</head>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link rel="stylesheet" href="../css/mui.min.css"/>
+    <script type="text/javascript" src="../js/mui.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="../js/back_icon.js"></script>
+    <link rel="stylesheet" href="../css/zhifu.css"/>
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+    <script type="text/javascript" src="../js/change_lange.js"></script>
+    <style>
+        .word2 {
+            background-color: white;
+            width: 100%;
+            height: 80px;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
 
-	<body>
-		<script>
-			if(localStorage.pagecount == 1) {
-				addCssByLink('../css/zh.css');
-			} else if(localStorage.pagecount == 2) {
-				addCssByLink('../css/en.css');
-			}
-		</script>
-		<header class="mui-bar mui-bar-nav" style="background-color: #FFFFFF;">
-			<!--<i class="mui-icon mui-icon-left-nav mui-pull-left" onclick="window.location.href='turn_out.html'"></i>-->
-			<h1 class="mui-title"><span class="language-duihuanjifen"></span></h1>
-			<!--<button class="mui-btn mui-btn-blue mui-btn-link mui-pull-right" style="color: #000000;font-size: 14px;" onclick="window.location.href='change_recode_lt.html'; "><span class="language-jifenjilu"></span></button>-->
-		</header>
-		
-		<div class="mui-content">
-			<div class="word2">
-				<div class="money border_right">
-					<a href="javascript:;">
-						<p><span class="language-score"></span></p>
-						<p id="s_assets"></p>
-					</a>
-				</div>
+        .money {
+            width: 50%;
+            text-align: center;
+            float: left;
+        }
 
-				<div class="money">
-					<a href="javascript:;">
-						<p><span class="language-zichan"></span></p>
-						<p id="s_balance"></p>
-					</a>
-				</div>
-			</div>
-			<div class="c_word">
-				<p><span class="language-duihuancjifen"></span></p>
-				<div class="mui-input-row">
-					<label><span class="language-zichan"></span></span></label>
-					<input type="number" placeholder="请输入兑换数额" id="money">
-				</div>
-				<h5><span class="language-buzhiqishenmemingzi"></span></h5>
-			</div>
+        .money p {
+            color: #000000;
+        }
 
-			<div class="mui-content-padded">
-				<button type="button"  class="mui-btn mui-btn-warning mui-btn-block" style="background:#46adfc;border-color:#46adfc;font-size: 14px;" id="turn_out"><span class="language-quedingduihuan"></span></button>	
-				<button class="mui-btn mui-btn-warning mui-btn-block" style="color: #000000;font-size: 14px;" onclick="window.location.href='change_recode_lt.html'; "><span class="language-jifenjilu"></span></button>
-			</div>
-			
-			<!--支付键盘-->
-		    <div class="ftc_wzsf">
-		        <div class="srzfmm_box">
-		            <div class="qsrzfmm_bt clear_wl">
-		                <img src="../images/xx_03.jpg" class="tx close fl">
-		                <span class="fl"><span class="language-qingchuruzhifumima"></span></span></div>
-		            <div class="zfmmxx_shop">
-		                <div class="zhifu_price">￥<span id="need"></span></div></div>
-		            <ul class="mm_box">
-		                <li></li><li></li><li></li><li></li><li></li><li></li>
-		            </ul>
-		        </div>
-		        <div class="numb_box">
-		            <div class="xiaq_tb">
-		            	<img src="../images/jftc_14.jpg" height="10">
-		            </div>
-			            <ul class="nub_ggg">
-			                <li><a href="javascript:void(0);" class="zf_num">1</a></li>
-			                <li><a href="javascript:void(0);" class="zj_x zf_num">2</a></li>
-			                <li><a href="javascript:void(0);" class="zf_num">3</a></li>
-			                <li><a href="javascript:void(0);" class="zf_num">4</a></li>
-			                <li><a href="javascript:void(0);" class="zj_x zf_num">5</a></li>
-			                <li><a href="javascript:void(0);" class="zf_num">6</a></li>
-			                <li><a href="javascript:void(0);" class="zf_num">7</a></li>
-			                <li><a href="javascript:void(0);" class="zj_x zf_num">8</a></li>
-			                <li><a href="javascript:void(0);" class="zf_num">9</a></li>
-			                <li><a href="javascript:void(0);" class="zf_empty"><span class="language-qingkong" style="color: #000000;"></span></a></li>
-			                <li><a href="javascript:void(0);" class="zj_x zf_num">0</a></li>
-			                <li><a href="javascript:void(0);" class="zf_del"><span class="language-shanchu" style="color: #000000;"></span></a></li>
-			            </ul>
-		        </div>
-		        
+        .c_word {
+            background-color: #FFFFFF;
+            padding: 0 15px;
+        }
+
+        .c_word p {
+            color: red;
+            font-size: 16px;
+        }
+
+        .mui-input-row label ~ input,
+        .mui-input-row label ~ select,
+        .mui-input-row label ~ textarea {
+            border: 1px solid gainsboro;
+        }
+
+        .c_word h5 {
+            padding: 10px 0;
+            color: #000000;
+        }
+
+        .mui-btn {
+            margin-top: 50px;
+        }
+
+        .border_right {
+            border-right: 1px solid gainsboro;
+        }
+    </style>
+</head>
+
+<body>
+<script>
+    if (localStorage.pagecount == 1) {
+        addCssByLink('../css/zh.css');
+    } else if (localStorage.pagecount == 2) {
+        addCssByLink('../css/en.css');
+    }
+</script>
+<header class="mui-bar mui-bar-nav" style="background-color: #FFFFFF;">
+    <!--<i class="mui-icon mui-icon-left-nav mui-pull-left" onclick="window.location.href='turn_out.html'"></i>-->
+    <h1 class="mui-title"><span class="language-duihuanjifen"></span></h1>
+    <!--<button class="mui-btn mui-btn-blue mui-btn-link mui-pull-right" style="color: #000000;font-size: 14px;" onclick="window.location.href='change_recode_lt.html'; "><span class="language-jifenjilu"></span></button>-->
+</header>
+
+<div class="mui-content">
+    <div class="word2">
+        <div class="money border_right">
+            <a href="javascript:;">
+                <p><span class="language-score"></span></p>
+                <p id="s_assets"></p>
+            </a>
+        </div>
+
+        <div class="money">
+            <a href="javascript:;">
+                <p><span class="language-zichan"></span></p>
+                <p id="s_balance"></p>
+            </a>
+        </div>
+    </div>
+    <div class="c_word">
+        <p><span class="language-duihuancjifen"></span></p>
+        <div class="mui-input-row">
+            <label><span class="language-zichan"></span></span></label>
+            <input type="number" placeholder="请输入兑换数额" id="money">
+        </div>
+        <h5><span class="language-buzhiqishenmemingzi"></span></h5>
+    </div>
+
+    <div class="mui-content-padded">
+        <button type="button" class="mui-btn mui-btn-warning mui-btn-block"
+                style="background:#46adfc;border-color:#46adfc;font-size: 14px;" id="turn_out"><span
+                class="language-quedingduihuan"></span></button>
+        <button class="mui-btn mui-btn-warning mui-btn-block" style="color: #000000;font-size: 14px;"
+                onclick="window.location.href='change_recode_lt.html'; "><span class="language-jifenjilu"></span>
+        </button>
+    </div>
+
+    <!--支付键盘-->
+    <div class="ftc_wzsf">
+        <div class="srzfmm_box">
+            <div class="qsrzfmm_bt clear_wl">
+                <img src="../images/xx_03.jpg" class="tx close fl">
+                <span class="fl"><span class="language-qingchuruzhifumima"></span></span></div>
+            <div class="zfmmxx_shop">
+                <div class="zhifu_price">￥<span id="need"></span></div>
+            </div>
+            <ul class="mm_box">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="numb_box">
+            <div class="xiaq_tb">
+                <img src="../images/jftc_14.jpg" height="10">
+            </div>
+            <ul class="nub_ggg">
+                <li><a href="javascript:void(0);" class="zf_num">1</a></li>
+                <li><a href="javascript:void(0);" class="zj_x zf_num">2</a></li>
+                <li><a href="javascript:void(0);" class="zf_num">3</a></li>
+                <li><a href="javascript:void(0);" class="zf_num">4</a></li>
+                <li><a href="javascript:void(0);" class="zj_x zf_num">5</a></li>
+                <li><a href="javascript:void(0);" class="zf_num">6</a></li>
+                <li><a href="javascript:void(0);" class="zf_num">7</a></li>
+                <li><a href="javascript:void(0);" class="zj_x zf_num">8</a></li>
+                <li><a href="javascript:void(0);" class="zf_num">9</a></li>
+                <li><a href="javascript:void(0);" class="zf_empty"><span class="language-qingkong"
+                                                                         style="color: #000000;"></span></a></li>
+                <li><a href="javascript:void(0);" class="zj_x zf_num">0</a></li>
+                <li><a href="javascript:void(0);" class="zf_del"><span class="language-shanchu"
+                                                                       style="color: #000000;"></span></a></li>
+            </ul>
+        </div>
+
         <div class="hbbj"></div>
     </div>
-		</div>
-	</body>
+</div>
+</body>
 
 </html>
 
-		<script type="text/javascript" src="../js/url.js" ></script>
-		<script src="../js/mui.min.js"></script>
+<script type="text/javascript" src="../js/url.js"></script>
+<script src="../js/mui.min.js"></script>
 <script>
-	mui.init()
-	 if(localStorage.pagecount == 1) {
-					document.getElementById("money").setAttribute("placeholder", "请输入兑换数额");
-					
-				} else if(localStorage.pagecount == 2) {
-					document.getElementById("money").setAttribute("placeholder", " enter the exchange amount");
-				}
-	
-	$.ajax({
-				url: j_url + "/index/index",
-				type: 'POST',
-				data: {
-					u_id: localStorage.lastname
-				},
-				dataType: 'jsonp',
-				crossDomain: true,
-				success: function(res) {
-					console.log(res);
-					$("#s_assets").html(res.data.assets);
-					$("#s_balance").html(res.data.balance);
-					$("#s_current").html(res.data.current);
+    mui.init()
+    if (localStorage.pagecount == 1) {
+        document.getElementById("money").setAttribute("placeholder", "请输入兑换数额");
 
-				},
-				fail: function(res) {
+    } else if (localStorage.pagecount == 2) {
+        document.getElementById("money").setAttribute("placeholder", " enter the exchange amount");
+    }
 
-				}
-			});
-			
-			
-	/*支付*/
-    $(function(){
+    $.ajax({
+        url: j_url + "/index/index",
+        type: 'POST',
+        data: {
+            u_id: localStorage.lastname
+        },
+        dataType: 'jsonp',
+        crossDomain: true,
+        success: function (res) {
+            console.log(res);
+            $("#s_assets").html(res.data.assets);
+            $("#s_balance").html(res.data.balance);
+            $("#s_current").html(res.data.current);
+
+        },
+        fail: function (res) {
+
+        }
+    });
+
+
+    /*支付*/
+    $(function () {
         //出现浮动层
-        $("#turn_out").click(function(){
-        	if($("#money").val() % 100 != 0){
-               mui.alert('请输入100的整数倍！');
-            }else{
-            	 $('#need').html($("#money").val());
-            $(".ftc_wzsf").show();
+        $("#turn_out").click(function () {
+            if ($("#money").val() % 100 != 0) {
+                mui.alert('请输入100的整数倍！');
+            } else {
+                $('#need').html($("#money").val());
+                $(".ftc_wzsf").show();
             }
-           
+
         });
         //关闭浮动
-        $(".close").click(function(){
+        $(".close").click(function () {
             $(".ftc_wzsf").hide();
             $(".mm_box li").removeClass("mmdd");
-            $(".mm_box li").attr("data","");
+            $(".mm_box li").attr("data", "");
             i = 0;
         });
         //数字显示隐藏
-        $(".xiaq_tb").click(function(){
+        $(".xiaq_tb").click(function () {
             $(".numb_box").slideUp(500);
         });
-        $(".mm_box").click(function(){
+        $(".mm_box").click(function () {
             $(".numb_box").slideDown(500);
         });
         //----
         var i = 0;
-        $(".nub_ggg li .zf_num").click(function(){
+        $(".nub_ggg li .zf_num").click(function () {
 
-            if(i<6){
+            if (i < 6) {
                 $(".mm_box li").eq(i).addClass("mmdd");
-                $(".mm_box li").eq(i).attr("data",$(this).text());
+                $(".mm_box li").eq(i).attr("data", $(this).text());
                 i++
-                if (i==6) {
-                    setTimeout(function(){
-                    	 $(".ftc_wzsf").hide();
+                if (i == 6) {
+                    setTimeout(function () {
+                        $(".ftc_wzsf").hide();
                         var data = "";
-                        $(".mm_box li").each(function(){
+                        $(".mm_box li").each(function () {
                             data += $(this).attr("data");
                         });
                         $.ajax({
@@ -229,44 +242,47 @@
                                 pass_p: data,
                                 type: 2
                             },
-                            success: function(res) {
+                            success: function (res) {
                                 console.log(res);
-                                if(res.code == 2) {
-                                    mui.toast(res.msg,{ duration:'long', type:'div' });
+                                if (res.code == 2) {
+                                    mui.toast(res.msg, {duration: 'long', type: 'div'});
                                     $(".ftc_wzsf").hide();
                                     $(".mm_box li").removeClass("mmdd");
-                                    $(".mm_box li").attr("data","");
+                                    $(".mm_box li").attr("data", "");
                                     i = 0;
-                                } else if(res.code == 1) {
-                                    mui.toast(res.msg,{ duration:'long', type:'div' });
+                                } else if (res.code == 1) {
+                                    mui.toast(res.msg, {duration: 'long', type: 'div'});
                                     $(".ftc_wzsf").hide();
                                     $(".mm_box li").removeClass("mmdd");
-                                    $(".mm_box li").attr("data","");
+                                    $(".mm_box li").attr("data", "");
                                     i = 0;
-                                    setTimeout(function(){window.location.reload() },800);
+                                    setTimeout(function () {
+                                        window.location.reload()
+                                    }, 800);
                                 }
                             },
-                            fail: function(res) {
+                            fail: function (res) {
 
                             }
                         });
 
-                    },100);
-                };
+                    }, 100);
+                }
+                ;
             }
         });
 
-        $(".nub_ggg li .zf_del").click(function(){
-            if(i>0){
+        $(".nub_ggg li .zf_del").click(function () {
+            if (i > 0) {
                 i--;
                 $(".mm_box li").eq(i).removeClass("mmdd");
-                $(".mm_box li").eq(i).attr("data","");
+                $(".mm_box li").eq(i).attr("data", "");
             }
         });
 
-        $(".nub_ggg li .zf_empty").click(function(){
+        $(".nub_ggg li .zf_empty").click(function () {
             $(".mm_box li").removeClass("mmdd");
-            $(".mm_box li").attr("data","");
+            $(".mm_box li").attr("data", "");
             i = 0;
         });
     });

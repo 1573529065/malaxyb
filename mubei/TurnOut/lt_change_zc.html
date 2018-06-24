@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <link rel="stylesheet" href="../css/mui.min.css" />
+    <link rel="stylesheet" href="../css/mui.min.css"/>
     <script type="text/javascript" src="../js/mui.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="../js/back_icon.js"></script>
-    <link rel="stylesheet" href="../css/zhifu.css" />
+    <link rel="stylesheet" href="../css/zhifu.css"/>
     <style>
         .word2 {
             background-color: white;
@@ -38,9 +38,9 @@
             font-size: 16px;
         }
 
-        .mui-input-row label~input,
-        .mui-input-row label~select,
-        .mui-input-row label~textarea {
+        .mui-input-row label ~ input,
+        .mui-input-row label ~ select,
+        .mui-input-row label ~ textarea {
             border: 1px solid gainsboro;
         }
 
@@ -66,6 +66,7 @@
         .shue a:hover {
             text-decoration: none;
         }
+
         .shu {
             margin: 3% 5% 3% 8%;
             text-align: center;
@@ -89,7 +90,9 @@
 <header class="mui-bar mui-bar-nav" style="background-color: #fec900;">
     <i class="mui-icon mui-icon-left-nav mui-pull-left" onclick="back_go()"></i>
     <h1 class="mui-title">流通兑换资产</h1>
-    <button class="mui-btn mui-btn-blue mui-btn-link mui-pull-right" style="color: #000000;font-size: 14px;" onclick="window.location.href='lt_change_recode_zc.html'; ">兑换记录</button>
+    <button class="mui-btn mui-btn-blue mui-btn-link mui-pull-right" style="color: #000000;font-size: 14px;"
+            onclick="window.location.href='lt_change_recode_zc.html'; ">兑换记录
+    </button>
 </header>
 <div class="mui-content">
     <div class="word2">
@@ -136,7 +139,9 @@
     </div>
 
     <div class="mui-content-padded">
-        <button type="button" class="mui-btn mui-btn-warning mui-btn-block" style="font-size: 16px;" id="turn_out">确认兑换</button>
+        <button type="button" class="mui-btn mui-btn-warning mui-btn-block" style="font-size: 16px;" id="turn_out">
+            确认兑换
+        </button>
     </div>
 
     <!--支付键盘-->
@@ -211,7 +216,7 @@
 <script src="../js/mui.min.js"></script>
 <script>
     mui.init()
-    $(".selected").click(function(){
+    $(".selected").click(function () {
         $(".selected").eq($(this).index()).addClass("shu2").siblings().removeClass('shu2');
 
     });
@@ -224,56 +229,56 @@
         },
         dataType: 'jsonp',
         crossDomain: true,
-        success: function(res) {
+        success: function (res) {
             console.log(res);
             $("#s_assets").html(res.data.assets);
             $("#s_balance").html(res.data.balance);
             $("#s_current").html(res.data.current);
 
         },
-        fail: function(res) {
+        fail: function (res) {
 
         }
     });
-    $(document).ready(function() {
-        $('#test').find('input[type=checkbox]').bind('click', function() {
+    $(document).ready(function () {
+        $('#test').find('input[type=checkbox]').bind('click', function () {
             $('#test').find('input[type=checkbox]').not(this).attr("checked", false);
         });
     });
 
     /*支付*/
-    $(function() {
+    $(function () {
         //出现浮动层
-        $("#turn_out").click(function() {
+        $("#turn_out").click(function () {
             $('#need').html($(".shu2").val());
             $(".ftc_wzsf").show();
         });
         //关闭浮动
-        $(".close").click(function() {
+        $(".close").click(function () {
             $(".ftc_wzsf").hide();
             $(".mm_box li").removeClass("mmdd");
             $(".mm_box li").attr("data", "");
             i = 0;
         });
         //数字显示隐藏
-        $(".xiaq_tb").click(function() {
+        $(".xiaq_tb").click(function () {
             $(".numb_box").slideUp(500);
         });
-        $(".mm_box").click(function() {
+        $(".mm_box").click(function () {
             $(".numb_box").slideDown(500);
         });
         //----
         var i = 0;
-        $(".nub_ggg li .zf_num").click(function() {
+        $(".nub_ggg li .zf_num").click(function () {
 
-            if(i < 6) {
+            if (i < 6) {
                 $(".mm_box li").eq(i).addClass("mmdd");
                 $(".mm_box li").eq(i).attr("data", $(this).text());
                 i++
-                if(i == 6) {
-                    setTimeout(function() {
+                if (i == 6) {
+                    setTimeout(function () {
                         var data = "";
-                        $(".mm_box li").each(function() {
+                        $(".mm_box li").each(function () {
                             data += $(this).attr("data");
                         });
                         $.ajax({
@@ -286,42 +291,45 @@
                                 pass_p: data,
                                 type: $('input[type=radio]:checked').val()
                             },
-                            success: function(res) {
+                            success: function (res) {
                                 console.log(res);
-                                if(res.code == 2) {
-                                    mui.toast(res.msg,{ duration:'long', type:'div' });
+                                if (res.code == 2) {
+                                    mui.toast(res.msg, {duration: 'long', type: 'div'});
                                     $(".ftc_wzsf").hide();
                                     $(".mm_box li").removeClass("mmdd");
-                                    $(".mm_box li").attr("data","");
+                                    $(".mm_box li").attr("data", "");
                                     i = 0;
-                                } else if(res.code == 1) {
-                                    mui.toast(res.msg,{ duration:'long', type:'div' });
+                                } else if (res.code == 1) {
+                                    mui.toast(res.msg, {duration: 'long', type: 'div'});
                                     $(".ftc_wzsf").hide();
                                     $(".mm_box li").removeClass("mmdd");
-                                    $(".mm_box li").attr("data","");
+                                    $(".mm_box li").attr("data", "");
                                     i = 0;
-                                    setTimeout(function(){window.location.reload() },800);
+                                    setTimeout(function () {
+                                        window.location.reload()
+                                    }, 800);
                                 }
                             },
-                            fail: function(res) {
+                            fail: function (res) {
 
                             }
                         });
 
                     }, 100);
-                };
+                }
+                ;
             }
         });
 
-        $(".nub_ggg li .zf_del").click(function() {
-            if(i > 0) {
+        $(".nub_ggg li .zf_del").click(function () {
+            if (i > 0) {
                 i--;
                 $(".mm_box li").eq(i).removeClass("mmdd");
                 $(".mm_box li").eq(i).attr("data", "");
             }
         });
 
-        $(".nub_ggg li .zf_empty").click(function() {
+        $(".nub_ggg li .zf_empty").click(function () {
             $(".mm_box li").removeClass("mmdd");
             $(".mm_box li").attr("data", "");
             i = 0;

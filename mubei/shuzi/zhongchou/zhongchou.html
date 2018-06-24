@@ -1,182 +1,200 @@
 <!doctype html>
 <html>
 
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<link href="../../css/mui.min.css" rel="stylesheet" />
-		<style>
-			* {
-				font-size: 14px;
-				font-family: '微软雅黑';
-			}
-			
-			.mui-content>.mui-table-view:first-child {
-				margin-top: -15px;
-			}
-			
-			.mui-card .mui-control-content {
-				padding: 10px;
-			}
-			
-			.mui-control-content {
-				margin-top: 8px;
-			}
-			
-			.mui-segmented-control {
-				border: none;
-			}
-			
-			.mui-segmented-control .mui-control-item {
-				padding-top: 5px;
-				color: #000000;
-				border-left: 1px solid #f6f6f6;
-				background-color: #ffffff;
-			}
-			
-			.mui-segmented-control .mui-control-item.mui-active {
-				color: #007aff;
-				background-color: #ffffff;
-			}
-			
-			.img {
-				height: 25px;
-				display: block;
-				margin: auto;
-			}
-			
-			.mui-table-view .mui-media-object {
-				line-height: 55px;
-				max-width: 55px;
-				height: 55px;
-			}
-			
-			.mui-progressbar {
-				width: 58%;
-				height: 5px;
-				float: left;
-				margin-top: 8px;
-				margin-right: 10px;
-			}
-			.foot{
-				float: left;width: 33%;
-				font-size: 12px;
-			}
-			.foot,.r_foot p{
-				font-size: 12px;
-			}
-			.r_foot{
-				float: right;width: 33%;
-				font-size: 12px;
-			}
-			.foot_box{
-				border-top: 1px solid gainsboro;text-align: center;overflow: auto;
-			}
-			.f_btn {
-				padding: 3px;
-			}
-		</style>
-	</head>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link href="../../css/mui.min.css" rel="stylesheet"/>
+    <style>
+        * {
+            font-size: 14px;
+            font-family: '微软雅黑';
+        }
 
-	<body>
-		<header class="mui-bar mui-bar-nav" style="background-color: #46adfc;color: white;">
-			<i class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" onclick="back()"></i>
-			<h1 class="mui-title" style="color: white;">众筹项目中心</h1>
-			<button class="mui-btn mui-btn-blue mui-btn-link mui-pull-right" style="color: white;font-size: 14px;" onclick="window.location.href='zc_recode.html'; ">记录</button>
-		</header>
-		<div class="mui-content">
-			<div>
-				<div id="segmentedControl" class="mui-segmented-control">
-					<a class="mui-control-item mui-active" href="#item1">
-						<img src="../../images/img/zhongchou_01_03.png" alt="" class="img" /> 预热中
-					</a>
-					<a class="mui-control-item" href="#item2">
-						<img src="../../images/img/zhongchou_05.png" alt="" class="img" /> 进行中
-					</a>
-					<a class="mui-control-item" href="#item3">
-						<img src="../../images/img/zhongchou_07.png" alt="" class="img" /> 已结束
-					</a>
-				</div>
-			</div>
+        .mui-content > .mui-table-view:first-child {
+            margin-top: -15px;
+        }
 
-			<div id="item1" class="mui-control-content mui-active">
-				<!--没有相关记录-->
-				<!--<p style="font-size: 16px; margin: auto;width: 130px;margin-top: 20px;">没有找到相关记录</p>-->
-				<ul class="mui-table-view">
-					<li class="mui-table-view-cell mui-media">
-							<img class="mui-media-object mui-pull-left" src="../../images/img/shuijiao.jpg">
-							<div class="mui-media-body">
-								<div class="mui-pull-right" style="color: red;">
-									<img src="../../images/img/zhongchou_01_03.png" height="17px" /> 2018-06-15 12:12
-								</div>
-								HPAY数字资产
-								<div style="width: 100%;">
-									<div style="float: left;margin-right: 5px;font-size: 12px;">每个id限购1000枚</div>
-									<p style="font-size: 12px;">释放比例100.0%</p>
-								</div>
-								<div>
-									<p style="float: left;">接受币种：</p><span>余额</span></div>
-							</div>
-						<div class="foot_box">
-							<div class="foot">
-								<p>众筹规模</p>1000万</div>
-							<div class="foot">
-								<p>价格</p>1HPAY=?</div>
-							<div class="r_foot">
-								<p>剩余时间</p>未开始</div>
-						</div>
-						<div style="margin-top: 6px;overflow: auto;">
-							<p class="mui-progressbar mui-progressbar-in" data-progress="20"></p>
-							<div style="float: left;">0.00%</div>
-							<button type="button" class="mui-btn f_btn" style="float: right;">立即购买</button>
-						</div>
-					</li>
+        .mui-card .mui-control-content {
+            padding: 10px;
+        }
 
-					<li class="mui-table-view-cell mui-media">
-							<img class="mui-media-object mui-pull-left" src="../../images/img/shuijiao.jpg">
-							<div class="mui-media-body">
-								<div class="mui-pull-right" style="color: red;">
-									<img src="../../images/img/zhongchou_01_03.png" height="17px" /> 2018-06-15 12:12
-								</div>
-								HPAY数字资产
-								<div style="">
-									<div style="float: left;margin-right: 5px;font-size: 12px;">每个id限购1000枚</div>
-									<p style="font-size: 12px;">释放比例100.0%</p>
-								</div>
-								<div>
-									<p style="float: left;">接受币种：</p><span>余额</span></div>
-							</div>
-						<div class="foot_box">
-							<div class="foot">
-								<p>众筹规模</p>1000万</div>
-							<div class="foot">
-								<p>价格</p>1HPAY=?</div>
-							<div class="r_foot">
-								<p>剩余时间</p>未开始</div>
-						</div>
-						<div style="margin-top: 15px;">
-							<p class="mui-progressbar mui-progressbar-in" data-progress="20"></p>
-							<div style="float: left;">0.00%</div>
-							<button type="button" class="mui-btn f_btn" style="float: right;">立即购买</button>
-						</div>
-					</li>
-				</ul>
-				<p style="font-size: 16px; margin: auto;width: 130px;margin-top: 20px;letter-spacing: 2px;">已经加载完了...</p>
-			</div>
-			<div id="item2" class="mui-control-content">
-				<p style="font-size: 16px; margin: auto;width: 140px;margin-top: 20px;">没有找到相关记录2</p>
-			</div>
-			<div id="item3" class="mui-control-content">
-				<p style="font-size: 16px; margin: auto;width: 140px;margin-top: 20px;">没有找到相关记录3</p>
-			</div>
+        .mui-control-content {
+            margin-top: 8px;
+        }
 
-		</div>
+        .mui-segmented-control {
+            border: none;
+        }
 
-		<script src="../../js/mui.min.js"></script>
-		<script type="text/javascript">
-			mui.init()
-		</script>
-	</body>
+        .mui-segmented-control .mui-control-item {
+            padding-top: 5px;
+            color: #000000;
+            border-left: 1px solid #f6f6f6;
+            background-color: #ffffff;
+        }
+
+        .mui-segmented-control .mui-control-item.mui-active {
+            color: #007aff;
+            background-color: #ffffff;
+        }
+
+        .img {
+            height: 25px;
+            display: block;
+            margin: auto;
+        }
+
+        .mui-table-view .mui-media-object {
+            line-height: 55px;
+            max-width: 55px;
+            height: 55px;
+        }
+
+        .mui-progressbar {
+            width: 58%;
+            height: 5px;
+            float: left;
+            margin-top: 8px;
+            margin-right: 10px;
+        }
+
+        .foot {
+            float: left;
+            width: 33%;
+            font-size: 12px;
+        }
+
+        .foot, .r_foot p {
+            font-size: 12px;
+        }
+
+        .r_foot {
+            float: right;
+            width: 33%;
+            font-size: 12px;
+        }
+
+        .foot_box {
+            border-top: 1px solid gainsboro;
+            text-align: center;
+            overflow: auto;
+        }
+
+        .f_btn {
+            padding: 3px;
+        }
+    </style>
+</head>
+
+<body>
+<header class="mui-bar mui-bar-nav" style="background-color: #46adfc;color: white;">
+    <i class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" onclick="back()"></i>
+    <h1 class="mui-title" style="color: white;">众筹项目中心</h1>
+    <button class="mui-btn mui-btn-blue mui-btn-link mui-pull-right" style="color: white;font-size: 14px;"
+            onclick="window.location.href='zc_recode.html'; ">记录
+    </button>
+</header>
+<div class="mui-content">
+    <div>
+        <div id="segmentedControl" class="mui-segmented-control">
+            <a class="mui-control-item mui-active" href="#item1">
+                <img src="../../images/img/zhongchou_01_03.png" alt="" class="img"/> 预热中
+            </a>
+            <a class="mui-control-item" href="#item2">
+                <img src="../../images/img/zhongchou_05.png" alt="" class="img"/> 进行中
+            </a>
+            <a class="mui-control-item" href="#item3">
+                <img src="../../images/img/zhongchou_07.png" alt="" class="img"/> 已结束
+            </a>
+        </div>
+    </div>
+
+    <div id="item1" class="mui-control-content mui-active">
+        <!--没有相关记录-->
+        <!--<p style="font-size: 16px; margin: auto;width: 130px;margin-top: 20px;">没有找到相关记录</p>-->
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell mui-media">
+                <img class="mui-media-object mui-pull-left" src="../../images/img/shuijiao.jpg">
+                <div class="mui-media-body">
+                    <div class="mui-pull-right" style="color: red;">
+                        <img src="../../images/img/zhongchou_01_03.png" height="17px"/> 2018-06-15 12:12
+                    </div>
+                    HPAY数字资产
+                    <div style="width: 100%;">
+                        <div style="float: left;margin-right: 5px;font-size: 12px;">每个id限购1000枚</div>
+                        <p style="font-size: 12px;">释放比例100.0%</p>
+                    </div>
+                    <div>
+                        <p style="float: left;">接受币种：</p><span>余额</span></div>
+                </div>
+                <div class="foot_box">
+                    <div class="foot">
+                        <p>众筹规模</p>1000万
+                    </div>
+                    <div class="foot">
+                        <p>价格</p>1HPAY=?
+                    </div>
+                    <div class="r_foot">
+                        <p>剩余时间</p>未开始
+                    </div>
+                </div>
+                <div style="margin-top: 6px;overflow: auto;">
+                    <p class="mui-progressbar mui-progressbar-in" data-progress="20"></p>
+                    <div style="float: left;">0.00%</div>
+                    <button type="button" class="mui-btn f_btn" style="float: right;">立即购买</button>
+                </div>
+            </li>
+
+            <li class="mui-table-view-cell mui-media">
+                <img class="mui-media-object mui-pull-left" src="../../images/img/shuijiao.jpg">
+                <div class="mui-media-body">
+                    <div class="mui-pull-right" style="color: red;">
+                        <img src="../../images/img/zhongchou_01_03.png" height="17px"/> 2018-06-15 12:12
+                    </div>
+                    HPAY数字资产
+                    <div style="">
+                        <div style="float: left;margin-right: 5px;font-size: 12px;">每个id限购1000枚</div>
+                        <p style="font-size: 12px;">释放比例100.0%</p>
+                    </div>
+                    <div>
+                        <p style="float: left;">接受币种：</p><span>余额</span></div>
+                </div>
+                <div class="foot_box">
+                    <div class="foot">
+                        <p>众筹规模</p>1000万
+                    </div>
+                    <div class="foot">
+                        <p>价格</p>1HPAY=?
+                    </div>
+                    <div class="r_foot">
+                        <p>剩余时间</p>未开始
+                    </div>
+                </div>
+                <div style="margin-top: 15px;">
+                    <p class="mui-progressbar mui-progressbar-in" data-progress="20"></p>
+                    <div style="float: left;">0.00%</div>
+                    <button type="button" class="mui-btn f_btn" style="float: right;">立即购买</button>
+                </div>
+            </li>
+        </ul>
+        <p style="font-size: 16px; margin: auto;width: 130px;margin-top: 20px;letter-spacing: 2px;">已经加载完了...</p>
+    </div>
+    <div id="item2" class="mui-control-content">
+        <p style="font-size: 16px; margin: auto;width: 140px;margin-top: 20px;">没有找到相关记录2</p>
+    </div>
+    <div id="item3" class="mui-control-content">
+        <p style="font-size: 16px; margin: auto;width: 140px;margin-top: 20px;">没有找到相关记录3</p>
+    </div>
+
+</div>
+
+<script src="../../js/mui.min.js"></script>
+<script type="text/javascript">
+    mui.init()
+</script>
+</body>
 
 </html>

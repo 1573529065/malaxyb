@@ -1,141 +1,142 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="UTF-8">
-		<meta name="Keywords" content="">
-		<meta name="Description" content="">
-		<meta name="format-detection" content="telephone=no">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimum-scale=1.0">
-		<link rel="stylesheet" href="css/reset.css">
-		<link rel="stylesheet" href="css/index.css">
-		<link rel="stylesheet" href="../css/mui.min.css" />
-		<title>Receipt_address</title>
-	</head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimum-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="../css/mui.min.css"/>
+    <title>Receipt_address</title>
+</head>
 
-	<body>
-		<div id="wrapper" v-cloak>
-			<header class="mui-bar mui-bar-nav">
-			    <!--<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" ></a>-->
-			    <h1 class="mui-title">收货地址</h1>
-			</header>
-			
-			<div class="m_pwd topline mui-content">
-				<div class="confirm">
-					<ul v-for="(item,index ) in addressList">
-						<li class="fl addr_1 add_main" v-if="item.is_default==1">
-							<img src="images/adress/addr.png" />
-						</li>
-						<li class="fl addr_2 add_main" :class="item.is_default!=1?'add_left':''" @click="setDef(item)">
-							<span class="add_txt " :class="item.is_default==1?'add_color':''">{{item.delivery_name}} <font>{{item.contact}}</font></span>
-							<span class="add_txt">{{item.address}}</span>
-						</li>
-						<li class="fr addr_3 add_main">
-							<a :href="'New_address.html?ad_id='+item.address_id">编辑</a>
-						</li>
-					</ul>
-					<!--<ul class="topline">
-						<li class="fl addr_2 add_left add_main">
-							<span class="add_txt">李某 <font>139****1234</font></span>
-							<span class="add_txt">北京市丰台区北京市丰台区北京市丰台区北京市丰台区北京市丰台区</span>
-						</li>
-						<li class="fr addr_3 add_main"><a href="New_address.html">编辑</a></li>
-					</ul>-->
-					<!--<ul class="topline" v-for="(item,index ) in addressList">
-						
-						<li class="fl addr_2 add_left add_main">
-							<span class="add_txt add_color">{{item.delivery_name}} <font>{{item.contact}}</font></span>
-							<span class="add_txt">{{item.address}}</span>
-						</li>
-						<li class="fr addr_3 add_main"><a href="New_address.html">编辑</a></li>
-					</ul>-->
-				</div>
-				<div style="height: 10vw;"></div>
-				<div class="con_sub address">
-					<a href="New_address.html" class="con_ti address_ti">+ 新建地址</a>
-				</div>
-			</div>
-		</div>
-		<script type="text/javascript" src="js/rem.js"></script>
-		<script type="text/javascript" src="js/swiper.min.js"></script>
-		<script type="text/javascript" src="../js/mui.min.js"></script>
-		<!--<script type="text/javascript" src="js/seasonal.js" ></script>-->
-		<script type="text/javascript" src="js/vue.min.js"></script>
-		<script type="text/javascript" src="../js/jquery.js"></script>
-		<script type="text/javascript" src="../js/url.js"></script>
-		<script type="text/javascript" src="./js/common.js"></script>
-		<script>
-			var vm = new Vue({
-				el: '#wrapper',
-				data: {
-					addressList: [],
-					tempData: ''
-				},
-				methods: {
-					initAddress: function() {
-						var that = this
-						$.ajax({
-							type: "post",
-							url: p_url + "getAddress",
-							async: true,
-							dataType: "jsonp",
-							crossDomain: true,
-							data: {
-								u_id: u_id
-							},
-							success: function(res) {
-								if(res.code == 1) {
-									that.addressList = res.data
-								} else {
-									that.addressList = []
-								}
-								console.log(res)
-							}
-						});
-					},
-					setDef: function(item) {
-						var that = this
-						this.tempData = item
-						
-						mui.confirm('设为默认地址并返回吗？', '提示', ['否', '是'], function(e) {
+<body>
+<div id="wrapper" v-cloak>
+    <header class="mui-bar mui-bar-nav">
+        <!--<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" ></a>-->
+        <h1 class="mui-title">收货地址</h1>
+    </header>
+
+    <div class="m_pwd topline mui-content">
+        <div class="confirm">
+            <ul v-for="(item,index ) in addressList">
+                <li class="fl addr_1 add_main" v-if="item.is_default==1">
+                    <img src="images/adress/addr.png"/>
+                </li>
+                <li class="fl addr_2 add_main" :class="item.is_default!=1?'add_left':''" @click="setDef(item)">
+                    <span class="add_txt " :class="item.is_default==1?'add_color':''">{{item.delivery_name}} <font>{{item.contact}}</font></span>
+                    <span class="add_txt">{{item.address}}</span>
+                </li>
+                <li class="fr addr_3 add_main">
+                    <a :href="'New_address.html?ad_id='+item.address_id">编辑</a>
+                </li>
+            </ul>
+            <!--<ul class="topline">
+                <li class="fl addr_2 add_left add_main">
+                    <span class="add_txt">李某 <font>139****1234</font></span>
+                    <span class="add_txt">北京市丰台区北京市丰台区北京市丰台区北京市丰台区北京市丰台区</span>
+                </li>
+                <li class="fr addr_3 add_main"><a href="New_address.html">编辑</a></li>
+            </ul>-->
+            <!--<ul class="topline" v-for="(item,index ) in addressList">
+
+                <li class="fl addr_2 add_left add_main">
+                    <span class="add_txt add_color">{{item.delivery_name}} <font>{{item.contact}}</font></span>
+                    <span class="add_txt">{{item.address}}</span>
+                </li>
+                <li class="fr addr_3 add_main"><a href="New_address.html">编辑</a></li>
+            </ul>-->
+        </div>
+        <div style="height: 10vw;"></div>
+        <div class="con_sub address">
+            <a href="New_address.html" class="con_ti address_ti">+ 新建地址</a>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="js/rem.js"></script>
+<script type="text/javascript" src="js/swiper.min.js"></script>
+<script type="text/javascript" src="../js/mui.min.js"></script>
+<!--<script type="text/javascript" src="js/seasonal.js" ></script>-->
+<script type="text/javascript" src="js/vue.min.js"></script>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/url.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#wrapper',
+        data: {
+            addressList: [],
+            tempData: ''
+        },
+        methods: {
+            initAddress: function () {
+                var that = this
+                $.ajax({
+                    type: "post",
+                    url: p_url + "getAddress",
+                    async: true,
+                    dataType: "jsonp",
+                    crossDomain: true,
+                    data: {
+                        u_id: u_id
+                    },
+                    success: function (res) {
+                        if (res.code == 1) {
+                            that.addressList = res.data
+                        } else {
+                            that.addressList = []
+                        }
+                        console.log(res)
+                    }
+                });
+            },
+            setDef: function (item) {
+                var that = this
+                this.tempData = item
+
+                mui.confirm('设为默认地址并返回吗？', '提示', ['否', '是'], function (e) {
 //							console.log(e, item)
-							console.log(item.u_id,item.address,item.contact,item.delivery_name,item.address_id,'default=1')
-							if(e.index == 1) {
-								$.ajax({
-									type: "post",
-									url: p_url + "updateAddress",
-									async: true,
-									dataType: "jsonp",
-									crossDomain: true,
-									data: {
-										u_id:item.u_id,
-										address:item.address,
-										contact:item.contact,
-										delivery_name:item.delivery_name,
-										address_id:item.address_id,
-										is_default:1
-									},
-									success:function(res){
-										console.log(res)
-										if(res.code==1){
-											mui.alert(res.msg,function(){
-												location.href=document.referrer;
-											})
-											
-										}
-									}
-								});
-							}
-						})
-					}
-				},
-				mounted: function() {
-					this.initAddress()
-				}
-			})
-		</script>
-	</body>
+                    console.log(item.u_id, item.address, item.contact, item.delivery_name, item.address_id, 'default=1')
+                    if (e.index == 1) {
+                        $.ajax({
+                            type: "post",
+                            url: p_url + "updateAddress",
+                            async: true,
+                            dataType: "jsonp",
+                            crossDomain: true,
+                            data: {
+                                u_id: item.u_id,
+                                address: item.address,
+                                contact: item.contact,
+                                delivery_name: item.delivery_name,
+                                address_id: item.address_id,
+                                is_default: 1
+                            },
+                            success: function (res) {
+                                console.log(res)
+                                if (res.code == 1) {
+                                    mui.alert(res.msg, function () {
+                                        location.href = document.referrer;
+                                    })
+
+                                }
+                            }
+                        });
+                    }
+                })
+            }
+        },
+        mounted: function () {
+            this.initAddress()
+        }
+    })
+</script>
+</body>
 
 </html>

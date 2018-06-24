@@ -1,228 +1,224 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="UTF-8">
-		<meta name="Keywords" content="">
-		<meta name="Description" content="">
-		<meta name="format-detection" content="telephone=no">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimum-scale=1.0">
-		<link rel="stylesheet" href="css/reset.css">
-		<!--<link rel="stylesheet" href="css/index.css">-->
-		<link rel="stylesheet" href="../css/mui.min.css" />
-		<link rel="stylesheet" href="css/mui.picker.css" />
-		<link rel="stylesheet" href="css/mui.poppicker.css" />
-		<title>M_password</title>
-		<style>
-			.mui-input-group {
-				margin: 5px;
-			}
-			
-			.btnP {
-				padding: 5px;
-			}
-			
-			.sureBtn {
-				display: block;
-				width: 100%;
-				background-color: dodgerblue;
-				color: white;
-				font-size: 18px;
-			}
-			
-			.mui-input-row label {
-				padding: 11px 9px;
-			}
-			
-			.mui-input-row .mui-btn {
-				width: auto;
-				position: absolute;
-				right: 0;
-			}
-		</style>
-	</head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimum-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <!--<link rel="stylesheet" href="css/index.css">-->
+    <link rel="stylesheet" href="../css/mui.min.css"/>
+    <link rel="stylesheet" href="css/mui.picker.css"/>
+    <link rel="stylesheet" href="css/mui.poppicker.css"/>
+    <title>M_password</title>
+    <style>
+        .mui-input-group {
+            margin: 5px;
+        }
 
-	<body>
-		<div id="wrapper" v-cloak>
-			<header class="mui-bar mui-bar-nav">
-				<!--<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>-->
-				<h1 class="mui-title">注册商家</h1>
-			</header>
-			<div class="m_pwd mui-content">
-				<div class="mui-input-group">
-					<div class="mui-input-row">
-						<label>账号</label>
-						<input type="text" class="mui-input-clear" v-model="account" placeholder="请输入账号">
-					</div>
-				</div>
-				<div class="mui-input-group">
-					<div class="mui-input-row">
-						<label>手机号码</label>
-						<input type="number" class="mui-input-clear" v-model="mobile" placeholder="请输入11位正确的手机号码">
-					</div>
-				</div>
-				<div class="mui-input-group">
-					<div class="mui-input-row">
-						<label>密码：</label>
-						<input type="password" class="mui-input-clear" v-model="pass" placeholder="请输入密码">
-					</div>
-				</div>
-				<div class="mui-input-group">
-					<div class="mui-input-row">
-						<label>二次密码：</label>
-						<input type="password" class="mui-input-clear" v-model="again_pass" placeholder="请输入二次密码">
-					</div>
-				</div>
-				<div class="mui-input-group">
-					<div class="mui-input-row">
-						<label>商品分类：</label>
-						<select name="classify_id" id="classify_id" class="mui-input-clear" v-model="classify_id" >
-							
-						</select>
-					</div>
-				</div>
-				<div class="mui-input-group">
-					<div class="mui-input-row">
-						<label>店铺名</label>
-						<input type="shop_name" class="mui-input-clear" v-model="shop_name" placeholder="请输入店铺名">
-					</div>
-				</div>
-				<div class="btnP">
-					<button class="sureBtn" @click="save">注册</button>
-				</div>
-			</div>
-		</div>
-		<script type="text/javascript" src="js/rem.js"></script>
-		<script type="text/javascript" src="js/city.data-3.js"></script>
-		<script type="text/javascript" src="../js/mui.min.js"></script>
-		<script type="text/javascript" src="js/mui.picker.min.js"></script>
-		<script type="text/javascript" src="js/mui.poppicker.js"></script>
-		<script type="text/javascript" src="js/vue.min.js"></script>
-		<script type="text/javascript" src="../js/url.js"></script>
-		<script type="text/javascript" src="js/common.js"></script>
-		<script type="text/javascript" src="../js/jquery.min.js"></script>
-		<script>
-			var vm = new Vue({
-				el: '#wrapper',
-				data: {
-					account: '',
-					pass: '',
-					again_pass: '',
-					mobile: '',
-					shop_name:'',
-					classify_id:''
-				},
-				methods: {			
-					save: function() {
-						var that = this;
-						//console.log(u_id, that.pro + that.city + that.district + that.address, that.phone, that.is_default)
-						u_id = localStorage.lastname;
-							reg = /^1[3456789]{1}\d{9}$/
-							res = reg.test(that.mobile);
-							if(that.account == ''){
-								mui.toast('账号不能为空');
-							}else if(that.mobile == ''){
-								mui.toast('手机号码不能为空');
-							}else if(that.pass == ''){
-								mui.toast('密码不能为空');
-							}else if(that.again_pass == ''){
-								mui.toast('二次密码不能为空');
-							}else if(that.shop_name == ''){
-								mui.toast('店铺名不能为空');
-							}else if(that.pass !== that.again_pass){
-								mui.toast('两次密码不一致');
-							}else if(!res){
-								mui.toast('请输入正确的手机号码');
-							}else if($('#classify_id').val() == ''){
-								mui.toast('请选择商品分类');
-							}else{
-								$.ajax({
-								type: "post",
-								url: p_url + 'registSeller',
-								async: true,
-								dataType: "jsonp",
-								crossDomain: true,
-								data: {
-									u_id:u_id,
-									account: that.account,
-									pass: that.pass,
-									mobile:that.mobile,
-									classify_id:$('#classify_id').val(),
-									shop_name:that.shop_name
-								},
-								success: function(res) {
-									//console.log(res)
-									mui.toast(res.msg);
+        .btnP {
+            padding: 5px;
+        }
 
-									if(res.code == 1) {
-										setInterval('history.go(-1)',2000);
-									}
-									
-									
-									
+        .sureBtn {
+            display: block;
+            width: 100%;
+            background-color: dodgerblue;
+            color: white;
+            font-size: 18px;
+        }
 
-								}
-								});
-							}
-								
-							
-							
+        .mui-input-row label {
+            padding: 11px 9px;
+        }
+
+        .mui-input-row .mui-btn {
+            width: auto;
+            position: absolute;
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+<div id="wrapper" v-cloak>
+    <header class="mui-bar mui-bar-nav">
+        <!--<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>-->
+        <h1 class="mui-title">注册商家</h1>
+    </header>
+    <div class="m_pwd mui-content">
+        <div class="mui-input-group">
+            <div class="mui-input-row">
+                <label>账号</label>
+                <input type="text" class="mui-input-clear" v-model="account" placeholder="请输入账号">
+            </div>
+        </div>
+        <div class="mui-input-group">
+            <div class="mui-input-row">
+                <label>手机号码</label>
+                <input type="number" class="mui-input-clear" v-model="mobile" placeholder="请输入11位正确的手机号码">
+            </div>
+        </div>
+        <div class="mui-input-group">
+            <div class="mui-input-row">
+                <label>密码：</label>
+                <input type="password" class="mui-input-clear" v-model="pass" placeholder="请输入密码">
+            </div>
+        </div>
+        <div class="mui-input-group">
+            <div class="mui-input-row">
+                <label>二次密码：</label>
+                <input type="password" class="mui-input-clear" v-model="again_pass" placeholder="请输入二次密码">
+            </div>
+        </div>
+        <div class="mui-input-group">
+            <div class="mui-input-row">
+                <label>商品分类：</label>
+                <select name="classify_id" id="classify_id" class="mui-input-clear" v-model="classify_id">
+
+                </select>
+            </div>
+        </div>
+        <div class="mui-input-group">
+            <div class="mui-input-row">
+                <label>店铺名</label>
+                <input type="shop_name" class="mui-input-clear" v-model="shop_name" placeholder="请输入店铺名">
+            </div>
+        </div>
+        <div class="btnP">
+            <button class="sureBtn" @click="save">注册</button>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="js/rem.js"></script>
+<script type="text/javascript" src="js/city.data-3.js"></script>
+<script type="text/javascript" src="../js/mui.min.js"></script>
+<script type="text/javascript" src="js/mui.picker.min.js"></script>
+<script type="text/javascript" src="js/mui.poppicker.js"></script>
+<script type="text/javascript" src="js/vue.min.js"></script>
+<script type="text/javascript" src="../js/url.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#wrapper',
+        data: {
+            account: '',
+            pass: '',
+            again_pass: '',
+            mobile: '',
+            shop_name: '',
+            classify_id: ''
+        },
+        methods: {
+            save: function () {
+                var that = this;
+                //console.log(u_id, that.pro + that.city + that.district + that.address, that.phone, that.is_default)
+                u_id = localStorage.lastname;
+                reg = /^1[3456789]{1}\d{9}$/
+                res = reg.test(that.mobile);
+                if (that.account == '') {
+                    mui.toast('账号不能为空');
+                } else if (that.mobile == '') {
+                    mui.toast('手机号码不能为空');
+                } else if (that.pass == '') {
+                    mui.toast('密码不能为空');
+                } else if (that.again_pass == '') {
+                    mui.toast('二次密码不能为空');
+                } else if (that.shop_name == '') {
+                    mui.toast('店铺名不能为空');
+                } else if (that.pass !== that.again_pass) {
+                    mui.toast('两次密码不一致');
+                } else if (!res) {
+                    mui.toast('请输入正确的手机号码');
+                } else if ($('#classify_id').val() == '') {
+                    mui.toast('请选择商品分类');
+                } else {
+                    $.ajax({
+                        type: "post",
+                        url: p_url + 'registSeller',
+                        async: true,
+                        dataType: "jsonp",
+                        crossDomain: true,
+                        data: {
+                            u_id: u_id,
+                            account: that.account,
+                            pass: that.pass,
+                            mobile: that.mobile,
+                            classify_id: $('#classify_id').val(),
+                            shop_name: that.shop_name
+                        },
+                        success: function (res) {
+                            //console.log(res)
+                            mui.toast(res.msg);
+
+                            if (res.code == 1) {
+                                setInterval('history.go(-1)', 2000);
+                            }
 
 
-					},
-					getClassify:function(){
-						var that = this;
-						$.ajax({
-								type: "get",
-								url: p_url + 'getGoodsClassify',
-								async: true,
-								dataType: "jsonp",
-								crossDomain: true,								
-								success: function(res) {
-									option = '';
-									for(i in res.data){
-										if(i ==0 ){
-											option+='<option selected value='+res.data[i].classify_id+'>'+res.data[i].name+'</option>';
-										}else{
-											option+='<option value='+res.data[i].classify_id+'>'+res.data[i].name+'</option>';
-										}
-										
-									}
-									//console.log(option);
-									$('#classify_id').html(option);
-									
-								}
-								});
-					}
-					
-				},
-				computed: {
-					is_default: function() {
-						if(this.ch_default) {
-							return 1
-						} else {
-							return 0
-						}
-					},
-					isBianji: function() {
-						if(this.ad_id == undefined || this.ad_id == null || this.ad_id == '') {
-							return false
-						} else {
-							return true
-						}
-					}
+                        }
+                    });
+                }
 
-				},
-				mounted: function() {
-					mui.init()
-					this.getClassify();
-					//window.history.back();
-					
-				}
-			})
-		</script>
-	</body>
+
+            },
+            getClassify: function () {
+                var that = this;
+                $.ajax({
+                    type: "get",
+                    url: p_url + 'getGoodsClassify',
+                    async: true,
+                    dataType: "jsonp",
+                    crossDomain: true,
+                    success: function (res) {
+                        option = '';
+                        for (i in res.data) {
+                            if (i == 0) {
+                                option += '<option selected value=' + res.data[i].classify_id + '>' + res.data[i].name + '</option>';
+                            } else {
+                                option += '<option value=' + res.data[i].classify_id + '>' + res.data[i].name + '</option>';
+                            }
+
+                        }
+                        //console.log(option);
+                        $('#classify_id').html(option);
+
+                    }
+                });
+            }
+
+        },
+        computed: {
+            is_default: function () {
+                if (this.ch_default) {
+                    return 1
+                } else {
+                    return 0
+                }
+            },
+            isBianji: function () {
+                if (this.ad_id == undefined || this.ad_id == null || this.ad_id == '') {
+                    return false
+                } else {
+                    return true
+                }
+            }
+
+        },
+        mounted: function () {
+            mui.init()
+            this.getClassify();
+            //window.history.back();
+
+        }
+    })
+</script>
+</body>
 
 </html>

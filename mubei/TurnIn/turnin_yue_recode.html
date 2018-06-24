@@ -1,107 +1,113 @@
 <!doctype html>
 <html>
 
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-		<link href="../css/mui.min.css" rel="stylesheet" />
-		<script type="text/javascript" src="../js/back_icon.js" ></script>
-		<style>
-			.h-ul {
-				height: 40px;
-				background-color: #ffffff;
-				margin-top: 0px;
-			}
-			 ul {
-				-webkit-padding-start:0px;
-				    -webkit-margin-after: 0em;
-			}
-			.h-ul li {
-				padding-top: 10px;
-				list-style: none;
-				float: left;
-				width: 33%;
-				text-align: center;
-				 font-size: 15px;
-				 font-weight:inherit;
-			}
-			.table {
-				margin-top: 8px;
-                background-color: #FFFFFF;
-                font-size: 14px;
-                color: gray;
-                text-align: center;
-            }
-              .table td,
-            .table th {
-                border-bottom: 1px solid #d8d8d8;
-                padding: 0 1em 0;
-                width: 33%;
-            }
-             .table tr{
-             	height:40px;
-             }
-             .jine{
-             	color: red;
-             }
-		</style>
-	</head>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../css/mui.min.css" rel="stylesheet"/>
+    <script type="text/javascript" src="../js/back_icon.js"></script>
+    <style>
+        .h-ul {
+            height: 40px;
+            background-color: #ffffff;
+            margin-top: 0px;
+        }
 
-	<body>
-	    <header class="mui-bar mui-bar-nav" style="background-color: #FFFFFF;">
-			<!--<i class="mui-icon mui-icon-left-nav mui-pull-left" onclick="back_go()"></i>-->
-			<h1 class="mui-title">转入流通记录</h1>
-		</header>
-	
-		<div class="mui-content">
-			<ul class="h-ul">
-				<li>姓名</li>
-				<li>时间</li>
-				<li>额度</li>
-			</ul> 
-			<table class="table" width="100%">
-				
-            	
-            </table>
-		</div>
-		<script type="text/javascript" src="../js/jquery.min.js" ></script>
-		<script type="text/javascript" src="../js/common.js" ></script>
-		<script type="text/javascript" src="../js/url.js" ></script>
-		<script src="../js/mui.min.js"></script>
-		<script type="text/javascript">
-			mui.init()
-			
-			$.ajax({
-				url: j_url + "/turnin/turnin_recode_c",
-				type: 'POST',
-				dataType: 'jsonp',
-				data: {
-					u_id: localStorage.lastname,
-				},
-				crossDomain: true,
-				success: function(res) {
-					console.log(res);
-					if(res.code == 2) {
-						mui.alert(res.msg);
-					} else if(res.code == 1) {
-						var rou = res.data;
-						for(var key in rou) {
-							if(rou[key].target_uid){
-							$('.table').append("<tr style='height: 35px;'><td>" + rou[key].user + "("+rou[key].target_uid+")</td> <td>" + rou[key].co_money + "</td>" +
-								"<td>"+ rou[key].co_time +  "</td> </tr>");	
-							}else{
-								$('.table').append("<tr style='height: 35px;'><td>" + rou[key].user + "</td> <td>" + rou[key].co_money + "</td>" +
-								"<td>"+ rou[key].co_time +  "</td> </tr>");	
-							}
-							
-						}
-					}
-				},
-				fail: function(res) {
+        ul {
+            -webkit-padding-start: 0px;
+            -webkit-margin-after: 0em;
+        }
 
-				}
-			});
-		</script>
-	</body>
+        .h-ul li {
+            padding-top: 10px;
+            list-style: none;
+            float: left;
+            width: 33%;
+            text-align: center;
+            font-size: 15px;
+            font-weight: inherit;
+        }
+
+        .table {
+            margin-top: 8px;
+            background-color: #FFFFFF;
+            font-size: 14px;
+            color: gray;
+            text-align: center;
+        }
+
+        .table td,
+        .table th {
+            border-bottom: 1px solid #d8d8d8;
+            padding: 0 1em 0;
+            width: 33%;
+        }
+
+        .table tr {
+            height: 40px;
+        }
+
+        .jine {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+<header class="mui-bar mui-bar-nav" style="background-color: #FFFFFF;">
+    <!--<i class="mui-icon mui-icon-left-nav mui-pull-left" onclick="back_go()"></i>-->
+    <h1 class="mui-title">转入流通记录</h1>
+</header>
+
+<div class="mui-content">
+    <ul class="h-ul">
+        <li>姓名</li>
+        <li>时间</li>
+        <li>额度</li>
+    </ul>
+    <table class="table" width="100%">
+
+
+    </table>
+</div>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/url.js"></script>
+<script src="../js/mui.min.js"></script>
+<script type="text/javascript">
+    mui.init()
+
+    $.ajax({
+        url: j_url + "/turnin/turnin_recode_c",
+        type: 'POST',
+        dataType: 'jsonp',
+        data: {
+            u_id: localStorage.lastname,
+        },
+        crossDomain: true,
+        success: function (res) {
+            console.log(res);
+            if (res.code == 2) {
+                mui.alert(res.msg);
+            } else if (res.code == 1) {
+                var rou = res.data;
+                for (var key in rou) {
+                    if (rou[key].target_uid) {
+                        $('.table').append("<tr style='height: 35px;'><td>" + rou[key].user + "(" + rou[key].target_uid + ")</td> <td>" + rou[key].co_money + "</td>" +
+                            "<td>" + rou[key].co_time + "</td> </tr>");
+                    } else {
+                        $('.table').append("<tr style='height: 35px;'><td>" + rou[key].user + "</td> <td>" + rou[key].co_money + "</td>" +
+                            "<td>" + rou[key].co_time + "</td> </tr>");
+                    }
+
+                }
+            }
+        },
+        fail: function (res) {
+
+        }
+    });
+</script>
+</body>
 
 </html>
