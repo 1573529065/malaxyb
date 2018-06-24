@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c3eec561-b85e-45d5-bfe6-c01cb19bb019" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/new_vpay_api/application/index/controller/Index.php" afterPath="$PROJECT_DIR$/new_vpay_api/application/index/controller/Index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/new_vpay_api/application/index/controller/User.php" afterPath="$PROJECT_DIR$/new_vpay_api/application/index/controller/User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/new_vpay_api/application/index/controller/Card.php" afterPath="$PROJECT_DIR$/new_vpay_api/application/index/controller/Card.php" />
     </list>
     <list id="d259030c-ace7-4e09-b021-c1c9c209a123" name="Default-no" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/new_vpay_api/runtime/cache/8b/04d5e3775d298e78455efc5ca404d5.php" afterPath="$PROJECT_DIR$/new_vpay_api/runtime/cache/8b/04d5e3775d298e78455efc5ca404d5.php" />
@@ -47,11 +46,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/new_vpay_api/application/index/controller/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="224" column="32" lean-forward="true" selection-start-line="224" selection-start-column="32" selection-end-line="224" selection-end-column="32" />
+            <state relative-caret-position="272">
+              <caret line="194" column="59" lean-forward="true" selection-start-line="194" selection-start-column="59" selection-end-line="194" selection-end-column="59" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Card.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/new_vpay_api/application/index/controller/Card.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="78" column="7" lean-forward="true" selection-start-line="78" selection-start-column="7" selection-end-line="78" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -73,7 +82,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>language-huoquyanzhenma</find>
       <find>#send</find>
       <find>phone_code</find>
       <find>mui-input-rowmui-input-row</find>
@@ -103,6 +111,7 @@
       <find>value(</find>
       <find>$f_phone</find>
       <find>buy_sentic</find>
+      <find>input</find>
     </findStrings>
     <dirStrings>
       <dir>F:\phpStudy\PHPTutorial\WWW\malaxyb</dir>
@@ -144,10 +153,10 @@
         <option value="$PROJECT_DIR$/mubei/TurnOut/change_recode_lt.html" />
         <option value="$PROJECT_DIR$/mubei/TurnOut/turn_recode.html" />
         <option value="$PROJECT_DIR$/mubei/index.html" />
-        <option value="$PROJECT_DIR$/new_vpay_api/application/index/controller/Card.php" />
         <option value="$PROJECT_DIR$/mubei/jiaoyi/BuyIn/recharge.html" />
         <option value="$PROJECT_DIR$/new_vpay_api/application/index/controller/Index.php" />
         <option value="$PROJECT_DIR$/new_vpay_api/application/index/controller/User.php" />
+        <option value="$PROJECT_DIR$/new_vpay_api/application/index/controller/Card.php" />
       </list>
     </option>
   </component>
@@ -164,9 +173,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="438" />
-    <option name="width" value="928" />
-    <option name="height" value="728" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -185,6 +195,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -323,7 +334,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -431,7 +441,8 @@
       <workItem from="1529670685016" duration="12077000" />
       <workItem from="1529720887292" duration="128000" />
       <workItem from="1529723133732" duration="9406000" />
-      <workItem from="1529803416424" duration="710000" />
+      <workItem from="1529803416424" duration="886000" />
+      <workItem from="1529805083279" duration="3230000" />
     </task>
     <task id="LOCAL-00001" summary="初始化项目">
       <created>1529291021491</created>
@@ -524,11 +535,18 @@
       <option name="project" value="LOCAL" />
       <updated>1529740599764</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="推荐注册6%,满十人成为vip">
+      <created>1529804340029</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1529804340029</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40917000" />
+    <option name="totallyTimeSpent" value="44323000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -540,19 +558,19 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="438" y="0" width="928" height="728" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22004609" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14750378" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5604396" sideWeight="0.49716598" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5263736" sideWeight="0.5060729" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.49716598" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.49716598" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24950884" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2630719" sideWeight="0.49392712" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -582,25 +600,20 @@
     <MESSAGE value="脚本,成为vip" />
     <MESSAGE value="fix 买卖出中心" />
     <MESSAGE value="默认银行卡" />
-    <option name="LAST_COMMIT_MESSAGE" value="默认银行卡" />
+    <MESSAGE value="推荐注册6%,满十人成为vip" />
+    <option name="LAST_COMMIT_MESSAGE" value="推荐注册6%,满十人成为vip" />
   </component>
   <component name="WindowStateProjectService">
     <state width="198" height="301" key="Git.Branch.Popup" />
     <state width="198" height="301" key="Git.Branch.Popup/0.0.1366.768" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/new_vpay_api/application/index/controller/Index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8619">
-          <caret line="507" column="35" lean-forward="true" selection-start-line="507" selection-start-column="35" selection-end-line="507" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mubei/login/register.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1530">
@@ -917,10 +930,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/new_vpay_api/application/index/controller/Card.php">
+    <entry file="file://$USER_HOME$/Desktop/home/command/Test.php" />
+    <entry file="file://$PROJECT_DIR$/new_vpay_api/application/index/controller/Index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="146" column="42" lean-forward="true" selection-start-line="146" selection-start-column="42" selection-end-line="146" selection-end-column="42" />
+        <state relative-caret-position="15334">
+          <caret line="908" column="5" lean-forward="false" selection-start-line="908" selection-start-column="5" selection-end-line="908" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -946,26 +960,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/new_vpay_api/application/index/controller/Index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15334">
-          <caret line="908" column="5" lean-forward="false" selection-start-line="908" selection-start-column="5" selection-end-line="908" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/home/command/Test.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/new_vpay_api/application/index/controller/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="224" column="32" lean-forward="true" selection-start-line="224" selection-start-column="32" selection-end-line="224" selection-end-column="32" />
+        <state relative-caret-position="272">
+          <caret line="194" column="59" lean-forward="true" selection-start-line="194" selection-start-column="59" selection-end-line="194" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/new_vpay_api/thinkphp/library/think/Request.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="984" column="37" lean-forward="true" selection-start-line="984" selection-start-column="37" selection-end-line="984" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/new_vpay_api/application/index/controller/Card.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="78" column="7" lean-forward="true" selection-start-line="78" selection-start-column="7" selection-end-line="78" selection-end-column="7" />
           <folding />
         </state>
       </provider>
