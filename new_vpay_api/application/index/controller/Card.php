@@ -76,7 +76,7 @@ class Card extends Controller
         }
     }
 
-    /**ying
+    /**
      * 设为默认银行卡
      * @param u_id 用户u_id
      * @param b_id 银行卡b_id
