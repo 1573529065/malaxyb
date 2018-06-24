@@ -249,198 +249,131 @@ class Turn extends Send
         $pass_p = Request::instance()->param('pass_p');
         $type = Request::instance()->param('type');
 
-        if ($user && $money && $pass_p && $type) {
-            $check = Db::table('mb_user')
+        if (empty($user) || empty($money) || empty($pass_p) || empty($type))  return jsonp(['code' => 2, 'msg' => '参数错误！']);
+        $check = Db::table('mb_user')
+            ->where('u_id', $user)
+            ->field('assets,speed,f_uid,best_uid,
+            pay_pass,era,balance,level')
+            ->find();
+        $config1 = Db::table('mb_config')
+            ->where('co_id', 7)
+            ->value('co_config');
+        if ($type == 2) { //余额兑换资产
+            if (md5($pass_p) != $check['pay_pass']) return jsonp(['code' => 2, 'msg' => '支付密码错误！']);
+            if ($check['balance'] < $money) return jsonp(['code' => 2, 'msg' => '余额不足！']);
+            $accets = $money * $config1 / 100;
+//            减少用户余额
+            $res1 = Db::table('mb_user')
                 ->where('u_id', $user)
-                ->field('assets,speed,f_uid,best_uid,
-                pay_pass,era,balance,level')
-                ->find();
-            $config1 = Db::table('mb_config')
-                ->where('co_id', 7)
-                ->value('co_config');
-
-            if ($type == 1) { //流通兑换资产
-            } else if ($type == 2) { //余额兑换资产
-                if (md5($pass_p) == $check['pay_pass']) {
-                    if ($check['balance'] < $money) {
-                        return jsonp([
-                            'code' => 2,
-                            'msg' => '余额不足！'
-                        ]);
+                ->setDec('balance', $money);
+//            增加用户积分
+            $res2 = Db::table('mb_user')
+                ->where('u_id', $user)
+                ->setInc('assets', $accets);
+//            增加用户积分记录 type = 3 :兑换积分
+            $insert1 = Db::table('mb_assets_order')->insert([
+                'u_id' => $user,
+                'ao_money' => $accets,
+                'former_money' => $check['assets'],
+                'ao_time' => time(),
+                'type' => 3,
+            ]);
+//            增加用户余额记录 type 8: 兑换固定资产
+            $insert2 = Db::table('mb_balance_order')->insert([
+                'u_id' => $user,
+                'bo_money' => -$money,
+                'former_money' => $check['balance'],
+                'bo_time' => time(),
+                'type' => 8,
+            ]);
+//            如果用户的等级大于0 ,说明有上级用户
+            if ($check['era'] > 0) {
+                $f_uid = Db::table('mb_user')
+                    ->where('u_id', $check['f_uid'])
+                    ->find();
+//                推荐5个用户以上才会有释放加速
+                $tuijian_num = Db::table('vpay_share_order')->where('u_id',$f_uid['u_id'])->select();
+//                if ($tuijian_num >= 5){
+                    if ($f_uid['vip_static'] == 1) {
+//                       如果用户上级用户为 vip
+                        $config11 = Db::table('mb_config')->where('co_id', 1)->value('co_config');
                     } else {
-                        $res1 = Db::table('mb_user')
-                            ->where('u_id', $user)
-                            ->setDec('balance', $money);
-                        $res2 = Db::table('mb_user')
-                            ->where('u_id', $user)
-                            ->setInc('assets', $money * $config1 / 100);
-                        $insert1 = Db::table('mb_assets_order')->insert([
-                            'u_id' => $user,
-                            'ao_money' => $money * $config1 / 100,
-                            'former_money' => $check['assets'],
-                            'ao_time' => time(),
-                            'type' => 3,
-                        ]);
-                        $insert2 = Db::table('mb_balance_order')->insert([
-                            'u_id' => $user,
-                            'bo_money' => -$money,
-                            'former_money' => $check['balance'],
-                            'bo_time' => time(),
-                            'type' => 8,
-                        ]);
-
-                        if ($check['era'] > 0) {
-                            $f_uid = Db::table('mb_user')
-                                ->where('u_id', $check['f_uid'])
-                                ->find();
-                            if ($f_uid['vip_static'] == 1) {
-                                $vip_num = 15;
-                                $config11 = Db::table('mb_config')
-                                    ->where('co_id', 1)
-                                    ->value('co_config');
-                            } else {
-                                $vip_num = 9;
-                                $config11 = Db::table('mb_config')
-                                    ->where('co_id', 3)
-                                    ->value('co_config');
-                            }
-
-                            if (($check['era'] - $f_uid['era']) < $vip_num) {
-                                $speed = sprintf("%.2f", substr(sprintf("%.3f", $money * $config11 / 100), 0, -2));
-                                if ($speed > 0) {
-//                                    $res3=Db::table('mb_user')->where('u_id',$f_uid['u_id'])->setDec('assets',$speed);
-//                                    $res4=Db::table('mb_user')->where('u_id',$f_uid['u_id'])->setInc('balance',$speed);
-                                    $insert3 = Db::table('mb_assets_order')->insert([
-                                        'u_id' => $f_uid['u_id'],
-                                        'ao_money' => -$speed,
-                                        'former_money' => $f_uid['assets'],
-                                        'ao_time' => time(),
-                                        'type' => 2,
-                                    ]);
-                                    $insert4 = Db::table('mb_balance_order')->insert([
-                                        'u_id' => $f_uid['u_id'],
-                                        'bo_money' => $speed,
-                                        'former_money' => $f_uid['balance'],
-                                        'bo_time' => time(),
-                                        'type' => 5,
-                                    ]);
-                                }
-
-                                $two_uid = Db::table('mb_user')
-                                    ->where('u_id', $check['f_uid'])
-                                    ->value('u_id');
-                                if ($f_uid['vip_static'] == 1) {
-                                    $num = 14;
-                                    $config12 = Db::table('mb_config')
-                                        ->where('co_id', 2)
-                                        ->value('co_config');
-                                } else if ($f_uid['vip_static'] != 1) {
-                                    $num = 8;
-                                    $config12 = Db::table('mb_config')
-                                        ->where('co_id', 4)
-                                        ->value('co_config');
-                                }
-                                if ($f_uid['era'] == 1) {
-                                    $num = 0;
-                                }
-
-                                if ($f_uid['era'] != 0) {
-                                    $speed1 = sprintf("%.2f", substr(sprintf("%.3f", $money * $config12 / 100), 0, -2));
-                                    $this->get_top_parentid($f_uid['f_uid'], $money, $num, $check['era']);
-                                }
-                            }
-                        }
-                        $now = Db::table('mb_user')->where('u_id', $user)->field('balance,assets')->find();
-                        if ($res1 || $res2 || $insert1 || $insert2) {
-                            return jsonp(['code' => 1, 'msg' => '兑换成功！', 'data' => $now]);
-                        } else {
-                            return jsonp(['code' => 2, 'msg' => '兑换失败！']);
-                        }
+//                       用户上级为 普通用户
+                        $config11 = Db::table('mb_config')
+                            ->where('co_id', 3)
+                            ->value('co_config');
                     }
-                } else {
-                    return jsonp(['code' => 2, 'msg' => '支付密码错误！']);
-                }
-            }
-        } else {
-            return jsonp(['code' => 2, 'msg' => '参数错误！']);
-        }
+                    $speed = sprintf("%.2f", substr(sprintf("%.3f", $accets * $config11 / 100), 0, -2));
+                    if ($speed > 0) {
+                        Db::table('mb_user')->where('u_id',$f_uid['u_id'])->setDec('assets',$speed);
+                        Db::table('mb_user')->where('u_id',$f_uid['u_id'])->setInc('balance',$speed);
 
-
-    }
-
-    //递归寻找最上级
-    public function get_top_parentid($uid, $money, $num, $c_num)
-    {
-        $r = Db::table('mb_user')->where('u_id', $uid)->find();
-
-        if ($r['era'] >= 1 && $num > 0) {
-            if ($money > 0) {
-                $config12 = 0;
-                $vip_num = 0;
-                if ($r['vip_static'] == 1) {
-                    $vip_num = 15;
-                    $config12 = Db::table('mb_config')->where('co_id', 2)->value('co_config');
-                } else if ($r['vip_static'] != 1) {
-                    $vip_num = 9;
-                    $config12 = Db::table('mb_config')->where('co_id', 4)->value('co_config');
-                } else if ($r['era'] == 1) {
-                    $num = 0;
-                }
-                $speed1 = sprintf("%.2f", substr(sprintf("%.3f", $money * $config12 / 100), 0, -2));
-                if (($c_num - $r['era']) < $vip_num) {
-                    if ($speed1 > 0) {
-//                        $res3=Db::table('mb_user')->where('u_id',$r['u_id'])->setDec('assets',$speed1);
-//                        $res4=Db::table('mb_user')->where('u_id',$r['u_id'])->setInc('balance',$speed1);
-                        $insert3 = Db::table('mb_assets_order')->insert([
-                            'u_id' => $r['u_id'],
-                            'ao_money' => -$speed1,
-                            'former_money' => $r['assets'],
+                        Db::table('mb_assets_order')->insert([
+                            'u_id' => $f_uid['u_id'],
+                            'ao_money' => -$speed,
+                            'former_money' => $f_uid['assets'],
                             'ao_time' => time(),
                             'type' => 2,
                         ]);
-                        $insert4 = Db::table('mb_balance_order')->insert([
-                            'u_id' => $r['u_id'],
-                            'bo_money' => $speed1,
-                            'former_money' => $r['balance'],
+                        Db::table('mb_balance_order')->insert([
+                            'u_id' => $f_uid['u_id'],
+                            'bo_money' => $speed,
+                            'former_money' => $f_uid['balance'],
                             'bo_time' => time(),
                             'type' => 5,
                         ]);
                     }
+//                }
+                if ($f_uid['era'] != 0) {
+                    $this->get_top_parentid($f_uid['f_uid'], $accets, $check['era']);
                 }
             }
-
-            $this->get_top_parentid($r['f_uid'], $money, $num, $c_num);
-
-
-        } else if ($r['era'] == 0 && $num == 0) {
-            $config12 = 0;
-
-            if ($r['vip_static'] == 1) {
-                $config12 = Db::table('mb_config')->where('co_id', 2)->value('co_config');
-            } else if ($r['vip_static'] != 1) {
-                $config12 = Db::table('mb_config')->where('co_id', 4)->value('co_config');
+            $now = Db::table('mb_user')->where('u_id', $user)->field('balance,assets')->find();
+            if ($res1 || $res2 || $insert1 || $insert2) {
+                return jsonp(['code' => 1, 'msg' => '兑换成功！', 'data' => $now]);
+            } else {
+                return jsonp(['code' => 2, 'msg' => '兑换失败！']);
             }
-            $speed1 = sprintf("%.2f", substr(sprintf("%.3f", $money * $config12 / 100), 0, -2));
-            if ($speed1 > 0) {
-//                $res3=Db::table('mb_user')->where('u_id',$r['u_id'])->setDec('assets',$speed1);
-//                $res4=Db::table('mb_user')->where('u_id',$r['u_id'])->setInc('balance',$speed1);
-                $insert3 = Db::table('mb_assets_order')->insert([
-                    'u_id' => $r['u_id'],
-                    'ao_money' => -$speed1,
-                    'former_money' => $r['assets'],
-                    'ao_time' => time(),
-                    'type' => 2,
-                ]);
-                $insert4 = Db::table('mb_balance_order')->insert([
-                    'u_id' => $r['u_id'],
-                    'bo_money' => $speed1,
-                    'former_money' => $r['balance'],
-                    'bo_time' => time(),
-                    'type' => 5,
-                ]);
-            }
+        }
+    }
 
-
+    /**
+     * 递归寻找最上级
+     * @param $uid      用户上级u_id
+     * @param $money    兑换金额
+     * @param $c_num    兑换积分用户多少代
+     */
+    public function get_top_parentid($uid, $money, $c_num)
+    {
+        $r = Db::table('mb_user')->where('u_id', $uid)->find();
+        $num = $c_num - $r['era'];
+        if ($r['vip_static'] == 1) {
+            $config12 = Db::table('mb_config')->where('co_id', 2)->value('co_config');
+        } else{
+            $config12 = Db::table('mb_config')->where('co_id', 4)->value('co_config');
+        }
+        $speed1 = sprintf("%.2f", substr(sprintf("%.3f", $money * $config12 / 100), 0, -2));
+        if ($speed1 > 0) {
+            Db::table('mb_user')->where('u_id',$r['u_id'])->setDec('assets',$speed1);
+            Db::table('mb_user')->where('u_id',$r['u_id'])->setInc('balance',$speed1);
+            Db::table('mb_assets_order')->insert([
+                'u_id' => $r['u_id'],
+                'ao_money' => -$speed1,
+                'former_money' => $r['assets'],
+                'ao_time' => time(),
+                'type' => 2,
+            ]);
+            Db::table('mb_balance_order')->insert([
+                'u_id' => $r['u_id'],
+                'bo_money' => $speed1,
+                'former_money' => $r['balance'],
+                'bo_time' => time(),
+                'type' => 5,
+            ]);
+        }
+        if ($r['era'] >= 1 && $num <= 15) {
+            $this->get_top_parentid($r['f_uid'], $money, $c_num);
+        }else if ($r['era'] == 0 && $num <= 15) {
             Cache::set('best_uid', $r['u_id'], 10);
         }
     }
