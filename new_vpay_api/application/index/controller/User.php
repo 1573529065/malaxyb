@@ -92,32 +92,32 @@ class User extends Controller
                                 $b_id = Cache::get($f_phone);
                                 if ($b_id) {
                                     Db::table('mb_user')->data([
-                                            'user' => $name,
-                                            'tel' => $phone,
-                                            'u_name' => 0,
-                                            'pass' => md5($pass),
-                                            'speed' => 0,
-                                            'pay_pass' => md5($pay_pass),
-                                            'time' => time(),
-                                            'f_uid' => $f_phone,
-                                            'era' => $agentid['era'] + 1,
-                                            'best_uid' => $b_id
-                                        ])
+                                        'user' => $name,
+                                        'tel' => $phone,
+                                        'u_name' => 0,
+                                        'pass' => md5($pass),
+                                        'speed' => 0,
+                                        'pay_pass' => md5($pay_pass),
+                                        'time' => time(),
+                                        'f_uid' => $f_phone,
+                                        'era' => $agentid['era'] + 1,
+                                        'best_uid' => $b_id
+                                    ])
                                         ->insert();
                                     $userId = Db::name('mb_user')->getLastInsID();
                                 } else {
                                     Db::table('mb_user')->data([
-                                            'user' => $name,
-                                            'tel' => $phone,
-                                            'u_name' => 0,
-                                            'pass' => md5($pass),
-                                            'speed' => 0,
-                                            'pay_pass' => md5($pay_pass),
-                                            'time' => time(),
-                                            'f_uid' => $f_phone,
-                                            'era' => $agentid['era'] + 1,
-                                            'best_uid' => $f_phone
-                                        ])->insert();
+                                        'user' => $name,
+                                        'tel' => $phone,
+                                        'u_name' => 0,
+                                        'pass' => md5($pass),
+                                        'speed' => 0,
+                                        'pay_pass' => md5($pay_pass),
+                                        'time' => time(),
+                                        'f_uid' => $f_phone,
+                                        'era' => $agentid['era'] + 1,
+                                        'best_uid' => $f_phone
+                                    ])->insert();
                                     $userId = Db::name('mb_user')->getLastInsID();
                                 }
 
@@ -210,14 +210,14 @@ class User extends Controller
 
 //        如果等级不为0,且第一次进入则,设置first=上级用户ID 设置上级用户ID = 最上级用户ID   10 秒缓存
         if ($r['era'] != 0) { // 说明不是初级会员
-            if ($num == 0){
-                $count = Db::table('mb_user')->where('f_uid',$uid)->value('u_id');
-                if ($count >= 10 && $r['vip_static'] != 1){
-                    Db::table('mb_user')->where('u_id',$r['u_id'])->update(['vip_static' => 1]);
+            if ($num == 0) {
+                $count = Db::table('mb_user')->where('f_uid', $uid)->value('u_id');
+                if ($count >= 10 && $r['vip_static'] != 1) {
+                    Db::table('mb_user')->where('u_id', $r['u_id'])->update(['vip_static' => 1]);
                 }
-                $balance = $r['assets']* 0.06; // 推荐会员 加速6%释放
-                Db::table('mb_user')->where('u_id',$r['u_id'])
-                    ->setInc('balance',$balance);
+                $balance = $r['assets'] * 0.06; // 推荐会员 加速6%释放
+                Db::table('mb_user')->where('u_id', $r['u_id'])
+                    ->setInc('balance', $balance);
                 Db::table('mb_balance_order')->insert([
                     'u_id' => $r['u_id'],
                     'bo_money' => $balance,
@@ -226,11 +226,11 @@ class User extends Controller
                     'bo_time' => time()
                 ]);
 
-                Db::table('mb_user')->where('u_id',$r['u_id'])
-                    ->setDec('assets',$balance);
+                Db::table('mb_user')->where('u_id', $r['u_id'])
+                    ->setDec('assets', $balance);
                 Db::table('mb_assets_order')->insert([
                     'u_id' => $r['u_id'],
-                    'ao_money' => '-'.$balance,
+                    'ao_money' => '-' . $balance,
                     'former_money' => $r['assets'],
                     'type' => 2,
                     'ao_time' => time()
