@@ -247,6 +247,7 @@ class Menu extends Common
         $config8 = Db::table('mb_config')->where('co_id', 6)->find();
         $config9 = Db::table('mb_config')->where('co_id', 9)->find();
         $config10 = Db::table('mb_config')->where('co_id', 10)->find();
+        $config11 = Db::table('mb_config')->where('co_id', 11)->find();
 
         $this->assign('config1', $config1);
         $this->assign('config2', $config2);
@@ -256,8 +257,9 @@ class Menu extends Common
         $this->assign('config6', $config6);
         $this->assign('config7', $config7);
         $this->assign('config8', $config8);
-        $this->assign('config10', $config10);
         $this->assign('config9', $config9);
+        $this->assign('config10', $config10);
+        $this->assign('config11', $config11);
 
         return $this->fetch();
     }

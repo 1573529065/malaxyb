@@ -3,50 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="c3eec561-b85e-45d5-bfe6-c01cb19bb019" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/TurnIn/turnin_recode.html" afterPath="$PROJECT_DIR$/mubei/TurnIn/turnin_recode.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/TurnIn/turnin_yue_recode.html" afterPath="$PROJECT_DIR$/mubei/TurnIn/turnin_yue_recode.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/TurnOut/change_lt.html" afterPath="$PROJECT_DIR$/mubei/TurnOut/change_lt.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/TurnOut/change_recode_lt.html" afterPath="$PROJECT_DIR$/mubei/TurnOut/change_recode_lt.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/TurnOut/change_recode_zichan.html" afterPath="$PROJECT_DIR$/mubei/TurnOut/change_recode_zichan.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/TurnOut/change_zichan.html" afterPath="$PROJECT_DIR$/mubei/TurnOut/change_zichan.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/TurnOut/lt_change_recode_zc.html" afterPath="$PROJECT_DIR$/mubei/TurnOut/lt_change_recode_zc.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/TurnOut/lt_change_zc.html" afterPath="$PROJECT_DIR$/mubei/TurnOut/lt_change_zc.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/TurnOut/turn_out.html" afterPath="$PROJECT_DIR$/mubei/TurnOut/turn_out.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/TurnOut/turnout_next.html" afterPath="$PROJECT_DIR$/mubei/TurnOut/turnout_next.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/barcode_scan.html" afterPath="$PROJECT_DIR$/mubei/barcode_scan.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/hongbao.html" afterPath="$PROJECT_DIR$/mubei/hongbao.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/login/forgerpsw.html" afterPath="$PROJECT_DIR$/mubei/login/forgerpsw.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/login/register.html" afterPath="$PROJECT_DIR$/mubei/login/register.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/setting.html" afterPath="$PROJECT_DIR$/mubei/setting.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/shuzi/V/V_treasure_number.html" afterPath="$PROJECT_DIR$/mubei/shuzi/V/V_treasure_number.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/shuzi/recode.html" afterPath="$PROJECT_DIR$/mubei/shuzi/recode.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/shuzi/shuzi.html" afterPath="$PROJECT_DIR$/mubei/shuzi/shuzi.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/shuzi/transaction/fabu_in.html" afterPath="$PROJECT_DIR$/mubei/shuzi/transaction/fabu_in.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/shuzi/transaction/fabu_out.html" afterPath="$PROJECT_DIR$/mubei/shuzi/transaction/fabu_out.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/shuzi/transaction/order.html" afterPath="$PROJECT_DIR$/mubei/shuzi/transaction/order.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/shuzi/transaction/transaction.html" afterPath="$PROJECT_DIR$/mubei/shuzi/transaction/transaction.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/shuzi/transaction/transaction_record.html" afterPath="$PROJECT_DIR$/mubei/shuzi/transaction/transaction_record.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/shuzi/turn_out/s_turn_out.html" afterPath="$PROJECT_DIR$/mubei/shuzi/turn_out/s_turn_out.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/shuzi/zhongchou/zc_recode.html" afterPath="$PROJECT_DIR$/mubei/shuzi/zhongchou/zc_recode.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/shuzi/zhongchou/zhongchou.html" afterPath="$PROJECT_DIR$/mubei/shuzi/zhongchou/zhongchou.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/store/Details_zoom.html" afterPath="$PROJECT_DIR$/mubei/store/Details_zoom.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/store/Fill_order.html" afterPath="$PROJECT_DIR$/mubei/store/Fill_order.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/store/My_info.html" afterPath="$PROJECT_DIR$/mubei/store/My_info.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/store/New_address.html" afterPath="$PROJECT_DIR$/mubei/store/New_address.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/store/Order_details.html" afterPath="$PROJECT_DIR$/mubei/store/Order_details.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/store/Payment_success.html" afterPath="$PROJECT_DIR$/mubei/store/Payment_success.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/store/Receipt_info.html" afterPath="$PROJECT_DIR$/mubei/store/Receipt_info.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/store/all_order.html" afterPath="$PROJECT_DIR$/mubei/store/all_order.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/store/index.html" afterPath="$PROJECT_DIR$/mubei/store/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/store/my_order.html" afterPath="$PROJECT_DIR$/mubei/store/my_order.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/store/regist_seller.html" afterPath="$PROJECT_DIR$/mubei/store/regist_seller.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/store/seller.html" afterPath="$PROJECT_DIR$/mubei/store/seller.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/wallet/liutong.html" afterPath="$PROJECT_DIR$/mubei/wallet/liutong.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/wallet/wallet.html" afterPath="$PROJECT_DIR$/mubei/wallet/wallet.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/wallet/yue.html" afterPath="$PROJECT_DIR$/mubei/wallet/yue.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/wallet/zichan.html" afterPath="$PROJECT_DIR$/mubei/wallet/zichan.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/zichan/zichan.html" afterPath="$PROJECT_DIR$/mubei/zichan/zichan.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/zichan/zichan_word.html" afterPath="$PROJECT_DIR$/mubei/zichan/zichan_word.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei_admin/application/index/controller/Menu.php" afterPath="$PROJECT_DIR$/mubei_admin/application/index/controller/Menu.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei_admin/application/index/view/menu/config.html" afterPath="$PROJECT_DIR$/mubei_admin/application/index/view/menu/config.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/new_vpay_api/application/Turn.php" afterPath="$PROJECT_DIR$/new_vpay_api/application/Turn.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/new_vpay_api/application/index/controller/User.php" afterPath="$PROJECT_DIR$/new_vpay_api/application/index/controller/User.php" />
     </list>
     <list id="d259030c-ace7-4e09-b021-c1c9c209a123" name="Default-no" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/new_vpay_api/runtime/cache/8b/04d5e3775d298e78455efc5ca404d5.php" afterPath="$PROJECT_DIR$/new_vpay_api/runtime/cache/8b/04d5e3775d298e78455efc5ca404d5.php" />
@@ -66,107 +26,71 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="wallet.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mubei/wallet/wallet.html">
+      <file leaf-file-name="Index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/new_vpay_api/application/index/controller/Index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="18" column="4" lean-forward="false" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="yue.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mubei/wallet/yue.html">
+      <file leaf-file-name="User.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/new_vpay_api/application/index/controller/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding>
-                <marker date="1529827930339" expanded="true" signature="2072:2085" ph="..." />
-                <marker date="1529827930339" expanded="true" signature="2341:2354" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="zichan.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mubei/wallet/zichan.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="8" lean-forward="false" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
-              <folding>
-                <marker date="1529827930095" expanded="true" signature="1983:1996" ph="..." />
-                <marker date="1529827930095" expanded="true" signature="2252:2265" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="zichan.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mubei/zichan/zichan.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+            <state relative-caret-position="102">
+              <caret line="192" column="52" lean-forward="true" selection-start-line="192" selection-start-column="52" selection-end-line="192" selection-end-column="52" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="zichan_word.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mubei/zichan/zichan_word.html">
+      <file leaf-file-name="config.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mubei_admin/application/index/view/menu/config.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="16" column="2" lean-forward="false" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
+            <state relative-caret-position="102">
+              <caret line="422" column="0" lean-forward="true" selection-start-line="422" selection-start-column="0" selection-end-line="422" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="barcode_scan.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mubei/barcode_scan.html">
+      <file leaf-file-name="Menu.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mubei_admin/application/index/controller/Menu.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+            <state relative-caret-position="346">
+              <caret line="256" column="43" lean-forward="true" selection-start-line="256" selection-start-column="43" selection-end-line="256" selection-end-column="43" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hongbao.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mubei/hongbao.html">
+      <file leaf-file-name="composer.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mubei_admin/thinkphp/composer.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="17" column="6" lean-forward="false" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+            <state relative-caret-position="136">
+              <caret line="8" column="6" lean-forward="true" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mubei/index.html">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mubei_admin/public/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="register.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mubei/login/register.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="14" column="11" lean-forward="false" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mubei/login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="setting.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mubei/setting.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="18" column="10" lean-forward="false" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+              <caret line="258" column="43" lean-forward="false" selection-start-line="258" selection-start-column="35" selection-end-line="258" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -176,12 +100,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>yuedu</find>
-      <find>l</find>
-      <find>ltap</find>
-      <find>ltapp</find>
-      <find>result_order_s</find>
-      <find>favicon.ico</find>
       <find>_</find>
       <find>__taa</find>
       <find>__ta</find>
@@ -206,6 +124,12 @@
       <find>s_gold</find>
       <find>0</find>
       <find>$user_arr</find>
+      <find>inc_speed_p2</find>
+      <find>speed</find>
+      <find>register</find>
+      <find>config</find>
+      <find>change_config</find>
+      <find>$userId</find>
     </findStrings>
     <dirStrings>
       <dir>F:\phpStudy\PHPTutorial\WWW\malaxyb</dir>
@@ -222,10 +146,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/mall/application/index/view/index/welcome.html" />
-        <option value="$PROJECT_DIR$/mall/application/index/view/login/login.html" />
-        <option value="$PROJECT_DIR$/mall/application/index/view/login/update_pass.html" />
-        <option value="$PROJECT_DIR$/mall/application/index/view/order/index.html" />
         <option value="$PROJECT_DIR$/mall/application/index/view/order/search.html" />
         <option value="$PROJECT_DIR$/mall/application/index/view/seller/index.html" />
         <option value="$PROJECT_DIR$/mall/application/index/view/seller/search.html" />
@@ -273,6 +193,10 @@
         <option value="$PROJECT_DIR$/mubei/barcode_scan.html" />
         <option value="$PROJECT_DIR$/mubei/hongbao.html" />
         <option value="$PROJECT_DIR$/mubei/setting.html" />
+        <option value="$PROJECT_DIR$/new_vpay_api/application/Turn.php" />
+        <option value="$PROJECT_DIR$/new_vpay_api/application/index/controller/User.php" />
+        <option value="$PROJECT_DIR$/mubei_admin/application/index/controller/Menu.php" />
+        <option value="$PROJECT_DIR$/mubei_admin/application/index/view/menu/config.html" />
       </list>
     </option>
   </component>
@@ -289,9 +213,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="462" />
-    <option name="width" value="904" />
-    <option name="height" value="728" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -333,7 +258,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="mubei" />
+              <option name="myItemId" value="mubei_admin" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -347,29 +272,11 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="mubei" />
+              <option name="myItemId" value="mubei_admin" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="zichan" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="malaxyb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="malaxyb" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mubei" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wallet" />
+              <option name="myItemId" value="thinkphp" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -383,29 +290,11 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="mubei" />
+              <option name="myItemId" value="mubei_admin" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="unpackage" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="malaxyb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="malaxyb" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mubei" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TurnOut" />
+              <option name="myItemId" value="public" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -419,29 +308,11 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="mubei" />
+              <option name="myItemId" value="mubei_admin" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="TurnIn" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="malaxyb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="malaxyb" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mubei" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="store" />
+              <option name="myItemId" value="application" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -455,33 +326,15 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="mubei" />
+              <option name="myItemId" value="mubei_admin" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="shuzi" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="malaxyb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="malaxyb" />
+              <option name="myItemId" value="application" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="mubei" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shuzi" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zhongchou" />
+              <option name="myItemId" value="index" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -495,77 +348,19 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="mubei" />
+              <option name="myItemId" value="mubei_admin" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="shuzi" />
+              <option name="myItemId" value="application" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="V" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="malaxyb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="malaxyb" />
+              <option name="myItemId" value="index" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="mubei" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shuzi" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="turn_out" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="malaxyb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="malaxyb" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mubei" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shuzi" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="transaction" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="malaxyb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="malaxyb" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mubei" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="login" />
+              <option name="myItemId" value="controller" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -679,7 +474,7 @@
       <workItem from="1529720887292" duration="128000" />
       <workItem from="1529723133732" duration="9406000" />
       <workItem from="1529803416424" duration="886000" />
-      <workItem from="1529805083279" duration="14888000" />
+      <workItem from="1529805083279" duration="20629000" />
     </task>
     <task id="LOCAL-00001" summary="初始化项目">
       <created>1529291021491</created>
@@ -870,11 +665,18 @@
       <option name="project" value="LOCAL" />
       <updated>1529827676910</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="前端代码格式格式化">
+      <created>1529827982639</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1529827982639</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55981000" />
+    <option name="totallyTimeSpent" value="61722000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -886,17 +688,18 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="462" y="0" width="904" height="728" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39810428" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15658094" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5604396" sideWeight="0.49716598" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5263736" sideWeight="0.5060729" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48366013" sideWeight="0.49716598" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24950884" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2630719" sideWeight="0.49392712" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25490198" sideWeight="0.49392712" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -906,7 +709,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -966,7 +768,8 @@
     <MESSAGE value="接口页面代码格式化" />
     <MESSAGE value="后台代码格式化" />
     <MESSAGE value="商城后台代码格式化" />
-    <option name="LAST_COMMIT_MESSAGE" value="商城后台代码格式化" />
+    <MESSAGE value="前端代码格式格式化" />
+    <option name="LAST_COMMIT_MESSAGE" value="前端代码格式格式化" />
   </component>
   <component name="WindowStateProjectService">
     <state width="198" height="301" key="Git.Branch.Popup" />
@@ -979,94 +782,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mubei/GerenCenter/About.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="25" lean-forward="false" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mubei/GerenCenter/add_bank.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="6" lean-forward="false" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mubei/login/forgerpsw.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="17" column="16" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mubei/login/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="17" column="11" lean-forward="false" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mubei/login/xieyi.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="24" lean-forward="false" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mubei/shuzi/transaction/fabu_in.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="18" column="9" lean-forward="false" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mubei/shuzi/transaction/fabu_out.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="19" column="12" lean-forward="false" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mubei/shuzi/transaction/order.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="18" column="12" lean-forward="false" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mubei/shuzi/transaction/transaction.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="18" column="9" lean-forward="false" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mubei/shuzi/transaction/transaction_record.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="20" column="1" lean-forward="false" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mubei/shuzi/turn_out/s_turn_out.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="15" column="3" lean-forward="false" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mubei/shuzi/V/V_treasure_number.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -1417,8 +1132,98 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mubei/setting.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="18" column="10" lean-forward="false" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+        <state relative-caret-position="272">
+          <caret line="17" column="34" lean-forward="true" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/new_vpay_api/application/index/controller/Send.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="126" column="5" lean-forward="true" selection-start-line="126" selection-start-column="5" selection-end-line="126" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/new_vpay_api/application/Turn.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-119">
+          <caret line="196" column="33" lean-forward="true" selection-start-line="196" selection-start-column="33" selection-end-line="196" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/new_vpay_api/application/index/controller/Turn.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="260" column="0" lean-forward="true" selection-start-line="260" selection-start-column="0" selection-end-line="260" selection-end-column="0" />
+          <folding>
+            <element signature="e#40#61#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/new_vpay_api/application/index/controller/Index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/new_vpay_api/application/index/controller/Login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-255">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mubei/login/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="258" column="43" lean-forward="false" selection-start-line="258" selection-start-column="35" selection-end-line="258" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mubei_admin/public/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mubei_admin/thinkphp/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="6" lean-forward="true" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mubei_admin/application/index/controller/Menu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="256" column="43" lean-forward="true" selection-start-line="256" selection-start-column="43" selection-end-line="256" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mubei_admin/application/index/view/menu/config.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="422" column="0" lean-forward="true" selection-start-line="422" selection-start-column="0" selection-end-line="422" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/new_vpay_api/application/index/controller/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="192" column="52" lean-forward="true" selection-start-line="192" selection-start-column="52" selection-end-line="192" selection-end-column="52" />
           <folding />
         </state>
       </provider>
