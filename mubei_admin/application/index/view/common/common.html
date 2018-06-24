@@ -19,7 +19,7 @@
 
             <a href="javascript:;" class="btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
 
-                <img src="__static__/media/image/menu-toggler.png" alt="" />
+                <img src="__static__/media/image/menu-toggler.png" alt=""/>
 
             </a>
 
@@ -98,7 +98,7 @@
             <li style="margin: 10% 0 0 0;"></li>
 
             <?php foreach($menu as $v){ ?>
-            <li class="start <?php if($fun == $v['me_class']){echo 'active';}?>" >
+            <li class="start <?php if($fun == $v['me_class']){echo 'active';}?>">
 
                 <a href="{:url($v.me_url)}">
 
@@ -112,8 +112,6 @@
 
             </li>
             <?php }?>
-
-
 
 
         </ul>

@@ -9,6 +9,7 @@
 /**
  * 检测用户登陆状态基类检测类
  */
+
 namespace app\index\controller;
 
 use think\Controller;

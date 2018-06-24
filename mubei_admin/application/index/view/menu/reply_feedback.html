@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 
-<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" class="ie8 no-js"> <![endif]-->
 
-<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if IE 9]>
+<html lang="en" class="ie9 no-js"> <![endif]-->
 
-<!--[if !IE]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" class="no-js"> <!--<![endif]-->
 
 <!-- BEGIN HEAD -->
 
 <head>
 
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
 
     <title>会员管理</title>
 
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 
-    <meta content="" name="description" />
+    <meta content="" name="description"/>
 
-    <meta content="" name="author" />
+    <meta content="" name="author"/>
 
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
 
@@ -48,7 +51,7 @@
 
     <link href="__static__/media/css/jquery.gritter.css" rel="stylesheet" type="text/css"/>
 
-    <link href="__static__/media/css/daterangepicker.css" rel="stylesheet" type="text/css" />
+    <link href="__static__/media/css/daterangepicker.css" rel="stylesheet" type="text/css"/>
 
     <link href="__static__/media/css/fullcalendar.css" rel="stylesheet" type="text/css"/>
 
@@ -56,7 +59,7 @@
 
     <link href="__static__/media/css/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen"/>
 
-    <link rel="stylesheet" type="text/css" href="__static__/bianji/styles/simditor.css" />
+    <link rel="stylesheet" type="text/css" href="__static__/bianji/styles/simditor.css"/>
     <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
     <script type="text/javascript" src="__static__/bianji/scripts/module.min.js"></script>
     <script type="text/javascript" src="__static__/bianji/scripts/hotkeys.min.js"></script>
@@ -69,7 +72,7 @@
 
 <!-- BEGIN BODY -->
 
-<body >
+<body>
 
 
 <div class="portlet box blue ">
@@ -92,14 +95,15 @@
                 <div class="controls">
 
                     <!--<input type="text" id="title" value=""  class="m-wrap span12">-->
-                    <textarea id="f_content"  onpropertychange= "this.style.posHeight=this.scrollHeight " ></textarea>
+                    <textarea id="f_content" onpropertychange="this.style.posHeight=this.scrollHeight "></textarea>
                 </div>
 
             </div>
 
             <div class="form-actions">
 
-                <button type="button" class="btn blue" onclick="send(<?php echo $f_id?>)"><i class="icon-ok"></i> 确认</button>
+                <button type="button" class="btn blue" onclick="send(<?php echo $f_id?>)"><i class="icon-ok"></i> 确认
+                </button>
 
             </div>
 
@@ -120,7 +124,7 @@
 
 <script>
 
-    jQuery(document).ready(function() {
+    jQuery(document).ready(function () {
 
         App.init(); // initlayout and core plugins
 
@@ -143,20 +147,19 @@
     });
 
 
-
     function admin_add(title, url, w, h) {
         layer_show(title, url, w, h);
     }
 
 
-    function send(f_id){
-        if(!$('#f_content').val()){
+    function send(f_id) {
+        if (!$('#f_content').val()) {
             layer.open({
                 content: '请填写内容'
                 , skin: 'msg'
                 , time: 1
             });
-        }else{
+        } else {
             $.ajax({
                 url: "{:url('index/menu/replyFeedback1')}",
                 type: 'POST',
@@ -166,7 +169,7 @@
                     f_id: f_id
                 },
                 success: function (res) {
-                    if(res.code == 2) {
+                    if (res.code == 2) {
                         layer.open({
                             content: res.msg
                             , skin: 'msg'
@@ -178,7 +181,9 @@
                             , skin: 'msg'
                             , time: 1
                         });
-                        setTimeout(function(){window.parent.location.reload();},500);
+                        setTimeout(function () {
+                            window.parent.location.reload();
+                        }, 500);
                     }
                 }, fail: function (res) {
 

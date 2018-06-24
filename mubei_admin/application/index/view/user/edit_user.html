@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 
-<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" class="ie8 no-js"> <![endif]-->
 
-<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if IE 9]>
+<html lang="en" class="ie9 no-js"> <![endif]-->
 
-<!--[if !IE]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" class="no-js"> <!--<![endif]-->
 
 <!-- BEGIN HEAD -->
 
 <head>
 
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
 
     <title>会员管理</title>
 
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 
-    <meta content="" name="description" />
+    <meta content="" name="description"/>
 
-    <meta content="" name="author" />
+    <meta content="" name="author"/>
 
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
 
@@ -44,7 +47,7 @@
 
     <link href="__static__/media/css/jquery.gritter.css" rel="stylesheet" type="text/css"/>
 
-    <link href="__static__/media/css/daterangepicker.css" rel="stylesheet" type="text/css" />
+    <link href="__static__/media/css/daterangepicker.css" rel="stylesheet" type="text/css"/>
 
     <link href="__static__/media/css/fullcalendar.css" rel="stylesheet" type="text/css"/>
 
@@ -54,7 +57,7 @@
 
     <!-- END PAGE LEVEL STYLES -->
 
-    <link rel="shortcut icon" href="__static__/media/image/favicon.ico" />
+    <link rel="shortcut icon" href="__static__/media/image/favicon.ico"/>
 
 </head>
 
@@ -62,7 +65,7 @@
 
 <!-- BEGIN BODY -->
 
-<body >
+<body>
 
 
 <div class="portlet box blue ">
@@ -96,7 +99,7 @@
 
                 <div class="controls">
 
-                    <input type="text" id="user" value="{$user['user']}"  class="m-wrap span12">
+                    <input type="text" id="user" value="{$user['user']}" class="m-wrap span12">
 
                 </div>
 
@@ -108,7 +111,7 @@
 
                 <div class="controls">
 
-                    <input type="text" id="tel" value="{$user['tel']}"  class="m-wrap span12">
+                    <input type="text" id="tel" value="{$user['tel']}" class="m-wrap span12">
 
                 </div>
 
@@ -120,7 +123,7 @@
 
                 <div class="controls">
 
-                    <input type="text" id="balance" value="{$user['balance']}"  class="m-wrap span12">
+                    <input type="text" id="balance" value="{$user['balance']}" class="m-wrap span12">
 
                 </div>
 
@@ -132,19 +135,19 @@
 
                 <div class="controls">
 
-                    <input type="text" id="assets" value="{$user['assets']}"  class="m-wrap span12">
+                    <input type="text" id="assets" value="{$user['assets']}" class="m-wrap span12">
 
                 </div>
 
             </div>
-            
+
             <div class="control-group">
 
                 <label class="control-label">登录密码</label>
 
                 <div class="controls">
 
-                    <input type="password" id="pass" value=""  class="m-wrap span12">
+                    <input type="password" id="pass" value="" class="m-wrap span12">
 
                 </div>
 
@@ -155,7 +158,7 @@
 
                 <div class="controls">
 
-                    <input type="password" id="pass1" value=""  class="m-wrap span12">
+                    <input type="password" id="pass1" value="" class="m-wrap span12">
 
                 </div>
 
@@ -167,7 +170,7 @@
 
                 <div class="controls">
 
-                    <input type="password" id="pay_pass" value=""  class="m-wrap span12">
+                    <input type="password" id="pay_pass" value="" class="m-wrap span12">
 
                 </div>
 
@@ -178,7 +181,7 @@
 
                 <div class="controls">
 
-                    <input type="password" id="pay_pass1" value=""  class="m-wrap span12">
+                    <input type="password" id="pay_pass1" value="" class="m-wrap span12">
 
                 </div>
 
@@ -209,7 +212,7 @@
 
 <script>
 
-    jQuery(document).ready(function() {
+    jQuery(document).ready(function () {
 
         App.init(); // initlayout and core plugins
 
@@ -232,17 +235,16 @@
     });
 
 
-
     function admin_add(title, url, w, h) {
         layer_show(title, url, w, h);
     }
 
 
-    function send(){
+    function send() {
 
-        if(!(/^1(3|4|5|7|8)\d{9}$/.test($('#tel').val()))){
+        if (!(/^1(3|4|5|7|8)\d{9}$/.test($('#tel').val()))) {
             alert("手机号码有误，请重填");
-        }else{
+        } else {
             $.ajax({
                 url: "{:url('index/user/edit_user_p2')}",
                 type: 'POST',
@@ -259,7 +261,7 @@
                     pay_pass1: $('#pay_pass1').val()
                 },
                 success: function (res) {
-                    if(res.code == 2) {
+                    if (res.code == 2) {
                         layer.open({
                             content: res.msg
                             , skin: 'msg'
@@ -271,7 +273,9 @@
                             , skin: 'msg'
                             , time: 1
                         });
-                        setTimeout(function(){window.location.reload()},500);
+                        setTimeout(function () {
+                            window.location.reload()
+                        }, 500);
                     }
                 }, fail: function (res) {
 

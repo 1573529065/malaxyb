@@ -1,4 +1,5 @@
 <?php
+
 namespace app\index\controller;
 
 use think\Controller;
@@ -13,35 +14,34 @@ class Common extends Controller
         $logined_user = Cookie::get('logined_user');
         if (!$logined_user || $logined_user == null || $logined_user == '' || !is_array($logined_user)) {
             $this->redirect('index/login/login');
-        }else{
-            if (isset($logined_user['level'])){
-                if(!empty($logined_user['level']) || !empty($logined_user['type'])){
-                    $fun=Request::instance()->action();
+        } else {
+            if (isset($logined_user['level'])) {
+                if (!empty($logined_user['level']) || !empty($logined_user['type'])) {
+                    $fun = Request::instance()->action();
                     $logined_user = Cookie::get('logined_user');
-                    $menu = Db::table('vpay_menu')->where('me_level','>=',$logined_user['level'])->order('me_id asc')->select();
-                    $this->assign('admin',$logined_user);
-                    $this->assign('menu',$menu);
-                    $this->assign('fun',$fun);
-                }else{
+                    $menu = Db::table('vpay_menu')->where('me_level', '>=', $logined_user['level'])->order('me_id asc')->select();
+                    $this->assign('admin', $logined_user);
+                    $this->assign('menu', $menu);
+                    $this->assign('fun', $fun);
+                } else {
                     $this->redirect('index/login/login');
                 }
-            }else{
+            } else {
                 $this->redirect('index/login/login');
             }
 
         }
     }
 
-    public function common(Request $request){
+    public function common(Request $request)
+    {
 
-        $fun=$request->action();
+        $fun = $request->action();
         $logined_user = Cookie::get('logined_user');
-        $this->assign('admin',$logined_user);
-        $this->assign('fun',$fun);
+        $this->assign('admin', $logined_user);
+        $this->assign('fun', $fun);
         return $this->fetch();
     }
-
-
 
 
 }

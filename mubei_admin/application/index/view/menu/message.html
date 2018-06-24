@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 
-<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" class="ie8 no-js"> <![endif]-->
 
-<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if IE 9]>
+<html lang="en" class="ie9 no-js"> <![endif]-->
 
-<!--[if !IE]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" class="no-js"> <!--<![endif]-->
 
 <!-- BEGIN HEAD -->
 
 <head>
 
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
 
     <title>消息列表</title>
 
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 
-    <meta content="" name="description" />
+    <meta content="" name="description"/>
 
-    <meta content="" name="author" />
+    <meta content="" name="author"/>
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
 
     <link href="__static__/media/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
@@ -44,7 +47,7 @@
 
     <link href="__static__/media/css/jquery.gritter.css" rel="stylesheet" type="text/css"/>
 
-    <link href="__static__/media/css/daterangepicker.css" rel="stylesheet" type="text/css" />
+    <link href="__static__/media/css/daterangepicker.css" rel="stylesheet" type="text/css"/>
 
     <link href="__static__/media/css/fullcalendar.css" rel="stylesheet" type="text/css"/>
 
@@ -54,10 +57,21 @@
 
     <!-- END PAGE LEVEL STYLES -->
 
-    <link rel="shortcut icon" href="__static__/media/image/favicon.ico" />
+    <link rel="shortcut icon" href="__static__/media/image/favicon.ico"/>
 
     <style>
-        #overlay {  background: #000;  display: none;  filter: alpha(opacity=50); /* IE的透明度 */  opacity: 0.5;  /* 透明度 */  position: absolute;  top: 0;  left: 0;  width: 100%;  height: 100%;  z-index: 100; /* 此处的图层要大于页面 */  }
+        #overlay {
+            background: #000;
+            display: none;
+            filter: alpha(opacity=50); /* IE的透明度 */
+            opacity: 0.5; /* 透明度 */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 100; /* 此处的图层要大于页面 */
+        }
 
     </style>
 </head>
@@ -69,7 +83,7 @@
 <body class="page-header-fixed" style="padding-bottom: 5%;">
 
 <!-- BEGIN HEADER -->
-{include file="common/common"  /}
+{include file="common/common" /}
 
 <!-- END SIDEBAR -->
 
@@ -234,7 +248,6 @@
             <!-- BEGIN DASHBOARD STATS -->
 
 
-
             <!-- END DASHBOARD STATS -->
 
             <div class="clearfix"></div>
@@ -290,8 +303,10 @@
                             <td data-title="公告内容"><?php echo $vo['m_text']?></td>
                             <td data-title="时间" class="numeric"><?php echo date('Y-m-d H:i:s', $vo['m_time']) ?></td>
                             <?php if($admin['type'] != 2){ ?>
-                            <td data-title="操作" class="numeric"><button type="button" class="btn red" onclick="delete_n(<?php echo $vo['m_id']?>)">删除</button>
-                            <?php }?>
+                            <td data-title="操作" class="numeric">
+                                <button type="button" class="btn red" onclick="delete_n(<?php echo $vo['m_id']?>)">删除
+                                </button>
+                                <?php }?>
                         </tr>
                         <?php } ?>
                         </tbody>
@@ -305,8 +320,8 @@
             <div style="width: 100%;height: 450px;"></div>
 
 
-
-            <div id="myModal1" class="modal hide fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="false" style="display: none;height: 200px;">
+            <div id="myModal1" class="modal hide fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1"
+                 aria-hidden="false" style="display: none;height: 200px;">
 
                 <div class="modal-header">
 
@@ -334,7 +349,6 @@
         </div>
 
 
-
         <!--<div style="height: 200px;width: 100%;"></div>-->
     </div>
 
@@ -356,7 +370,8 @@
 
     <div class="footer-inner">
 
-        2018 &copy; Metronic by keenthemes.Collect from <a href="" title="" target="_blank"></a> - More Templates <a href="" target="_blank" title=""></a>
+        2018 &copy; Metronic by keenthemes.Collect from <a href="" title="" target="_blank"></a> - More Templates <a
+            href="" target="_blank" title=""></a>
 
     </div>
 
@@ -402,7 +417,7 @@
 
 <script src="__static__/media/js/jquery.cookie.min.js" type="text/javascript"></script>
 
-<script src="__static__/media/js/jquery.uniform.min.js" type="text/javascript" ></script>
+<script src="__static__/media/js/jquery.uniform.min.js" type="text/javascript"></script>
 
 <!-- END CORE PLUGINS -->
 
@@ -451,7 +466,6 @@
 <!-- END PAGE LEVEL SCRIPTS -->
 
 
-
 <script type="text/javascript" src="__static__/hui/lib/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="__static__/hui/lib/layer/2.4/layer.js"></script>
 <script type="text/javascript" src="__static__/hui/static/h-ui/js/H-ui.min.js"></script>
@@ -460,7 +474,7 @@
 
 <script>
 
-    jQuery(document).ready(function() {
+    jQuery(document).ready(function () {
 
         App.init(); // initlayout and core plugins
 
@@ -483,7 +497,7 @@
     });
 
 
-    function notice_add(){
+    function notice_add() {
         $("#form-admin-add").toggle("fast");
     }
 
@@ -491,26 +505,25 @@
         layer_show(title, url, w, h);
     }
 
-    $('#nonot').click(function(){
+    $('#nonot').click(function () {
         $('#myModal1').toggle("fast");
         hideOverlay();
     });
 
 
-
-    function delete_n(nid){
+    function delete_n(nid) {
         showOverlay();
         $('#myModal1').toggle("fast");
-        $('#yes').click(function(){
+        $('#yes').click(function () {
             $.ajax({
                 type: "post",
                 url: "{:url('index/menu/delete_message')}",
                 dataType: "json",
                 data: {
-                    mid:nid
+                    mid: nid
                 },
                 success: function (res) {
-                    if(res.code == 2) {
+                    if (res.code == 2) {
                         layer.open({
                             content: res.msg
                             , skin: 'msg'
@@ -522,7 +535,9 @@
                             , skin: 'msg'
                             , time: 1
                         });
-                        setTimeout(function(){window.location.reload()},500);
+                        setTimeout(function () {
+                            window.location.reload()
+                        }, 500);
                     }
                 }, fail: function (res) {
                     alert("网络错误");
@@ -557,11 +572,11 @@
             url: "{:url('index/menu/noticeManage_c')}",
             dataType: "json",
             data: {
-                title:title,
+                title: title,
                 content: content
             },
             success: function (res) {
-                if(res.code == 2) {
+                if (res.code == 2) {
                     layer.open({
                         content: res.msg
                         , skin: 'msg'
@@ -573,7 +588,9 @@
                         , skin: 'msg'
                         , time: 1
                     });
-                    setTimeout(function(){window.location.reload()},500);
+                    setTimeout(function () {
+                        window.location.reload()
+                    }, 500);
                 }
             }, fail: function (res) {
                 alert("网络错误");
