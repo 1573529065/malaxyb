@@ -199,7 +199,11 @@ class Index extends Controller
         }
     }
 
-    //个人信息
+    /**
+     * 个人信息->钱包地址
+     * 20180624 改为钱包地址
+     * @return \think\response\Jsonp
+     */
     public function message()
     {
         $user = Request::instance()->param('u_id');
@@ -226,6 +230,7 @@ class Index extends Controller
     {
         $address = Request::instance()->param('wallet_address');
         $u_id = Request::instance()->param('u_id');
+        if (empty($u_id)) return jsonp(['code' => 2,'msg' => '参数错误']);
         if ($address) {
             $info = Db::table('mb_user')->where('u_id', $u_id)->update(['wallet_address' => $address]);
             if ($info) {
@@ -239,54 +244,39 @@ class Index extends Controller
     }
 
 
-    //公告详情页
+    /*
+     * 公告详情页
+     */
     public function notice_list()
     {
         $user = Request::instance()->param('token');
         $soid = Request::instance()->param('n_id');
-        if ($user == 'notice') {
-            $card = Db::table('mb_notice')->where('n_id', $soid)->find();
+        if ($user != 'notice') return jsonp(['code' => 2, 'msg' => '参数错误']);
 
-//            foreach($card as $k=>$v){
-
-//            }
-            if ($card) {
-                $card['time'] = date('Y-m-d H:i:s', $card['time']);
-                return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $card]);
-            } else {
-                return jsonp(['code' => 2, 'msg' => '暂无数据']);
-            }
+        $card = Db::table('mb_notice')->where('n_id', $soid)->find();
+        if ($card) {
+            $card['time'] = date('Y-m-d H:i:s', $card['time']);
+            return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $card]);
         } else {
-            return jsonp(['code' => 2, 'msg' => '参数错误']);
+            return jsonp(['code' => 2, 'msg' => '暂无数据']);
         }
-
-
     }
 
 
-    //消息详情页
+    //个人信息->消息详情页
     public function message_list()
     {
         $user = Request::instance()->param('token');
         $soid = Request::instance()->param('m_id');
-        if ($user == 'message') {
-            $card = Db::table('mb_message')->where('m_id', $soid)->find();
+        if ($user != 'message')  return jsonp(['code' => 2, 'msg' => '参数错误']);
 
-//            foreach($card as $k=>$v){
-
-//            }
-            if ($card) {
-
-                $card['m_time'] = date('Y-m-d H:i:s', $card['m_time']);
-                return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $card]);
-            } else {
-                return jsonp(['code' => 2, 'msg' => '暂无数据']);
-            }
+        $card = Db::table('mb_message')->where('m_id', $soid)->find();
+        if ($card) {
+            $card['m_time'] = date('Y-m-d H:i:s', $card['m_time']);
+            return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $card]);
         } else {
-            return jsonp(['code' => 2, 'msg' => '参数错误']);
+            return jsonp(['code' => 2, 'msg' => '暂无数据']);
         }
-
-
     }
 
 
@@ -294,20 +284,15 @@ class Index extends Controller
     public function about()
     {
         $token = Request::instance()->param('token');
-        $type = Request::instance()->param('type');
-        if ($token) {
-            if ($token == 'about') {
-                $about = Db::table('mb_about')->where('type', $type)->field('a_text')->find();
-                if ($about) {
-                    return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $about]);
-                } else {
-                    return jsonp(['code' => 2, 'msg' => '暂无数据']);
-                }
-            }
-        } else {
-            return jsonp(['code' => 2, 'msg' => '参数错误']);
-        }
+        $type = Request::instance()->param('type',1);
+        if ($token != 'about') return jsonp(['code' => 2, 'msg' => '参数错误']);
 
+        $about = Db::table('mb_about')->where('type', $type)->field('a_text')->find();
+        if ($about) {
+            return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $about]);
+        } else {
+            return jsonp(['code' => 2, 'msg' => '暂无数据']);
+        }
 
     }
 
@@ -323,21 +308,14 @@ class Index extends Controller
     public function about_t()
     {
         $token = Request::instance()->param('token');
+        if ($token != 'about_t') return jsonp(['code' => 2, 'msg' => '参数错误']);
 
-        if ($token) {
-            if ($token == 'about_t') {
-                $about = Db::table('mb_about')->where('type', 2)->field('a_text')->find();
-                if ($about) {
-                    return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $about]);
-                } else {
-                    return jsonp(['code' => 2, 'msg' => '暂无数据']);
-                }
-            }
+        $about = Db::table('mb_about')->where('type', 2)->field('a_text')->find();
+        if ($about) {
+            return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $about]);
         } else {
-            return jsonp(['code' => 2, 'msg' => '参数错误']);
+            return jsonp(['code' => 2, 'msg' => '暂无数据']);
         }
-
-
     }
 
 

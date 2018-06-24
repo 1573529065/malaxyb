@@ -3,24 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c3eec561-b85e-45d5-bfe6-c01cb19bb019" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/GerenCenter/About.html" afterPath="$PROJECT_DIR$/mubei/GerenCenter/About.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/GerenCenter/add_bank.html" afterPath="$PROJECT_DIR$/mubei/GerenCenter/add_bank.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/GerenCenter/announcement.html" afterPath="$PROJECT_DIR$/mubei/GerenCenter/announcement.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/GerenCenter/announcement_word.html" afterPath="$PROJECT_DIR$/mubei/GerenCenter/announcement_word.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/GerenCenter/banben.html" afterPath="$PROJECT_DIR$/mubei/GerenCenter/banben.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/GerenCenter/bank.html" afterPath="$PROJECT_DIR$/mubei/GerenCenter/bank.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/GerenCenter/feedback.html" afterPath="$PROJECT_DIR$/mubei/GerenCenter/feedback.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/GerenCenter/forget_loginpsw.html" afterPath="$PROJECT_DIR$/mubei/GerenCenter/forget_loginpsw.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/GerenCenter/forget_paypsw.html" afterPath="$PROJECT_DIR$/mubei/GerenCenter/forget_paypsw.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/GerenCenter/geren.html" afterPath="$PROJECT_DIR$/mubei/GerenCenter/geren.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/GerenCenter/geren_mese.html" afterPath="$PROJECT_DIR$/mubei/GerenCenter/geren_mese.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/GerenCenter/geren_mese_word.html" afterPath="$PROJECT_DIR$/mubei/GerenCenter/geren_mese_word.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/GerenCenter/lange.html" afterPath="$PROJECT_DIR$/mubei/GerenCenter/lange.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/GerenCenter/share.html" afterPath="$PROJECT_DIR$/mubei/GerenCenter/share.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/GerenCenter/share_recode.html" afterPath="$PROJECT_DIR$/mubei/GerenCenter/share_recode.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/GerenCenter/update_loginpsw.html" afterPath="$PROJECT_DIR$/mubei/GerenCenter/update_loginpsw.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/GerenCenter/update_name.html" afterPath="$PROJECT_DIR$/mubei/GerenCenter/update_name.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mubei/GerenCenter/update_paypsw.html" afterPath="$PROJECT_DIR$/mubei/GerenCenter/update_paypsw.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/new_vpay_api/application/index/controller/Index.php" afterPath="$PROJECT_DIR$/new_vpay_api/application/index/controller/Index.php" />
     </list>
     <list id="d259030c-ace7-4e09-b021-c1c9c209a123" name="Default-no" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/new_vpay_api/runtime/cache/8b/04d5e3775d298e78455efc5ca404d5.php" afterPath="$PROJECT_DIR$/new_vpay_api/runtime/cache/8b/04d5e3775d298e78455efc5ca404d5.php" />
@@ -40,106 +23,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="feedback.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mubei/GerenCenter/feedback.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="17" column="45" lean-forward="false" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forget_loginpsw.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mubei/GerenCenter/forget_loginpsw.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="15" column="28" lean-forward="false" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forget_paypsw.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mubei/GerenCenter/forget_paypsw.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="17" column="9" lean-forward="false" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="geren.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mubei/GerenCenter/geren.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="20" column="32" lean-forward="false" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="lange.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mubei/GerenCenter/lange.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="14" column="54" lean-forward="false" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="54" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="share.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mubei/GerenCenter/share.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="18" column="14" lean-forward="false" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="share_recode.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mubei/GerenCenter/share_recode.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="54" column="26" lean-forward="false" selection-start-line="54" selection-start-column="26" selection-end-line="54" selection-end-column="26" />
-              <folding>
-                <marker date="1529823487631" expanded="true" signature="3379:3420" ph="..." />
-                <marker date="1529823487631" expanded="true" signature="3948:3988" ph="..." />
-                <marker date="1529823487631" expanded="true" signature="4623:4664" ph="..." />
-                <marker date="1529823487631" expanded="true" signature="5222:5262" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="update_loginpsw.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mubei/GerenCenter/update_loginpsw.html">
+      <file leaf-file-name="Index.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/new_vpay_api/application/index/controller/Index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="374">
-              <caret line="25" column="27" lean-forward="false" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
+              <caret line="319" column="0" lean-forward="true" selection-start-line="319" selection-start-column="0" selection-end-line="319" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="update_name.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mubei/GerenCenter/update_name.html">
+      <file leaf-file-name="Request.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/new_vpay_api/thinkphp/library/think/Request.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="21" column="9" lean-forward="false" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="update_paypsw.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mubei/GerenCenter/update_paypsw.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="18" column="12" lean-forward="false" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
+            <state relative-caret-position="190">
+              <caret line="616" column="41" lean-forward="false" selection-start-line="616" selection-start-column="41" selection-end-line="616" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -222,7 +120,6 @@
         <option value="$PROJECT_DIR$/mubei/login.html" />
         <option value="$PROJECT_DIR$/new_vpay_api/application/index/controller/Login.php" />
         <option value="$PROJECT_DIR$/mubei/index.html" />
-        <option value="$PROJECT_DIR$/new_vpay_api/application/index/controller/Index.php" />
         <option value="$PROJECT_DIR$/mubei/GerenCenter/geren_mese_word.html" />
         <option value="$PROJECT_DIR$/mubei/GerenCenter/geren_mese.html" />
         <option value="$PROJECT_DIR$/mubei/GerenCenter/About.html" />
@@ -241,6 +138,7 @@
         <option value="$PROJECT_DIR$/mubei/GerenCenter/update_loginpsw.html" />
         <option value="$PROJECT_DIR$/mubei/GerenCenter/update_name.html" />
         <option value="$PROJECT_DIR$/mubei/GerenCenter/update_paypsw.html" />
+        <option value="$PROJECT_DIR$/new_vpay_api/application/index/controller/Index.php" />
       </list>
     </option>
   </component>
@@ -257,10 +155,9 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="x" value="325" />
+    <option name="width" value="1041" />
+    <option name="height" value="728" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -558,7 +455,7 @@
       <workItem from="1529720887292" duration="128000" />
       <workItem from="1529723133732" duration="9406000" />
       <workItem from="1529803416424" duration="886000" />
-      <workItem from="1529805083279" duration="10465000" />
+      <workItem from="1529805083279" duration="11082000" />
     </task>
     <task id="LOCAL-00001" summary="初始化项目">
       <created>1529291021491</created>
@@ -686,11 +583,18 @@
       <option name="project" value="LOCAL" />
       <updated>1529823207772</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="格式化代码格式">
+      <created>1529823543281</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1529823543281</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51558000" />
+    <option name="totallyTimeSpent" value="52175000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -702,10 +606,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="325" y="0" width="1041" height="728" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10892587" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1814475" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5604396" sideWeight="0.49716598" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5263736" sideWeight="0.5060729" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -773,7 +677,8 @@
     <MESSAGE value="card fix" />
     <MESSAGE value="代码格式化" />
     <MESSAGE value="前端登录,首页,红包,公告" />
-    <option name="LAST_COMMIT_MESSAGE" value="前端登录,首页,红包,公告" />
+    <MESSAGE value="格式化代码格式" />
+    <option name="LAST_COMMIT_MESSAGE" value="格式化代码格式" />
   </component>
   <component name="WindowStateProjectService">
     <state width="198" height="301" key="Git.Branch.Popup" />
@@ -957,14 +862,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/new_vpay_api/thinkphp/library/think/Request.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="984" column="37" lean-forward="true" selection-start-line="984" selection-start-column="37" selection-end-line="984" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/new_vpay_api/application/index/controller/Card.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -1032,14 +929,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/new_vpay_api/application/index/controller/Index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="212" column="35" lean-forward="false" selection-start-line="212" selection-start-column="31" selection-end-line="212" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mubei/GerenCenter/geren_mese_word.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -1104,50 +993,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mubei/GerenCenter/feedback.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="17" column="45" lean-forward="false" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mubei/GerenCenter/forget_loginpsw.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="15" column="28" lean-forward="false" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mubei/GerenCenter/forget_paypsw.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="17" column="9" lean-forward="false" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mubei/GerenCenter/geren.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="20" column="32" lean-forward="false" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mubei/GerenCenter/lange.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="14" column="54" lean-forward="false" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mubei/GerenCenter/share.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="18" column="14" lean-forward="false" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mubei/GerenCenter/update_paypsw.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mubei/GerenCenter/update_name.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="21" column="9" lean-forward="false" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mubei/GerenCenter/update_loginpsw.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="25" column="27" lean-forward="false" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
           <folding />
         </state>
       </provider>
@@ -1165,26 +1038,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mubei/GerenCenter/update_loginpsw.html">
+    <entry file="file://$PROJECT_DIR$/mubei/GerenCenter/lange.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="14" column="54" lean-forward="false" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mubei/GerenCenter/geren.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="20" column="32" lean-forward="false" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mubei/GerenCenter/forget_paypsw.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="17" column="9" lean-forward="false" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mubei/GerenCenter/forget_loginpsw.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="15" column="28" lean-forward="false" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mubei/GerenCenter/feedback.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="17" column="45" lean-forward="false" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/new_vpay_api/thinkphp/library/think/Request.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="616" column="41" lean-forward="false" selection-start-line="616" selection-start-column="41" selection-end-line="616" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/new_vpay_api/application/index/controller/Index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
-          <caret line="25" column="27" lean-forward="false" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mubei/GerenCenter/update_name.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="21" column="9" lean-forward="false" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mubei/GerenCenter/update_paypsw.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="18" column="12" lean-forward="false" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
+          <caret line="319" column="0" lean-forward="true" selection-start-line="319" selection-start-column="0" selection-end-line="319" selection-end-column="0" />
           <folding />
         </state>
       </provider>
