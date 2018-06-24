@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-    <link href="../css/mui.min.css" rel="stylesheet" />
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link href="../css/mui.min.css" rel="stylesheet"/>
 </head>
 
 <body>
@@ -21,21 +22,20 @@
             <label>English</label>
             <input name="radio1" value="2" type="radio">
         </div>
-        
-           
-       
+
+
     </form>
- <button type="button" class="mui-btn mui-btn-primary mui-btn-block" onclick="change_lange()">确认</button>
+    <button type="button" class="mui-btn mui-btn-primary mui-btn-block" onclick="change_lange()">确认</button>
 </div>
-<script type="text/javascript" src="../js/jquery.min.js" ></script>
-<script type="text/javascript" src="../js/mui.min.js" ></script>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/mui.min.js"></script>
 <script type="text/javascript" src="../js/url.js"></script>
 <script type="text/javascript" src="../js/layer/2.4/layer.js"></script>
 <!--<script type="text/javascript" src="../js/libs/layer/2.4/layer.js" ></script>-->
 <script type="text/javascript">
     mui.init();
-    function change_lange(){
-        var type=$('input[name="radio1"]:checked').val();
+    function change_lange() {
+        var type = $('input[name="radio1"]:checked').val();
         $.ajax({
             url: j_url + "index/lange",
             type: 'POST',
@@ -45,7 +45,7 @@
                 token: 'lange'
             },
             success: function (res) {
-                if(res.code == 2) {
+                if (res.code == 2) {
                 } else if (res.code == 1) {
                     localStorage.pagecount = type;
                     window.parent.location.reload();

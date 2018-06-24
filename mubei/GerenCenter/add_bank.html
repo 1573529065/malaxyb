@@ -1,145 +1,147 @@
 <!doctype html>
 <html>
 
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<link href="../css/mui.css" rel="stylesheet" />
-		<script type="text/javascript" src="../js/jquery.min.js" ></script>
-		<script src="../js/mui.min.js"></script>
-		<script type="text/javascript" src="../js/change_lange.js" ></script>
-		<script type="text/javascript" src="../js/back_icon.js" ></script>
-		<style>
-			.mui-input-group .mui-input-row{
-				height: 65px;
-			}
-		</style>
-	</head>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link href="../css/mui.css" rel="stylesheet"/>
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script src="../js/mui.min.js"></script>
+    <script type="text/javascript" src="../js/change_lange.js"></script>
+    <script type="text/javascript" src="../js/back_icon.js"></script>
+    <style>
+        .mui-input-group .mui-input-row {
+            height: 65px;
+        }
+    </style>
+</head>
 
-	<body>
-			<script>
-			if(localStorage.pagecount == 1) {
-				addCssByLink('../css/zh.css');
-			} else if(localStorage.pagecount == 2) {
-				addCssByLink('../css/en.css');
-			}
-		</script>
-		<header class="mui-bar mui-bar-nav" style="background-color: #FFFFFF;">
-			<!--<i class="mui-icon mui-icon-left-nav mui-pull-left" onclick="window.location.href='bank.html?tab=5'"></i>-->
-			<h1 class="mui-title"><span class="language-tianjiayinghanka"></span></h1>
-		</header>
-		<div class="mui-content">
-			<form class="mui-input-group">
-				<div class="mui-input-row">
-					<label class="xin"><span class="language-zhuanchujinei1"></span></label>
-					<input type="text" placeholder="请输入持卡人姓名" id="name">
-				</div>
-				<div class="mui-input-row">
-					<label class="xin"><span class="language-zhuanchujinei2"></span></label>
-					<select class="mui-h5" style="margin: auto;color: #000000;" id="bank">
-					</select>
-					
-				</div>
-				<div class="mui-input-row">
-					<label class="xin"><span class="language-zhuanchujinei3"></span></label>
-					<input type="number" placeholder="请输入开户银行的卡号" id="bankcard"">
-				</div>
-				<div class="mui-input-row">
-					<label><span class="language-zhuanchujinei4"></span></label>
-					<input type="text" placeholder="请输入开户银行的支行" id="branch">
-				</div>
-				
-			</form>
-			<h6 class="mui-content-padded xin" style="color: #fec900;">
-				<span class="language-yiduidongix"></span>
-			</h6>
-			<div class="mui-input-row mui-checkbox mui-left">
-				<label><span class="language-moren"></span></label>
-				<input name="checkbox" value="1" type="checkbox">
-			</div>
-			<div class="mui-content-padded">
-				<button type="button" id="getAll" class="mui-btn mui-btn-primary mui-btn-block"><span class="language-queren"></span></button>
-			</div>
+<body>
+<script>
+    if (localStorage.pagecount == 1) {
+        addCssByLink('../css/zh.css');
+    } else if (localStorage.pagecount == 2) {
+        addCssByLink('../css/en.css');
+    }
+</script>
+<header class="mui-bar mui-bar-nav" style="background-color: #FFFFFF;">
+    <!--<i class="mui-icon mui-icon-left-nav mui-pull-left" onclick="window.location.href='bank.html?tab=5'"></i>-->
+    <h1 class="mui-title"><span class="language-tianjiayinghanka"></span></h1>
+</header>
+<div class="mui-content">
+    <form class="mui-input-group">
+        <div class="mui-input-row">
+            <label class="xin"><span class="language-zhuanchujinei1"></span></label>
+            <input type="text" placeholder="请输入持卡人姓名" id="name">
+        </div>
+        <div class="mui-input-row">
+            <label class="xin"><span class="language-zhuanchujinei2"></span></label>
+            <select class="mui-h5" style="margin: auto;color: #000000;" id="bank">
+            </select>
 
-		</div>
-		
-        <script type="text/javascript" src="../js/common.js" ></script>
-        <script type="text/javascript" src="../js/url.js" ></script>
-        <script type="text/javascript">
+        </div>
+        <div class="mui-input-row">
+            <label class="xin"><span class="language-zhuanchujinei3"></span></label>
+            <input type="number" placeholder="请输入开户银行的卡号" id="bankcard"">
+        </div>
+        <div class="mui-input-row">
+            <label><span class="language-zhuanchujinei4"></span></label>
+            <input type="text" placeholder="请输入开户银行的支行" id="branch">
+        </div>
+
+    </form>
+    <h6 class="mui-content-padded xin" style="color: #fec900;">
+        <span class="language-yiduidongix"></span>
+    </h6>
+    <div class="mui-input-row mui-checkbox mui-left">
+        <label><span class="language-moren"></span></label>
+        <input name="checkbox" value="1" type="checkbox">
+    </div>
+    <div class="mui-content-padded">
+        <button type="button" id="getAll" class="mui-btn mui-btn-primary mui-btn-block"><span
+                class="language-queren"></span></button>
+    </div>
+
+</div>
+
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/url.js"></script>
+<script type="text/javascript">
     mui.init();
-   if(localStorage.pagecount == 1) {
-   	                document.getElementById("name").setAttribute("placeholder", "请输入持卡人姓名");
-					document.getElementById("bankcard").setAttribute("placeholder", "请输入开户银行的卡号");
-					document.getElementById("branch").setAttribute("placeholder", "请输入开户银行的支行");
-					
-				} else if(localStorage.pagecount == 2) {
-					document.getElementById("name").setAttribute("placeholder", "Please enter the name of the cardholder");
-					document.getElementById("bankcard").setAttribute("placeholder", "Please enter the card number of the account opening bank");
-					document.getElementById("branch").setAttribute("placeholder", "Please enter the branch bank of the bank");
-				}
-    
-    $.ajax({
-				url: j_url + "index/bank",
-				data: {
-					token:'bank'
-				},
-				type: "POST",
-				dataType: 'jsonp',
-				crossDomain: true,
-				success: function(res) {
-					console.log(res);
-					if(res.code == 2) {
-						mui.alert(res.msg);
-					} else if(res.code == 1) {
-						var rou = res.data;
-						for(var key in rou) {
-							$('.mui-h5').append("<option value="+rou[key].bn_id+">" + rou[key].bn_name + "</option>");	
-						}
+    if (localStorage.pagecount == 1) {
+        document.getElementById("name").setAttribute("placeholder", "请输入持卡人姓名");
+        document.getElementById("bankcard").setAttribute("placeholder", "请输入开户银行的卡号");
+        document.getElementById("branch").setAttribute("placeholder", "请输入开户银行的支行");
 
-					}
-				}
-			});
-    
-      	 document.getElementById("getAll").addEventListener('tap', function() {
-    
-     if (!$("#name").val()) {
+    } else if (localStorage.pagecount == 2) {
+        document.getElementById("name").setAttribute("placeholder", "Please enter the name of the cardholder");
+        document.getElementById("bankcard").setAttribute("placeholder", "Please enter the card number of the account opening bank");
+        document.getElementById("branch").setAttribute("placeholder", "Please enter the branch bank of the bank");
+    }
+
+    $.ajax({
+        url: j_url + "index/bank",
+        data: {
+            token: 'bank'
+        },
+        type: "POST",
+        dataType: 'jsonp',
+        crossDomain: true,
+        success: function (res) {
+            console.log(res);
+            if (res.code == 2) {
+                mui.alert(res.msg);
+            } else if (res.code == 1) {
+                var rou = res.data;
+                for (var key in rou) {
+                    $('.mui-h5').append("<option value=" + rou[key].bn_id + ">" + rou[key].bn_name + "</option>");
+                }
+
+            }
+        }
+    });
+
+    document.getElementById("getAll").addEventListener('tap', function () {
+
+        if (!$("#name").val()) {
             mui.alert('姓名不能为空！');
         } else if (!$("#bankcard").val()) {
             mui.alert('银行卡号不能为空！');
-        }else if($('input[type=checkbox]:checked').val() == 0){
+        } else if ($('input[type=checkbox]:checked').val() == 0) {
             mui.alert('请选择开户银行！');
-        }else{
-        	 
-				 $.ajax({
-					url: j_url+"card/card",
-					data: {
-					u_id: localStorage.lastname,
-					name:$("#name").val(),
-					card_id:$("#bankcard").val(),
-					bank:$("#bank option:checked").val(),
-					branch:$("#branch").val(),
+        } else {
+
+            $.ajax({
+                url: j_url + "card/card",
+                data: {
+                    u_id: localStorage.lastname,
+                    name: $("#name").val(),
+                    card_id: $("#bankcard").val(),
+                    bank: $("#bank option:checked").val(),
+                    branch: $("#branch").val(),
                     defult: $('input[type=checkbox]:checked').val()
-				    },
-					type: "POST",
-					dataType: 'jsonp',
-					crossDomain: true,
-					success: function(res) {
-						console.log(res);
-						if(res.code == 2) {
-							mui.alert(res.msg);
-						} else if(res.code == 1) {
-							mui.alert("添加成功");
-							window.location.href = 'bank.html';
-							
-						}
-					}
-				});
-			
+                },
+                type: "POST",
+                dataType: 'jsonp',
+                crossDomain: true,
+                success: function (res) {
+                    console.log(res);
+                    if (res.code == 2) {
+                        mui.alert(res.msg);
+                    } else if (res.code == 1) {
+                        mui.alert("添加成功");
+                        window.location.href = 'bank.html';
+
+                    }
+                }
+            });
+
         }
     });
-       
-		</script>
-	</body>
+
+</script>
+</body>
 
 </html>
