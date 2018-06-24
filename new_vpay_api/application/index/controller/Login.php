@@ -15,7 +15,7 @@ class Login extends Controller
 {
 
     /**
-     * 用户登录
+     * 用户前端登录
      * @param account 用户名
      * @param password 用户名
      * @return \think\response\Jsonp
