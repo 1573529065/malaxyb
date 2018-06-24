@@ -319,28 +319,24 @@ class Index extends Controller
     }
 
 
-    //card银行卡页
+    // 用户中心->我的银行卡
     public function card()
     {
         $user = Request::instance()->param('u_id');
-        if ($user) {
-            $card = Db::table('mb_bank')
-                ->alias('a')
-                ->join('mb_bank_name w', 'a.b_name = w.bn_id')
-                ->field('a.b_branch,a.c_name,w.bn_name,a.b_card,a.defult,a.b_id')
-                ->where('u_id', $user)
-                ->select();
+        if (!$user) return jsonp(['code' => 2, 'msg' => '参数错误']);
 
-            if ($card) {
-                return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $card]);
-            } else {
-                return jsonp(['code' => 2, 'msg' => '暂无数据']);
-            }
+        $card = Db::table('mb_bank')
+            ->alias('a')
+            ->join('mb_bank_name w', 'a.b_name = w.bn_id')
+            ->field('a.b_branch,a.c_name,w.bn_name,a.b_card,a.defult,a.b_id')
+            ->where('u_id', $user)
+            ->select();
+
+        if ($card) {
+            return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $card]);
         } else {
-            return jsonp(['code' => 2, 'msg' => '参数错误']);
+            return jsonp(['code' => 2, 'msg' => '暂无数据']);
         }
-
-
     }
 
     //资讯
@@ -367,22 +363,15 @@ class Index extends Controller
     {
         $user = Request::instance()->param('token');
         $soid = Request::instance()->param('so_id');
-        if ($user == 'news') {
-            $card = Db::table('vpay_shop')->where('sh_id', $soid)->find();
+        if ($user != 'news' || empty($soid))  return jsonp(['code' => 2, 'msg' => '参数错误']);
 
-//            foreach($card as $k=>$v){
+        $card = Db::table('vpay_shop')->where('sh_id', $soid)->find();
+        if ($card) {
             $card['time'] = date('Y-m-d H:i:s', $card['time']);
-//            }
-            if ($card) {
-                return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $card]);
-            } else {
-                return jsonp(['code' => 2, 'msg' => '暂无数据']);
-            }
+            return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $card]);
         } else {
-            return jsonp(['code' => 2, 'msg' => '参数错误']);
+            return jsonp(['code' => 2, 'msg' => '暂无数据']);
         }
-
-
     }
 
     //分享
@@ -406,46 +395,37 @@ class Index extends Controller
     public function bank()
     {
         $token = Request::instance()->param('token');
-        if ($token) {
-            if ($token == 'bank') {
-                $card = Db::table('mb_bank_name')
-                    ->field('bn_id,bn_name')
-                    ->select();
-                if ($card) {
-                    return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $card]);
-                } else {
-                    return jsonp(['code' => 2, 'msg' => '暂无数据']);
-                }
-            }
+        if ($token != 'bank') return jsonp(['code' => 2, 'msg' => '参数错误']);
+
+        $card = Db::table('mb_bank_name')->field('bn_id,bn_name')->select();
+        if ($card) {
+            return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $card]);
         } else {
-            return jsonp(['code' => 2, 'msg' => '参数错误']);
+            return jsonp(['code' => 2, 'msg' => '暂无数据']);
         }
-
-
     }
 
     //分享记录
     public function share_order()
     {
         $user = Request::instance()->param('u_id');
-        if (!empty($user)) {
-            $order = Db::table('vpay_share_order')
-                ->alias('a')
-                ->join('mb_user w', 'a.user = w.u_id')
-                ->where('a.u_id', $user)
-                ->field('w.user,w.u_img,w.u_id,a.time,w.vip_static,w.tel')
-                ->select();
+        if (empty($user)) return jsonp(['code' => 2, 'msg' => '参数错误']);
 
+        $order = Db::table('vpay_share_order')
+            ->alias('a')
+            ->join('mb_user w', 'a.user = w.u_id')
+            ->where('a.u_id', $user)
+            ->field('w.user,w.u_img,w.u_id,a.time,w.vip_static,w.tel')
+            ->select();
+
+        if ($order) {
             foreach ($order as $k => $v) {
                 $order[$k]['time'] = date('Y-m-d H:i:s', $v['time']);
             }
-            if ($order) {
-                return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $order]);
-            } else {
-                return jsonp(['code' => 2, 'msg' => '暂无数据']);
-            }
+            return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $order]);
+        } else {
+            return jsonp(['code' => 2, 'msg' => '暂无数据']);
         }
-
     }
 
 
@@ -458,54 +438,79 @@ class Index extends Controller
     }
 
 
-    //买入数据接口
+    /**
+     * 买入数据接口
+     * type 1 买入 2.卖出
+     * static 1: 挂卖中 2:交易中 3 确认中 4 已完成'
+     * @return \think\response\Jsonp
+     */
     public function purchase()
     {
         $user = Request::instance()->param('u_id');
-        if ($user) {
-            $user_arr = Db::table('mb_user')->where('u_id', $user)->find();
-            if ($user_arr['is_card'] != 0) {
-                $card = Db::table('mb_bank')
-                    ->alias('a')
-                    ->join('mb_bank_name w', 'a.b_name = w.bn_id')
-                    ->field('a.b_branch,a.c_name,w.bn_name,a.b_card,a.defult')
-                    ->where('u_id', $user)
-                    ->where('defult', 1)
-                    ->find();
+        if (!$user) return jsonp(['code' => 2, 'msg' => '参数错误']);
 
-                $order = Db::table('mb_sell_order')->where('type', 1)->where('u_id', $user)->where('static', 4)->count('s_id');
-                $order1 = Db::table('mb_sell_order')->where('type', 2)->where('user', $user)->where('static', '>=', 2)->count('s_id');
+        $user_arr = Db::table('mb_user')->where('u_id', $user)->find();
+        if ($user_arr['is_card'] == 0) return jsonp(['code' => 2, 'msg' => '请添加银行卡']);
 
-                $order3 = Db::table('mb_sell_order')->where('type', 1)->where('u_id', $user)->where('static', 2)->count('s_id');
-                $order4 = Db::table('mb_sell_order')->where('type', 2)->where('user', $user)->where('static', 2)->count('s_id');
+        $card = Db::table('mb_bank')
+            ->alias('a')
+            ->join('mb_bank_name w', 'a.b_name = w.bn_id')
+            ->field('a.b_branch,a.c_name,w.bn_name,a.b_card,a.defult')
+            ->where('u_id', $user)
+            ->where('defult', 1)
+            ->find();
+        if (empty($card)) return jsonp(['code' => 2, 'msg' => '请设置默认银行卡']);
 
-                $order6 = Db::table('mb_sell_order')->where('type', 1)->where('u_id', $user)->where('static', 1)->where('user', null)->count('s_id');
-                $order7 = Db::table('mb_sell_order')->where('type', 1)->where('u_id', $user)->where('user', '>', 1)->where('static', '>', 1)->count('s_id');
+//        买入完成的订单数量
+        $order = Db::table('mb_sell_order')->where('type', 1)
+            ->where('u_id', $user)
+            ->where('static', 4)
+            ->count('s_id');
 
-                $order5 = Db::table('mb_sell_order')->where('type', 2)->where('static', 1)->count('s_id');
+//        卖出的未完成订单数量
+        $order1 = Db::table('mb_sell_order')->where('type', 2)
+            ->where('user', $user)
+            ->where('static', '>=', 2)
+            ->count('s_id');
 
+//        正在交易中的买入 订单数
+        $order3 = Db::table('mb_sell_order')->where('type', 1)
+            ->where('u_id', $user)
+            ->where('static', 2)
+            ->count('s_id');
+//        正在交易中的卖出 订单数
+        $order4 = Db::table('mb_sell_order')->where('type', 2)
+            ->where('user', $user)
+            ->where('static', 2)
+            ->count('s_id');
 
-                if ($card) {
-                    return jsonp([
-                        'code' => 1,
-                        'msg' => 'succeed',
-                        'data' => $card,
-                        'result_pay' => $order3 + $order4,
-                        'buy_center' => $order5,
-                        'no_order' => $order6 + $order7,
-                        'order_result' => $order + $order1
-                    ]);
-                } else {
-                    return jsonp(['code' => 2, 'msg' => '请设置默认银行卡']);
-                }
+//        正在挂卖中,没有付款人的买入 订单数
+        $order6 = Db::table('mb_sell_order')->where('type', 1)
+            ->where('u_id', $user)
+            ->where('static', 1)
+            ->where('user', null)
+            ->count('s_id');
 
-            } else {
-                return jsonp(['code' => 2, 'msg' => '请添加银行卡']);
-            }
-        } else {
-            return jsonp(['code' => 2, 'msg' => '参数错误']);
-        }
+//        正在交易中,有付款人的买入 订单数
+        $order7 = Db::table('mb_sell_order')->where('type', 1)
+            ->where('u_id', $user)
+            ->where('user', '>', 1)
+            ->where('static', '>', 1)
+            ->count('s_id');
+//        正在挂卖中的卖出 订单数
+        $order5 = Db::table('mb_sell_order')->where('type', 2)
+            ->where('static', 1)
+            ->count('s_id');
 
+        return jsonp([
+            'code' => 1,
+            'msg' => 'succeed',
+            'data' => $card,
+            'result_pay' => $order3 + $order4, // 交易中的订单数
+            'buy_center' => $order5,
+            'no_order' => $order6 + $order7,
+            'order_result' => $order + $order1
+        ]);
     }
 
     //买入记录
