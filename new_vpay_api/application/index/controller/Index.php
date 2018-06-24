@@ -18,32 +18,123 @@ class Index extends Controller
     public function index()
     {
         $user = Request::instance()->param('u_id');
-        $order = Db::table('mb_lunbo')->select();
-        if ($user) {
-            $user_arr = Db::table('mb_user')
-                ->where('u_id', $user)
-                ->field('u_id,user,u_img,tel,assets,balance,vip_static')
-                ->find();
-            $beijin = Db::table('mb_beijin')
-                ->where('bj_id', 1)
-                ->value('bj_img');
+        $lunbo = Db::table('mb_lunbo')->select();
+        if (empty($user)) return jsonp(['code' => 2, 'msg' => '参数错误']);
 
-            $data = array();
-            $time = date('Y-m-d', time());
-            $time1 = date("Y-m-d", strtotime("-1 day"));
-            $data_start1 = strtotime($time1 . '00:00:00');
-            $data_end1 = strtotime($time1 . '23:59:59');
-            $date_start = strtotime($time . '00:00:00');
-            $date_end = strtotime($time . '23:59:59');
+        $user_arr = Db::table('mb_user')
+            ->where('u_id', $user)
+            ->field('u_id,user,u_img,tel,assets,balance,vip_static,gold')
+            ->find();
+        if (!$user_arr) return jsonp(['code' => 2, 'msg' => '参数错误']);
+
+        $beijin = Db::table('mb_beijin')->where('bj_id', 1)->value('bj_img');
+
+        $data = array();
+
+        $date_start = strtotime(date("Y-m-d 00:00:00")); // 今天开始
+        $date_end = strtotime(date("Y-m-d 23:59:59")); // 今天开始
+        $data_start1 = strtotime(date("Y-m-d 00:00:00", strtotime("-1 day"))); // 昨天开始
+        $data_end1 = strtotime(date("Y-m-d 23:59:59", strtotime("-1 day"))); // 昨天结束
+
+//        昨天加速释放和
+        $asstes = Db::table('mb_balance_order')
+            ->where('type', 5)
+            ->where('u_id', $user)
+            ->where('bo_time', '<=', $data_end1)
+            ->where('bo_time', '>=', $data_start1)
+            ->sum('bo_money');
+//        昨天每日释放
+        $ass = Db::table('mb_balance_order')
+            ->where('type', 1)
+            ->where('u_id', $user)
+            ->where('bo_time', '<=', $data_end1)
+            ->where('bo_time', '>=', $data_start1)
+            ->limit(1)
+            ->sum('bo_money');
+
+        $today = Db::table('mb_today_assets')
+            ->where('u_id', $user)
+            ->where('time', '<=', $date_end)
+            ->where('time', '>=', $date_start)
+            ->find();
+
+//        每日释放时间
+        $time = Db::table('mb_config')->where('co_id', 6)
+            ->find();
+
+        $hou = date("G", $time['co_config']);
+        $hour = date("G");
+        $tan = 2;
+
+        if (($asstes + $ass) > 0) {
+            if ($today) {
+                $tan = 2;
+            } elseif ($hou <= $hour && $user_arr['assets'] > 0) {
+                $tan = 1;
+            }
+        }
+
+        $notice = Db::table('mb_notice')
+            ->order('time', 'desc')
+            ->field('n_text')
+            ->select();
+
+        $notice = array_column($notice, 'n_text');
 
 
-            $asstes = Db::table('mb_balance_order')
+        foreach ($lunbo as $k => $v) {
+            $data['lb_img' . $k] = $v['lb_img'];
+        }
+        return jsonp([
+            'code' => 1,
+            'msg' => 'succeed',
+            'data' => $user_arr,
+            'images' => $data,
+            'tan' => $tan,
+            'beijin' => $beijin,
+            'gold' => $asstes + $ass,
+            'notice' => $notice
+        ]);
+
+    }
+
+    /**
+     * 如果昨天的加速释放积分+每日释放积分大于0 ,且今天没有领取过红包
+     * 则会弹出红包页
+     * 现在要求加速和每日释放实时到,所以有些代码需要注释
+     * @return \think\response\Jsonp
+     */
+    public function red_bao()
+    {
+
+        $user = Request::instance()->param('u_id');
+        if (Cache::get('red_bao' . $user)) return jsonp(['code' => 2, 'msg' => '频率过快']);
+        Cache::set('red_bao' . $user, true, 3);
+        $user_arr = Db::table('mb_user')
+            ->where('u_id', $user)
+            ->field('u_id,user,u_img,tel,assets,balance,vip_static')
+            ->find();
+
+        $date_start = strtotime(date("Y-m-d 00:00:00")); // 今天开始
+        $date_end = strtotime(date("Y-m-d 23:59:59")); // 今天开始
+        $data_start1 = strtotime(date("Y-m-d 00:00:00", strtotime("-1 day"))); // 昨天开始
+        $data_end1 = strtotime(date("Y-m-d 23:59:59", strtotime("-1 day"))); // 昨天结束
+
+//        查看今天是否已经领过红包
+        $today = Db::table('mb_today_assets')
+            ->where('u_id', $user)
+            ->where('time', '<=', $date_end)
+            ->where('time', '>=', $date_start)
+            ->find();
+        if (!$today) {
+//            昨天加速释放和
+            $ass1 = Db::table('mb_balance_order')
                 ->where('type', 5)
                 ->where('u_id', $user)
                 ->where('bo_time', '<=', $data_end1)
                 ->where('bo_time', '>=', $data_start1)
                 ->sum('bo_money');
-
+//            昨天->每日释放数
             $ass = Db::table('mb_balance_order')
                 ->where('type', 1)
                 ->where('u_id', $user)
@@ -52,151 +143,39 @@ class Index extends Controller
                 ->limit(1)
                 ->sum('bo_money');
 
-            $today = Db::table('mb_today_assets')
-                ->where('u_id', $user)
-                ->where('time', '<=', $date_end)
-                ->where('time', '>=', $date_start)
-                ->find();
-
-            $time = Db::table('mb_config')
-                ->where('co_id', 6)
-                ->find();
-
-            $hou = date("G", $time['co_config']);
-            $hour = date("G");
-            $tan = 2;
-
-            if (($asstes + $ass) > 0) {
-                if ($today) {
-                    $tan = 2;
-                } elseif ($hou <= $hour && $user_arr['assets'] > 0) {
-                    $tan = 1;
-                }
+            $asstes = $ass1 + $ass; // 昨日 共释放量
+            if ($user_arr['assets'] > $asstes && $asstes > 0) {
+                $asstes = $asstes;
+            } else if ($user_arr['assets'] <= $asstes && $asstes > 0) {
+                $asstes = $user_arr['assets'];
             }
 
-            $notice = Db::table('mb_notice')
-                ->order('time', 'desc')
-                ->field('n_text')
-                ->select();
-//            foreach($notice as $k=>$v){
-//                $notice[$k]['time']=date('Y-m-d H:i:s',$v['time']);
-//                $notice[$k]['n_text']=mb_substr(strip_tags($v['n_text']),0,60);
+            // 因为现在是实时奖励,所以在领红包的时候就不需要更新用户资产了
+//            $res1 = Db::table('mb_user')->where('u_id', $user)
+//                ->setDec('assets', $asstes);
+//            $res2 = Db::table('mb_user')->where('u_id', $user)
+//                ->setInc('balance', $asstes);
+
+            Db::table('mb_today_assets')->insert([
+                'u_id' => $user,
+                'assets' => $asstes,
+                'time' => time(),
+            ]);
+            return jsonp([
+                'code' => 1,
+                'msg' => '领取成功',
+                'money' => $asstes
+            ]);
+//            if ($res1 && $res2) {
+//                return jsonp([
+//                    'code' => 1,
+//                    'msg' => '领取成功',
+//                    'money' => $asstes
+//                ]);
+//            } else {
+//                return jsonp(['code' => 2, 'msg' => '参数错误']);
 //            }
-            $notice = array_column($notice, 'n_text');
-
-
-            foreach ($order as $k => $v) {
-                $data['lb_img' . $k] = $v['lb_img'];
-            }
-            if ($user_arr) {
-                return jsonp([
-                    'code' => 1,
-                    'msg' => 'succeed',
-                    'data' => $user_arr,
-                    'images' => $data,
-                    'tan' => $tan,
-                    'beijin' => $beijin,
-                    'gold' => $asstes + $ass,
-                    'notice' => $notice
-                ]);
-            } else {
-                return jsonp(['code' => 2, 'msg' => '参数错误']);
-            }
-        } else {
-            return jsonp(['code' => 2, 'msg' => '参数错误']);
         }
-
-
-    }
-
-    public function red_bao()
-    {
-
-        $user = Request::instance()->param('u_id');
-        if (Cache::get('red_bao' . $user)) {
-            return jsonp(['code' => 2, 'msg' => '频率过快']);
-        } else {
-            Cache::set('red_bao' . $user, true, 3);
-            $user_arr = Db::table('mb_user')
-                ->where('u_id', $user)
-                ->field('u_id,user,u_img,tel,assets,balance,vip_static')
-                ->find();
-
-            $time = date('Y-m-d', time());
-            $time1 = date("Y-m-d", strtotime("-1 day"));
-            $data_start1 = strtotime($time1 . '00:00:00');
-            $data_end1 = strtotime($time1 . '23:59:59');
-            $date_start = strtotime($time . '00:00:00');
-            $date_end = strtotime($time . '23:59:59');
-            $today = Db::table('mb_today_assets')
-                ->where('u_id', $user)
-                ->where('time', '<=', $date_end)
-                ->where('time', '>=', $date_start)
-                ->find();
-            if (!$today) {
-                $ass1 = Db::table('mb_balance_order')
-                    ->where('type', 5)
-                    ->where('u_id', $user)
-                    ->where('bo_time', '<=', $data_end1)
-                    ->where('bo_time', '>=', $data_start1)
-                    ->sum('bo_money');
-                $ass = Db::table('mb_balance_order')
-                    ->where('type', 1)
-                    ->where('u_id', $user)
-                    ->where('bo_time', '<=', $data_end1)
-                    ->where('bo_time', '>=', $data_start1)
-                    ->limit(1)
-                    ->sum('bo_money');
-
-                $asstes = $ass1 + $ass;
-                if ($user_arr['assets'] > $asstes && $asstes > 0) {
-                    $res1 = Db::table('mb_user')
-                        ->where('u_id', $user)
-                        ->setDec('assets', $asstes);
-                    $res2 = Db::table('mb_user')
-                        ->where('u_id', $user)
-                        ->setInc('balance', $asstes);
-
-                    $insert2 = Db::table('mb_today_assets')->insert([
-                        'u_id' => $user,
-                        'assets' => $asstes,
-                        'time' => time(),
-                    ]);
-                    if ($res1 && $res2) {
-                        return jsonp([
-                            'code' => 1,
-                            'msg' => '领取成功',
-                            'money' => $asstes
-                        ]);
-                    } else {
-                        return jsonp(['code' => 2, 'msg' => '参数错误']);
-                    }
-
-                } else if ($user_arr['assets'] <= $asstes && $asstes > 0) {
-                    $res1 = Db::table('mb_user')
-                        ->where('u_id', $user)
-                        ->setDec('assets', $user_arr['assets']);
-                    $res2 = Db::table('mb_user')
-                        ->where('u_id', $user)
-                        ->setInc('balance', $user_arr['assets']);
-                    $insert2 = Db::table('mb_today_assets')->insert([
-                        'u_id' => $user,
-                        'assets' => $asstes,
-                        'time' => time(),
-                    ]);
-                    if ($res1 && $res2) {
-                        return jsonp([
-                            'code' => 1,
-                            'msg' => '领取成功',
-                            'money' => $asstes
-                        ]);
-                    } else {
-                        return jsonp(['code' => 2, 'msg' => '参数错误']);
-                    }
-                };
-            }
-        }
-
 
     }
 
@@ -205,24 +184,19 @@ class Index extends Controller
     public function notice()
     {
         $token = Request::instance()->param('token');
-        if ($token) {
-            if ($token == 'notice') {
-                $notice = Db::table('mb_notice')->order('time', 'desc')->field('n_id,n_title,n_text,time')->select();
-                foreach ($notice as $k => $v) {
-                    $notice[$k]['time'] = date('Y-m-d H:i:s', $v['time']);
-                    $notice[$k]['n_text'] = mb_substr(strip_tags($v['n_text']), 0, 60);
-                }
-                if ($notice) {
-                    return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $notice]);
-                } else {
-                    return jsonp(['code' => 2, 'msg' => '暂无数据']);
-                }
+        if (!$token) return jsonp(['code' => 2, 'msg' => '参数错误']);
+        if ($token == 'notice') {
+            $notice = Db::table('mb_notice')->order('time', 'desc')->field('n_id,n_title,n_text,time')->select();
+            foreach ($notice as $k => $v) {
+                $notice[$k]['time'] = date('Y-m-d H:i:s', $v['time']);
+                $notice[$k]['n_text'] = mb_substr(strip_tags($v['n_text']), 0, 60);
             }
-        } else {
-            return jsonp(['code' => 2, 'msg' => '参数错误']);
+            if ($notice) {
+                return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $notice]);
+            } else {
+                return jsonp(['code' => 2, 'msg' => '暂无数据']);
+            }
         }
-
-
     }
 
     //个人信息
@@ -395,23 +369,19 @@ class Index extends Controller
     public function news()
     {
         $user = Request::instance()->param('token');
-        if ($user == 'news') {
-            $card = Db::table('vpay_shop')->order('time desc')->select();
+        if ($user != 'news') return jsonp(['code' => 2, 'msg' => '参数错误']);
 
-            foreach ($card as $k => $v) {
-                $card[$k]['time'] = date('Y-m-d H:i:s', $v['time']);
-                $card[$k]['sh_text'] = mb_substr(strip_tags($v['sh_text']), 0, 60);
-            }
-            if ($card) {
-                return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $card]);
-            } else {
-                return jsonp(['code' => 2, 'msg' => '暂无数据']);
-            }
-        } else {
-            return jsonp(['code' => 2, 'msg' => '参数错误']);
+        $card = Db::table('vpay_shop')->order('time desc')->select();
+
+        foreach ($card as $k => $v) {
+            $card[$k]['time'] = date('Y-m-d H:i:s', $v['time']);
+            $card[$k]['sh_text'] = mb_substr(strip_tags($v['sh_text']), 0, 60);
         }
-
-
+        if ($card) {
+            return jsonp(['code' => 1, 'msg' => 'succeed', 'data' => $card]);
+        } else {
+            return jsonp(['code' => 2, 'msg' => '暂无数据']);
+        }
     }
 
     //资讯详情页

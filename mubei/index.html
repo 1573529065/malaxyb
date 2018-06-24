@@ -347,7 +347,6 @@
                     if (res.code == 2) {
                         mui.alert(res.msg);
                     } else if (res.code == 1) {
-                        //									mui.alert(res.msg);
                         var rou = res.data;
                         $('#zichan').empty();
                         for (var key in rou) {
@@ -420,7 +419,6 @@
         interval: 5000
     });
 
-    //						mui.plusReady(function() {
     $.ajax({
         url: j_url + "/index/index",
         type: 'POST',

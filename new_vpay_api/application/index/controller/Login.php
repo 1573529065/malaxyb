@@ -30,42 +30,20 @@ class Login extends Controller
         if (empty($account) || empty($password)) return jsonp(['code' => 2, 'msg' => '参数错误！']);
 
         $is_account = Db::table('mb_user')->where('tel', $account)->whereOr('u_id', $account)->find();
-//        $is_account = Db::query("SELECT * FROM  `mb_user` WHERE
-//          `tel` =? OR  `u_id` =?", [$account, $account]
-//        );
-        if (!$is_account) return jsonp(['code' => 2, 'msg' => ' 账户不存在！']);
 
-        $login = Db::table('mb_user')
-            ->where('u_id', $account)
-            ->whereOr('tel', $account)
-            ->where('pass', md5($password))
-            ->find();
+        if (!$is_account || empty($is_account)) return jsonp(['code' => 2, 'msg' => ' 账户不存在！']);
 
-//        $login = Db::query("select * from mb_user
-//            where (u_id=? and pass=?) or (tel=? and pass=?)",
-//            [$account, md5($password), $account, md5($password)]
-//        );
-        if ($login) {
-            if ($login[0]['status'] == 2) {
-                return jsonp([
-                    'code' => 2,
-                    'msg' => ' 账户已禁用！如需重新开通，请联系客服'
-                ]);
-            } else {
-                $ip = $this->get_ip();
-                Db::table('mb_user')
-                    ->where('u_id', $login[0]['u_id'])
-                    ->setField('last_ip', $ip);
-                return jsonp([
-                    'code' => 1,
-                    'msg' => ' 登录成功！',
-                    'u_id' => $login[0]['u_id']
-                ]);
-            }
+        if ($is_account['pass'] == md5($password)) {
+            if ($is_account['status'] == 2) return jsonp(['code' => 2, 'msg' => ' 账户已禁用！如需重新开通，请联系客服']);
+
+            $ip = $this->get_ip();
+            Db::table('mb_user')->where('u_id', $is_account['u_id'])
+                ->setField('last_ip', $ip);
+
+            return jsonp(['code' => 1, 'msg' => ' 登录成功！', 'u_id' => $is_account['u_id']]);
         } else {
             return jsonp(['code' => 2, 'msg' => '密码错误！']);
         }
-
     }
 
     public function get_ip()
