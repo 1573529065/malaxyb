@@ -80,6 +80,7 @@ class User extends Controller
                         return jsonp(['code' => 2, 'msg' => '该手机号码已被注册！']);
                     } else {
                         if ($f_phone) {
+                            // 查询上级用户的等级
                             $agentid = Db::table('mb_user')
                                 ->where('u_id', $f_phone)
                                 ->field('era')
@@ -152,84 +153,88 @@ class User extends Controller
         $f_uid = Request::instance()->param('account'); //上级用户id
         $re_name = Request::instance()->param('re_name'); //真实姓名
 
-        if ($phone_code != Cache::get($phone)) {
-            return json(['code' => 2, 'msg' => '手机验证码输入错误！']);
-        } else {
-            if ($this->is_utf8($name) == true) {
-                $resname = Db::table('mb_user')
-                    ->where('user', $name)
-                    ->find();
+        if ($phone_code != Cache::get($phone)) return json(['code' => 2, 'msg' => '手机验证码输入错误！']);
 
-                if ($resname) {
-                    return json(['code' => 2, 'msg' => '昵称重复！']);
-                } else {
-                    $resphone = Db::table('mb_user')
-                        ->where('tel', $phone)
-                        ->find();
+        if ($this->is_utf8($name) != true) return json(['code' => 2, 'msg' => '昵称命名不规范！']);
 
-                    if ($resphone) {
-                        return json(['code' => 2, 'msg' => '该手机号码已被注册！']);
-                    } else {
-                        if ($f_uid) {
-                            $agentid = Db::table('mb_user')
-                                ->where('u_id', $f_uid)
-                                ->field('era')
-                                ->find();
-                            if ($agentid) {
-                                $num = 0;
-                                $this->get_top_parentid($f_uid, $num);
-                                $b_id = Cache::get($f_uid);
-                                if ($b_id) {
-                                    Db::table('mb_user')->data([
-                                        'user' => $name,
-                                        'tel' => $phone,
-                                        'u_name' => $re_name,
-                                        'pass' => md5($pass),
-                                        'speed' => 0,
-                                        'pay_pass' => md5($pay_pass),
-                                        'time' => time(),
-                                        'f_uid' => $f_uid,
-                                        'era' => $agentid['era'] + 1,
-                                        'best_uid' => $b_id
-                                    ])
-                                        ->insert();
-                                } else {
-                                    Db::table('mb_user')->data([
-                                            'user' => $name,
-                                            'tel' => $phone,
-                                            'u_name' => $re_name,
-                                            'pass' => md5($pass),
-                                            'speed' => 0,
-                                            'pay_pass' => md5($pay_pass),
-                                            'time' => time(),
-                                            'f_uid' => $f_uid,
-                                            'era' => $agentid['era'] + 1,
-                                            'best_uid' => $f_uid]
-                                    )->insert();
-                                }
-                                return jsonp(['code' => 1, 'msg' => ' 注册成功！']);
-                            } else {
-                                return jsonp(['code' => 2, 'msg' => '请输入正确的邀请码！']);
-                            }
+        $resname = Db::table('mb_user')->where('user', $name)->find();
+        if ($resname) return json(['code' => 2, 'msg' => '昵称重复！']);
 
-                        }
+        $resphone = Db::table('mb_user')->where('tel', $phone)->find();
+        if ($resphone) return json(['code' => 2, 'msg' => '该手机号码已被注册！']);
 
-                    }
-                }
-            } else {
-                return json(['code' => 2, 'msg' => '昵称命名不规范！']);
-            }
-        }
+        if (!$f_uid) return json(['code' => 2, 'msg' => '请输入邀请码！']);
+
+        $agentid = Db::table('mb_user')->where('u_id', $f_uid)->field('era')->find();
+        if (!$agentid) return jsonp(['code' => 2, 'msg' => '请输入正确的邀请码！']);
+
+        $num = 0;
+        $this->get_top_parentid($f_uid, $num);
+        $b_id = Cache::get($f_uid); // 最上级用户ID
+        $data = [
+            'user' => $name,
+            'tel' => $phone,
+            'u_name' => $re_name,
+            'pass' => md5($pass),
+            'speed' => 0,
+            'pay_pass' => md5($pay_pass),
+            'time' => time(),
+            'f_uid' => $f_uid,
+            'era' => $agentid['era'] + 1,
+            'best_uid' => $b_id
+        ];
+        if ($b_id)
+            $data['best_uid'] = $b_id;
+        else
+            $data['best_uid'] = $b_id;
+
+        $info = Db::table('mb_user')->data($data)->insert();
+        if ($info)
+            return jsonp(['code' => 2, 'msg' => ' 注册失败！']);
+        else
+            return jsonp(['code' => 1, 'msg' => ' 注册成功！']);
     }
 
+    /**
+     * 获取最上级用户id
+     * @param $uid  上级用户id
+     * @param $num
+     */
     public function get_top_parentid($uid, $num)
     {
         $r = Db::table('mb_user')
             ->where('u_id', $uid)
-            ->field('u_id,f_uid,era')
+            ->field('u_id,f_uid,era,vip_static,assets,balance')
             ->find();
-        if ($r['era'] != 0) {
-            if ($num == 0) {
+
+
+//        如果等级不为0,且第一次进入则,设置first=上级用户ID 设置上级用户ID = 最上级用户ID   10 秒缓存
+        if ($r['era'] != 0) { // 说明不是初级会员
+            if ($num == 0){
+                $count = Db::table('mb_user')->where('f_uid',$uid)->value('u_id');
+                if ($count >= 10 && $r['vip_static'] != 1){
+                    Db::table('mb_user')->where('u_id',$r['u_id'])->update(['vip_static' => 1]);
+                }
+                $balance = $r['assets']* 0.06; // 推荐会员 加速6%释放
+                Db::table('mb_user')->where('u_id',$r['u_id'])
+                    ->setInc('balance',$balance);
+                Db::table('mb_balance_order')->insert([
+                    'u_id' => $r['u_id'],
+                    'bo_money' => $balance,
+                    'former_money' => $r['balance'],
+                    'type' => 5,
+                    'bo_time' => time()
+                ]);
+
+                Db::table('mb_user')->where('u_id',$r['u_id'])
+                    ->setDec('assets',$balance);
+                Db::table('mb_assets_order')->insert([
+                    'u_id' => $r['u_id'],
+                    'ao_money' => '-'.$balance,
+                    'former_money' => $r['assets'],
+                    'type' => 2,
+                    'ao_time' => time()
+                ]);
                 Cache::set('first', $uid, 10);
             }
             $num += 1;

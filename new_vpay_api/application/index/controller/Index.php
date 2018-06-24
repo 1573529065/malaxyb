@@ -831,7 +831,9 @@ class Index extends Controller
                 ->where('w.type', 2)
                 ->where('w.user', null)
                 ->where('w.money', $money)
-                ->field('a.u_img,a.user,a.tel,n.bn_name,w.money,w.s_id,w.static,w.time,w.u_id,c.b_card,c.c_name,w.shi_money')
+                ->field('a.u_img,a.user,a.tel,
+                n.bn_name,w.money,w.s_id,
+                w.static,w.time,w.u_id,c.b_card,c.c_name,w.shi_money')
                 ->order('w.time', 'desc')
                 ->select();
             foreach ($order as $k => $v) {
