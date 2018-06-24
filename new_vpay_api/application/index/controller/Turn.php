@@ -675,22 +675,23 @@ class Turn extends Send
         Log::write($fUserInfo['u_id'], 'notice');
         Log::write($money, 'notice');
         Log::write($type, 'notice');
-        if ($fUserInfo['vip_static'] == 1) {
-            if ($type == 1) {
-                $config1 = Db::table('mb_config')->where('co_id', 10)->value('co_config');
-            } else {
-                $config1 = Db::table('mb_config')->where('co_id', 9)->value('co_config');
+        if (($level - $fUserInfo['era']) <= 15) {
+            if ($fUserInfo['vip_static'] == 1) {
+                if ($type == 1) {
+                    $config1 = Db::table('mb_config')->where('co_id', 10)->value('co_config');
+                } else {
+                    $config1 = Db::table('mb_config')->where('co_id', 9)->value('co_config');
+                }
+                $f_speed = sprintf("%.2f", substr(sprintf("%.3f", $money * $config1 / 100), 0, -2));
+                Db::table('mb_user')->where('u_id', $fUserInfo['u_id'])->setInc('assets', $f_speed);
+                Db::table('mb_assets_order')->insert([
+                    'u_id' => $fUserInfo['u_id'],
+                    'ao_money' => $f_speed,
+                    'former_money' => $fUserInfo['assets'],
+                    'ao_time' => time(),
+                    'type' => 10, // vip 积分奖励
+                ]);
             }
-            $f_speed = sprintf("%.2f", substr(sprintf("%.3f", $money * $config1 / 100), 0, -2));
-            Db::table('mb_user')->where('u_id', $fUserInfo['u_id'])->setInc('assets', $f_speed);
-            Db::table('mb_assets_order')->insert([
-                'u_id' => $fUserInfo['u_id'],
-                'ao_money' => $f_speed,
-                'former_money' => $fUserInfo['assets'],
-                'ao_time' => time(),
-                'type' => 10, // vip 积分奖励
-            ]);
-
         }
         if (($level - $fUserInfo['era']) <= 15 && $fUserInfo['era'] > 0) {
             $this->inc_speed($fUserInfo['f_uid'], $money, $type, $level);

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3eec561-b85e-45d5-bfe6-c01cb19bb019" name="Default" comment="余额兑换积分,上级按比例加速">
+    <list default="true" id="c3eec561-b85e-45d5-bfe6-c01cb19bb019" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/new_vpay_api/application/index/controller/Turn.php" afterPath="$PROJECT_DIR$/new_vpay_api/application/index/controller/Turn.php" />
     </list>
@@ -46,8 +46,8 @@
       <file leaf-file-name="Turn.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/new_vpay_api/application/index/controller/Turn.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="103">
-              <caret line="655" column="0" lean-forward="true" selection-start-line="655" selection-start-column="0" selection-end-line="655" selection-end-column="0" />
+            <state relative-caret-position="324">
+              <caret line="690" column="40" lean-forward="true" selection-start-line="690" selection-start-column="40" selection-end-line="690" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -180,8 +180,8 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="349" />
-    <option name="width" value="1017" />
+    <option name="x" value="427" />
+    <option name="width" value="939" />
     <option name="height" value="728" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -441,7 +441,7 @@
       <workItem from="1529720887292" duration="128000" />
       <workItem from="1529723133732" duration="9406000" />
       <workItem from="1529803416424" duration="886000" />
-      <workItem from="1529805083279" duration="37551000" />
+      <workItem from="1529805083279" duration="38307000" />
     </task>
     <task id="LOCAL-00001" summary="初始化项目">
       <created>1529291021491</created>
@@ -667,11 +667,18 @@
       <option name="project" value="LOCAL" />
       <updated>1529847365911</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="转出,双方都是vip,15代上级有vip的可以获得8% config 9积分奖励&#10;如果有一个vip,或者都不是,有2% config 10积分奖励">
+      <created>1529854754299</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1529854754299</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78644000" />
+    <option name="totallyTimeSpent" value="79400000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -683,7 +690,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="349" y="0" width="1017" height="728" extended-state="0" />
+    <frame x="427" y="0" width="939" height="728" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2526096" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -740,7 +747,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix代码格式化" />
     <MESSAGE value="fix`" />
     <MESSAGE value="微信不显示获取验证码问题" />
     <MESSAGE value="格式化代码" />
@@ -765,7 +771,8 @@
     <MESSAGE value="注册,推荐奖励,后台设置推荐奖励百分比" />
     <MESSAGE value="fix" />
     <MESSAGE value="余额兑换积分,上级按比例加速" />
-    <option name="LAST_COMMIT_MESSAGE" value="余额兑换积分,上级按比例加速" />
+    <MESSAGE value="转出,双方都是vip,15代上级有vip的可以获得8% config 9积分奖励&#10;如果有一个vip,或者都不是,有2% config 10积分奖励" />
+    <option name="LAST_COMMIT_MESSAGE" value="转出,双方都是vip,15代上级有vip的可以获得8% config 9积分奖励&#10;如果有一个vip,或者都不是,有2% config 10积分奖励" />
   </component>
   <component name="WindowStateProjectService">
     <state width="198" height="301" key="Git.Branch.Popup" />
@@ -1195,8 +1202,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/new_vpay_api/application/index/controller/Turn.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="655" column="0" lean-forward="true" selection-start-line="655" selection-start-column="0" selection-end-line="655" selection-end-column="0" />
+        <state relative-caret-position="324">
+          <caret line="690" column="40" lean-forward="true" selection-start-line="690" selection-start-column="40" selection-end-line="690" selection-end-column="40" />
           <folding />
         </state>
       </provider>
