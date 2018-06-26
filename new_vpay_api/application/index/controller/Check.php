@@ -9,6 +9,7 @@
 /**
  * 检测用户登陆状态基类检测类
  */
+
 namespace app\index\controller;
 
 use think\Controller;
@@ -19,6 +20,7 @@ class Check extends Controller
     public function _initialize()
     {
         $logined_user = Cookie::get('login_ed');
+
         if (!$logined_user || $logined_user == null || $logined_user == '') {
             $this->redirect('index/user/login');
         }

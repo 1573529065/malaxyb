@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 
-<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" class="ie8 no-js"> <![endif]-->
 
-<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if IE 9]>
+<html lang="en" class="ie9 no-js"> <![endif]-->
 
-<!--[if !IE]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" class="no-js"> <!--<![endif]-->
 
 <!-- BEGIN HEAD -->
 
 <head>
 
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
 
     <title>会员管理</title>
 
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 
-    <meta content="" name="description" />
+    <meta content="" name="description"/>
 
-    <meta content="" name="author" />
+    <meta content="" name="author"/>
 
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
 
@@ -44,7 +47,7 @@
 
     <link href="__static__/media/css/jquery.gritter.css" rel="stylesheet" type="text/css"/>
 
-    <link href="__static__/media/css/daterangepicker.css" rel="stylesheet" type="text/css" />
+    <link href="__static__/media/css/daterangepicker.css" rel="stylesheet" type="text/css"/>
 
     <link href="__static__/media/css/fullcalendar.css" rel="stylesheet" type="text/css"/>
 
@@ -54,7 +57,7 @@
 
     <!-- END PAGE LEVEL STYLES -->
 
-    <link rel="shortcut icon" href="__static__/media/image/favicon.ico" />
+    <link rel="shortcut icon" href="__static__/media/image/favicon.ico"/>
 
 </head>
 
@@ -62,7 +65,7 @@
 
 <!-- BEGIN BODY -->
 
-<body >
+<body>
 
 
 <div class="portlet box blue ">
@@ -84,12 +87,12 @@
 
                 <div class="controls">
 
-                    <input type="text" id="uid" value="<?php echo $user['u_id']?>" disabled="true" class="m-wrap span12">
+                    <input type="text" id="uid" value="<?php echo $user['u_id']?>" disabled="true"
+                           class="m-wrap span12">
 
                 </div>
 
             </div>
-
 
 
             <div class="control-group">
@@ -103,7 +106,6 @@
                 </div>
 
             </div>
-
 
 
             <div class="control-group">
@@ -124,7 +126,8 @@
 
                 <div class="controls">
 
-                    <select data-placeholder="Your Favorite Type of Bear" class="chosen-with-diselect span6" tabindex="-1" id="selCSI">
+                    <select data-placeholder="Your Favorite Type of Bear" class="chosen-with-diselect span6"
+                            tabindex="-1" id="selCSI">
 
 
                         <option value="1">资产</option>
@@ -173,7 +176,7 @@
 
 <script>
 
-    jQuery(document).ready(function() {
+    jQuery(document).ready(function () {
 
         App.init(); // initlayout and core plugins
 
@@ -196,20 +199,19 @@
     });
 
 
-
     function admin_add(title, url, w, h) {
         layer_show(title, url, w, h);
     }
 
 
-    function send(){
-        if(!$('#money').val()){
+    function send() {
+        if (!$('#money').val()) {
             layer.open({
                 content: '请填写金额'
                 , skin: 'msg'
                 , time: 1
             });
-        }else{
+        } else {
             $.ajax({
                 url: "{:url('index/user/change_money')}",
                 type: 'POST',
@@ -220,7 +222,7 @@
                     type: $("#selCSI option:checked").val()
                 },
                 success: function (res) {
-                    if(res.code == 2) {
+                    if (res.code == 2) {
                         layer.open({
                             content: res.msg
                             , skin: 'msg'
@@ -232,7 +234,9 @@
                             , skin: 'msg'
                             , time: 1
                         });
-                        setTimeout(function(){window.location.reload()},500);
+                        setTimeout(function () {
+                            window.location.reload()
+                        }, 500);
                     }
                 }, fail: function (res) {
 

@@ -4,36 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-    <link href="../css/mui.min.css" rel="stylesheet" />
-    <script type="text/javascript" src="../js/back_icon.js" ></script>
-    <script type="text/javascript" src="../js/change_lange.js" ></script>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link href="../css/mui.min.css" rel="stylesheet"/>
+    <script type="text/javascript" src="../js/back_icon.js"></script>
+    <script type="text/javascript" src="../js/change_lange.js"></script>
     <style>
         * {
             font-size: 14px;
             font-family: '微软雅黑';
         }
-        .card{
+
+        .card {
             height: 80px;
             width: 95%;
             margin: 10px;
-            background-color:#fec900;
+            background-color: #fec900;
             /*padding-left: 10px;*/
             border-radius: 10px;
         }
-        ul{
+
+        ul {
             -webkit-padding-start: 15px;
             float: left;
         }
-        .right{
+
+        .right {
             float: right;
         }
-        .right button{
+
+        .right button {
             display: block;
             margin-top: 5px;
         }
 
-        .card li{
+        .card li {
             /*padding-top: 5px;*/
             height: 20px;
             list-style: none;
@@ -42,13 +47,13 @@
 </head>
 
 <body>
-	<script>
-			if(localStorage.pagecount == 1) {
-				addCssByLink('../css/zh.css');
-			} else if(localStorage.pagecount == 2) {
-				addCssByLink('../css/en.css');
-			}
-		</script>
+<script>
+    if (localStorage.pagecount == 1) {
+        addCssByLink('../css/zh.css');
+    } else if (localStorage.pagecount == 2) {
+        addCssByLink('../css/en.css');
+    }
+</script>
 <header class="mui-bar mui-bar-nav" style="background-color: #FFFFFF;">
     <!--<i class="mui-icon mui-icon-left-nav mui-pull-left" onclick="window.location.href='../setting.html'"></i>-->
     <h1 class="mui-title"><span class="language-card"></span></h1>
@@ -59,7 +64,9 @@
         <div class="ff">
         </div>
         <div class="mui-content-padded">
-            <button type="button"  style="background: #46adfc;border-color: #46adfc;" class="mui-btn mui-btn-warning mui-btn-block mui-icon mui-icon-plus" onclick="window.location.href='add_bank.html'">
+            <button type="button" style="background: #46adfc;border-color: #46adfc;"
+                    class="mui-btn mui-btn-warning mui-btn-block mui-icon mui-icon-plus"
+                    onclick="window.location.href='add_bank.html'">
                 <span class="language-tianjiayinghanka"></span>
             </button>
         </div>
@@ -72,81 +79,81 @@
     <script type="text/javascript" src="../js/url.js"></script>
     <script type="text/javascript">
         mui.init();
-        function deleter(id){
+        function deleter(id) {
             $.ajax({
                 url: j_url + "/card/del_card",
                 data: {
                     u_id: localStorage.lastname,
-                    b_id:id
+                    b_id: id
                 },
                 type: "POST",
                 dataType: 'jsonp',
                 crossDomain: true,
-                success: function(res) {
+                success: function (res) {
                     console.log(res);
-                    if(res.code == 2) {
-                        mui.toast(res.msg,{ duration:'long', type:'div' });
-                    } else if(res.code == 1) {
+                    if (res.code == 2) {
+                        mui.toast(res.msg, {duration: 'long', type: 'div'});
+                    } else if (res.code == 1) {
 
-                        mui.toast(res.msg,{ duration:'long', type:'div' });
-                        setTimeout(function(){window.location.reload() },800);
+                        mui.toast(res.msg, {duration: 'long', type: 'div'});
+                        setTimeout(function () {
+                            window.location.reload()
+                        }, 800);
                     }
                 }
             });
         }
-        
-          function moren(id){
+
+        function moren(id) {
             $.ajax({
                 url: j_url + "/card/default_bc",
                 data: {
                     u_id: localStorage.lastname,
-                    b_id:id
+                    b_id: id
                 },
                 type: "POST",
                 dataType: 'jsonp',
                 crossDomain: true,
-                success: function(res) {
+                success: function (res) {
                     console.log(res);
-                    if(res.code == 2) {
-                        mui.toast(res.msg,{ duration:'long', type:'div' });
-                    } else if(res.code == 1) {
-                        mui.toast(res.msg,{ duration:'long', type:'div' });
-                        setTimeout(function(){window.location.reload() },800);
+                    if (res.code == 2) {
+                        mui.toast(res.msg, {duration: 'long', type: 'div'});
+                    } else if (res.code == 1) {
+                        mui.toast(res.msg, {duration: 'long', type: 'div'});
+                        setTimeout(function () {
+                            window.location.reload()
+                        }, 800);
                     }
                 }
             });
         }
 
-       $.ajax({
+        $.ajax({
             url: j_url + "index/card",
             data: {
-                u_id:localStorage.lastname
+                u_id: localStorage.lastname
             },
             type: "POST",
             dataType: 'jsonp',
             crossDomain: true,
-            success: function(res) {
+            success: function (res) {
                 console.log(res);
-                if(res.code == 2) {
-                    
-                } else if(res.code == 1) {
+                if (res.code == 2) {
+
+                } else if (res.code == 1) {
                     var rou = res.data;
-                    for(var key in rou) {
-                        if(rou[key].defult==1){
-                            $('.ff').append("<div class='card'><ul><li>" + rou[key].c_name + "</li><li>" + rou[key].bn_name + "</li><li>"+ rou[key].b_card +  "</li></ul>"+
-                            "<div class='right'><button onclick='moren("+rou[key].b_id+")' type='button' class='mui-btn mui-btn-danger'>默认</button><button type='button' class='mui-btn' onclick='deleter("+rou[key].b_id+")'>删除</button></div></div>");
-                        }else{
-                            $('.ff').append("<div class='card'><ul><li>" + rou[key].c_name + "</li><li>" + rou[key].bn_name + "</li><li>"+ rou[key].b_card +  "</li></ul>"+
-                            "<div class='right'><button onclick='moren("+rou[key].b_id+")' type='button' class='mui-btn mui-button-waring'>默认</button><button type='button' class='mui-btn' onclick='deleter("+rou[key].b_id+")'>删除</button></div></div>");
+                    for (var key in rou) {
+                        if (rou[key].defult == 1) {
+                            $('.ff').append("<div class='card'><ul><li>" + rou[key].c_name + "</li><li>" + rou[key].bn_name + "</li><li>" + rou[key].b_card + "</li></ul>" +
+                                "<div class='right'><button onclick='moren(" + rou[key].b_id + ")' type='button' class='mui-btn mui-btn-danger'>默认</button><button type='button' class='mui-btn' onclick='deleter(" + rou[key].b_id + ")'>删除</button></div></div>");
+                        } else {
+                            $('.ff').append("<div class='card'><ul><li>" + rou[key].c_name + "</li><li>" + rou[key].bn_name + "</li><li>" + rou[key].b_card + "</li></ul>" +
+                                "<div class='right'><button onclick='moren(" + rou[key].b_id + ")' type='button' class='mui-btn mui-button-waring'>默认</button><button type='button' class='mui-btn' onclick='deleter(" + rou[key].b_id + ")'>删除</button></div></div>");
                         }
                     }
                 }
             }
         });
-
-
-
-
 
 
     </script>

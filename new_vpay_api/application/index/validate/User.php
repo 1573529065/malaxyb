@@ -16,7 +16,7 @@ class User extends Validate
     protected $rule = [
         'account' => 'require',
         'password' => 'require',
-        'captcha|验证码'=>'require|captcha'
+        'captcha|验证码' => 'require|captcha'
     ];
 
     protected $message = [

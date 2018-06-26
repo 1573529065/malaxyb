@@ -12,17 +12,6 @@ use think\Cache;
 
 class Turn extends Send
 {
-
-
-
-
-
-
-
-
-
-
-
     //转出加速至最上级，vip获取金额8%的积分奖励
     public function inc_speed($u_id,$money,$check){
 
@@ -204,7 +193,10 @@ class Turn extends Send
         $pass_p = Request::instance()->param('pass_p');
         $type = Request::instance()->param('type');
 
-        $check=Db::table('mb_user')->where('u_id',$user)->field('current,assets,speed,f_uid,pay_pass,era,balance')->find();
+        $check=Db::table('mb_user')
+            ->where('u_id',$user)
+            ->field('current,assets,speed,f_uid,pay_pass,era,balance')
+            ->find();
         $config1=Db::table('mb_config')->where('co_id',7)->value('co_config');
 
         if($type == 1){ //流通兑换资产

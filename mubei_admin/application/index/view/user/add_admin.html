@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 
-<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" class="ie8 no-js"> <![endif]-->
 
-<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if IE 9]>
+<html lang="en" class="ie9 no-js"> <![endif]-->
 
-<!--[if !IE]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" class="no-js"> <!--<![endif]-->
 
 <!-- BEGIN HEAD -->
 
 <head>
 
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
 
     <title>添加管理员</title>
 
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 
-    <meta content="" name="description" />
+    <meta content="" name="description"/>
 
-    <meta content="" name="author" />
+    <meta content="" name="author"/>
 
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
 
@@ -44,7 +47,7 @@
 
     <link href="__static__/media/css/jquery.gritter.css" rel="stylesheet" type="text/css"/>
 
-    <link href="__static__/media/css/daterangepicker.css" rel="stylesheet" type="text/css" />
+    <link href="__static__/media/css/daterangepicker.css" rel="stylesheet" type="text/css"/>
 
     <link href="__static__/media/css/fullcalendar.css" rel="stylesheet" type="text/css"/>
 
@@ -54,7 +57,7 @@
 
     <!-- END PAGE LEVEL STYLES -->
 
-    <link rel="shortcut icon" href="__static__/media/image/favicon.ico" />
+    <link rel="shortcut icon" href="__static__/media/image/favicon.ico"/>
 
 </head>
 
@@ -62,7 +65,7 @@
 
 <!-- BEGIN BODY -->
 
-<body >
+<body>
 
 
 <div class="portlet box blue ">
@@ -84,7 +87,7 @@
 
                 <div class="controls">
 
-                    <input type="text" id="uid" value=""  class="m-wrap span12">
+                    <input type="text" id="uid" value="" class="m-wrap span12">
 
                 </div>
 
@@ -97,7 +100,7 @@
 
                 <div class="controls">
 
-                    <input type="password" id="pass" value=""  class="m-wrap span12">
+                    <input type="password" id="pass" value="" class="m-wrap span12">
 
                 </div>
 
@@ -108,7 +111,8 @@
 
                 <div class="controls">
 
-                    <select data-placeholder="Your Favorite Type of Bear" class="chosen-with-diselect span6" tabindex="-1" id="selCSI">
+                    <select data-placeholder="Your Favorite Type of Bear" class="chosen-with-diselect span6"
+                            tabindex="-1" id="selCSI">
 
 
                         <option value="0">是</option>
@@ -146,7 +150,7 @@
 
 <script>
 
-    jQuery(document).ready(function() {
+    jQuery(document).ready(function () {
 
         App.init(); // initlayout and core plugins
 
@@ -169,44 +173,44 @@
     });
 
 
-
     function admin_add(title, url, w, h) {
         layer_show(title, url, w, h);
     }
 
 
-    function send(){
+    function send() {
 
 
-            $.ajax({
-                url: "{:url('index/user/add_admin_p2')}",
-                type: 'POST',
-                dataType: 'JSON',
-                data: {
-                    u_id: $('#uid').val(),
-                    type: $('#selCSI').val(),
-                    pass: $('#pass').val()
-                },
-                success: function (res) {
-                    if(res.code == 2) {
-                        layer.open({
-                            content: res.msg
-                            , skin: 'msg'
-                            , time: 1
-                        });
-                    } else if (res.code == 1) {
-                        layer.open({
-                            content: res.msg
-                            , skin: 'msg'
-                            , time: 1
-                        });
-                        setTimeout(function(){window.location.reload()},500);
-                    }
-                }, fail: function (res) {
-
+        $.ajax({
+            url: "{:url('index/user/add_admin_p2')}",
+            type: 'POST',
+            dataType: 'JSON',
+            data: {
+                u_id: $('#uid').val(),
+                type: $('#selCSI').val(),
+                pass: $('#pass').val()
+            },
+            success: function (res) {
+                if (res.code == 2) {
+                    layer.open({
+                        content: res.msg
+                        , skin: 'msg'
+                        , time: 1
+                    });
+                } else if (res.code == 1) {
+                    layer.open({
+                        content: res.msg
+                        , skin: 'msg'
+                        , time: 1
+                    });
+                    setTimeout(function () {
+                        window.location.reload()
+                    }, 500);
                 }
-            });
+            }, fail: function (res) {
 
+            }
+        });
 
 
     }

@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 
-<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" class="ie8 no-js"> <![endif]-->
 
-<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if IE 9]>
+<html lang="en" class="ie9 no-js"> <![endif]-->
 
-<!--[if !IE]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" class="no-js"> <!--<![endif]-->
 
 <!-- BEGIN HEAD -->
 
 <head>
 
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
 
     <title>会员管理</title>
 
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 
-    <meta content="" name="description" />
+    <meta content="" name="description"/>
 
-    <meta content="" name="author" />
+    <meta content="" name="author"/>
 
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
 
@@ -44,7 +47,7 @@
 
     <link href="__static__/media/css/jquery.gritter.css" rel="stylesheet" type="text/css"/>
 
-    <link href="__static__/media/css/daterangepicker.css" rel="stylesheet" type="text/css" />
+    <link href="__static__/media/css/daterangepicker.css" rel="stylesheet" type="text/css"/>
 
     <link href="__static__/media/css/fullcalendar.css" rel="stylesheet" type="text/css"/>
 
@@ -54,7 +57,7 @@
 
     <!-- END PAGE LEVEL STYLES -->
 
-    <link rel="shortcut icon" href="__static__/media/image/favicon.ico" />
+    <link rel="shortcut icon" href="__static__/media/image/favicon.ico"/>
 
 </head>
 
@@ -105,7 +108,9 @@
                 <td data-title="用户uid" class="numeric"><?php echo $vo['u_id']?></td>
                 <td data-title="筹备金额" class="numeric"><?php echo $vo['sg_money']?></td>
                 <td data-title="商品标题" class="numeric"><?php echo $vo['sh_title']?></td>
-                <td data-title="商品图片" class="numeric"><img src="<?php echo  '/vpay/public/static/uploads/'.$vo['sh_img']?>" style="width:100px;" alt=""/></td>
+                <td data-title="商品图片" class="numeric"><img
+                        src="<?php echo  '/vpay/public/static/uploads/'.$vo['sh_img']?>" style="width:100px;" alt=""/>
+                </td>
                 <td data-title="收货人" class="numeric"><?php echo $vo['s_name']?></td>
                 <td data-title="联系电话" class="numeric"><?php echo $vo['s_tel']?></td>
                 <td data-title="联系地址" class="numeric"><?php echo $vo['s_diqu']?><?php echo $vo['s_dizhi']?></td>
@@ -118,7 +123,8 @@
                 <td data-title="时间" class="numeric"><?php echo date('Y-m-d H:i:s', $vo['time']) ?></td>
                 <?php if($vo['type'] == 2){?>
                 <td data-title="操作" class="numeric">
-                    <button onclick="result_order(<?php echo $vo['sg_id']?>)" type="button" class="btn blue">确认发货</button>
+                    <button onclick="result_order(<?php echo $vo['sg_id']?>)" type="button" class="btn blue">确认发货
+                    </button>
                 </td>
                 <script>
                     $('#cao').show();
@@ -135,9 +141,6 @@
 </div>
 
 
-
-
-
 <script type="text/javascript" src="__static__/hui/lib/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="__static__/hui/lib/layer/2.4/layer.js"></script>
 <script type="text/javascript" src="__static__/hui/static/h-ui/js/H-ui.min.js"></script>
@@ -147,7 +150,7 @@
 
 <script>
 
-    jQuery(document).ready(function() {
+    jQuery(document).ready(function () {
 
         App.init(); // initlayout and core plugins
 
@@ -170,12 +173,11 @@
     });
 
 
-
     function admin_add(title, url, w, h) {
         layer_show(title, url, w, h);
     }
 
-    function result_order(sg_id){
+    function result_order(sg_id) {
 
         $.ajax({
             url: "{:url('index/user/result_order')}",
@@ -185,7 +187,7 @@
                 sg_id: sg_id
             },
             success: function (res) {
-                if(res.code == 2) {
+                if (res.code == 2) {
                     layer.open({
                         content: res.msg
                         , skin: 'msg'
@@ -197,7 +199,9 @@
                         , skin: 'msg'
                         , time: 1
                     });
-                    setTimeout(function(){window.location.reload()},500);
+                    setTimeout(function () {
+                        window.location.reload()
+                    }, 500);
                 }
             }, fail: function (res) {
 

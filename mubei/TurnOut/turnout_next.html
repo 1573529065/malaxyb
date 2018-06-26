@@ -4,15 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <link rel="stylesheet" href="libs/bootstrap-3.3.7/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="libs/bootstrap-3.3.7/dist/css/bootstrap.min.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/mui.min.css" />
-    <script type="text/javascript" src="../js/back_icon.js" ></script>
+    <link rel="stylesheet" href="../css/mui.min.css"/>
+    <script type="text/javascript" src="../js/back_icon.js"></script>
     <style>
         * {
             font-size: 14px;
             font-family: '微软雅黑';
         }
+
         .mui-toast-message {
             opacity: 0.6;
             color: #fff;
@@ -20,38 +21,44 @@
             height: 40px;
             margin: 80px 5px 250px 5px;
         }
-        a:hover{
+
+        a:hover {
             text-decoration: none;
         }
 
-        .t-bg{
+        .t-bg {
             width: 100%;
             height: 20%;
             background-color: #FFFFFF;
         }
-        .t-img{
+
+        .t-img {
             width: 25%;
             margin: auto;
             padding-top: 20px;
         }
 
-        .c-jin{
+        .c-jin {
             height: 25px;
         }
-        .c-check{
+
+        .c-check {
             height: 90px;
             background-color: white;
         }
-        .k-input{
+
+        .k-input {
             float: right;
             margin-top: -55px;
-            margin-left:30%;
+            margin-left: 30%;
         }
-        input[type=text]{
+
+        input[type=text] {
             border: none;
-            border-bottom: 1px solid rgba(0,0,0,.2);
+            border-bottom: 1px solid rgba(0, 0, 0, .2);
         }
-        .box{
+
+        .box {
             margin-top: 60px;
         }
     </style>
@@ -61,7 +68,9 @@
 <header class="mui-bar mui-bar-nav" style="background-color: #fec900;">
     <i class="mui-icon mui-icon-left-nav mui-pull-left" onclick="back()"></i>
     <h1 class="mui-title">转出</h1>
-    <button class="mui-btn mui-btn-blue mui-btn-link mui-pull-right" style="color: #000000;font-size: 14px;" onclick="window.location.href='turn_recode.html'; ">转出记录</button>
+    <button class="mui-btn mui-btn-blue mui-btn-link mui-pull-right" style="color: #000000;font-size: 14px;"
+            onclick="window.location.href='turn_recode.html'; ">转出记录
+    </button>
 </header>
 
 <div class="mui-content" id="turn_first">
@@ -74,9 +83,15 @@
 
     <div class="mui-content-padded">
         <button id='next' type="button" class="mui-btn mui-btn-warning mui-btn-block">下一步</button>
-        <button type="button" class="mui-btn mui-btn-warning mui-btn-block " onclick="window.location.href='change_lt.html';">兑换流通</button>
-        <button type="button" class="mui-btn mui-btn-warning mui-btn-block " onclick="window.location.href='change_zichan.html';">兑换资产</button>
-        <button type="button" class="mui-btn mui-btn-warning mui-btn-block " onclick="window.location.href='lt_change_zc.html';">流通兑换资产</button>
+        <button type="button" class="mui-btn mui-btn-warning mui-btn-block "
+                onclick="window.location.href='change_lt.html';">兑换流通
+        </button>
+        <button type="button" class="mui-btn mui-btn-warning mui-btn-block "
+                onclick="window.location.href='change_zichan.html';">兑换资产
+        </button>
+        <button type="button" class="mui-btn mui-btn-warning mui-btn-block "
+                onclick="window.location.href='lt_change_zc.html';">流通兑换资产
+        </button>
     </div>
 
 </div>
@@ -87,7 +102,8 @@
         <div class="t-img">
             <div style="height: 80px;">
                 <div style="width: 100%;height: 100%;border-radius: 100%;">
-                    <img src="../images/shouye/touxiang.jpg" alt="" style="width: 100%;height: 100%;border-radius: 100%;" id="image" />
+                    <img src="../images/shouye/touxiang.jpg" alt=""
+                         style="width: 100%;height: 100%;border-radius: 100%;" id="image"/>
                 </div>
             </div>
             <p>那时<span>(134540)</span></p>
@@ -97,12 +113,12 @@
     <form class="mui-input-group" id="test">
         <div class="mui-input-row mui-checkbox mui-left">
             <label>转出余额</label>
-            <input name="checkbox" value="1" type="checkbox" >
+            <input name="checkbox" value="1" type="checkbox">
 
         </div>
         <div class="mui-input-row mui-checkbox mui-left">
             <label>转出资产</label>
-            <input name="checkbox" value="2" type="checkbox" >
+            <input name="checkbox" value="2" type="checkbox">
         </div>
     </form>
     <form class="mui-input-group">
@@ -119,7 +135,9 @@
         </div>
     </div>
     <div class="mui-content-padded">
-        <button type="button" class="mui-btn mui-btn-warning mui-btn-block" style="font-size: 16px;" id="turn_out">确认转出</button>
+        <button type="button" class="mui-btn mui-btn-warning mui-btn-block" style="font-size: 16px;" id="turn_out">
+            确认转出
+        </button>
     </div>
     <!--支付键盘-->
     <div class="ftc_wzsf">
@@ -128,9 +146,15 @@
                 <img src="../images/xx_03.jpg" class="tx close fl">
                 <span class="fl">请输入支付密码</span></div>
             <div class="zfmmxx_shop">
-                <div class="zhifu_price">￥<span id="need"></span></div></div>
+                <div class="zhifu_price">￥<span id="need"></span></div>
+            </div>
             <ul class="mm_box">
-                <li></li><li></li><li></li><li></li><li></li><li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
             </ul>
         </div>
         <div class="numb_box">
@@ -156,9 +180,9 @@
 
 </div>
 </body>
-<script type="text/javascript" src="../js/jquery.min.js" ></script>
-<script type="text/javascript" src="../js/url.js" ></script>
-<script type="text/javascript" src="../js/common.js" ></script>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/url.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
 <script type="text/javascript" src="../js/mui.min.js"></script>
 <script>
     //mui初始化
@@ -166,64 +190,64 @@
         swipeBack: true //启用右滑关闭功能
     });
 
-    document.getElementById("next").addEventListener('tap', function() {
+    document.getElementById("next").addEventListener('tap', function () {
 //			 	mui.alert($("#tel").val());
         $.ajax({
-            url: j_url+"/turn/turn_out_first",
+            url: j_url + "/turn/turn_out_first",
             type: 'POST',
             dataType: 'jsonp',
             data: {
-                u_id:localStorage.lastname,
-                user_phone:$("#tel").val()
+                u_id: localStorage.lastname,
+                user_phone: $("#tel").val()
             },
             crossDomain: true,
-            success: function(res) {
+            success: function (res) {
                 console.log(res);
-                if(res.code == 2) {
+                if (res.code == 2) {
                     mui.alert(res.msg);
-                } else if(res.code == 1) {
+                } else if (res.code == 1) {
                     $("#turn_first").hide();
                     $("#turn_second").show();
                 }
             },
-            fail: function(res) {
+            fail: function (res) {
 
             }
         });
     });
     /*支付*/
-    $(function(){
+    $(function () {
         //出现浮动层
-        $("#turn_out").click(function(){
+        $("#turn_out").click(function () {
             $('#need').html($("#money").val());
             $(".ftc_wzsf").show();
         });
         //关闭浮动
-        $(".close").click(function(){
+        $(".close").click(function () {
             $(".ftc_wzsf").hide();
             $(".mm_box li").removeClass("mmdd");
-            $(".mm_box li").attr("data","");
+            $(".mm_box li").attr("data", "");
             i = 0;
         });
         //数字显示隐藏
-        $(".xiaq_tb").click(function(){
+        $(".xiaq_tb").click(function () {
             $(".numb_box").slideUp(500);
         });
-        $(".mm_box").click(function(){
+        $(".mm_box").click(function () {
             $(".numb_box").slideDown(500);
         });
         //----
         var i = 0;
-        $(".nub_ggg li .zf_num").click(function(){
+        $(".nub_ggg li .zf_num").click(function () {
 
-            if(i<6){
+            if (i < 6) {
                 $(".mm_box li").eq(i).addClass("mmdd");
-                $(".mm_box li").eq(i).attr("data",$(this).text());
+                $(".mm_box li").eq(i).attr("data", $(this).text());
                 i++
-                if (i==6) {
-                    setTimeout(function(){
+                if (i == 6) {
+                    setTimeout(function () {
                         var data = "";
-                        $(".mm_box li").each(function(){
+                        $(".mm_box li").each(function () {
                             data += $(this).attr("data");
                         });
 
@@ -262,23 +286,24 @@
 //
 
 
-                        alert("支付成功"+data);
-                    },100);
-                };
+                        alert("支付成功" + data);
+                    }, 100);
+                }
+                ;
             }
         });
 
-        $(".nub_ggg li .zf_del").click(function(){
-            if(i>0){
+        $(".nub_ggg li .zf_del").click(function () {
+            if (i > 0) {
                 i--;
                 $(".mm_box li").eq(i).removeClass("mmdd");
-                $(".mm_box li").eq(i).attr("data","");
+                $(".mm_box li").eq(i).attr("data", "");
             }
         });
 
-        $(".nub_ggg li .zf_empty").click(function(){
+        $(".nub_ggg li .zf_empty").click(function () {
             $(".mm_box li").removeClass("mmdd");
-            $(".mm_box li").attr("data","");
+            $(".mm_box li").attr("data", "");
             i = 0;
         });
 

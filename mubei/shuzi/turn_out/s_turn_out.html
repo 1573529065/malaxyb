@@ -1,66 +1,70 @@
 <!doctype html>
 <html>
 
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<link href="../../css/mui.min.css" rel="stylesheet" />
-		<style>
-			* {
-				font-size: 14px;
-				font-family: '微软雅黑';
-			}
-			
-			.mui-input-row label {
-				line-height: 1.1;
-				float: left;
-				width: 20%;
-				padding: 10px 5px;
-			}
-			
-			.mui-input-row label~input {
-				float: left;
-				width: 75%;
-				margin-bottom: 0;
-				padding-left: 0;
-				border: 0;
-				/*padding-right: 20px;*/
-			}
-		</style>
-	</head>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link href="../../css/mui.min.css" rel="stylesheet"/>
+    <style>
+        * {
+            font-size: 14px;
+            font-family: '微软雅黑';
+        }
 
-	<body>
-		<header class="mui-bar mui-bar-nav" style="background-color: #46adfc;color: white;">
-			<i class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></i>
-			<h1 class="mui-title" style="color: white;">转出</h1>
-			<button class="mui-btn mui-btn-blue mui-btn-link mui-pull-right" style="color: white;font-size: 14px;" onclick="window.location.href='recode.html'; ">记录</button>
-		</header>
+        .mui-input-row label {
+            line-height: 1.1;
+            float: left;
+            width: 20%;
+            padding: 10px 5px;
+        }
 
-		<div class="mui-content">
-			<form class="mui-input-group">
-				<div class="mui-input-row">
-					<label>HPAY</label>
-					<input type="text" placeholder="请输入转出数量(如有小数保留2位)">
-				</div>
-				<div class="mui-input-row">
-					<label>转出地址</label>
-					<input type="text" placeholder="手机/UID/钱包地址">
-				</div>
-			</form>
+        .mui-input-row label ~ input {
+            float: left;
+            width: 75%;
+            margin-bottom: 0;
+            padding-left: 0;
+            border: 0;
+            /*padding-right: 20px;*/
+        }
+    </style>
+</head>
 
-			<div class="mui-content-padded">
+<body>
+<header class="mui-bar mui-bar-nav" style="background-color: #46adfc;color: white;">
+    <i class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></i>
+    <h1 class="mui-title" style="color: white;">转出</h1>
+    <button class="mui-btn mui-btn-blue mui-btn-link mui-pull-right" style="color: white;font-size: 14px;"
+            onclick="window.location.href='recode.html'; ">记录
+    </button>
+</header>
 
-				<button type="button" class="mui-btn mui-btn-primary mui-btn-block" onclick="window.location.href='#'; ">确定</button>
+<div class="mui-content">
+    <form class="mui-input-group">
+        <div class="mui-input-row">
+            <label>HPAY</label>
+            <input type="text" placeholder="请输入转出数量(如有小数保留2位)">
+        </div>
+        <div class="mui-input-row">
+            <label>转出地址</label>
+            <input type="text" placeholder="手机/UID/钱包地址">
+        </div>
+    </form>
 
-			</div>
+    <div class="mui-content-padded">
 
-		</div>
+        <button type="button" class="mui-btn mui-btn-primary mui-btn-block" onclick="window.location.href='#'; ">确定
+        </button>
 
-		<script src="../../js/mui.min.js"></script>
-		<script type="text/javascript">
-			mui.init()
-		</script>
-	</body>
+    </div>
+
+</div>
+
+<script src="../../js/mui.min.js"></script>
+<script type="text/javascript">
+    mui.init()
+</script>
+</body>
 
 </html>

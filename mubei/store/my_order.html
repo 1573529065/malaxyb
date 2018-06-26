@@ -1,197 +1,196 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="Keywords" content="">
-		<meta name="Description" content="">
-		<meta name="format-detection" content="telephone=no">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimum-scale=1.0">
-		<link rel="stylesheet" href="css/reset.css">
-		<link rel="stylesheet" href="css/index.css">
-		<link rel="stylesheet" href="../css/mui.min.css" />
-		<link rel="stylesheet" href="css/mui.picker.css" />
-		<link rel="stylesheet" href="css/mui.poppicker.css" />
-		<title>My_order</title>
-	</head>
-	<body>
-		<div id="wrapper" class="m_pwd">
-			<!--<h2 class="int_title clearfix"><span class="int_pic"><img src="images/jifen/left.png"/></span>积分商城</h2>-->
-			<div class="int_title">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimum-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="../css/mui.min.css"/>
+    <link rel="stylesheet" href="css/mui.picker.css"/>
+    <link rel="stylesheet" href="css/mui.poppicker.css"/>
+    <title>My_order</title>
+</head>
+<body>
+<div id="wrapper" class="m_pwd">
+    <!--<h2 class="int_title clearfix"><span class="int_pic"><img src="images/jifen/left.png"/></span>积分商城</h2>-->
+    <div class="int_title">
 			    <span class="int_pic">
 			        <!--<a href="My_info.html"><img src="images/jifen/left.png"/></a>-->
 			    </span>我的订单
-			</div>
-			<!--banner start-->	
-			
-				<!-- <main>
-					<div class="best_Sellers order_top best_top  clearfix">
-						<h3 class="best_title"><p>为您推荐<span class="sprite-icon"></span></p></h3>
-						<ul>
-							<li class="border_right">
-								<img src="images/jifen/sp.png" />
-								<span>迷你智能电饭煲HYFG-1016</span>
-								<span class="int_color">86.0积分</span>
-							</li>
-							<li>
-								<img src="images/jifen/sp.png" />
-								<span>迷你智能电饭煲HYFG-1016</span>
-								<span class="int_color">86.0积分</span>
-							</li>
-							<li class="border_right">
-								<img src="images/jifen/sp.png" />
-								<span>迷你智能电饭煲HYFG-1016</span>
-								<span class="int_color">86.0积分</span>
-							</li>
-							<li>
-								<img src="images/jifen/sp.png" />
-								<span>迷你智能电饭煲HYFG-1016</span>
-								<span class="int_color">86.0积分</span>
-							</li>
-							<li class="border_right">
-								<img src="images/jifen/sp.png" />
-								<span>迷你智能电饭煲HYFG-1016</span>
-								<span class="int_color">86.0积分</span>
-							</li>
-							<li>
-								<img src="images/jifen/sp.png" />
-								<span>迷你智能电饭煲HYFG-1016</span>
-								<span class="int_color">86.0积分</span>
-							</li>
-							<li class="border_right">
-								<img src="images/jifen/sp.png" />
-								<span>迷你智能电饭煲HYFG-1016</span>
-								<span class="int_color">86.0积分</span>
-							</li>
-							<li>
-								<img src="images/jifen/sp.png" />
-								<span>迷你智能电饭煲HYFG-1016</span>
-								<span class="int_color">86.0积分</span>
-							</li>
-						</ul>
-					</div>
-					<p class="notice">没有更多商品了！</p>
-				</main> -->
-				<!--menu  start-->
-			</div>
-			<!--menu  end-->
-			<div id="back_top">
-				<a href="#"><img src="images/xqq/the_top.png" /></a>
-			</div>
-			
-			<script type="text/javascript" src="js/rem.js" ></script>
-			<script type="text/javascript" src="js/pay_success.js" ></script>
-			<script type="text/javascript" src="../js/jquery.min.js"></script>
-			<script type="text/javascript" src="../js/mui.min.js"></script>
-			<script type="text/javascript" src="js/mui.picker.min.js"></script>
-			<script type="text/javascript" src="js/mui.poppicker.js"></script>
-			<script type="text/javascript" src="./../js/url.js"></script>
-			<script>
-				$(function(){
-					mui.init();
-					u_id = localStorage.lastname;
-					//alert(localStorage);
-					$.ajax({
-								type: "post",
-								url: p_url+'getOrderInfo',
-								async: true,
-								dataType: "jsonp",
-								crossDomain: true,
-								data: {
-									u_id:u_id
-									
-								},
-								success: function(res) {
-									console.log(res);
-									option= '';
-									if(res.code == 0){
-										$('#wrapper').append('<p>暂无数据</p>');
-									}else{
-										for(i in res.data){
-										option += '<div class="order">'
-										option +=				'<p class="o_txt clearfix">'
-										option +=					'编号 :'+ res.data[i].order_sn 
-										option +=					'<span class="fr">'+res.data[i].status+'</span>'
-										option +=				'</p>'
-										option +=				'<dl class="order_box topline clearfix">'
-										option +=					'<dt class="order_pic fl">'
-										option +=						'<img src="'+i_url+res.data[i].goods_img+'" />'
-										option +=					'</dt>'
-										option +=					'<dd class="order_txt fr">'
-										option +=						'<p class="order_con">'+res.data[i].goods_name+'</p>'
-										option +=						'<span class="order_line">规格：'+res.data[i].standard+'</span>'
-										option +=						'<p class="order_number clearfix">'+res.data[i].price+'<span class="order_add fr">x'+res.data[i].num+'</span></p>'
-										option +=					'</dd>'
-										option +=				'</dl>'
-										option +=				'<div class="order_btn topline clearfix">'
-										option +=					'<p >'
-										option +=						'<span style="float:left">'+timestampToTime(res.data[i].add_time)+'</span>&nbsp;&nbsp;&nbsp;'
-										option +=						'<span>共'+res.data[i].total_price+'</span>'
-										if(res.data[i].status == '已发货'){
-											option +=						'<a href="javascript:confirm('+res.data[i].order_id+')" class="p_money order_border  fr">确认收货</a>'
-										}
-										if(res.data[i].status == '已付款'){
-											option +=						'<span  class="p_money order_border  fr">待发货</span>'
-										}
-										
-										option +=					'</p>'
-										option +=				'</div>'
-										option +=			'</div>';
-										}
-										//console.log(option);
-										$('#wrapper').append(option);
-									
-									
-									
+    </div>
+    <!--banner start-->
 
-									}
-									}
-									
-								});
-							
-				})
-				function timestampToTime(timestamp){
-			        var date = new Date(timestamp * 1000);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
-			        Y = date.getFullYear() + '-';
-			        M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
-			        D = date.getDate() + ' ';
-			        h = date.getHours() + ':';
-			        m = date.getMinutes() + ':';
-			        s = date.getSeconds();
-			        return Y+M+D+h+m+s;
-			    }
-				function confirm(order_id){
-					//alert(1);
-					 mui.confirm('是否确认收货',function(e){
-						if (e.index == 1) {
-                        	$.ajax({
-								type: "post",
-								url: p_url+'confirmOrder',
-								async: true,
-								dataType: "jsonp",
-								crossDomain: true,
-								data: {
-									u_id:u_id,
-									order_id:order_id
-									
-								},
-								success: function(res) {
-									mui.toast(res.msg);
-									if(res.code == 1){
-										setInterval('window.location.reload()',1000);
-									}
-								}
-								});
-	                    } else {
-	                        
-	                    }
-					});
-					//alert(a);
-					/*if(mui.confirm('是否确认收货')){
-						
-					}*/
-				}
-			</script>
-	</body>
+    <!-- <main>
+        <div class="best_Sellers order_top best_top  clearfix">
+            <h3 class="best_title"><p>为您推荐<span class="sprite-icon"></span></p></h3>
+            <ul>
+                <li class="border_right">
+                    <img src="images/jifen/sp.png" />
+                    <span>迷你智能电饭煲HYFG-1016</span>
+                    <span class="int_color">86.0积分</span>
+                </li>
+                <li>
+                    <img src="images/jifen/sp.png" />
+                    <span>迷你智能电饭煲HYFG-1016</span>
+                    <span class="int_color">86.0积分</span>
+                </li>
+                <li class="border_right">
+                    <img src="images/jifen/sp.png" />
+                    <span>迷你智能电饭煲HYFG-1016</span>
+                    <span class="int_color">86.0积分</span>
+                </li>
+                <li>
+                    <img src="images/jifen/sp.png" />
+                    <span>迷你智能电饭煲HYFG-1016</span>
+                    <span class="int_color">86.0积分</span>
+                </li>
+                <li class="border_right">
+                    <img src="images/jifen/sp.png" />
+                    <span>迷你智能电饭煲HYFG-1016</span>
+                    <span class="int_color">86.0积分</span>
+                </li>
+                <li>
+                    <img src="images/jifen/sp.png" />
+                    <span>迷你智能电饭煲HYFG-1016</span>
+                    <span class="int_color">86.0积分</span>
+                </li>
+                <li class="border_right">
+                    <img src="images/jifen/sp.png" />
+                    <span>迷你智能电饭煲HYFG-1016</span>
+                    <span class="int_color">86.0积分</span>
+                </li>
+                <li>
+                    <img src="images/jifen/sp.png" />
+                    <span>迷你智能电饭煲HYFG-1016</span>
+                    <span class="int_color">86.0积分</span>
+                </li>
+            </ul>
+        </div>
+        <p class="notice">没有更多商品了！</p>
+    </main> -->
+    <!--menu  start-->
+</div>
+<!--menu  end-->
+<div id="back_top">
+    <a href="#"><img src="images/xqq/the_top.png"/></a>
+</div>
+
+<script type="text/javascript" src="js/rem.js"></script>
+<script type="text/javascript" src="js/pay_success.js"></script>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/mui.min.js"></script>
+<script type="text/javascript" src="js/mui.picker.min.js"></script>
+<script type="text/javascript" src="js/mui.poppicker.js"></script>
+<script type="text/javascript" src="./../js/url.js"></script>
+<script>
+    $(function () {
+        mui.init();
+        u_id = localStorage.lastname;
+        //alert(localStorage);
+        $.ajax({
+            type: "post",
+            url: p_url + 'getOrderInfo',
+            async: true,
+            dataType: "jsonp",
+            crossDomain: true,
+            data: {
+                u_id: u_id
+
+            },
+            success: function (res) {
+                console.log(res);
+                option = '';
+                if (res.code == 0) {
+                    $('#wrapper').append('<p>暂无数据</p>');
+                } else {
+                    for (i in res.data) {
+                        option += '<div class="order">'
+                        option += '<p class="o_txt clearfix">'
+                        option += '编号 :' + res.data[i].order_sn
+                        option += '<span class="fr">' + res.data[i].status + '</span>'
+                        option += '</p>'
+                        option += '<dl class="order_box topline clearfix">'
+                        option += '<dt class="order_pic fl">'
+                        option += '<img src="' + i_url + res.data[i].goods_img + '" />'
+                        option += '</dt>'
+                        option += '<dd class="order_txt fr">'
+                        option += '<p class="order_con">' + res.data[i].goods_name + '</p>'
+                        option += '<span class="order_line">规格：' + res.data[i].standard + '</span>'
+                        option += '<p class="order_number clearfix">' + res.data[i].price + '<span class="order_add fr">x' + res.data[i].num + '</span></p>'
+                        option += '</dd>'
+                        option += '</dl>'
+                        option += '<div class="order_btn topline clearfix">'
+                        option += '<p >'
+                        option += '<span style="float:left">' + timestampToTime(res.data[i].add_time) + '</span>&nbsp;&nbsp;&nbsp;'
+                        option += '<span>共' + res.data[i].total_price + '</span>'
+                        if (res.data[i].status == '已发货') {
+                            option += '<a href="javascript:confirm(' + res.data[i].order_id + ')" class="p_money order_border  fr">确认收货</a>'
+                        }
+                        if (res.data[i].status == '已付款') {
+                            option += '<span  class="p_money order_border  fr">待发货</span>'
+                        }
+
+                        option += '</p>'
+                        option += '</div>'
+                        option += '</div>';
+                    }
+                    //console.log(option);
+                    $('#wrapper').append(option);
+
+
+                }
+            }
+
+        });
+
+    })
+    function timestampToTime(timestamp) {
+        var date = new Date(timestamp * 1000);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+        Y = date.getFullYear() + '-';
+        M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+        D = date.getDate() + ' ';
+        h = date.getHours() + ':';
+        m = date.getMinutes() + ':';
+        s = date.getSeconds();
+        return Y + M + D + h + m + s;
+    }
+    function confirm(order_id) {
+        //alert(1);
+        mui.confirm('是否确认收货', function (e) {
+            if (e.index == 1) {
+                $.ajax({
+                    type: "post",
+                    url: p_url + 'confirmOrder',
+                    async: true,
+                    dataType: "jsonp",
+                    crossDomain: true,
+                    data: {
+                        u_id: u_id,
+                        order_id: order_id
+
+                    },
+                    success: function (res) {
+                        mui.toast(res.msg);
+                        if (res.code == 1) {
+                            setInterval('window.location.reload()', 1000);
+                        }
+                    }
+                });
+            } else {
+
+            }
+        });
+        //alert(a);
+        /*if(mui.confirm('是否确认收货')){
+
+         }*/
+    }
+</script>
+</body>
 </html>

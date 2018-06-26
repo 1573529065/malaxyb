@@ -1,97 +1,98 @@
 <!DOCTYPE html>
 <html>
 
-	<head>
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<meta charset="UTF-8">
-		<title></title>
-		<!--<link rel="stylesheet" href="../css/bootstrap.min.css" />-->
-		<link rel="stylesheet" href="../css/mui.min.css" />
-		<link rel="stylesheet" href="css/common.css" />
-	</head>
+<head>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta charset="UTF-8">
+    <title></title>
+    <!--<link rel="stylesheet" href="../css/bootstrap.min.css" />-->
+    <link rel="stylesheet" href="../css/mui.min.css"/>
+    <link rel="stylesheet" href="css/common.css"/>
+</head>
 
-	<body>
-		<div id="vm">
-			<header class="mui-bar mui-bar-nav">
-				<!--<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" onclick="history.go(-1)"></a>-->
-				<h1 class="mui-title">所有订单</h1>
-			</header>
-			<div class="mui-content">
-				<!--<div class="underHead">
-					<span class="mlabel">全部</span>
-				</div>-->
+<body>
+<div id="vm">
+    <header class="mui-bar mui-bar-nav">
+        <!--<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" onclick="history.go(-1)"></a>-->
+        <h1 class="mui-title">所有订单</h1>
+    </header>
+    <div class="mui-content">
+        <!--<div class="underHead">
+            <span class="mlabel">全部</span>
+        </div>-->
 
-				<div class="order_item" v-for="(item,index) in list">
-					<div class="mui-row inside relative">
-						<div class="mui-col-xs-3">
-							<img :src="i_url+item.goods_img" class="img-responsive img" />
-						</div>
-						<div class="mui-col-xs-7 pd_5">
-							<div class="title">
-								{{item.goods_name}}
-							</div>
-							<div class="sub_title">
-								分类：{{item.classify_name}}
-							</div>
-						</div>
-						<div class="mui-col-xs-2 pd_5 " style="position: initial;">
-							<div class="money">$&nbsp;{{item.price}}</div>
-							<div class="bottom_5 f_gray count">×&nbsp;{{item.num}}</div>
-						</div>
-					</div>
-					<div class="bar2">
-						<span class="state">{{item.status}}</span>
-						<span class="right">共{{item.num}}件商品 合计：{{item.total_price}}</span>
-					</div>
-					<!--<div class="bar3 relative">-->
-						<!--<a class="item right">查看详情</a>-->
+        <div class="order_item" v-for="(item,index) in list">
+            <div class="mui-row inside relative">
+                <div class="mui-col-xs-3">
+                    <img :src="i_url+item.goods_img" class="img-responsive img"/>
+                </div>
+                <div class="mui-col-xs-7 pd_5">
+                    <div class="title">
+                        {{item.goods_name}}
+                    </div>
+                    <div class="sub_title">
+                        分类：{{item.classify_name}}
+                    </div>
+                </div>
+                <div class="mui-col-xs-2 pd_5 " style="position: initial;">
+                    <div class="money">$&nbsp;{{item.price}}</div>
+                    <div class="bottom_5 f_gray count">×&nbsp;{{item.num}}</div>
+                </div>
+            </div>
+            <div class="bar2">
+                <span class="state">{{item.status}}</span>
+                <span class="right">共{{item.num}}件商品 合计：{{item.total_price}}</span>
+            </div>
+            <!--<div class="bar3 relative">-->
+            <!--<a class="item right">查看详情</a>-->
 
-						<!--占位-->
-						<!--<a>&nbsp;</a>-->
-					<!--</div>-->
-				</div>
-			</div>
-		</div>
+            <!--占位-->
+            <!--<a>&nbsp;</a>-->
+            <!--</div>-->
+        </div>
+    </div>
+</div>
 
-		<script type="text/javascript" src="js/vue.min.js"></script>
-		<script type="text/javascript" src="../js/jquery.js"></script>
-		<script type="text/javascript" src="../js/url.js"></script>
-		<script type="text/javascript" src="js/common.js"></script>
-		<script>
-			var vm = new Vue({
-				el: '#vm',
-				data: {
-					list: []
-				},
-				methods: {
-					initList: function() {
-						var that = this
-						$.ajax({
-							type: "post",
-							url: p_url + "getOrderInfo",
-							async: true,
-							dataType: "jsonp",
-							crossDomain: true,
-							data: {
-								u_id: u_id
-							},
-							success: function(res) {
-								console.log(res, 'list')
-								if(res.code == 1) {
-									that.list = res.data
-								} else {
+<script type="text/javascript" src="js/vue.min.js"></script>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/url.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#vm',
+        data: {
+            list: []
+        },
+        methods: {
+            initList: function () {
+                var that = this
+                $.ajax({
+                    type: "post",
+                    url: p_url + "getOrderInfo",
+                    async: true,
+                    dataType: "jsonp",
+                    crossDomain: true,
+                    data: {
+                        u_id: u_id
+                    },
+                    success: function (res) {
+                        console.log(res, 'list')
+                        if (res.code == 1) {
+                            that.list = res.data
+                        } else {
 
-								}
+                        }
 
-							}
-						});
-					}
-				},
-				mounted: function() {
-					this.initList()
-				}
-			})
-		</script>
-	</body>
+                    }
+                });
+            }
+        },
+        mounted: function () {
+            this.initList()
+        }
+    })
+</script>
+</body>
 
 </html>

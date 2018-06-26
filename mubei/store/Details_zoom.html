@@ -1,203 +1,198 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="UTF-8">
-		<meta name="Keywords" content="">
-		<meta name="Description" content="">
-		<meta name="format-detection" content="telephone=no">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		<meta name="viewport" content="width=device-width,
+<head>
+    <meta charset="UTF-8">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width,
 		initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimum-scale=1.0">
-		<link rel="stylesheet" href="css/reset.css">
-		<link rel="stylesheet" href="css/index.css">
-		<link rel="stylesheet" href="css/zoomify.min.css" />
-		<link rel="stylesheet" href="../css/mui.min.css" />
-		<link rel="stylesheet" href="css/swiper-4.2.2.min.css" />
-		<title>Details_zoom</title>
-		<style>
-			.mui-title {
-				font-size: 0.8rem;
-			}
-			
-			input[type=text] {
-				margin-bottom: 0;
-			}
-			
-			input[type=button] {
-				padding: 0;
-			}
-		</style>
-	</head>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/zoomify.min.css"/>
+    <link rel="stylesheet" href="../css/mui.min.css"/>
+    <link rel="stylesheet" href="css/swiper-4.2.2.min.css"/>
+    <title>Details_zoom</title>
+    <style>
+        .mui-title {
+            font-size: 0.8rem;
+        }
 
-	<body>
-		<div id="vm" v-cloak>
-			<div id="wrapper">
-				<header class="mui-bar mui-bar-nav">
-					<!--<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" onclick="history.go(-1)"></a>-->
-					<h1 class="mui-title">商品详情</h1>
-				</header>
-				<div style="height: 41px;"></div>
-				<div class="video details_back">
-					<div class="swiper-container">
-						<div class="swiper-wrapper">
-							<div class="swiper-slide" v-for="(item,index) in info.nav_img">
-								<img :src="i_url+item.path" />
-							</div>
-						</div>
-						<!-- Add Pagination -->
-						<div class="swiper-pagination"></div>
-					</div>
-					
-					<div class="deta_pic topline">
-						<!--<p class="deta_box"><img src="http://mubei8.com/mall/public/uploads/20180528/9e95ce34f8f229c9675c376d251cc2e4.jpg" /></p>-->
-						<!--<p class="deta_con" v-text="info.goods_name">北美电器（ACA）面包机全自动家用 彩钢全新升级款AB-DCN03</p>-->
-						<p class="deta_con" v-text="info.goods_name"></p>
-						<p class="deta_con deta_line"style="float:right">{{info.shop_name}} &nbsp;</p>
-						<p class="deta_con deta_line">{{info.price}} &nbsp;余额</p>
-						<span class="deta_con_right">销量:{{info.sales_num}}</span>
-						<div class="deta_con topline deta_height clearfix">
-							<span class="deta_display fl">数量：</span>
-							<div class="deta_padding">
-								<p class="supp_c_inpt perfor_input deta_top fl">
-								    <input type="button" value="-" id="plus" @click="sub" />
-								    <input type="text" id="txt" value="1" v-model="count" readonly="readonly" />
-								    <input type="button" value="+" id="reduce" @click="add" />
-								</p>
-							</div>
-						</div>
-					</div>
-					<div class="perform topline">
-						<div class="fill_name clearfix topline">
-							<ul>
-								<li class="fill fl name_color">详情</li>
-								<li class="addr_name fill fr">规格</li>
-							</ul>
-						</div>
-						<div class="name_perf details_padding">
-							<div class="name_box detail_width_con">
-								<!--<span class="detail_main"></span>-->
-								<span class="detail_main" id="xiangqing"></span>
+        input[type=text] {
+            margin-bottom: 0;
+        }
 
-							
-							</div>
-							<div class="name_box detail_width_con">
-								<!--<span class="detail_main">{{info.standard}}</span>-->
-								<span class="detail_main" id="guige"></span>
+        input[type=button] {
+            padding: 0;
+        }
+    </style>
+</head>
 
-								<span class="detail_main">配送时间：我们会在您下单后的2-3个工作日内日发货</span>
-							</div>
-						</div>
-					</div>
+<body>
+<div id="vm" v-cloak>
+    <div id="wrapper">
+        <header class="mui-bar mui-bar-nav">
+            <!--<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" onclick="history.go(-1)"></a>-->
+            <h1 class="mui-title">商品详情</h1>
+        </header>
+        <div style="height: 41px;"></div>
+        <div class="video details_back">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" v-for="(item,index) in info.nav_img">
+                        <img :src="i_url+item.path"/>
+                    </div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
 
-				</div>
-			</div>
-			<div id="menu" class="detail_nav_main topline">
-				<ul class="m_nav clearfix">
-					<a href="index.html">
-						<li class="m_nav_1">
+            <div class="deta_pic topline">
+                <!--<p class="deta_box"><img src="http://mubei8.com/mall/public/uploads/20180528/9e95ce34f8f229c9675c376d251cc2e4.jpg" /></p>-->
+                <!--<p class="deta_con" v-text="info.goods_name">北美电器（ACA）面包机全自动家用 彩钢全新升级款AB-DCN03</p>-->
+                <p class="deta_con" v-text="info.goods_name"></p>
+                <p class="deta_con deta_line" style="float:right">{{info.shop_name}} &nbsp;</p>
+                <p class="deta_con deta_line">{{info.price}} &nbsp;余额</p>
+                <span class="deta_con_right">销量:{{info.sales_num}}</span>
+                <div class="deta_con topline deta_height clearfix">
+                    <span class="deta_display fl">数量：</span>
+                    <div class="deta_padding">
+                        <p class="supp_c_inpt perfor_input deta_top fl">
+                            <input type="button" value="-" id="plus" @click="sub"/>
+                            <input type="text" id="txt" value="1" v-model="count" readonly="readonly"/>
+                            <input type="button" value="+" id="reduce" @click="add"/>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="perform topline">
+                <div class="fill_name clearfix topline">
+                    <ul>
+                        <li class="fill fl name_color">详情</li>
+                        <li class="addr_name fill fr">规格</li>
+                    </ul>
+                </div>
+                <div class="name_perf details_padding">
+                    <div class="name_box detail_width_con">
+                        <span class="detail_main">{{info.content}}</span>
+
+
+                    </div>
+                    <div class="name_box detail_width_con">
+                        <span class="detail_main">{{info.standard}}</span>
+
+                        <span class="detail_main">配送时间：我们会在您下单后的2-3个工作日内日发货</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="menu" class="detail_nav_main topline">
+        <ul class="m_nav clearfix">
+            <a href="index.html">
+                <li class="m_nav_1">
 							<span class="m_nav_pic_main">
-							<img src="images/xqq/nav_icon.png" />
+							<img src="images/xqq/nav_icon.png"/>
 							</span>
-						</li>
-					</a>
-					<!-- <a href="Shopping_Cart.html"><li class="m_nav_2">加入购物车</li></a> -->
-					<a :href="'Fill_order.html?g_id='+g_id+'&count='+count">
-						<li class="m_nav_2 m_nav_fr ">立即购买</li>
-					</a>
-				</ul>
-			</div>
-			<div id="back_top">
-				<a href="#"><img src="images/xqq/the_top.png" /></a>
-			</div>
+                </li>
+            </a>
+            <!-- <a href="Shopping_Cart.html"><li class="m_nav_2">加入购物车</li></a> -->
+            <a :href="'Fill_order.html?g_id='+g_id+'&count='+count">
+                <li class="m_nav_2 m_nav_fr ">立即购买</li>
+            </a>
+        </ul>
+    </div>
+    <div id="back_top">
+        <a href="#"><img src="images/xqq/the_top.png"/></a>
+    </div>
 
-			<!--<img :src="i_url+item.path" v-for="(item,index) in info.nav_img" class="showImgs"/>-->
-		</div>
+    <!--<img :src="i_url+item.path" v-for="(item,index) in info.nav_img" class="showImgs"/>-->
+</div>
 
-		<script type="text/javascript" src="js/rem.js"></script>
-		<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
-		<script type="text/javascript" src="js/fill_name.js"></script>
-		<script type="text/javascript" src="../js/url.js"></script>
-		<script type="text/javascript" src="js/common.js"></script>
-		<script type="text/javascript" src="js/pay_success.js"></script>
-		<script type="text/javascript" src="js/vue.min.js"></script>
-		<script type="text/javascript" src="js/zoomify.min.js"></script>
-		<script type="text/javascript" src="js/swiper.min.js"></script>
-		<script>
-			var vm = new Vue({
-				el: '#vm',
-				data: {
-					g_id: getUrlParam('g_id'),
-					info: '',
-					bgImg: '', //第一个大图
-					g_name: '', //商品名称
-					count: 1
-				},
-				methods: {
-					initInfo: function() {
-						var that = this
-						console.log(this.g_id)
-						$.ajax({
-							type: "post",
-							url: p_url + "getGoodsInfo",
-							async: true,
-							dataType: "jsonp",
-							crossDomain: true,
-							data: {
-								goods_id: that.g_id
-							},
-							success: function(res) {
-								that.info = res.data
-								that.bgImg = res.data.goods_img
-								if(res.code != 1) {
-									alert(res.msg)
-								}else{
-								    $('#xiangqing').html(res.data.content);
-								    $('#guige').html(res.data.standard);
-								}
-								$('.showImgs').zoomify();
-								console.log(res)
-								setTimeout(function() {
-									that.initLunBo()
-								}, 50)
+<script type="text/javascript" src="js/rem.js"></script>
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/fill_name.js"></script>
+<script type="text/javascript" src="../js/url.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/pay_success.js"></script>
+<script type="text/javascript" src="js/vue.min.js"></script>
+<script type="text/javascript" src="js/zoomify.min.js"></script>
+<script type="text/javascript" src="js/swiper.min.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#vm',
+        data: {
+            g_id: getUrlParam('g_id'),
+            info: '',
+            bgImg: '', //第一个大图
+            g_name: '', //商品名称
+            count: 1
+        },
+        methods: {
+            initInfo: function () {
+                var that = this
+                console.log(this.g_id)
+                $.ajax({
+                    type: "post",
+                    url: p_url + "getGoodsInfo",
+                    async: true,
+                    dataType: "jsonp",
+                    crossDomain: true,
+                    data: {
+                        goods_id: that.g_id
+                    },
+                    success: function (res) {
+                        that.info = res.data
+                        that.bgImg = res.data.goods_img
+                        if (res.code != 1) {
+                            alert(res.msg)
+                        }
+                        $('.showImgs').zoomify();
+                        console.log(res)
+                        setTimeout(function () {
+                            that.initLunBo()
+                        }, 50)
 
-							},
-						});
-					},
-					sub: function() {
-						if(this.count <= 1) {
+                    },
+                });
+            },
+            sub: function () {
+                if (this.count <= 1) {
 
-						} else {
-							this.count--
-						}
-					},
-					add: function() {
-						this.count++
-					},
-					//初始化轮播
-					initLunBo: function() {
-						var swiper = new Swiper('.swiper-container', {
-							spaceBetween: 30,
-							autoplay:true,
-							speed:2000,
-							pagination: {
-								el: '.swiper-pagination',
-								dynamicBullets: true,
-							},
-						});
-					}
-				},
-				mounted: function() {
-					this.initInfo()
+                } else {
+                    this.count--
+                }
+            },
+            add: function () {
+                this.count++
+            },
+            //初始化轮播
+            initLunBo: function () {
+                var swiper = new Swiper('.swiper-container', {
+                    spaceBetween: 30,
+                    autoplay: true,
+                    speed: 2000,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        dynamicBullets: true,
+                    },
+                });
+            }
+        },
+        mounted: function () {
+            this.initInfo()
 
-				}
-			})
+        }
+    })
 
-			//			$(document).on('click','.showImgs',function(){
-			//				console.log(12)
-			//			})
-		</script>
-	</body>
+    //			$(document).on('click','.showImgs',function(){
+    //				console.log(12)
+    //			})
+</script>
+</body>
 
 </html>

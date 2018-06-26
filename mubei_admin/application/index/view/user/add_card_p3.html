@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 
-<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" class="ie8 no-js"> <![endif]-->
 
-<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if IE 9]>
+<html lang="en" class="ie9 no-js"> <![endif]-->
 
-<!--[if !IE]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" class="no-js"> <!--<![endif]-->
 
 <!-- BEGIN HEAD -->
 
 <head>
 
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
 
     <title>银行管理</title>
 
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 
-    <meta content="" name="description" />
+    <meta content="" name="description"/>
 
-    <meta content="" name="author" />
+    <meta content="" name="author"/>
 
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
 
@@ -44,7 +47,7 @@
 
     <link href="__static__/media/css/jquery.gritter.css" rel="stylesheet" type="text/css"/>
 
-    <link href="__static__/media/css/daterangepicker.css" rel="stylesheet" type="text/css" />
+    <link href="__static__/media/css/daterangepicker.css" rel="stylesheet" type="text/css"/>
 
     <link href="__static__/media/css/fullcalendar.css" rel="stylesheet" type="text/css"/>
 
@@ -54,7 +57,7 @@
 
     <!-- END PAGE LEVEL STYLES -->
 
-    <link rel="shortcut icon" href="__static__/media/image/favicon.ico" />
+    <link rel="shortcut icon" href="__static__/media/image/favicon.ico"/>
 
 </head>
 
@@ -62,7 +65,7 @@
 
 <!-- BEGIN BODY -->
 
-<body >
+<body>
 
 
 <div class="portlet box blue ">
@@ -84,7 +87,7 @@
 
                 <div class="controls">
 
-                    <input type="text" id="title" value="<?php echo $user['bn_name']?>"  class="m-wrap span12">
+                    <input type="text" id="title" value="<?php echo $user['bn_name']?>" class="m-wrap span12">
 
                 </div>
 
@@ -92,7 +95,9 @@
 
             <div class="form-actions">
 
-                <button type="button" class="btn blue" onclick="send(<?php echo $user['bn_id']?>)"><i class="icon-ok"></i> 修改</button>
+                <button type="button" class="btn blue" onclick="send(<?php echo $user['bn_id']?>)"><i
+                        class="icon-ok"></i> 修改
+                </button>
 
             </div>
 
@@ -113,7 +118,7 @@
 
 <script>
 
-    jQuery(document).ready(function() {
+    jQuery(document).ready(function () {
 
         App.init(); // initlayout and core plugins
 
@@ -136,20 +141,19 @@
     });
 
 
-
     function admin_add(title, url, w, h) {
         layer_show(title, url, w, h);
     }
 
 
-    function send(nid){
-        if(!$('#title').val()){
+    function send(nid) {
+        if (!$('#title').val()) {
             layer.open({
                 content: '请填写标题'
                 , skin: 'msg'
                 , time: 1
             });
-        }else{
+        } else {
             $.ajax({
                 url: "{:url('index/menu/add_card_p4')}",
                 type: 'POST',
@@ -159,7 +163,7 @@
                     nid: nid
                 },
                 success: function (res) {
-                    if(res.code == 2) {
+                    if (res.code == 2) {
                         layer.open({
                             content: res.msg
                             , skin: 'msg'
@@ -171,7 +175,9 @@
                             , skin: 'msg'
                             , time: 1
                         });
-                        setTimeout(function(){window.location.reload()},500);
+                        setTimeout(function () {
+                            window.location.reload()
+                        }, 500);
                     }
                 }, fail: function (res) {
 

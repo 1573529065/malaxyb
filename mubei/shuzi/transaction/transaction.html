@@ -1,300 +1,308 @@
 <!doctype html>
 <html>
 
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<link href="../../css/mui.min.css" rel="stylesheet" />
-		<style>
-			.mui-bar-nav {
-				box-shadow: none;
-			}
-			
-			#topPopover {
-				position: fixed;
-				top: 16px;
-				right: 6px;
-			}
-			
-			#topPopover .mui-popover-arrow {
-				left: auto;
-				right: 6px;
-			}
-			
-			p {
-				text-indent: 22px;
-			}
-			
-			span.mui-icon {
-				font-size: 12px;
-				margin-left: -15px;
-				padding-right: 10px;
-			}
-			
-			.mui-popover {
-				width: 120px;
-				height: 230px;
-			}
-			
-			.head {
-				background-color: #46adfc;
-				height: 65px;
-				text-align: center;
-				color: #FFFFFF;
-				padding: 5px;
-				font-size: 15px;
-			}
-			
-			.l_head {
-				letter-spacing: 1px;
-				width: 48%;
-				float: left;
-				border-right: 1px solid #FFFFFF;
-			}
-			
-			.r_head {
-				float: left;
-				letter-spacing: 1px;
-				width: 48%;
-			}
-			
-			.price {
-				overflow: auto;
-				background-color: #FFFFFF;
-				width: 100%;
-				padding: 10px;
-				float: left;
-				font-size: 12px;
-				border-bottom: 1px solid gainsboro;
-			}
-			
-			.h_word {
-				color: gray;
-				float: left;
-				width: 33%;
-			}
-			
-			.h_word span {
-				color: #000000;
-			}
-			
-			span.mui-icon {
-				margin-left: 0;
-				padding-right: 0;
-			}
-			
-			.right {
-				float: right;
-			}
-			
-			.c_bar {
-				background-color: #FFFFFF;
-				height: 130px;
-				width: 100%;
-			}
-			.icon_bar {
-				letter-spacing: 1px;
-				padding: 10px 0px;
-				text-align: center;
-				width: 25%;
-				display: table;
-				font-size: 12px;
-				float: left;
-				color: #000000;
-			}
-			.mui-segmented-control2 {
-				font-size: 15px;
-				font-weight: 400;
-				position: relative;
-				display: table;
-				overflow: hidden;
-				width: 100%;
-				table-layout: fixed;
-				border: 1px solid #dd524d;
-				border-radius: 3px;
-				background-color: transparent;
-				-webkit-touch-callout: none;
-				border-radius: 2em;
-			}
-			
-			.mui-segmented-control2 .mui-control-item.mui-active {
-				color: #fff;
-				background-color: #dd524d;
-			}
-			
-			.mui-segmented-control2 .mui-control-item {
-				line-height: 38px;
-				display: table-cell;
-				overflow: hidden;
-				width: 1%;
-				-webkit-transition: background-color .1s linear;
-				transition: background-color .1s linear;
-				text-align: center;
-				white-space: nowrap;
-				text-overflow: ellipsis;
-				color: #dd524d;
-				border-color: #dd524d;
-				border-left: 1px solid #dd524d;
-			}
-			ul{
-				-webkit-padding-start: 0px;
-			}
-			.mui-ellipsis{
-				margin-left: -20px;
-			}
-			.mui-table-view-chevron .mui-table-view-cell{
-				padding-right: 10px;
-			}
-			.buy{
-				border-radius: 2em;
-				padding: 3px 12px;
-			}
-		</style>
-	</head>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link href="../../css/mui.min.css" rel="stylesheet"/>
+    <style>
+        .mui-bar-nav {
+            box-shadow: none;
+        }
 
-	<body>
-		<header class="mui-bar mui-bar-nav" style="background-color: #46adfc;color: white;">
-			<i class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></i>
-			<h1 class="mui-title" style="color: white;">HPAY</h1>
-			<a id="menu" class="mui-action-menu mui-icon mui-icon-bars mui-pull-right" style="color: white;" href="#topPopover"></a>
-		</header>
-		<div class="mui-content">
-			<div class="head">
-				<div class="l_head">
-					HPAY资产
-					<div>0.0000</div>
-				</div>
-				<div class="r_head">
-					余&nbsp;&nbsp;额
-					<div>￥0000</div>
-				</div>
-			</div>
-			<div class="price">
-				<div class="h_word mui-pull-left">
-					当前价格<span>23.9520</span>
-				</div>
-				<div class="h_word" style="text-align: center;">
-					高<span>23.9520</span>
-					<img src="../../images/img/up.png" alt="" height="11px" />
-				</div>
-				<div class="h_word right">
-					低<span>23.9520</span>
-					<span style="color: green;" class="mui-icon mui-icon-pulldown"></span>
-				</div>
-			</div>
-			<div class="c_bar">
-				<a class="icon_bar" href="fabu_out.html">
-					<img src="../../images/img/fabu.png" height="40" />
-					<div>发布出售订单</div>
-				</a>
-				<a class="icon_bar" href="fabu_in.html">
-					<img src="../../images/img/chushou.png" height="40" />
-					<div>发布购买订单</div>
-				</a>
-				<a class="icon_bar" href="order.html">
-					<img src="../../images/img/_order.png" height="40" />
-					<div>订单</div>
-				</a>
-				<a class="icon_bar" href="transaction_record.html">
-					<img src="../../images/img/up (1).png" height="40" />
-					<div>交易记录</div>
-				</a>
-			</div>
-			<!--中间选项-->
-			<div style="margin: 10px 0;background-color: #FFFFFF;">
-				<div id="segmentedControl" class="mui-segmented-control">
-					<a class="mui-control-item mui-active" href="#item1">5分钟</a>
-					<a class="mui-control-item" href="#item2">5小时</a>
-					<a class="mui-control-item" href="#item3">日线</a>
-				</div>
-			</div>
-			<div id="item1" class="mui-control-content mui-active">
-				<div style="width: 100%;height: 200px;background-color: #D0E9C6;"></div>
-			</div>
-			<div id="item2" class="mui-control-content">
-				<div style="width: 100%;height: 200px;background-color: #D3D4D3;"></div>
-			</div>
-			<div id="item3" class="mui-control-content">
-				<div style="width: 100%;height: 200px;background-color: #C4E3F3;"></div>
-			</div>
-			
-            <!--尾部选项-->
-			<div style="padding: 15px 20px;">
-				<div id="segmentedControl" class="mui-segmented-control2">
-					<a class="mui-control-item mui-active " href="#list1">购买</a>
-					<a class="mui-control-item " href="#list2">出售</a>
-				</div>
-			</div>
-			<div id="list1" class="mui-control-content1 mui-active">
-				<ul class="mui-table-view mui-table-view-chevron">
-							<li class="mui-table-view-cell mui-media">
-									<img class="mui-media-object mui-pull-left head-img" id="head-img" src="../../images/img/tou.png">
-									<div class="mui-media-body">
-										<div style="float: left;">
-										<div style="margin-bottom: 5px;">嘻嘻</div>
-										<p class='mui-ellipsis'>限额0.5285</p>
-										</div>
-										<div class="mui-pull-right">
-											<div style="font-size: 14px;">￥14.2585</div>
-											<button type="button" class="mui-btn mui-btn-danger mui-btn-outlined buy">购买</button>
-										</div>
-									</div>
-							</li>
-							<li class="mui-table-view-cell mui-media">
-									<img class="mui-media-object mui-pull-left head-img" id="head-img" src="../../images/img/tou.png">
-									<div class="mui-media-body">
-										<div style="float: left;">
-										<div style="margin-bottom: 5px;">嘻嘻</div>
-										<p class='mui-ellipsis'>限额0.5285</p>
-										</div>
-										<div class="mui-pull-right">
-											<div style="font-size: 14px;">￥14.2585</div>
-											<button type="button" class="mui-btn mui-btn-danger mui-btn-outlined buy">购买</button>
-										</div>
-									</div>
-							</li>
-				</ul>
-			</div>
-			<!--<div id="list2" class="mui-control-content2">
-				<div style="width: 100%;height: 200px;background-color: #D3D4D3;"></div>
-			</div>-->
-			
+        #topPopover {
+            position: fixed;
+            top: 16px;
+            right: 6px;
+        }
 
-		</div>
-		<!--右上角弹出菜单-->
-		<div id="topPopover" class="mui-popover">
-			<div class="mui-popover-arrow"></div>
-			<div class="mui-scroll-wrapper">
-				<div class="mui-scroll">
-					<ul class="mui-table-view" style="">
-						<li class="mui-table-view-cell">
-							<a href="Confirmation_money.html">Vpay</a>
-						</li>
-						<li class="mui-table-view-cell">
-							<a href="Completed_order.html">比特币</a>
-						</li>
-						<li class="mui-table-view-cell">
-							<a href="Buy_record.html">莱特币</a>
-						</li>
-						<li class="mui-table-view-cell">
-							<a href="Buy_center .html">以太坊</a>
-						</li>
-						<li class="mui-table-view-cell">
-							<a href="Buy_center .html">狗狗币</a>
-						</li>
+        #topPopover .mui-popover-arrow {
+            left: auto;
+            right: 6px;
+        }
 
-					</ul>
-				</div>
-			</div>
-		</div>
-		<script src="../../js/mui.min.js"></script>
-		<script type="text/javascript" src="../../js/jquery.js" ></script>
-		<script type="text/javascript">
-			mui.init()
-			
-			
-		</script>
-	</body>
+        p {
+            text-indent: 22px;
+        }
+
+        span.mui-icon {
+            font-size: 12px;
+            margin-left: -15px;
+            padding-right: 10px;
+        }
+
+        .mui-popover {
+            width: 120px;
+            height: 230px;
+        }
+
+        .head {
+            background-color: #46adfc;
+            height: 65px;
+            text-align: center;
+            color: #FFFFFF;
+            padding: 5px;
+            font-size: 15px;
+        }
+
+        .l_head {
+            letter-spacing: 1px;
+            width: 48%;
+            float: left;
+            border-right: 1px solid #FFFFFF;
+        }
+
+        .r_head {
+            float: left;
+            letter-spacing: 1px;
+            width: 48%;
+        }
+
+        .price {
+            overflow: auto;
+            background-color: #FFFFFF;
+            width: 100%;
+            padding: 10px;
+            float: left;
+            font-size: 12px;
+            border-bottom: 1px solid gainsboro;
+        }
+
+        .h_word {
+            color: gray;
+            float: left;
+            width: 33%;
+        }
+
+        .h_word span {
+            color: #000000;
+        }
+
+        span.mui-icon {
+            margin-left: 0;
+            padding-right: 0;
+        }
+
+        .right {
+            float: right;
+        }
+
+        .c_bar {
+            background-color: #FFFFFF;
+            height: 130px;
+            width: 100%;
+        }
+
+        .icon_bar {
+            letter-spacing: 1px;
+            padding: 10px 0px;
+            text-align: center;
+            width: 25%;
+            display: table;
+            font-size: 12px;
+            float: left;
+            color: #000000;
+        }
+
+        .mui-segmented-control2 {
+            font-size: 15px;
+            font-weight: 400;
+            position: relative;
+            display: table;
+            overflow: hidden;
+            width: 100%;
+            table-layout: fixed;
+            border: 1px solid #dd524d;
+            border-radius: 3px;
+            background-color: transparent;
+            -webkit-touch-callout: none;
+            border-radius: 2em;
+        }
+
+        .mui-segmented-control2 .mui-control-item.mui-active {
+            color: #fff;
+            background-color: #dd524d;
+        }
+
+        .mui-segmented-control2 .mui-control-item {
+            line-height: 38px;
+            display: table-cell;
+            overflow: hidden;
+            width: 1%;
+            -webkit-transition: background-color .1s linear;
+            transition: background-color .1s linear;
+            text-align: center;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            color: #dd524d;
+            border-color: #dd524d;
+            border-left: 1px solid #dd524d;
+        }
+
+        ul {
+            -webkit-padding-start: 0px;
+        }
+
+        .mui-ellipsis {
+            margin-left: -20px;
+        }
+
+        .mui-table-view-chevron .mui-table-view-cell {
+            padding-right: 10px;
+        }
+
+        .buy {
+            border-radius: 2em;
+            padding: 3px 12px;
+        }
+    </style>
+</head>
+
+<body>
+<header class="mui-bar mui-bar-nav" style="background-color: #46adfc;color: white;">
+    <i class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></i>
+    <h1 class="mui-title" style="color: white;">HPAY</h1>
+    <a id="menu" class="mui-action-menu mui-icon mui-icon-bars mui-pull-right" style="color: white;"
+       href="#topPopover"></a>
+</header>
+<div class="mui-content">
+    <div class="head">
+        <div class="l_head">
+            HPAY资产
+            <div>0.0000</div>
+        </div>
+        <div class="r_head">
+            余&nbsp;&nbsp;额
+            <div>￥0000</div>
+        </div>
+    </div>
+    <div class="price">
+        <div class="h_word mui-pull-left">
+            当前价格<span>23.9520</span>
+        </div>
+        <div class="h_word" style="text-align: center;">
+            高<span>23.9520</span>
+            <img src="../../images/img/up.png" alt="" height="11px"/>
+        </div>
+        <div class="h_word right">
+            低<span>23.9520</span>
+            <span style="color: green;" class="mui-icon mui-icon-pulldown"></span>
+        </div>
+    </div>
+    <div class="c_bar">
+        <a class="icon_bar" href="fabu_out.html">
+            <img src="../../images/img/fabu.png" height="40"/>
+            <div>发布出售订单</div>
+        </a>
+        <a class="icon_bar" href="fabu_in.html">
+            <img src="../../images/img/chushou.png" height="40"/>
+            <div>发布购买订单</div>
+        </a>
+        <a class="icon_bar" href="order.html">
+            <img src="../../images/img/_order.png" height="40"/>
+            <div>订单</div>
+        </a>
+        <a class="icon_bar" href="transaction_record.html">
+            <img src="../../images/img/up (1).png" height="40"/>
+            <div>交易记录</div>
+        </a>
+    </div>
+    <!--中间选项-->
+    <div style="margin: 10px 0;background-color: #FFFFFF;">
+        <div id="segmentedControl" class="mui-segmented-control">
+            <a class="mui-control-item mui-active" href="#item1">5分钟</a>
+            <a class="mui-control-item" href="#item2">5小时</a>
+            <a class="mui-control-item" href="#item3">日线</a>
+        </div>
+    </div>
+    <div id="item1" class="mui-control-content mui-active">
+        <div style="width: 100%;height: 200px;background-color: #D0E9C6;"></div>
+    </div>
+    <div id="item2" class="mui-control-content">
+        <div style="width: 100%;height: 200px;background-color: #D3D4D3;"></div>
+    </div>
+    <div id="item3" class="mui-control-content">
+        <div style="width: 100%;height: 200px;background-color: #C4E3F3;"></div>
+    </div>
+
+    <!--尾部选项-->
+    <div style="padding: 15px 20px;">
+        <div id="segmentedControl" class="mui-segmented-control2">
+            <a class="mui-control-item mui-active " href="#list1">购买</a>
+            <a class="mui-control-item " href="#list2">出售</a>
+        </div>
+    </div>
+    <div id="list1" class="mui-control-content1 mui-active">
+        <ul class="mui-table-view mui-table-view-chevron">
+            <li class="mui-table-view-cell mui-media">
+                <img class="mui-media-object mui-pull-left head-img" id="head-img" src="../../images/img/tou.png">
+                <div class="mui-media-body">
+                    <div style="float: left;">
+                        <div style="margin-bottom: 5px;">嘻嘻</div>
+                        <p class='mui-ellipsis'>限额0.5285</p>
+                    </div>
+                    <div class="mui-pull-right">
+                        <div style="font-size: 14px;">￥14.2585</div>
+                        <button type="button" class="mui-btn mui-btn-danger mui-btn-outlined buy">购买</button>
+                    </div>
+                </div>
+            </li>
+            <li class="mui-table-view-cell mui-media">
+                <img class="mui-media-object mui-pull-left head-img" id="head-img" src="../../images/img/tou.png">
+                <div class="mui-media-body">
+                    <div style="float: left;">
+                        <div style="margin-bottom: 5px;">嘻嘻</div>
+                        <p class='mui-ellipsis'>限额0.5285</p>
+                    </div>
+                    <div class="mui-pull-right">
+                        <div style="font-size: 14px;">￥14.2585</div>
+                        <button type="button" class="mui-btn mui-btn-danger mui-btn-outlined buy">购买</button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!--<div id="list2" class="mui-control-content2">
+        <div style="width: 100%;height: 200px;background-color: #D3D4D3;"></div>
+    </div>-->
+
+
+</div>
+<!--右上角弹出菜单-->
+<div id="topPopover" class="mui-popover">
+    <div class="mui-popover-arrow"></div>
+    <div class="mui-scroll-wrapper">
+        <div class="mui-scroll">
+            <ul class="mui-table-view" style="">
+                <li class="mui-table-view-cell">
+                    <a href="Confirmation_money.html">Vpay</a>
+                </li>
+                <li class="mui-table-view-cell">
+                    <a href="Completed_order.html">比特币</a>
+                </li>
+                <li class="mui-table-view-cell">
+                    <a href="Buy_record.html">莱特币</a>
+                </li>
+                <li class="mui-table-view-cell">
+                    <a href="Buy_center .html">以太坊</a>
+                </li>
+                <li class="mui-table-view-cell">
+                    <a href="Buy_center .html">狗狗币</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+<script src="../../js/mui.min.js"></script>
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript">
+    mui.init()
+
+
+</script>
+</body>
 
 </html>

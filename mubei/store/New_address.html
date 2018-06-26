@@ -1,289 +1,290 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="UTF-8">
-		<meta name="Keywords" content="">
-		<meta name="Description" content="">
-		<meta name="format-detection" content="telephone=no">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimum-scale=1.0">
-		<link rel="stylesheet" href="css/reset.css">
-		<!--<link rel="stylesheet" href="css/index.css">-->
-		<link rel="stylesheet" href="../css/mui.min.css" />
-		<link rel="stylesheet" href="css/mui.picker.css" />
-		<link rel="stylesheet" href="css/mui.poppicker.css" />
-		<title>添加地址</title>
-		<style>
-			.mui-input-group {
-				margin: 5px;
-			}
-			
-			.btnP {
-				padding: 5px;
-			}
-			
-			.sureBtn {
-				display: block;
-				width: 100%;
-				background-color: dodgerblue;
-				color: white;
-				font-size: 18px;
-			}
-			
-			.mui-input-row label {
-				padding: 11px 9px;
-			}
-			
-			.mui-input-row .mui-btn {
-				width: auto;
-				position: absolute;
-				right: 0;
-			}
-		</style>
-	</head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimum-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <!--<link rel="stylesheet" href="css/index.css">-->
+    <link rel="stylesheet" href="../css/mui.min.css"/>
+    <link rel="stylesheet" href="css/mui.picker.css"/>
+    <link rel="stylesheet" href="css/mui.poppicker.css"/>
+    <title>添加地址</title>
+    <style>
+        .mui-input-group {
+            margin: 5px;
+        }
 
-	<body>
-		<div id="wrapper" v-cloak>
-			<header class="mui-bar mui-bar-nav">
-				<!--<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>-->
-				<h1 class="mui-title">新建地址</h1>
-			</header>
-			<div class="m_pwd mui-content">
-				<div class="mui-input-group">
-					<div class="mui-input-row">
-						<label>收货人</label>
-						<input type="text" class="mui-input-clear" v-model="name" placeholder="收货人">
-					</div>
-				</div>
-				<div class="mui-input-group">
-					<div class="mui-input-row">
-						<label>联系电话：</label>
-						<input type="number" class="mui-input-clear" v-model="phone" placeholder="联系电话">
-					</div>
-				</div>
-				<div class="mui-input-group">
-					<div class="mui-input-row">
-						<label>选择城市</label>
-						<span style="height: 40px;line-height: 40px;">{{pro}}:{{city}}:{{district}}</span>
-						<button id='showCityPicker3' class="mui-btn " type='button'>选择</button>
-					</div>
-				</div>
-				<div class="mui-input-group">
-					<div class="mui-input-row">
-						<label>详细地址：</label>
-						<input type="text" class="mui-input-clear" v-model="address" placeholder="详细地址">
-					</div>
-				</div>
-				<div class="mui-input-group">
-					<div class="mui-input-row">
-						<label>设为默认：</label>
-						<div class="mui-switch" @click="ch_default=!ch_default">
-							<div class="mui-switch-handle"></div>
-						</div>
-					</div>
-				</div>
-				<div class="btnP">
-					<button class="sureBtn" @click="save">保存</button>
-				</div>
-				<div class="btnP">
-					<button class="sureBtn" @click="del" v-if="isBianji" style="background-color: orangered;">删除地址</button>
-				</div>
-			</div>
-		</div>
-		<script type="text/javascript" src="js/rem.js"></script>
-		<script type="text/javascript" src="js/city.data-3.js"></script>
-		<script type="text/javascript" src="../js/mui.min.js"></script>
-		<script type="text/javascript" src="js/mui.picker.min.js"></script>
-		<script type="text/javascript" src="js/mui.poppicker.js"></script>
-		<script type="text/javascript" src="js/vue.min.js"></script>
-		<script type="text/javascript" src="../js/url.js"></script>
-		<script type="text/javascript" src="js/common.js"></script>
-		<script type="text/javascript" src="../js/jquery.min.js"></script>
-		<script>
-			var vm = new Vue({
-				el: '#wrapper',
-				data: {
-					name: '',
-					phone: '',
-					address: '',
-					pro: '省',
-					city: '市',
-					district: '区',
-					ad_id: getUrlParam('ad_id'),
-					ch_default: false
-				},
-				methods: {
-					initCity: function() {
-						var that = this;
-						(function($, doc) {
-							$.init();
-							$.ready(function() {
-								/**
-								 * 获取对象属性的值
-								 * 主要用于过滤三级联动中，可能出现的最低级的数据不存在的情况，实际开发中需要注意这一点；
-								 * @param {Object} obj 对象
-								 * @param {String} param 属性名
-								 */
-								var _getParam = function(obj, param) {
-									return obj[param] || '';
-								};
-								//普通示例
+        .btnP {
+            padding: 5px;
+        }
 
-								//-----------------------------------------
-								//级联示例
+        .sureBtn {
+            display: block;
+            width: 100%;
+            background-color: dodgerblue;
+            color: white;
+            font-size: 18px;
+        }
 
-								//-----------------------------------------
-								//					//级联示例
-								var cityPicker3 = new $.PopPicker({
-									layer: 3
-								});
-								cityPicker3.setData(cityData3);
-								var showCityPickerButton = doc.getElementById('showCityPicker3');
-								var cityResult3 = doc.getElementById('cityResult3');
-								showCityPickerButton.addEventListener('tap', function(event) {
-									cityPicker3.show(function(items) {
-										//										cityResult3.innerText = "你选择的城市是:" + _getParam(items[0], 'text') + " " + _getParam(items[1], 'text') + " " + _getParam(items[2], 'text');
-										//										//返回 false 可以阻止选择框的关闭
-										that.pro = _getParam(items[0], 'text');
-										that.city = _getParam(items[1], 'text');
-										that.district = _getParam(items[2], 'text');
-										//										return false;
-									});
+        .mui-input-row label {
+            padding: 11px 9px;
+        }
 
-								}, false);
-							});
-						})(mui, document);
+        .mui-input-row .mui-btn {
+            width: auto;
+            position: absolute;
+            right: 0;
+        }
+    </style>
+</head>
 
-					},
-					save: function() {
-						var that = this;
-						console.log(u_id, that.pro + that.city + that.district + that.address, that.phone, that.is_default)
-						if(this.ad_id == undefined || this.ad_id == null || this.ad_id == '') {
-							console.log('保存')
-							$.ajax({
-								type: "post",
-								url: p_url+'addAddress',
-								async: true,
-								dataType: "jsonp",
-								crossDomain: true,
-								data: {
-									u_id: u_id,
-									address: that.pro + that.city + that.district + that.address,
-									contact: that.phone,
-									delivery_name: that.name,
-									is_default: that.is_default
-								},
-								success: function(res) {
-									console.log(res)
-									if(res.code == 1) {
-										history.go(-1)
-									}
-								}
-							});
-						} else {
-							console.log('xiugai')
-							$.ajax({
-								type: "post",
-								url: p_url + "updateAddress",
-								async: true,
-								dataType: "jsonp",
-								crossDomain: true,
-								data: {
-									u_id: u_id,
-									address: that.pro + that.city + that.district + that.address,
-									contact: that.phone,
-									delivery_name: that.name,
-									address_id: that.ad_id,
-									is_default: that.is_default
-								},
-								success: function(res) {
-									console.log(res)
-									if(res.code==1){
-										mui.alert('修改成功',function(){
-											history.go(-1)
-										})
-									}
-								}
-							});
-						}
+<body>
+<div id="wrapper" v-cloak>
+    <header class="mui-bar mui-bar-nav">
+        <!--<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>-->
+        <h1 class="mui-title">新建地址</h1>
+    </header>
+    <div class="m_pwd mui-content">
+        <div class="mui-input-group">
+            <div class="mui-input-row">
+                <label>收货人</label>
+                <input type="text" class="mui-input-clear" v-model="name" placeholder="收货人">
+            </div>
+        </div>
+        <div class="mui-input-group">
+            <div class="mui-input-row">
+                <label>联系电话：</label>
+                <input type="number" class="mui-input-clear" v-model="phone" placeholder="联系电话">
+            </div>
+        </div>
+        <div class="mui-input-group">
+            <div class="mui-input-row">
+                <label>选择城市</label>
+                <span style="height: 40px;line-height: 40px;">{{pro}}:{{city}}:{{district}}</span>
+                <button id='showCityPicker3' class="mui-btn " type='button'>选择</button>
+            </div>
+        </div>
+        <div class="mui-input-group">
+            <div class="mui-input-row">
+                <label>详细地址：</label>
+                <input type="text" class="mui-input-clear" v-model="address" placeholder="详细地址">
+            </div>
+        </div>
+        <div class="mui-input-group">
+            <div class="mui-input-row">
+                <label>设为默认：</label>
+                <div class="mui-switch" @click="ch_default=!ch_default">
+                    <div class="mui-switch-handle"></div>
+                </div>
+            </div>
+        </div>
+        <div class="btnP">
+            <button class="sureBtn" @click="save">保存</button>
+        </div>
+        <div class="btnP">
+            <button class="sureBtn" @click="del" v-if="isBianji" style="background-color: orangered;">删除地址</button>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="js/rem.js"></script>
+<script type="text/javascript" src="js/city.data-3.js"></script>
+<script type="text/javascript" src="../js/mui.min.js"></script>
+<script type="text/javascript" src="js/mui.picker.min.js"></script>
+<script type="text/javascript" src="js/mui.poppicker.js"></script>
+<script type="text/javascript" src="js/vue.min.js"></script>
+<script type="text/javascript" src="../js/url.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#wrapper',
+        data: {
+            name: '',
+            phone: '',
+            address: '',
+            pro: '省',
+            city: '市',
+            district: '区',
+            ad_id: getUrlParam('ad_id'),
+            ch_default: false
+        },
+        methods: {
+            initCity: function () {
+                var that = this;
+                (function ($, doc) {
+                    $.init();
+                    $.ready(function () {
+                        /**
+                         * 获取对象属性的值
+                         * 主要用于过滤三级联动中，可能出现的最低级的数据不存在的情况，实际开发中需要注意这一点；
+                         * @param {Object} obj 对象
+                         * @param {String} param 属性名
+                         */
+                        var _getParam = function (obj, param) {
+                            return obj[param] || '';
+                        };
+                        //普通示例
 
-					},
-					getAll: function() {
-						if(this.ad_id == undefined || this.ad_id == null || this.ad_id == '') {
+                        //-----------------------------------------
+                        //级联示例
 
-						} else {
-							var that = this
-							$.ajax({
-								type: "post",
-								url: p_url + "getAddress",
-								async: true,
-								dataType: "jsonp",
-								crossDomain: true,
-								data: {
-									u_id: u_id
-								},
-								success: function(res) {
-									if(res.code == 1) {
-										for(var i = 0; i < res.data.length; i++) {
-											if(res.data[i].address_id == that.ad_id) {
-												that.name = res.data[i].delivery_name
-												that.phone = res.data[i].contact
-											}
-										}
-									}
-									console.log(res)
-								}
-							});
-						}
-					},
-					del: function() {
-						var that = this
-							$.ajax({
-								type: "post",
-								url: p_url + "delAddress",
-								async: true,
-								dataType: "jsonp",
-								crossDomain: true,
-								data: {
-									address_id: that.ad_id
-								},
-								success: function(res) {
-									console.log(res)
-									if(res.code == 1) {
-										mui.alert('删除成功',function(){
-											history.go(-1)
-										})
-									}
-								}
-							});
-					}
-				},
-				computed: {
-					is_default: function() {
-						if(this.ch_default) {
-							return 1
-						} else {
-							return 0
-						}
-					},
-					isBianji: function() {
-						if(this.ad_id == undefined || this.ad_id == null || this.ad_id == '') {
-							return false
-						} else {
-							return true
-						}
-					}
+                        //-----------------------------------------
+                        //					//级联示例
+                        var cityPicker3 = new $.PopPicker({
+                            layer: 3
+                        });
+                        cityPicker3.setData(cityData3);
+                        var showCityPickerButton = doc.getElementById('showCityPicker3');
+                        var cityResult3 = doc.getElementById('cityResult3');
+                        showCityPickerButton.addEventListener('tap', function (event) {
+                            cityPicker3.show(function (items) {
+                                //										cityResult3.innerText = "你选择的城市是:" + _getParam(items[0], 'text') + " " + _getParam(items[1], 'text') + " " + _getParam(items[2], 'text');
+                                //										//返回 false 可以阻止选择框的关闭
+                                that.pro = _getParam(items[0], 'text');
+                                that.city = _getParam(items[1], 'text');
+                                that.district = _getParam(items[2], 'text');
+                                //										return false;
+                            });
 
-				},
-				mounted: function() {
-					mui.init()
-					this.initCity()
-					this.getAll()
-				}
-			})
-		</script>
-	</body>
+                        }, false);
+                    });
+                })(mui, document);
+
+            },
+            save: function () {
+                var that = this;
+                console.log(u_id, that.pro + that.city + that.district + that.address, that.phone, that.is_default)
+                if (this.ad_id == undefined || this.ad_id == null || this.ad_id == '') {
+                    console.log('保存')
+                    $.ajax({
+                        type: "post",
+                        url: p_url + 'addAddress',
+                        async: true,
+                        dataType: "jsonp",
+                        crossDomain: true,
+                        data: {
+                            u_id: u_id,
+                            address: that.pro + that.city + that.district + that.address,
+                            contact: that.phone,
+                            delivery_name: that.name,
+                            is_default: that.is_default
+                        },
+                        success: function (res) {
+                            console.log(res)
+                            if (res.code == 1) {
+                                history.go(-1)
+                            }
+                        }
+                    });
+                } else {
+                    console.log('xiugai')
+                    $.ajax({
+                        type: "post",
+                        url: p_url + "updateAddress",
+                        async: true,
+                        dataType: "jsonp",
+                        crossDomain: true,
+                        data: {
+                            u_id: u_id,
+                            address: that.pro + that.city + that.district + that.address,
+                            contact: that.phone,
+                            delivery_name: that.name,
+                            address_id: that.ad_id,
+                            is_default: that.is_default
+                        },
+                        success: function (res) {
+                            console.log(res)
+                            if (res.code == 1) {
+                                mui.alert('修改成功', function () {
+                                    history.go(-1)
+                                })
+                            }
+                        }
+                    });
+                }
+
+            },
+            getAll: function () {
+                if (this.ad_id == undefined || this.ad_id == null || this.ad_id == '') {
+
+                } else {
+                    var that = this
+                    $.ajax({
+                        type: "post",
+                        url: p_url + "getAddress",
+                        async: true,
+                        dataType: "jsonp",
+                        crossDomain: true,
+                        data: {
+                            u_id: u_id
+                        },
+                        success: function (res) {
+                            if (res.code == 1) {
+                                for (var i = 0; i < res.data.length; i++) {
+                                    if (res.data[i].address_id == that.ad_id) {
+                                        that.name = res.data[i].delivery_name
+                                        that.phone = res.data[i].contact
+                                    }
+                                }
+                            }
+                            console.log(res)
+                        }
+                    });
+                }
+            },
+            del: function () {
+                var that = this
+                $.ajax({
+                    type: "post",
+                    url: p_url + "delAddress",
+                    async: true,
+                    dataType: "jsonp",
+                    crossDomain: true,
+                    data: {
+                        address_id: that.ad_id
+                    },
+                    success: function (res) {
+                        console.log(res)
+                        if (res.code == 1) {
+                            mui.alert('删除成功', function () {
+                                history.go(-1)
+                            })
+                        }
+                    }
+                });
+            }
+        },
+        computed: {
+            is_default: function () {
+                if (this.ch_default) {
+                    return 1
+                } else {
+                    return 0
+                }
+            },
+            isBianji: function () {
+                if (this.ad_id == undefined || this.ad_id == null || this.ad_id == '') {
+                    return false
+                } else {
+                    return true
+                }
+            }
+
+        },
+        mounted: function () {
+            mui.init()
+            this.initCity()
+            this.getAll()
+        }
+    })
+</script>
+</body>
 
 </html>
