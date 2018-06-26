@@ -309,10 +309,10 @@
                                 <td data-title="用户uid"><?php echo $v['u_id']?></td>
                                 <!--<td data-title="Company">AUSTRALIAN AGRICULTURAL COMPANY LIMITED.</td>-->
                                 <td data-title="业务类型">  <?php if($v['type'] == 1){ ?>
-                                    <?php echo '签到';?>
-                                    <?php }else if($v['type'] == 2){ echo '兑换流通资产';}
+                                    <?php echo '每日释放';?>
+                                    <?php }else if($v['type'] == 2){ echo '兑换流动资产';}
                     else if($v['type'] == 3){ echo '买入';}else if($v['type'] == 4){ echo '卖出';}else if($v['type'] == 5){ echo '加速释放';}
-                    else if($v['type'] == 6){ echo '转出';}else if($v['type'] == 7){ echo '转入';}else if($v['type'] == 8){ echo '兑换积分';}
+                    else if($v['type'] == 6){ echo '转出';}else if($v['type'] == 7){ echo '转入';}else if($v['type'] == 8){ echo '兑换固定资产';}
                      ?>
                                     <?php if($v['target_uid'] != 0) { ?>
                                     ({$v.target_uid})

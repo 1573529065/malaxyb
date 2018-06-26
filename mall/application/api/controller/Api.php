@@ -55,6 +55,7 @@ class Api {
 		$where['a.classify_id'] = $param['classify_id'];
 		$where['a.is_delete'] = 0;
 		$where['a.status'] = 1;
+		$where['b.status'] = 1;
 		$res = $mall->table('mall_goods a')
 			   ->join('mall_admin b','a.seller_id = b.admin_id')	
 			   ->where($where)
